@@ -1,0 +1,115 @@
+%% Copyright (C) 2014 Dorian Depriester
+%% http://blog.dorian-depriester.fr
+%%
+%% This file may be distributed and/or modified under the conditions
+%% of the LaTeX Project Public License, either version 1.3c of this
+%% license or (at your option) any later version. The latest version
+%% of this license is in:
+%%
+%%    http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2006/05/20 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Dorian Depriester
+%% <contact [at] dorian [-] depriester [dot] fr>.
+%%
+%% This is main.tex for French PhD Thesis.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Fichier maitre				%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt, twoside,openright]{report}
+\input{Preambule}		% Liste des packages et de leurs options
+\input{CommandesPerso}	% Commandes et environnements perso
+\input{PageDeGarde}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			Liste des fichiers à compiler					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\includeonly{Chapitre1,Chapitre2,Annexes}
+
+
+
+% Infos de la page de garde
+\author{Marco \scshape{Bomben}}
+\title{\Huge Silicon Trackers for High Luminosity Colliders}
+%\specialite{Science et Génie des Matériaux}
+%\directeur{Elisabeth \scshape{Massoni}}
+%\encadrant{Michel \scshape{Bellet}}
+\date{18 décembre 2017}
+\jurya{Fran\c{c}ois Le Diberder}{LAL \& Paris Diderot, Paris}{Pr\'esident du Jury}
+\juryc{Marc Winter}{IPHC, Strasbourg}{Rapporteur}
+\juryd{Ingrid Maria Gregor}{DESY, Hamburg}{Examinateur}
+\jurye{Anna Macchiolo}{Max-Planck-Institut for Physics, M\"unich}{Examinateur}
+\juryf{Daniela Bortoletto}{University of Oxford}{Examinateur}
+\juryb{Achille Stocchi}{LAL, Orsay}{Rapporteur}
+%\ecole{l'\'{E}cole Nationale Supérieure des Mines de Paris}
+
+% Méta-données du PDF
+%\hypersetup{
+   % pdfauthor={Dorian Depriester},
+   % pdfsubject={Manuscrit de thèse de doctorat},
+   % pdftitle={Fluotournage à froid de tubes en TA6V},
+    %pdfkeywords={Fluotournage, déformation plastique, titane, TA6V}
+%}
+
+\input{babarsym}
+
+
+\begin{document}
+
+% Préambule
+	\pagenumbering{roman}
+	\pagedegarde
+
+	\cleardoublepage
+		% Table des matières
+			\setcounter{tocdepth}{1}	% Pas besoin de trop détailler le sommaire ici (chapitres/sections)
+			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
+			\tableofcontents
+		% Liste des figures
+			\listoffigures
+		% Liste des tableaux
+		\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+%        Contenu du document        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{mtc}{3}	% "Corrige" les minitocs décallés à cause des chapter* (ex : table des matières)
+	\pagenumbering{arabic}
+	\includefrom{.}{Foreword}
+	%\addcontentsline{toc}{chapter}{Foreword}
+	
+	
+	\includefrom{HEP/}{HEP}
+	\includefrom{Silicon/}{Silicon}	
+	\includefrom{SuperB/}{SuperB} 	
+	\includefrom{Slim5/}{Slim5}
+	\includefrom{TCAD/}{TCAD}
+	\includefrom{ATLAS/}{ATLAS}
+	\includefrom{ITk/}{ITk}
+	\includefrom{Perspectives/}{Perspectives}
+	
+	
+	% Annexes
+	\begin{appendix}
+		\pagenumbering{Roman}
+		\includefrom{Annexes/}{Annexes}				% Figures en annexe
+			
+		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
+		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
+		\printglossary[title=Glossaire,toctitle=Glossaire]
+		\printglossary[type=notation,title={Liste des symboles}, toctitle={Liste des symboles}]
+	
+	\end{appendix}
+
+\bibliography{biblio}{}
+\bibliographystyle{unsrt}
+
+\end{document}
