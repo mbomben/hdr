@@ -11,6 +11,8 @@ After reviewing the basics  a discussion on radiation damage in silicon
 will follow in Section~\ref{sec:RadDam}.
 \section{Semiconductor Basics}
 
+\subsection{Crystals and Energy Bands}
+
 The physics of semiconductor devices is naturally dependent on the physics of semiconductor 
 themselves~\cite{Sze1981}. In this brief introduction only crystalline semiconductors will be treated, 
 with a particular focus on silicon. Most commonly used semiconductors are crystals with 
@@ -60,7 +62,88 @@ creating a weak conductivity due to free electrons and holes.
 
  The structure of an isolator, or insulator, is similar,  except that the band gap is much larger so that 
  the occupation probability of states in the conduction band is zero.   Conductors may either have 
- overlapping valence and conduction bands  or a partially filled conduction band.
+ overlapping valence and conduction bands  or a partially filled conduction band. 
+ We can conclude that the main difference between conductors, semiconductors and insulators 
+ is the value of the band gap energy $E_g$.
+ 
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.55\textwidth]{KinEnergy.pdf} % requires the graphicx package
+   \caption{\label{fig:KinEnergy}Potential and kinetic energy in the band 
+   representation (After~\cite{Lutz:411172}).}
+\end{figure}
+
+Focusing on the dynamics of carriers in crystalline materials, it can be proven that  electrons in the 
+conduction band and holes in the valence band are similar to free particles  but with an effective mass 
+($m_n$, $m_p$) different from elementary electrons not imbedded in the lattice.
+This mass is furthermore dependent on other parameters such as the direction of movement with 
+respect to the crystal axis. The kinetic energy of electrons is measured from the lower edge of the 
+conduction band upwards, that of the holes downward from the upper edge of the valence band; 
+Figure~\ref{fig:KinEnergy} presents the energy diagram for free electrons and holes in lattice.
+
+This simplified picture presents important limitations; in particular it neglects the relative position 
+in lattice reciprocal space of the minimum conduction band and the maximum of the valence band. 
+If there is no difference among the two positions then the semiconductor is said to have ``direct'' 
+bandgap; otherwise it is an indirect semiconductor. Figure~\ref{fig:bandStructures} shows the difference 
+between indirect semiconductors, like Silicon and Germanium, and direct ones, like Gallium Arsenide. 
+
+
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.55\textwidth]{bandStructures.jpg} % requires the graphicx package
+   \caption{\label{fig:bandStructures}Germanium (left), Silicon (center) and Gallium Arsenide (right) band structures. (Bottom) valence bands; (top) conductive bands.}
+\end{figure}
+
+For indirect semiconductors, the process of creation or annihilation of an electron-hole pair requires 
+not only a quantum of energy, like a photon, but also a net lattice momentum transfer, thanks to 
+phonons. In Silicon at room temperature the bandgap energy value is of about $E_g\sim1.12$~eV, 
+while the mean ionization energy is $\epsilon~3.6$~eV: the difference is due to the distance in the 
+lattice reciprocal space of the edge of conductive and valence band. 
+
+\subsection{Extrinsic Semiconductors and Doping}
+
+Intrinsic semiconductors contain a very limited number of impurities  compared with the number of 
+thermally generated electrons and holes. 
+Electron states are occupied following the Fermi-Dirac statistics:
+\begin{equation}
+F(E)=\dfrac{1}{1+\exp{\Bigg(\dfrac{E-E_F}{kT}}\Bigg)}
+\label{eq:FermiDirac}	
+\end{equation}
+where $E_F$, the Fermi energy, is the energy at which the occupation probability of a (possible) 
+state is one half, $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+
+Intrinsic semiconductors are rarely used in semiconductor 
+devices since it is extremely difficult to obtain sufficient purity in the material. Moreover, in most cases 
+one intentionally alters the property of the material by adding small fractions of specific impurities. 
+This procedure is called doping.  Doping is the replacement of a small number of atoms in the lattice by 
+atoms of neighbouring columns from the atomic table (with one valence electron more or less compared 
+to the basic material). Depending on the type of added material, one obtains n-type 
+semiconductors with an excess of electrons in the conduction band or p-types with additional holes in 
+the valence band. 
+
+Doping Silicon with an element of the V group (P, As, Sb) leaves a valence electron of dopant atom 
+loosely bound; those atoms are identified  
+as {\it donor} dopants. The energy level of the donor is just below the edge of the conduction band; 
+at room temperature most electrons are raised from the donor dopant to the conduction band.  
+The doping with donors  is illustrated in Figure~\ref{fig:nDoping}. 
+
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{nDopingBonds.pdf} 
+   \includegraphics[width=0.35\textwidth]{nDopingBands.pdf} 
+   \caption{\label{fig:nDoping}Doping Silicon with donor atoms. (Left) atom bonds with donor dopant; 
+   (right) energy bands diagram after donor doping.}
+\end{figure}
+
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{pDopingBonds.pdf} 
+   \includegraphics[width=0.35\textwidth]{pDopingBands.pdf} 
+   \caption{\label{fig:pDoping}Doping Silicon with acceptor atoms. (Left) atom bonds with acceptor 
+   dopant; (right) energy bands diagram after acceptor doping.}
+\end{figure}
+
+
 
 \section{Why Use Silicon}
 
@@ -84,7 +167,7 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
       \midrule
       Density  $\rho$    & 2.33~g/cm${^3}$ & compact and thin detectors  \\
       Energy bandgap $E_g$ & 1.12~eV & non-cryogenic operation \\
-      Ionisation energy $\epsilon$ & 3.6~eV & large signals\\
+      Mean ionisation energy $\epsilon$ & 3.6~eV & large signals\\
       Radiation length $X_0$      &  9.37~cm & thin detectors to minimize  \\
                                        &                 & multiple scattering \\
       Electron mobility  $\mu_e$     & $\sim$1350 cm$^2$V/s  & fast charge collection \\
