@@ -7,14 +7,13 @@ In this Chapter an introduction to silicon detectors will be given, focusing
 on those aspects that are relevant for the purpose of tracking and vertexing.
 Excellent books on the subject exists, like~\cite{Lutz:411172,Sze1981,Wang1989}. Here 
 some extracts from those will be reported, just to introduce the subject. 
-
- After reviewing the basics of the subject a discussion on radiation damage in silicon 
+After reviewing the basics  a discussion on radiation damage in silicon 
 will follow in Section~\ref{sec:RadDam}.
 \section{Semiconductor Basics}
 
 The physics of semiconductor devices is naturally dependent on the physics of semiconductor 
-themselves~\cite{Sze1981}. In this brief introduction only crystalline semiconductors will be treated 
-and with a particular focus on silicon. Most commonly used semiconductors are crystals with 
+themselves~\cite{Sze1981}. In this brief introduction only crystalline semiconductors will be treated, 
+with a particular focus on silicon. Most commonly used semiconductors are crystals with 
 diamond (Si and Ge) or zinc blende ({\it e.g.} GaAs) lattice type. In Figure~\ref{fig:diamondLattice} 
 a schematic view of the diamond lattice is presented.
 
@@ -22,12 +21,12 @@ a schematic view of the diamond lattice is presented.
 \begin{figure}[htbp]
    \centering
    \includegraphics{diamondLattice.pdf} % requires the graphicx package
-   \caption{\label{fig:diamondLattice}Diamond lattice. (After~\cite{Lutz:411172})}
+   \caption{\label{fig:diamondLattice}Diamond (a) and zinc blend (b) lattice. (After~\cite{Lutz:411172})}
 \end{figure}
 
 Due to the Pauli exclusion principle, electrons in crystals are organised in energy bands, 
-each one containing many closely spaced levels. Figure~\ref{fig:EnergyLevels} helps in picturing 
-the situation for diamond lattice: at very large distances each atom has the same two energy levels; 
+each one containing many closely spaced levels; Figure~\ref{fig:EnergyLevels} helps in picturing 
+the situation for diamond lattice. At very large distances each atom has the same two energy levels; 
 the energy levels are $N$-fold degenerate ($N$ being the number of atoms), they indeed split 
 into $N$ closely spaced levels when the atoms are brought close together. 
 For $N\to\infty$, one speaks of energy bands, rather than levels, and these bands broaden, merge 
@@ -38,6 +37,30 @@ and split again with even closer spacing~\cite{Lutz:411172}.
    \includegraphics{EnergyLevels.pdf} % requires the graphicx package
    \caption{\label{fig:EnergyLevels}Energy levels of silicon atoms arranged in a diamond structure, as a function of lattice spacing. (After~\cite{Lutz:411172})}
 \end{figure}
+
+The spacing corresponding to silicon is indicated in Figure~\ref{fig:EnergyLevels} and corresponds to 
+the minimum total energy of the electrons and the lattice, not very far from the minimum energy of
+ the electrons in the filled valence band. 
+ At low temperature one has a completely filled valence band and an empty conduction band; at room 
+ temperature the thermal energy is high enough to lift a few electrons to the conduction band, thus 
+ creating a weak conductivity due to free electrons and electrons vacancies, {\it i.e.} holes.
+In Figure~\ref{fig:EnergyBandGap} the energy band structures of several materials are reported. 
+From that Figure it can be seen that in semiconductors at low temperature one has a completely filled valence band and an empty conduction band; at room 
+temperature the thermal energy is high enough to lift a few electrons to the conduction band, thus 
+creating a weak conductivity due to free electrons and holes.
+ 
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.8\textwidth]{EnergyBandGap.png} % requires the graphicx package
+   \caption{\label{fig:EnergyBandGap}Energy band structure of several materials. For 
+   semiconductors the  $T=0$~K and $T>0$~K situations are reported; for metals two 
+   possible band configurations are represented (After~\cite{Krammer}).}
+\end{figure}
+
+
+ The structure of an isolator, or insulator, is similar,  except that the band gap is much larger so that 
+ the occupation probability of states in the conduction band is zero.   Conductors may either have 
+ overlapping valence and conduction bands  or a partially filled conduction band.
 
 \section{Why Use Silicon}
 
