@@ -75,7 +75,7 @@ creating a weak conductivity due to free electrons and holes.
 
 Focusing on the dynamics of carriers in crystalline materials, it can be proven that  electrons in the 
 conduction band and holes in the valence band are similar to free particles  but with an effective mass 
-($m_n$, $m_p$) different from elementary electrons not imbedded in the lattice.
+($m_n^*$, $m_p^*$) different from elementary electrons not imbedded in the lattice.
 This mass is furthermore dependent on other parameters such as the direction of movement with 
 respect to the crystal axis. The kinetic energy of electrons is measured from the lower edge of the 
 conduction band upwards, that of the holes downward from the upper edge of the valence band; 
@@ -111,6 +111,25 @@ F(E)=\dfrac{1}{1+\exp{\Bigg(\dfrac{E-E_F}{kT}}\Bigg)}
 \end{equation}
 where $E_F$, the Fermi energy, is the energy at which the occupation probability of a (possible) 
 state is one half, $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+In Intrinsic semiconductors electrons and holes exist on account of thermal creation of electron-hole 
+pairs, so we have:
+
+\begin{equation}
+p=n,
+\label{eq:n=p}
+\end{equation}
+
+{\it i.e.} the concentration of electrons $n$ equals that of holes $p$. 
+We will assert the mass action law for semiconductors:
+\begin{equation}
+np=n_i^2
+\label{eq:massLawAction}
+\end{equation} 
+where $n_i$ is the {\it intrinsic carrier concentration}. The intrinsic carrier concentration depends only 
+on the temperature $T$, the effective mass of the carriers $m^*$ 
+and the band gap energy 
+$E_g$~\cite{Lutz:411172}.
+
 
 Intrinsic semiconductors are rarely used in semiconductor 
 devices since it is extremely difficult to obtain sufficient purity in the material. Moreover, in most cases 
@@ -156,14 +175,36 @@ minority ones.
    \caption{\label{fig:pDoping}Doping Silicon with acceptor atoms. (Left) atom bonds with acceptor 
    dopant; (right) energy bands diagram after acceptor doping.(After~\cite{Krammer}).}
 \end{figure}
+In a doped semiconductor the relation $n=p$ doesn't hold, while the mass action law  
+(Eqution~\ref{eq:massLawAction}) still does. Semiconductors where $n\neq p$ are called
+ {\it extrinsic}.
+In a doped semiconductor electrons are merely redistributed among the various energy states, 
+but not taken out of or put into the semiconductor itself, the crystal remains electrically neutral. 
+The equation that states this charge-neutrality condition reads:
 
+\begin{equation}
+n+N_a^-=p+N_d^+,
+\label{eq:chargeNeutrality}
+\end{equation}
+
+where $N_{a(d)}^{-(+)}$ represent the charge density of ionised acceptors (donors) respectively. 
+At room temperature dopants are normally ionised so it is safe to assume that $N_a^-\simeq N_a$ 
+and $N_d^+\simeq N_d$, hence $n-p=N_d-N_a$. From charge neutrality and mass action law  
+it can be easily shown that for an $n$-type semiconductor the concentration of electrons $n$ is 
+equal to that of the donor dopants $N_d$ to a very good level; with the same reasoning in a 
+$p$-type semiconductor the concentration of holes $p$ is equal to that of the acceptor 
+dopants $N_a$. 
+Before moving to the case of semic
+
+
+\subsection{Carrier Transport in Semiconductors}
 
 \section{The p-n Junction}
 
 At the interface of an $n$-type and $p$-type semiconductor the difference in the Fermi levels cause 
 diffusion 
 of surplus carries to the other material until thermal equilibrium is reached. At this point the Fermi level 
-is equal. The remaining ions\footnote{At room temperature dopants are normally ionised} create a 
+is equal. The remaining ions create a 
 space charge and an electric field stopping further diffusion. 
 
 \begin{figure}[htbp]
