@@ -74,7 +74,8 @@ creating a weak conductivity due to free electrons and holes.
 \end{figure}
 
 Focusing on the dynamics of carriers in crystalline materials, it can be proven that  electrons in the 
-conduction band and holes in the valence band are similar to free particles  but with an effective mass 
+conduction band and holes in the valence band are similar to free particles  but with an effective 
+mass 
 ($m_n^*$, $m_p^*$) different from elementary electrons not imbedded in the lattice.
 This mass is furthermore dependent on other parameters such as the direction of movement with 
 respect to the crystal axis. The kinetic energy of electrons is measured from the lower edge of the 
@@ -110,7 +111,7 @@ F(E)=\dfrac{1}{1+\exp{\Bigg(\dfrac{E-E_F}{kT}}\Bigg)}
 \label{eq:FermiDirac}	
 \end{equation}
 where $E_F$, the Fermi energy, is the energy at which the occupation probability of a (possible) 
-state is one half, $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+state is one half, $k$ is the Boltzmann constant and $T$ is the absolute temperature. 
 In Intrinsic semiconductors electrons and holes exist on account of thermal creation of electron-hole 
 pairs, so we have:
 
@@ -194,10 +195,52 @@ it can be easily shown that for an $n$-type semiconductor the concentration of e
 equal to that of the donor dopants $N_d$ to a very good level; with the same reasoning in a 
 $p$-type semiconductor the concentration of holes $p$ is equal to that of the acceptor 
 dopants $N_a$. 
-Before moving to the case of semic
+
+The Fermi level for the intrinsic semiconductor $E_i$ lies very close to the middle of the bandgap.
+ When 
+impurity atoms are introduced, the Fermi level must adjust itself to preserve charge neutrality. 
+We assert that the in an $n$-type semiconductor where the donors concentration is $N_d$ the 
+Fermi level at temperature $T$ is:
+
+\begin{equation}
+E_F=E_C-kT\ln\Big(\dfrac{N_c}{N_d}\Big)
+\label{eq:nEF}
+\end{equation}
+where $N_c$ is the effective density of states in the conduction band. 
+Similarly, in a $p$-type semiconductor where the acceptors concentration is $N_a$ the 
+Fermi level at temperature $T$ is:
+
+\begin{equation}
+E_F=E_V+kT\ln\Big(\dfrac{N_v}{N_a}\Big)
+\label{eq:pEF}
+\end{equation}
+where $N_v$ is the effective density of states in the valence band. 
+
+The Equations~\ref{eq:nEF}~and~\ref{eq:pEF} can be expressed also as a function of the 
+electrons and holes thermal equilibrium concentration $n,p$, and the intrinsic carrier concentration 
+$n_i$, to evaluate  the distance of the Fermi level $E_F$ from the intrinsic value $E_i$ 
+in an extrinsic semiconductor:
+
+\begin{align}
+E_F&=E_i+kT\ln\Big(\dfrac{n}{n_i}\Big)\label{eq:nEini}\\
+E_F&=E_i-kT\ln\Big(\dfrac{p}{n_i}\Big)\label{eq:pEini}
+\end{align} 
 
 
-\subsection{Carrier Transport in Semiconductors}
+
+
+\subsection{Carrier Transport in Semiconductors and Continuity Equations}
+
+So far only semiconductors in equilibrium have been considered. We will now deal with 
+semiconductors out of equilibrium through the application of an external voltage or because 
+hit by light. These conditions will lead to an inhomogeneous distribution of charge carriers that 
+we will describe through the {\it continuity equations}. But before
+ getting to the continuity equations let's 
+review very briefly the mechanisms of transport of the 
+carriers, the drift and the diffusion.
+
+If an electric field is present the charge carriers will be accelerated in between random collisions 
+in a direction determined by the electric field and a net average drift velocity 
 
 \section{The p-n Junction}
 
