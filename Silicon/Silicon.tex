@@ -239,8 +239,56 @@ we will describe through the {\it continuity equations}. But before
 review very briefly the mechanisms of transport of the 
 carriers, the drift and the diffusion.
 
-If an electric field is present the charge carriers will be accelerated in between random collisions 
-in a direction determined by the electric field and a net average drift velocity 
+If an electric field is present the charge carriers will be accelerated in between random collisions  
+(the typical time between collisions $\tau_c$ is of about 10$^{-12}$~s), 
+in a direction determined by the electric field and a net average drift velocity will be obtained, 
+equal to:
+\begin{align}
+\vec{v}_n=-\dfrac{q\tau_c}{m_n}\vec{E}&=-\mu_n\vec{E}\label{eq:nDrift}\\
+\vec{v}_p=\dfrac{q\tau_c}{m_p}\vec{E}&=\mu_p\vec{E}\label{eq:pDrift}
+\end{align}
+$\vec{v}_n$ and $\vec{v}_p$ are the drift velocities.
+The parameters $\mu_n,\mu_p$ are the electrons and holes mobilities, respectively. 
+For fields small enough the mobilities are constant, while at large fields the carrier velocities 
+reach their saturation values $v_{s,n}$ and $v_{s,p}$. Mobilities depend on temperature and 
+doping levels too, other than on the electric field.
+
+If we now consider an inhomogeneous distribution of free charge carriers in a semiconductor crystal 
+and neglect all effects that are due to electric fields it can be shown that there is a net flow 
+of charges to smooth the charge distribution. This effect is called diffusion and it is mathematically 
+described by the diffusion equation:
+\begin{align}
+\vec{F}_n=-D_n\nabla{n}\label{eq:nDiff}\\
+\vec{F}_p=-D_p\nabla{p}\label{eq:pDiff}
+\end{align}
+Here $\vec{F}_{n,p}$ are the fluxes, $D_{n,p}$ the diffusion constants and 
+ $n,p$ the carrier concentrations,  of electrons and holes respectively.
+
+Combining the effects of drift and diffusion, one obtains the current densities:
+\begin{align}
+\vec{J}_n=q\mu_nn\vec{E}+qD_n\nabla{n}\label{eq:nCurrf}\\
+\vec{J}_p=q\mu_pp\vec{E}-qD_p\nabla{p}\label{eq:pCurr}
+\end{align}
+
+Mobility and diffusion are related to each other by the Einstein equation:
+
+\begin{align}
+D_n=\dfrac{kT}{q}\mu_n\label{nEinst}\\
+D_p=\dfrac{kT}{q}\mu_p\label{nEinst}
+\end{align}
+
+Carriers can recombine and be generated in pairs; we call $G$ the  generation rate per unit of 
+volume and $R$ the  recombination rate per unit of volume. 
+
+Now we can write the continuity equations which will describe the change in carrier concentration 
+as the result of the drift, diffusion, generation and recombination phenomena:
+
+\begin{align}
+\dfrac{\partial n}{\partial t}&=\dfrac{1}{q}\nabla\cdot\vec{J}_n+G_n-R_n\label{eq:nCont}\\
+\dfrac{\partial p}{\partial t}&=\dfrac{-1}{q}\nabla\cdot\vec{J}_p+G_p-R_p\label{eq:pCont}
+\end{align}
+
+%\showthe\font
 
 \section{The p-n Junction}
 
