@@ -288,15 +288,26 @@ as the result of the drift, diffusion, generation and recombination phenomena:
 \dfrac{\partial p}{\partial t}&=\dfrac{-1}{q}\nabla\cdot\vec{J}_p+G_p-R_p\label{eq:pCont}
 \end{align}
 
+The electric field $\vec{E}$ is linked to the charge distribution $\rho$ by the Poisson's equation:
+
+\begin{equation}
+\nabla\cdot\vec{E}=\dfrac{\rho}{\epsilon_{sc}\epsilon_{0}},
+\label{eq:Poisson}
+\end{equation}
+where $\epsilon_{sc}$ is the relative permittivity of the semiconductor.
 %\showthe\font
 
 \section{The p-n Junction}
 
 At the interface of an $n$-type and $p$-type semiconductor the difference in the Fermi levels cause 
 diffusion 
-of surplus carries to the other material until thermal equilibrium is reached. At this point the Fermi level 
+of surplus carries to the other material until thermal equilibrium is reached. At this point the Fermi 
+level 
 is equal. The remaining ions create a 
 space charge and an electric field stopping further diffusion. 
+The stable space charge region is free of charge carries and is called the depletion zone. 
+In Figure~\ref{fig:pnJunction} a p-n junction in thermal equilibrium, before and after its parts are 
+brought in contact.
 
 \begin{figure}[htbp]
    \centering
@@ -306,6 +317,117 @@ space charge and an electric field stopping further diffusion.
    are compared. (Rigth) The p-n junction is formed. (After~\cite{Krammer}).}
 \end{figure}
 
+By applying an external voltage the depletion zone can be shrunk or enlarged. For particle detection 
+purpose we are interested in maximising the depletion zone: within it there are virtually no 
+free carriers and there is an electric field 
+allowing the collection of the free carriers created by the ionising particles. 
+
+By looking at Figure~\ref{fig:pnJunction} it is clear that to deplete more the junction volume 
+a potential more positive on the $n$-side than on the $p$-side should be applied; we will refer 
+to this polarisation as {\it reverse bias}~voltage.
+
+In the following we will restrict ourselves to abrupt junctions, {\it i.e.} when the doping of both $p$- 
+and $n$-type sides of the junction are uniform. Moreover we will consider only the case of 
+asymmetric junctions, where one of the two sides is heavily doped, much more doped than the 
+other one\footnote{The way in which these junctions are fabricated is beyond the scope of this 
+report}. The heavily doped side is usually indicated with a $+$, hence we will talk of 
+$p^+-n$ and $n^+-p$ junctions. In Figure~\ref{fig:AAJunction} the charge distribution of 
+an abrupt asymmetric $n^+-p$ junction is depicted; the dopant concentration, the 
+resulting bulk effective doping concentration and the bulk thickness are indicated too.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{Abrupt_Junction.pdf} 
+      \caption{\label{fig:AAJunction}Charge distribution in an abrupt asymmetric $n^+-p$ junction.}
+\end{figure}
+
+To estimate the voltage needed to completely deplete the junction bulk we introduce the concept 
+of {\it effective doping concentration} $N_{eff}$:
+
+\begin{equation}
+N_{eff} = N_d-N_a
+\label{eq:Neff}
+\end{equation}
+which will reduce to simply $N_d$ for $p^+-n$ junctions and $-N_a$ for $n^+-p$ junctions.
+By integrating twice the Poisson's equation over the semiconductor thickness we get 
+the voltage needed to achieve the complete depletion of the 
+junction volume, the so-called {\it depletion voltage} $V_{depl}$, whose absolute value is equal to:
+\begin{equation}
+V_{depl}=\dfrac{q|N_{eff}|w^2}{2\epsilon_{sc}\epsilon_0}
+\label{eq:vdepl}
+\end{equation} 
+ where $w$ is the total thickness of the lightly doped semiconductor volume. We stress 
+ the fact that the depletion voltage $V_{depl}$ depends linearly on the effective doping 
+ concentration $N_{eff}$ and quadratically on the semiconductor volume $w$.
+
+Particle detectors exploiting the $p-n$ junction properties are labelles according to the type 
+of the bulk: $p$-type detectors feature a $p$-type bulk, the opposite goes for $n-$type detectors.
+
+If the applied voltage is less than the depletion one we can evaluate the depletion extension 
+$d_{depl}$
+using again the Poisson's equation. It is instructive to express the result using the {\it resistivity} 
+$\varrho$ of the doped semiconductor:
+
+\begin{equation}
+\varrho^{-1}=q(N_a\mu_h+N_d\mu_e)\simeq qN_{eff}\mu
+\label{eq:resisitivity}
+\end{equation}
+
+In Equation~\ref{eq:resisitivity} first the most general expression is presented (under the assumption 
+that the carriers concentrations are dominated by the dopants), then the approximated value for an 
+abrupt and asymmetric junction is given; $\mu$ is the mobility of the majority carriers.
+We can then express the depletion extension $d_{depl}$ as:
+
+\begin{equation}
+d_{depl} = \sqrt{2\epsilon_{sc}\epsilon_{0}\mu\varrho|V|}
+\label{eq:depletion}
+\end{equation}
+
+Comparing Equations~\ref{eq:vdepl}~and~\ref{eq:depletion} a useful relation for under-depleted 
+semiconductor bulks can be found:
+
+\begin{equation}
+d_{depl} = \sqrt{\dfrac{V}{V_{depl}}}w
+\label{eq:dunderdepleted}
+\end{equation}
+where $V(<V_{depl})$ is the absolute value of the applied bias voltage.
+
+In nowadays trackers for experiments at high energy colliders
+ high resistivity materials are used ($\varrho\sim$
+ serveral k$\Omega$cm); hence, for thicknesses $w$ of few hundreds of microns depletion voltages of 
+ (far) less than 100~V are achieved.
+
+In $p-n$ junctions under reverse bias an electric field is present; if we refer to the case represented 
+in Figure~\ref{fig:AAJunction} the electric field distribution at depletion voltage along the bulk is like 
+the one shown in Figure~\ref{fig:AAEField}.
+
+\begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{E_Abrupt_Junction.pdf} 
+    \includegraphics[width=0.45\textwidth]{Overdepleted_E_Abrupt_Junction.pdf}
+   \caption{\label{fig:AAEField}Electric field distribution in an abrupt asymmetric $n^+-p$ junction.
+   A doping profile like the one reported in Figure~\ref{fig:AAJunction} is assumed. (Left) at 
+   depletion voltage; (right) in over depletion.}
+\end{figure}
+The electric field depends linearly on the bulk depth $z$, with a maximum at the 
+junction; the maximum value is proportional to the effective doping concentration.
+
+Still referring to Figure~\ref{fig:AAEField}, if a bias $V$ greater than the depletion 
+voltage $V_{depl}$ is applied the electric field will 
+have the following dependence on bulk depth $z$:
+
+\begin{equation}
+|\vec{E}(z)|=\dfrac{2V_{depl}}{w}\Big(1-\dfrac{z}{w}\Big)+\dfrac{V-V_{depl}}{w}
+\label{eq:EFz}
+\end{equation}
+ The relation between the magnitude of the electric field and the position along the bulk is still 
+ linear but now the electric field is non-zero everywhere. The bulk is said to be over-depleted.
+ 
+The depleted region of a $p-n$ junction is out of equilibrium; in particular, since $pn<n_i^2$, in the 
+depleted region  the generation process is dominant over recombination. Thermally generated 
+electron-hole paris are separated by the electric field.
+
+
 \section{Why Use Silicon}
 Let's know focus only on Silicon. Silicon detectors replaced the  gas based detectors in the tracking systems, since they offer a much
  better position information and an improved energy resolution. The reasons for this are to be found 
@@ -314,6 +436,7 @@ in the possibility of use photolithography to realise charge collecting electrod
 These three characteristics allow to have large signals with a small active thickness and 
 excellent spatial resolution. Some of the Silicon properties that are relevant for high energy 
 physics applications are summarised in Table~\ref{tab:SiProperties}.
+
 
 % Requires the booktabs if the memoir class is not being used
 \begin{table}[htbp]
