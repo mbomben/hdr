@@ -437,7 +437,8 @@ I_{leak}=\dfrac{qwA}{2}G
 The subscript {\it leak} in Equation~\ref{eq:Ileak1}  stands for {\it leakage}: the current resulting 
 from thermally generated carriers in the depleted region is dubbed as {\it leakage current}.
 
-Equation~\ref{eq:Ileak1} can be rewritten introducing the concept of {\it generation lifetime} $\tau_g$:
+Equation~\ref{eq:Ileak1} can be rewritten introducing the concept of {\it generation lifetime} 
+$\tau_g=n_i/G$:
 
 \begin{equation}
 I_{leak}=\dfrac{qn_iwA}{2\tau_g}
@@ -445,6 +446,17 @@ I_{leak}=\dfrac{qn_iwA}{2\tau_g}
 \end{equation}
 Nowadays Silicon material for ionising particle detectors can reach generation lifetimes  $\tau_g$
 up to 1~s, for a current density $J$ of few pA/cm$^2$.
+
+The leakage current of a depleted $p-n$ junction depends quite strongly on temperature: 
+leakage current roughly doubles every seven degrees. The formula relating leakage 
+current at different temperatures is the following:
+
+\begin{equation}
+\dfrac{I(T)}{I(T_0)}=\dfrac{T^2}{T_0^2}exp\Big[-\dfrac{E_a}{2k_B}\Big(\dfrac{1}{T}-\dfrac{1}{T_0}\Big)\Big]
+\label{eq:IleakT}
+\end{equation}
+where $E_a$ is the equivalent of an activation energy (experimental value~$\sim$1.21~eV) and
+$k_B$ the Boltzmann constant.
 
 \section{Why Use Silicon}
 Let's know focus only on Silicon. Silicon detectors replaced the  gas based detectors in the tracking systems, since they offer a much
