@@ -425,8 +425,26 @@ have the following dependence on bulk depth $z$:
  
 The depleted region of a $p-n$ junction is out of equilibrium; in particular, since $pn<n_i^2$, in the 
 depleted region  the generation process is dominant over recombination. Thermally generated 
-electron-hole paris are separated by the electric field.
+electron-hole paris are separated by the electric field and so they cannot recombine. A net 
+flow of current appears, carriers will be collected at the ends of the semiconductor volume. 
+If we assume a constant generation rate $G$ the generated current for a depleted semiconductor 
+of area $A$ and thickness $w$ is equal to:
 
+\begin{equation}
+I_{leak}=\dfrac{qwA}{2}G
+\label{eq:Ileak1}
+\end{equation}
+The subscript {\it leak} in Equation~\ref{eq:Ileak1}  stands for {\it leakage}: the current resulting 
+from thermally generated carriers in the depleted region is dubbed as {\it leakage current}.
+
+Equation~\ref{eq:Ileak1} can be rewritten introducing the concept of {\it generation lifetime} $\tau_g$:
+
+\begin{equation}
+I_{leak}=\dfrac{qn_iwA}{2\tau_g}
+\label{eq:Ileak2}
+\end{equation}
+Nowadays Silicon material for ionising particle detectors can reach generation lifetimes  $\tau_g$
+up to 1~s, for a current density $J$ of few pA/cm$^2$.
 
 \section{Why Use Silicon}
 Let's know focus only on Silicon. Silicon detectors replaced the  gas based detectors in the tracking systems, since they offer a much
