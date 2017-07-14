@@ -557,22 +557,54 @@ the possibility of changing its properties by doping, the existence of a natural
 \section{Silicon Trackers}
 \label{sec:Trackers}
 We now focus on Silicon ionising particle detectors. They are all based on depleted $p-n$ junctions. 
-Ionising charged particles traversing the detector 
+Ionising  particles traversing the detector 
 produce electrons and holes in the depleted volume; those carriers drift toward 
 the collecting electrodes which are placed at the edge of the detector $p-n$ junction. 
 To ensure 
 a good ohmic contact heavily doped implants are present on both sides of the detector. 
+In Figure~\ref{fig:pad} the schematic representation  of a n-on-p {\it pad} diode silicon detector is 
+shown. External voltage to ensure sensor bulk depletion is also indicated.  
 
-In Figure~\ref{fig:n-on} the schematics representations  of n-on-p and n-on-p 
-silicon detectors are shown.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
    \centering
-   \includegraphics[width=0.45\textwidth]{n-on-p.pdf} 
-    \includegraphics[width=0.45\textwidth]{n-on-n.pdf}
-   \caption{\label{fig:n-on} Silicon detectors sketch. (Left) N-on-p; (right) n-on-n.}
+   \includegraphics[width=0.5\textwidth]{pad.pdf} 
+      \caption{\label{fig:pad} Silicon pad detector. Detector polarisation and carrier drift due to 
+      ionising particles is indicated too.}
 \end{figure}
 
+Charged particles at the minimum of ionisation creates about 100 electron-hole pairs per $\mu$m of 
+traversed Silicon. The drift of these charges induce a signal into the electrodes. 
+
+The spatial resolution of the detector can be greatly improved by segmenting the electrodes, just one of 
+them or both. 
+  Historically the first segmented silicon detector for high energy physics purpose was created by 
+ aluminum strips deposited on a silicon wafer~\cite{Amendolia}. 
+Nowadays so called strip-detectors are realised by creating an array of heavily doped strips crossing 
+the surface 
+ of the lightly doped silicon bulk. Each strips is read independently as shown in Figure~\ref{fig:strips}.
+ 
+ \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.4\textwidth]{Strips.pdf} 
+      \caption{\label{fig:strips} Silicon microstrip p-on-n detectors sketch. (After~\cite{Krammer})}
+\end{figure}
+ 
+ The typical spatial resolution of these detectors is of the order of (a fraction of) the strips pitch.
+ Adding one floating strip ({\it i.e.} not connected to a readout channel) can greatly 
+ improve the spatial resolution without increasing the number of channels to be 
+ readout~\cite{TURCHETTA}. We will come back to the strip detectors and their spatial resolution in 
+ more detail in 
+ Chapter~\ref{chap:Slim5}.
+ Double-sided strip detectors allow the reconstruction of two coordinates
+ 
+  \begin{figure}[htbp]
+   \centering
+   \includegraphics[width=0.35\textwidth]{DSSD.pdf} 
+   \includegraphics[width=0.35\textwidth]{ghosts.pdf} 
+      \caption{\label{fig:ghosts} Schematic representation of the formation of ghost hits in micro-strip 
+      detectors with 90 degree stereo angle. The incidence positions of two particles are indicated as filled red dots. Two additional valid combinations of the 1D information of both detectors are indicated as open circles. (After~\cite{Aplin})}
+\end{figure}
 
 
 \section{Radiation Damage}
