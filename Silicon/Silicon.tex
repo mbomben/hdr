@@ -556,8 +556,60 @@ the possibility of changing its properties by doping, the existence of a natural
 
 \section{Silicon Trackers}
 \label{sec:Trackers}
-We now focus on Silicon ionising particle detectors. They are all based on depleted $p-n$ junctions. 
-Ionising  particles traversing the detector 
+We now focus on Silicon ionising particle detectors. They are all based on depleted $p-n$ junctions.  
+We will first review the formation of signals and then the different detectors that were and are used 
+in high energy physics, in particular those relevant to this report.
+
+\subsection{Signal Formation}
+\label{sec:SigForm}
+
+A charged particle traversing the silicon sensor bulk produces electron holes pairs with a most 
+probable value (MPV) of 80 pairs per $\mu$m. Because of the sensor's reverse
+polarization, the created charge carriers drift toward the sensor electrodes under the influence of
+the electric field present in the depleted region. This movement of the charge carriers in the electric 
+field induces signals on the readout electrodes.
+To calculate the induced signal on the electrodes by the charge carriers drift the Shockley-Ramo 
+theorem~\cite{ShockleyPot,Ramo,HE2001250} can be used.
+The theorem states that the charge $Q$ and current $i$ on an electrode induced by a moving point 
+charge $q$ are given by:
+\begin{eqnarray}
+Q &=&-qV_{w}(\vec{r})\\ 
+i &=&q\vec{v}\cdot\vec{E}_{w}(\vec{r}) 
+\end{eqnarray}
+where $\vec{v}$ is the instantaneous velocity of charge $q$. $V_{w}$ and $\vec{E}_{w}$ are the 
+electric potential and field that would exist at the instantaneous position $\vec{r}$ of $q$ under the 
+following circumstances: the selected electrode at unit potential, all other electrodes at zero potential 
+and all charges removed.
+
+The sum of all the induced currents gives the total instantaneous current $I(t)$:
+\begin{equation}
+I(t) = \sum i(t)=\sum q\vec{E}_w(\vec{r})\cdot\vec{v}_{e,h}(t,\vec{r})
+\label{eq:current}
+\end{equation}
+where the carrier drift velocity is the product of the drift electric field $\vec{E}(\vec{r})$ with the carrier mobility $\mu_{e,h}$:
+\begin{equation}
+\vec{v}_{e,h}(t,\vec{r})=\mu_{e,h}(\vec{E},T)\vec{E}(\vec{r})
+\label{eq:carrierV}
+\end{equation}
+%As shown in Equation~\ref{eq:carrierV}, the carrier mobility $\mu_{e,h}$ depends on the electric field, the temperature, and the nature of the carrier. 
+%Conveniently for the digitizer calculations, the calculation of the induced signal for each charge carrier is completely independent from all the other carriers (see Section~\ref{sec:Athena}).
+A carrier that completes its path to the collecting electrode by moving from the position $\vec{r}_i$ where it was created to the
+final (electrode) position $\vec{r}_f$ induces the total charge $Q$ given by the Ramo theorem, where $\vec{V}_w(\vec{r})$ represents the weighting (Ramo) potential evaluated at the position $\vec{r}$ :
+\begin{equation}
+Q = - q\left(V_w(\vec{r}_f)-V_w(\vec{r}_i)\right)
+\label{eq:signal}
+\end{equation}
+A carrier $q$ that is produced at position $\vec{r}_i$ and trapped at position $\vec{r}_f$, before 
+reaching the electrode, induces a smaller charge $Q$ on the electrode by the same formula 
+(carrier trapping will be presented in detail in Section~\ref{sec:trapping}). Both 
+trapped electrons and trapped holes reduce the final signal amplitude, as shown in 
+Equation~\ref{eq:signal}.
+
+\subsection{Pad detectors}
+\label{sec:pads}
+
+A single p-n diode in reverse bias is the simplest silicon radiation detector. 
+Often it is called pad diode. Ionising  particles traversing the detector 
 produce electrons and holes in the depleted volume; those carriers drift toward 
 the collecting electrodes which are placed at the edge of the detector $p-n$ junction. 
 To ensure 
@@ -576,7 +628,11 @@ shown. External voltage to ensure sensor bulk depletion is also indicated.
 Charged particles at the minimum of ionisation creates about 100 electron-hole pairs per $\mu$m of 
 traversed Silicon. The drift of these charges induce a signal into the electrodes. 
 
-The spatial resolution of the detector can be greatly improved by segmenting the electrodes, just one of 
+Including Guard Rings (GRs).  GRs, placed all
+ around the pixel area, can help to improve the voltage-handling capability.
+
+The spatial resolution of pad detectors
+ can be greatly improved by segmenting the electrodes, just one of 
 them or both. 
   Historically the first segmented silicon detector for high energy physics purpose was created by 
  aluminum strips deposited on a silicon wafer~\cite{Amendolia}. 
@@ -601,11 +657,17 @@ the surface
   \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.35\textwidth]{DSSD.pdf} 
-   \includegraphics[width=0.35\textwidth]{ghosts.pdf} 
-      \caption{\label{fig:ghosts} Schematic representation of the formation of ghost hits in micro-strip 
-      detectors with 90 degree stereo angle. The incidence positions of two particles are indicated as filled red dots. Two additional valid combinations of the 1D information of both detectors are indicated as open circles. (After~\cite{Aplin})}
+  % \includegraphics[width=0.35\textwidth]{ghosts.pdf} 
+   \includegraphics[width=0.5\textwidth]{DSSD_and_Ghosts.pdf} 
+      \caption{\label{fig:ghosts} Schematic representation of the formation of ghost hits in 
+      double sided strip detectors. The incidence positions of two particles are indicated as  red 
+      crossed. Two additional valid combinations of the 1D information of both sides are indicated 
+      as brown open circles. (After~\cite{Krammer})}
 \end{figure}
 
 
 \section{Radiation Damage}
 \label{sec:RadDam}
+
+\subsection{Trapping}
+\label{sec:trapping}
