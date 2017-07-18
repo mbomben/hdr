@@ -608,41 +608,49 @@ Equation~\ref{eq:signal}.
 \subsection{Pad detectors}
 \label{sec:pads}
 
-A single p-n diode in reverse bias is the simplest silicon radiation detector. 
-Often it is called pad diode. Ionising  particles traversing the detector 
-produce electrons and holes in the depleted volume; those carriers drift toward 
+We now consider $p-n$ junction {\it diodes}.
+A single p-n diode in reverse bias is the simplest silicon radiation detector; 
+often it is called {\it pad} diode. Ionising  particles interacting with  the detector material 
+produce electrons and holes in the depleted bulk volume; those carriers drift toward 
 the collecting electrodes which are placed at the edge of the detector $p-n$ junction. 
 To ensure 
 a good ohmic contact heavily doped implants are present on both sides of the detector. 
-In Figure~\ref{fig:pad} the schematic representation  of a n-on-p {\it pad} diode silicon detector is 
+In Figure~\ref{fig:pad} the schematic representation  of a n-on-p pad diode silicon detector is 
 shown. External voltage to ensure sensor bulk depletion is also indicated.  
 
 
 \begin{figure}[!htbp]
    \centering
    \includegraphics[width=0.5\textwidth]{pad.pdf} 
+  % \includegraphics[width=0.07\textwidth]{ro.pdf} 
       \caption{\label{fig:pad} Silicon pad detector. Detector polarisation and carrier drift due to 
-      ionising particles is indicated too.}
+      ionising particles is indicated too. The symbol on top of the $n^+$ implant is used to indicate the 
+      readout electronics.}
 \end{figure}
-
 %Charged particles at the minimum of ionisation creates about 100 electron-hole pairs per $\mu$m of 
 %traversed Silicon. The drift of these charges induce a signal into the electrodes. 
-
-The size of pads varies between few mm$^2$ to few cm$^2$
+The size of pad detectors varies between few mm$^2$ to few cm$^2$,
 including Guard Rings (GRs).  GRs, placed all
 around the pad area, can help to improve the voltage-handling capability, since they act as a 
 voltage divider, assuring a smooth transition of the voltage drop between one side 
 and the other of the junction. 
 Normally in pad diodes signals are read-out only from one side of the junction; it is customary 
-to call that side as {\it frontside}, the other being the {\it backside}.
+to call that side as {\it frontside}, the other being the {\it backside}. 
+For example, in Figure~\ref{fig:pad} the 
+frontside is the $n^+$ one.
 
-The spatial resolution of pad detectors
- can be greatly improved by segmenting the electrodes, just one of 
+The pad side from which the depletion volume grows is called {\it junction} side; the other 
+one is indicated as the {\it ohmic} side.
+
+\subsection{Microstrip detectors}
+\label{sec:microstrips}
+The spatial resolution of pad detectors is roughly the size of the pad itself.
+ It can be greatly improved by segmenting the electrodes, just one of 
 them or both. 
   Historically the first segmented silicon detector for high energy physics purpose was created by 
  aluminum strips deposited on a silicon wafer~\cite{Amendolia}. 
-Nowadays so called strip-detectors are realised by creating an array of heavily doped strips crossing 
-the surface 
+Nowadays so called {\it microstrip} detectors are realised by creating an array of heavily doped 
+strips crossing the surface 
  of the lightly doped silicon bulk. Each strips is read independently as shown in Figure~\ref{fig:strips}.
  
  \begin{figure}[htbp]
@@ -651,28 +659,87 @@ the surface
       \caption{\label{fig:strips} Silicon microstrip p-on-n detectors sketch. (After~\cite{Krammer})}
 \end{figure}
  
- The typical spatial resolution of these detectors is of the order of (a fraction of) the strips pitch.
+ The typical spatial resolution of these detectors is of the order of (a fraction of) the strips pitch 
+ (50-80~$\mu$m nowadays).
  Adding one floating strip ({\it i.e.} not connected to a readout channel) can greatly 
  improve the spatial resolution without increasing the number of channels to be 
  readout~\cite{TURCHETTA}. We will come back to the strip detectors and their spatial resolution in 
  more detail in 
  Chapter~\ref{chap:Slim5}.
- Double-sided strip detectors allow the reconstruction of two coordinates
  
+ Microstrip detectors where  the ohmic side is segmented too  are called {\it double-sided microstrip 
+ detectors} (DSSDs); a scheme presenting the salient features of the DSSDs is shown in 
+ Figure~\ref{fig:DSSD}
   \begin{figure}[htbp]
    \centering
    \includegraphics[width=0.35\textwidth]{DSSD.pdf} 
-  % \includegraphics[width=0.35\textwidth]{ghosts.pdf} 
-   \includegraphics[width=0.5\textwidth]{DSSD_and_Ghosts.pdf} 
-      \caption{\label{fig:ghosts} Schematic representation of the formation of ghost hits in 
-      double sided strip detectors. The incidence positions of two particles are indicated as  red 
-      crossed. Two additional valid combinations of the 1D information of both sides are indicated 
-      as brown open circles. (After~\cite{Krammer})}
+  % \includegraphics[width=0.5\textwidth]{DSSD_and_Ghosts.pdf} 
+      \caption{\label{fig:DSSD} Schematic representation of a DSSD. (After~\cite{Krammer})}
 \end{figure}
+
+  DSSDs allow the reconstruction of two coordinates in one detector layer; 
+ this is very important to avoid deteriorating too much the spatial resolution 
+ due to the so called ``multiple scattering'' effect - see for example~\cite{pdg}. This issue too 
+ will be discussed in more detail in Chapter~\ref{chap:Slim5}.
+
+One important limitation of the DSSDs is the non unambiguous particle position measurement when 
+more than one track is hitting the detector at the same time. As shown in the example 
+in Figure~\ref{fig:ghosts}, when two tracks hit the detector two valid but spurious combinations 
+appear (``ghosts''),  other than the two ``true' valid positions due to the real tracks.
+
+  \begin{figure}[htbp]
+   \centering
+  \includegraphics[width=0.35\textwidth]{ghosts.pdf} 
+      \caption{\label{fig:ghosts} Schematic representation of the formation of ghost hits in 
+     DSSDs. The incidence positions of two particles are indicated as  red 
+      crossed. Two additional valid combinations of the 1D information of both sides are indicated 
+      as brown open circles. Strips in red are those who recorded a signal. (After~\cite{Krammer})}
+\end{figure}
+
+
+\subsection{Pixel detectors}
+\label{sec:pixels}
+To measure unambiguously the position where the tracks cross the detector a detector capable 
+of delivering both coordinates in one single measurement is needed: a {\it pixel} detector~\cite{Pixels}.
+The concept of {\it hybrid pixels} detectors (HPDs) is presented in Figure~\ref{fig:pixels}. 
+ \begin{figure}[htbp]
+   \centering
+  \includegraphics[width=0.35\textwidth]{HPD.pdf} 
+    \includegraphics[width=0.35\textwidth]{pixel_bb_roc.pdf} 
+      \caption{\label{fig:pixels} Schematic representations of an hybrid pixels detector. (Left) array 
+      of silicon $p-n$ diodes organised into a pixel detector. Each pixel cell is readout by a dedicated 
+      channel of the front-end electronics.(Right) detail of one pixel sensor cell connected via bump 
+      bonding to its front end electronics channel. (After~\cite{Pixels,Pixels2003})}
+\end{figure}
+A two dimensional array of $p-n$ diodes are organised in a matrix; each $p-n$ junction is readout 
+by a dedicated frontend electronics channel; sensor and readout electronics are physically separated 
+and linked by a {\it bump bonding}. The term {\it hybrid} refers to the fact that sensor and electronics 
+are built onto separate substrates then joint together indeed by means of the bump bonding technique.
+The typical pitches of nowadays HPDs are of the order of 
+ $50$~$\mu$m in the direction perpendicular to the magnetic field (``bending plane'') and 
+ a couple of times larger in the beam direction.
+ 
+ HPDs, other than unambiguous position measurement, compared to DSSDs offer 
+ smaller leakage current (few pA) and smaller capacitance (few fF) per channel, 
+ given the much smaller size of the 
+ fundamental sensor cell; both aspects help in keeping the level of electronic noise small, hence 
+ to preserve high detector efficiency and spatial resolution.
+ The main limitation of HPDs is the elevated number of channels to be readout ({\it e.g.}$\sim$27000 
+ in $\sim$ 4~cm$^2$~\cite{IBLTDR}). 
+ The high number 
+ of readout channels gives rise to complex solutions for sensor-electronics connection and 
+ large power consumption (0.1-1 W/cm$^2$~\cite{IBLTDR}).
+
 
 
 \section{Radiation Damage}
 \label{sec:RadDam}
+
+\subsection{Microscopic description}
+
+\subsection{Leakage Current Increase}
+
+\subsection{Operational Voltage Shifts}
 
 \subsection{Trapping}
 \label{sec:trapping}
