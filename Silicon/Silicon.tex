@@ -5,7 +5,7 @@ Pixel and strip detectors realised on high resistivity silicon substrates are no
 choice for high energy physics experiments. 
 In this Chapter an introduction to silicon detectors will be given, focusing 
 on those aspects that are relevant for the purpose of tracking and vertexing.
-Excellent books on the subject exists, like~\cite{Lutz:411172,Sze1981,Wang1989,Krammer,Shockley}. 
+Excellent books and reviews on the subject exists, like~\cite{Lutz:411172,Sze1981,Wang1989,Krammer,Shockley,rossi2006pixel,Hartmann2012}. 
 Here some extracts from those will be reported, just to introduce the subject. 
 After reviewing the semiconductor basics (Section~\ref{sec:SCBase}) and introducing 
 the fundamental ideas about the $p-n$ junction (Section~\ref{sec:pnjunction}), a brief discussion on 
@@ -731,6 +731,31 @@ The typical pitches of nowadays HPDs are of the order of
  large power consumption (0.1-1 W/cm$^2$~\cite{IBLTDR}).
 
 
+\subsection{Monolithic Pixel Detectors}
+\label{sec:MAPS}
+The high number of interconnections and the total material budget are the main limitations imposed 
+by the HPDs. One solution is to have on the same substrate the sensor and the electronics: 
+ simple electronics circuits (like the first stage of the amplifier of each pixel and some addressing 
+ scheme) are integrated on high-resistivity silicon. 
+ One example of sensor and frontend electronics integrations are the Monolithic Active Pixel Detectors 
+ (MAPS~\cite{CLAUS2001120}), which are realised  in  
+ commercial CMOS technology (for CMOS technology see for example~\cite{Lutz:411172}).  
+ The detector is realised on a thin layer of low-resistivity $p$-doped silicon, which is optimal for complex 
+ electronics design but does not allow having large depletion volumes and fast charge 
+ collection~\cite{rossi2006pixel}. The conceptual drawing of an example of MAPS is presented 
+ in~\ref{fig:maps}.
+ \begin{figure}[htbp]
+   \centering
+  \includegraphics[width=0.55\textwidth]{maps.pdf} 
+      \caption{\label{fig:maps} Conceptual drawing of an example of MAPS (After~\cite{ReApsel})}
+\end{figure}
+The $p-n$ junction is realized between the n-well and the p-type epitaxy\footnote{epitaxy is 
+semiconducting material made by epitaxial growth}, but, because of the low resistivity, the depletion is 
+partial even on the very thin ($\approx$10~$\mu$m) epitaxy layer and the collected charge is small 
+($\approx$1000e). The 
+charge collection from the epitaxial layer to the n-well/p-epi diode happens through drift and diffusion of 
+the carriers and takes about 100~ns, {\it i.e.} 10 times longer than in the approaches based on 
+high-resistivity silicon.
 
 \section{Radiation Damage}
 \label{sec:RadDam}
