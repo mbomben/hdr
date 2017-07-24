@@ -5,7 +5,7 @@ Pixel and strip detectors realised on high resistivity silicon substrates are no
 choice for high energy physics experiments. 
 In this Chapter an introduction to silicon detectors will be given, focusing 
 on those aspects that are relevant for the purpose of tracking and vertexing.
-Excellent books and reviews on the subject exists, like~\cite{Lutz:411172,Sze1981,Wang1989,Krammer,Shockley,rossi2006pixel,Hartmann2012}. 
+Excellent books and reviews on the subject exists, like~\cite{Lutz:411172,Sze1981,Wang1989,Krammer,Shockley,rossi2006pixel,Hartmann2012,Garcia-Sciveres:2017ymt}. 
 Here some extracts from those will be reported, just to introduce the subject. 
 After reviewing the semiconductor basics (Section~\ref{sec:SCBase}) and introducing 
 the fundamental ideas about the $p-n$ junction (Section~\ref{sec:pnjunction}), a brief discussion on 
@@ -712,12 +712,15 @@ The concept of {\it hybrid pixels} detectors (HPDs) is presented in Figure~\ref{
       bonding to its front end electronics channel. (After~\cite{Pixels,Pixels2003})}
 \end{figure}
 A two dimensional array of $p-n$ diodes are organised in a matrix; each $p-n$ junction is readout 
-by a dedicated frontend electronics channel; sensor and readout electronics are physically separated 
+by a dedicated  readout integrated circuit (ROIC), providing the functionality of a hybrid pixel assembly; 
+hence sensor and readout electronics are physically separated 
 and linked by a {\it bump bonding}. The term {\it hybrid} refers to the fact that sensor and electronics 
 are built onto separate substrates then joint together indeed by means of the bump bonding technique.
 The typical pitches of nowadays HPDs are of the order of 
  $50$~$\mu$m in the direction perpendicular to the magnetic field (``bending plane'') and 
  a couple of times larger in the beam direction.
+ 
+
  
  HPDs, other than unambiguous position measurement, compared to DSSDs offer 
  smaller leakage current (few pA) and smaller capacitance (few fF) per channel, 
@@ -735,8 +738,8 @@ The typical pitches of nowadays HPDs are of the order of
 \label{sec:MAPS}
 The high number of interconnections and the total material budget are the main limitations imposed 
 by the HPDs. One solution is to have on the same substrate the sensor and the electronics: 
- simple electronics circuits (like the first stage of the amplifier of each pixel and some addressing 
- scheme) are integrated on high-resistivity silicon. 
+ simple electronics circuits, like the first stage of the amplifier of each pixel, are integrated the 
+ same silicon substrate. 
  One example of sensor and frontend electronics integrations are the Monolithic Active Pixel Detectors 
  (MAPS~\cite{CLAUS2001120}), which are realised  in  
  commercial CMOS technology (for CMOS technology see for example~\cite{Lutz:411172}).  
@@ -756,6 +759,19 @@ partial even on the very thin ($\approx$10~$\mu$m) epitaxy layer and the collect
 charge collection from the epitaxial layer to the n-well/p-epi diode happens through drift and diffusion of 
 the carriers and takes about 100~ns, {\it i.e.} 10 times longer than in the approaches based on 
 high-resistivity silicon.
+
+%Even as monolithic solutions mature, hybrid technology with special purpose ROICs will continue to be 
+%necessary for the highest rate capability and the implementation of new functionality, such as fast 
+%timing. Looking to industry we find that the monolithic CMOS sensors in modern smartphones are 
+%actually 3D integrated devices~\cite{Garcia-Sciveres:2017ymt}. 
+
+Modern CMOS imaging sensors make use of 3D integration to combine high resistivity and 
+fully depleted charge collection layers with high density CMOS circuitry, in order to achieve high speed 
+and high collection efficiency (for low light operation). Such a combination of fully depleted high 
+resistivity silicon with CMOS readout sounds like a requirement from particle physics, not from 
+consumer electronics, but smartphone image sensors have independently evolved in this 
+direction. Recently depleted monolithic active pixel sensors 
+(DMAPS) started to be developed; they exploit ,edium to high (>100$\Omega$cm) resistivity 8" silicon substrate wafers. A depletion layer develops due the high resistivity with only moderate bias voltages applied from the electronics side or a (specially processed) backside contact.~\cite{Garcia-Sciveres:2017ymt}.
 
 \section{Radiation Damage}
 \label{sec:RadDam}
