@@ -11,8 +11,9 @@
 *maf
 *ntn
 *out
-*pdf
+./*.pdf
 *toc
 *xdy
 *gz
 *DS_*
+Main.pdf

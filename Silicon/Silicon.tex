@@ -517,6 +517,26 @@ where $E_a$ is the equivalent of an activation energy (the experimental value of
 is~$\sim$1.21~eV~\cite{1748-0221-8-10-P10003}) and
 $k_B$ the Boltzmann constant.
 
+
+
+In Figure~\ref{fig:IV_LPNHE5} the measured leakage current as a function of reverse bias voltage for 
+a pixel detector. The pixels sensor was an $n-on-p$, 200~$\mu$m thick; the measurement was 
+taken at room temperature.
+\begin{figure}
+\centering
+\includegraphics[width=0.55\textwidth]{IV_LPNHE5.pdf}
+\caption{\label{fig:IV_LPNHE5}Leakage current as a function of reverse bias voltage for 
+a pixel detector. See~\cite{bib:nim2012,2013arXiv1311.1628B}.}
+\end{figure}
+From Figure~\ref{fig:IV_LPNHE5} it can be seen that a kind of plateau in the current is reached 
+between 20 and 80~V; after that voltage the increase in current is huge. Indeed around 80~V 
+an {\it avalanche breakdown} occurred. If an electron or hole is created in, or moved into, a high-field 
+region inside a semiconductor, it may be accelerated strongly enough in between collisions to obtain 
+sufficient energy for the creation of an electron?hole pair: an avalanche may thereafter 
+develop~\cite{Lutz:411172}.
+Fields higher or of the order of 3$\times$10$^5$~V/cm trigger a multiplication regime that gives rise to a 
+breakdown. The voltage at which the phenomenon occurs is called {\it breakdown voltage}.
+
 \section{Why Use Silicon}
 \label{sec:Silicon}
 Let's know focus only on Silicon. Silicon detectors replaced the  gas based detectors in the tracking systems, since they offer a much
@@ -733,6 +753,23 @@ The typical pitches of nowadays HPDs are of the order of
  of readout channels gives rise to complex solutions for sensor-electronics connection and 
  large power consumption (0.1-1 W/cm$^2$~\cite{IBLTDR}).
 
+A variation of the sensor of HPDs are the so-called 3D-silicon sensors. 3D-silicon sensors have been 
+developed since the late 1990s~\cite{PARKER1997328} 
+featuring columnar electrode implants driven into the Si substrate perpendicular to the sensor surface 
+(Figure~\ref{fig:tredi}).
+
+ \begin{figure}[htbp]
+   \centering
+  \includegraphics[width=0.45\textwidth]{tredi.pdf} 
+      \caption{\label{fig:tredi}Single sided 3D-Si sensors with columns going completely through the 
+      sensor bulk. (After~\cite{Garcia-Sciveres:2017ymt})}
+\end{figure}
+
+The electrode distance is made smaller (50~$\mu$m) than the typical sensor thickness 
+(200-250~$\mu$m), thus rendering a shorter average drift distance for particles impinging on the sensor 
+face than in the case of planar sensors. In addition high drift fields are obtained with still moderate bias 
+voltages. Both these facts result in an increased radiation tolerance due to a reduced trapping 
+probability (see~\ref{sec:trapping})~\cite{	}.
 
 \subsection{Monolithic Pixel Detectors}
 \label{sec:MAPS}
@@ -771,12 +808,55 @@ and high collection efficiency (for low light operation). Such a combination of 
 resistivity silicon with CMOS readout sounds like a requirement from particle physics, not from 
 consumer electronics, but smartphone image sensors have independently evolved in this 
 direction. Recently depleted monolithic active pixel sensors 
-(DMAPS) started to be developed; they exploit ,edium to high (>100$\Omega$cm) resistivity 8" silicon substrate wafers. A depletion layer develops due the high resistivity with only moderate bias voltages applied from the electronics side or a (specially processed) backside contact.~\cite{Garcia-Sciveres:2017ymt}.
+(DMAPS) started to be developed; they exploit ,edium to high (>100$\Omega$cm) resistivity 8" silicon substrate wafers. A depletion layer develops due the high resistivity with only moderate bias voltages applied from the electronics side or a (specially processed) backside 
+contact~\cite{Garcia-Sciveres:2017ymt}.
 
 \section{Radiation Damage}
 \label{sec:RadDam}
 
+Silicon detectors are at the core of the modern High Energy Physics experiments at colliders. 
+High collision rates 
+and high track densities translate into fluence of particles of several $10^{11}$ per square centimetre 
+per hour for the detector layers closest to the interaction point~\cite{rossi2006pixel}. This flux of 
+particles is responsible for damage to the sensor and to the electronics. 
+
+Radiation-induced effects (radiation damage) are usually divided into bulk and surface defects. The 
+former are caused by the displacement of crystal atoms while the latter include all effects in the 
+covering dielectrics and the interface region. The most important surface effect is the increase of the 
+oxide charge which saturates after some kilograys to values of about 10$^{12}$~cm$^{-2}$. 
+At higher hadron fluence, bulk damage also becomes important. The main effects are: increase of 
+leakage current, change of the operational voltage and reduction in signal amplitude. 
+The following is a short description of the microscopic defects and the induced macroscopic effects.
+
 \subsection{Microscopic description}
+Inelastic collision between an incident particle and the silicon lattice can produce a displacement 
+of an atom from its lattice site. This event creates an interstitial site and a vacancy, which 
+collectively is called a {\it Frenkel defect}. 
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{Interstitial.pdf}
+\caption{\label{fig:Interstitial}Types of point defects in a simple lattice. After~\cite{Lutz:411172}.}
+\end{figure}
+
+
+Several defects can form a cluster; the probability 
+depends on the incident particle and its energy. 
+An electron whose kinetic energy is above 255~keV produce a Frenkel pair; above 8~MeV it 
+produces a cluster. For neutrons the thresholds are of 185~eV and 35~keV, 
+respectively~\cite{moll-thesis}. In Figure~\ref{fig:clusters} the results of a Monte Carlo simulation 
+for the recoil of an atom with a primary energy $E_R$ of 50~keV; this is the average energy imparted 
+to a lattice atom from a 1~MeV neutron~\cite{moll-thesis}.
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{clusters.pdf}
+\caption{\label{fig:clusters}Monte Carlo simulation of a recoil-atom track with a primary energy $E_R$
+of 50~keV. After~\cite{van1980mechanisms}.}
+\end{figure}
+
+
 
 \subsection{Leakage Current Increase}
 
