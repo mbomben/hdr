@@ -514,7 +514,7 @@ current at different temperatures is the following:
 \label{eq:IleakT}
 \end{equation}
 where $E_a$ is the equivalent of an activation energy (the experimental value of~$E_a$~for Silicon 
-is~$\sim$1.21~eV~\cite{1748-0221-8-10-P10003}) and
+is~$\sim$1.21~eV~\cite{Chilingarov_tscale}) and
 $k_B$ the Boltzmann constant.
 
 
@@ -856,11 +856,166 @@ to a lattice atom from a 1~MeV neutron~\cite{moll-thesis}.
 of 50~keV. After~\cite{van1980mechanisms}.}
 \end{figure}
 
+To be able to compare the damage caused by the different types of particles with different energies, 
+radiation damage is scaled with the non-ionizing energy loss (NIEL). This quantity summarises all 
+energy deposited in the crystal which has not been used for the fully reversible process of ionisation. 
+Neutrons of 1~MeV are used as reference particles. The fluence $\Phi_{\rm phys}$ of an arbitrary type 
+of particle causes the same NIEL as the fluence $\Phi_{\rm eq}$ of 1~MeV neutrons.
+The energy-dependent hardness factor $\kappa$ of a certain type of particle which converts the 
+``physical'' fluence $\Phi_{\rm phys}$ into the neutron equivalent fluence $\Phi_{\rm eq}$ can be 
+evaluated experimentally via the normalisation of the leakage 
+current~\cite{MOLL2002100,rossi2006pixel}. In the following text all fluences are given in units of neutron equivalent fluence, n$_{\rm eq}$/cm$^2$. 
 
+The primary defects caused by irradiation, silicon vacancies, and interstitials are not stable; {\it i.e.}, 
+they 
+are able to move through the crystal. This movement can lead to an {\it annealing} if defects 
+meet during 
+their migration through the crystal. But also secondary point defects with other defects already present 
+in the crystal can be formed, which might be stable and display different electrical properties. Point 
+defects in general cause energy levels in the band gap whose position can be measured by different 
+spectroscopic methods. They can be charged and, depending on the position of their energy levels, 
+have an impact on the space charge in the depletion zone. As the mobility of the defects is strongly 
+temperature-dependent it is clear that radiation-induced changes of sensor properties show a complex 
+annealing behaviour due to the many possible secondary defects~\cite{rossi2006pixel}.
+
+The radiation induced defects, primary or not, are responsible for macroscopic effects, like: the increase 
+of leakage current, since they can act as generation centers; the change in operational voltage, as they 
+can be charged; and, the most important effect after $\Phi$=$10^{15}$~n$_{\rm eq}$/cm$^2$, the 
+reduction of the signal amplitude, since they act as trapping centers. Let's now review some details 
+of these macroscopic effects.
 
 \subsection{Leakage Current Increase}
+The energy levels in the band gap caused by the crystal defects act as generation-recombination 
+centers. 
+They lead to a decrease of the generation lifetime $\tau_g$, hence to an increase of the leakage 
+current $I_{leak}$ generated in the volume. The rate of increase of leakage current $\Delta I$ per unit of 
+fluence $\Phi$ and per unit of volume $V$ is called $\alpha$:
 
+\begin{equation}
+\alpha = \dfrac{\Delta I}{V\Phi}
+\label{eq:alpha}
+\end{equation}
+ 
+ The typical value of the normalised rate of increase of leakage current $\alpha$ right after irradiation is of several units of $10^{-17}$~A/cm. After 
+ irradiation the leakage current anneals with time as shown in Figure~\ref{fig:alpha_annealing}.
+ 
+ \begin{figure}[!htbp]
+ \centering
+ \includegraphics[width=0.5\textwidth]{alpha_annealing.pdf}
+ \caption{\label{fig:alpha_annealing}The normalised rate of increase of leakage current $\alpha$ as 
+ function of the cumulated annealing time. (After~\cite{moll-thesis}).}
+ \end{figure}
+ The trends shown in Figure~\ref{fig:alpha_annealing} can be parametrised for a time $t$ at constant 
+ temperature $T$ after an instantaneous irradiation with fluence $\Phi$ by~\cite{moll-thesis}:
+ 
+ \begin{equation}
+\alpha = \left(\alpha_Ie^{-t/\tau}+\alpha_0-\beta\log(t/t_0)\right)
+\label{eq:alpha_annealing}
+\end{equation}
+ 
+ \noindent  where $\alpha_I=(1.23\pm0.06)\times 10^{-17}\text{ A}/\text{cm}$, $\tau$ follows an Arrhenius equation $\tau^{-1}=(1.2^{+5.3}_{-1.0})\times 10^{13}\text{ s}^{-1}\times e^{(-1.11\pm 0.05)\text{ eV}/k_BT}$, $\alpha_0=-(8.9\pm1.3)\times 10^{-17}\text{ A}/\text{cm}+(4.6\pm0.4)\times10^{-14}\text{ AK}/\text{cm}\times 1/T$, $\beta=(3.29\pm 0.18)\times 10^{-18}\text{ A}/\text{cm}$ , and $t_0=1\;$min.
+ 
+ It has to be mentioned that other formulations of~\ref{eq:alpha_annealing} are possible, 
+ suggesting the annealing to be a 
+ first-order process\footnote{First-order process involves only one defect; second-order processes 
+ depend the interplay between two defects~\cite{Lutz:411172}} with a temperature-independent $\alpha_0$.
+ 
+It has been measured that after 80 minutes at 60$^\circ$C the $\alpha$ value is very close to
+ 4$\times10^{-17}$~A/cm \cite{moll-thesis}; this value is often cited in literature as the 
+ reference value for the normalised rate of increase of leakage current $\alpha$, 
+ but one has to bear in mind that 
+ it is the result of a particular annealing scenario.
+
+It was shown~\cite{Chilingarov_tscale} that Equation~\ref{eq:IleakT} is adequate even after irradiation 
+to fluences largely exceeding $\Phi$=$10^{15}$~n$_{\rm eq}$/cm$^2$.
+ 
 \subsection{Operational Voltage Shifts}
+
+There are several radiation-damage mechanisms that lead to a change in space charge and 
+consequently to a change in the necessary operational voltage of detectors.
+
+The original dopants such as Phosphorus or Boron may be captured into new defect complexes, 
+thereby losing their original function as flat donors or acceptors. The new defect complexes may 
+assume a charge state within the space-charge region different from the original 
+dopants~\cite{Lutz:411172}.
+
+The evolution of acceptors and donors with fluence can be explained by the removal of acceptors 
+or donors, via the formation of defect complexes containing acceptors/donors, and by the 
+creation of acceptors and donors, via the formation defect complexes assuming positive/negative 
+charge states in the space-charge region.
+
+The dependence of the effective doping concentration $N_{eff}$ (Eq.~\ref{eq:Neff}) on fluence is then 
+expected to be the following:
+
+\begin{equation}
+N_{eff}=N_{d,0}e^{-c_d\Phi}-N_{a,0}e^{-c_a\Phi}+b_d\Phi-b_a\Phi
+\label{eq:Neff_Fl}
+\end{equation}
+with $N_{d,0}$, $N_{a,0}$ donator and acceptor concentration before irradiation and $c_d$,$c_a$, $b_d$, $b_a$ constants to be determined experimentally~\cite{Lutz:411172}.
+ 
+ It has been observed that initial $n-$type material becomes $p-$type after moderate fluences 
+ ($\Phi\sim2-5\times10^{12}$~n$_{\rm eq}$/cm$^2$); this phenomenon is called {\it type inversion}. 
+ This is interpreted as donor removal and acceptor creation. The depletion voltage decreases rapidly 
+ with fluence at 
+ first and then it increases linearly, as it can be seen in Figure~\ref{fig:typeinversion}.
+ 
+ \begin{figure}[htpb]
+ \centering
+ \includegraphics[width=0.5\textwidth]{typeinversion.pdf}
+ \caption{\label{fig:typeinversion} Change of the full depletion voltage of a 300 $\mu$m-thick silicon 
+ sensor and its absolute effective doping versus the normalized fluence, immediately after the irradiation (After~\cite{wunstors-thesis}.)}
+ \end{figure}
+
+For initial high resistivity $p-$type material the acceptor removal and donor creation effects can be 
+safely neglected and the change of the effective doping concentration $N_{eff}$ has a simple linear 
+dependence on the fluence $\Phi$.
+
+
+
+In the studies performed to determine the fluence and time dependence of the full depletion voltage 
+simple unstructured diodes were used and the full depletion voltage was deduced from CV 
+measurements (Eq.~\ref{eq:CV}). This method assumes a constant space charge which is not given 
+for highly irradiated sensors where the field shows a double peak~\cite{Li1992}. This can be 
+qualitatively explained by defects being filled by carriers drifting under reverse bias voltage. 
+In a $n-on-n$ detector electrons will flow toward the $n^+$ electrode while holes toward the $p^+$ one. 
+So the chances of having a negatively charged defect close to the   $n^+$ electrode  are higher 
+than a positively charged one; the opposite goes for the defects close to the $p^+$ electrode. 
+The mechanism was first proposed in~\cite{bib:DP};
+ it is illustrated in Figure~\ref{fig:Chiochia2005DP}.
+\begin{figure}[htpb]
+ \centering
+ \includegraphics[width=0.5\textwidth]{Chiochia2005DP.pdf}
+ \caption{\label{fig:Chiochia2005DP} An illustrative sketch of the explanation of the double peak effect in electric field  for a reverse biased irradiated device (After~\cite{Chiochia2005}.)}
+ \end{figure}
+
+In case of double peak in the electric field distribution the numbers derived for depletion voltage and 
+effective doping concentration form the CV measurements 
+are effective or average numbers.
+
+An example of a CV measurement for an irradiated device is shown in Figure~\ref{fig:irrCV}.
+\begin{figure}[htpb]
+ \centering
+\includegraphics[width=0.5\textwidth]{irrad2011-fl1e15-best.png}
+ \caption{\label{fig:irrCV} $C^{-2}$~vs~V of a 285~$\mu$m thick $n-on-p$ diode irradiated at CERN 
+ with 24~GeV/c protons, with an integrated fluence of $\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$, 
+ after having being annealed for 80 minutes at 60$^\circ$C. Results from three diodes, 
+ coming from 2 different 
+ wafers, and with different number of GRs are reported.  
+}  
+ \end{figure}
+ 
+ The $C^{-2}$ vs V curves reported in Figure~\ref{fig:irrCV}, whose slope is proportional to the 
+ effective doping concentration $N_{eff}$in un-irradiated material, show a change in slope around 
+ 200~V; the curves reach a pleateau around 300~V. These two slopes are connected with the 
+ electric field setting on from both the front and the back side of the detector.
+
+\subsubsection{Annealing and Effective Doping Concentration}
+Here we will go back to a simplified scenario where  we assume a constant space charge as done 
+in the so-called ``Hamburg model''~\cite{moll-thesis}. Under this assumption we will briefly 
+describe the evolution 
+of the space charge density and the depletion voltage with time and temperature. 
+
+Due to the mobility of defects the net doping concentration changes after the end of the irradiation. 
 
 \subsection{Trapping}
 \label{sec:trapping}
