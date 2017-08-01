@@ -1,0 +1,206 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%									ANNEXES 												%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Charge Collection Efficiency in Irradiated Silicon Pads}
+
+In this Section estimates of the expected charge collection efficiencies 
+for irradiated pads will be derived under some simplicistic assumptions.
+
+\subsection{Ramo theorem}
+\label{sec:ramo}
+The instantaneous current $i(t)$ appearing on the electrodes of a silicon pad can be expressed 
+in terms of the charge of the carriers $q_{e,h}$, the drift velocity $\vec{v}_{e,h}$  and the 
+weighting field $\vec{E}_w$. For the sake of simplicity the time/position/temperature/voltage 
+dependence of the drift velocity are here omitted, as well the dependence on position of the 
+weighting field.
+The following formula holds separately for electrons and holes:
+
+\begin{equation}
+i(t) = q\,\vec{v}\cdot\vec{E}_w
+\end{equation} 
+
+\subsection{Assumptions to simplify the calculation}
+\label{sec:assumptions}
+A simple 1D diode will be considered; its bulk depth is equal to $w$. The direction of the carriers 
+drift will be identified with $z$; electrons will move toward the $z=0$ position, the holes toward $z=w$.
+With the above assumptions, when focusing on the electrode collecting electrons 
+the weighting field is simply equal to:
+
+\begin{equation}
+\vec{E}_w=\dfrac{1}{w}\hat{z}
+\end{equation}
+
+Diffusion is neglected as well as temperature dependence for whatsoever variable. 
+The drift velocity is assumed to be saturated: $v_{e,h}=v^{(sat)}_{e,h}$; still the values can be different for electrons and holes. 
+With the above assumptions the vectorial drift velocity is simply equal to:
+
+\begin{equation}
+\vec{v}_{e,h}=(\mp)v^{(sat)}_{e,h}\hat{z}
+\end{equation}
+
+The trapping effect will be modeled through an exponential attenuation with time of drifting carriers:
+
+\begin{equation}
+q_{e,h}(t) = q_{e,h}(0)e^{-\dfrac{t}{\tau_{e,h}}}
+\end{equation}
+
+The trapping time $\tau_{e,h}$ is related to the fluence $\phi$ through:
+
+\begin{equation}
+(\tau_{e,h})^{-1}=\beta_{e,h}\phi
+\end{equation}
+$\beta_{e,h}$ are the trapping constants.
+
+The event of trapping and de-trapping within the current integration time will be neglected.
+
+The passage of a MIP through the entire sensor thickness will be considered. The 
+rate of charge created per unit length is $\mathcal{Q} (\sim \dfrac{80e}{\mu m})$. The total charge 
+released in the silicon bulk by the MIP is $Q_0=\mathcal{Q}\,w$
+
+\section{From instantaneous current to charge on electrodes}
+\label{sec:charge}
+Under the assumptions made in Section~\ref{sec:assumptions} the instantaneous current $i(t)$ 
+from electrons and holes is simply equal to:
+
+\begin{equation}
+i_{e,h}(t)=e\,\dfrac{v^{(sat)}_{e,h}}{w}e^{-\dfrac{t}{\tau_{e,h}}}
+\label{eq:final_current}
+\end{equation}
+
+To get the charge on electrodes the Equation~\ref{eq:final_current} has to be integrated over the collection time $t_{coll}$ and over all the possible initial $z$ position of the carriers.
+Given that the drift velocities are constant the collection times are equal to:
+
+\begin{equation}
+t_{coll_{e,h}}=\dfrac{(z,w-z)}{v^{(sat)}_{e,h}}
+\end{equation}
+
+The charge appearing on the electrode due to electrons  is $Q_e$:
+
+\begin{equation}
+Q_e = \int_0^wd{\rm z}\int_0^{\dfrac{z}{v^{(sat)}_{e}}}{\rm d}t\mathcal{Q}\dfrac{v^{(sat)}_{e}}{w}e^{-\dfrac{t}{\tau_{e}}}
+\label{eq:Qe_to_integrate}
+\end{equation}
+Integrating Equation~\ref{eq:Qe_to_integrate}, and introducing the collecting distance $d_e=v^{(sat)}_{e}\,\tau_{e}=\dfrac{v^{(sat)}_{e}}{\beta_{e,h}\phi}$, the charge  $Q_e$ due to electrons is found to be:
+
+\begin{equation}
+Q_e=Q_0\dfrac{d_e}{w}\Big[1-\dfrac{d_e}{w}\Big(1-e^{-\dfrac{w}{d_e}}\Big)\Big]
+\label{eq:Qe}
+\end{equation}
+
+Similarly, the charge appearing on the electrode due to holes is $Q_h$:
+\begin{equation}
+Q_h=Q_0\dfrac{d_h}{w}\Big[1-\dfrac{d_h}{w}\Big(1-e^{-\dfrac{w}{d_h}}\Big)\Big]
+\label{eq:Qh}
+\end{equation}
+
+The charge collection efficiency, hence, is  $CCE=\dfrac{Q}{Q_0}$:
+\begin{equation}
+CCE=\dfrac{Q}{Q_0}=\Big[\dfrac{d_e+d_h}{w}\Big]-\Big(\dfrac{d_e}{w}\Big)^2\Big(1-e^{-\dfrac{w}{d_e}}\Big)-\Big(\dfrac{d_h}{w}\Big)^2\Big(1-e^{-\dfrac{w}{d_h}}\Big)
+\end{equation}
+
+From Equation~\ref{eq:Qe} and~\ref{eq:Qh} it is also possible to get the contribution to $CCE$ 
+for electrons and holes separately. 
+
+\subsection{Predictions for interesting cases: unirradiated vs large fluences}
+
+\subsubsection{Unirradiated sensor}
+
+In the case of unirradiated sensors the fluence $\phi$ is zero, so the trapping time $\tau$ and the 
+collecting distance $d$ are infinite. Working out the limits the $CCE$ is found to be:
+\begin{equation}
+\begin{split}
+\lim_{\phi \to 0}CCE & \sim \\ \lim_{d_e,d_h\to \infty}   \Big\{\Big[\dfrac{d_e+d_h}{w}\Big]&-\Big(\dfrac{d_e}{w}\Big)^2\Big(\dfrac{w}{d_e}-\dfrac{1}{2}\big(\dfrac{w}{d_e}\big)^2+\dfrac{1}{6}\big(\dfrac{w}{d_e}\big)^3\Big)-\Big(\dfrac{d_h}{w}\Big)^2\Big(\dfrac{w}{d_h}-\dfrac{1}{2}\big(\dfrac{w}{d_h}\big)^2+\dfrac{1}{6}\big(\dfrac{w}{d_h}\big)^3\Big)\Big\}=\\
+&\dfrac{1}{2}+\dfrac{1}{2}1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)=1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)
+\end{split}
+\label{eq:CCE_unirr}
+\end{equation}
+To summarise: $CCE(\phi\to 0)\sim1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)$; for infinite 
+collecting distances the $CCE$ is exactly one. 
+It is interesting to notice that there's a contribution 1/2 from electrons and 1/2 from holes to the 
+$CCE$. Neglecting holes in case of no  trapping for electrons the $CCE$  would be merely 1/2: 
+all the holes would be trapped and screen on average half of the total charge $Q_0$.
+
+\subsubsection{Large fluences}
+In the case of sensors irradiated to large fluences  the 
+collecting distance $d$ is negligible with respect to the sensor thickness $w$.
+
+Working out the limits the $CCE$ is found to be:
+\begin{equation}
+\begin{split}
+\lim_{\phi \to \infty}CCE & \sim \\ 
+\lim_{d_e,d_h\to 0}  \Big\{\Big[\dfrac{d_e+d_h}{w}\Big]& - \Big(\dfrac{d_e}{w}\Big)^2 -\Big(\dfrac{d_h}{w}\Big)^2\Big\}\\
+\sim & \Big[\dfrac{d_e+d_h}{w}\Big]
+\end{split}
+\label{eq:CCE_irr}
+\end{equation}
+
+To summarise: $CCE(\phi\to \infty)\sim\Big[\dfrac{d_e+d_h}{w}\Big]$; for zero 
+collecting distances the $CCE$ is exactly zero. 
+The result  in Equation~\ref{eq:CCE_irr} means that in case of heavily irradiation the charge 
+can be effectively collected only within a distance from the electrode that is equal to the collection distance $d$; all the remaining $w-d$ have a negligible contribution. As for the unirradiated case, if holes are neglected the $CCE$ would be only about 1/2 of what it should be (in general
+ the collection distances are different for electrons and holes).
+
+\subsection{Estimates for some scenarios}
+
+In Table~\ref{tab:cce_scenarios} some estimates for the CCE at certain fluences $\Phi$ for 
+certain diode thicknesses $w$ are reported.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc}
+\hline
+$w$ [$\mu$m] & $\Phi$ [1$\times10^{15}$~n$_{\rm eq}$/cm$^2$] & CCE [\%] \\
+\hline
+\hline
+50 & 3 & 75 \\
+50 & 5 & 	63 \\
+50 & 7 & 54 \\
+50 & 	10 & 	45 \\
+50 & 15 & 34 \\
+50 & 20 & 27\\
+\hline
+100 & 1 & 82 \\
+100 & 3 & 59 \\
+100 & 5 & 	45 \\
+100 & 7 & 36 \\
+100 & 10 & 27 \\
+100 & 20 & 15 \\
+\hline
+200 & 0.1 & 96\\
+200 & 0.2 & 92\\
+200 & 0.5 & 82\\
+200 & 1 & 69 \\
+200 & 3 & 40 \\
+200 & 5 & 	27 \\
+200 & 7 & 21 \\
+200 & 10 & 15 \\
+\hline
+\end{tabular}
+\caption{\label{tab:cce_scenarios}CCE estimates at fluences $\Phi$ for 
+certain diode thicknesses $w$.}
+\end{table}
+
+It can be seen that already for moderate fluences, 1-2$\times10^{14}$~n$_{\rm eq}$/cm$^2$, 
+the signal amplitude loss is sizeable if the detector is 200~$\mu$m thick. 
+For fluences in the range of 5-10$\times10^{15}$~n$_{\rm eq}$/cm$^2$ only very thin diodes 
+can still deliver more than 1/4 of the original signal amplitude. 
+
+It is interesting to observe that for 1-2$\times10^{16}$~n$_{\rm eq}$/cm$^2$ there's little or no 
+difference in expected CCE between 100 and 50 $\mu$m thick diodes, since charge is collected 
+within a very thin layer close to the collected electron, the thickness of this layer being smaller 
+than the diode one $w$.
+
+
+
+
+\section{Flavour Tagging Algorithm}
+	%\blindtext
+	%On rappelle que \gls{alpha} et \gls{gamma} sont liés par la relation~\eqref{eq:alphagamma}. Pour plus de détails, voir page~\pageref{eq:alphagamma}.
+
+\section{Comparing TCAD Simulators}
+	%\blindtext
