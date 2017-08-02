@@ -478,8 +478,19 @@ have the following dependence on bulk depth $z$:
  \end{equation}
  where $A$ is the surface of the $p-n$ junction. Equation~\ref{eq:CV} is used to extract the 
  depletion voltage $V_{depl}$ and the effective doping concentration $N_{eff}$ in real 
- $p-n$ junctions.
+ $p-n$ junctions. An example of a  $C^{-2}$ vs V plot for an $n-on-p$ diode is shown  in 
+ Figure~\ref{fig:CV}. 
+    
   
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{C2V-n-in-p-291920-6-1GRs-GR1atGND-110704.pdf}
+\caption{\label{fig:CV} $C^{-2}$~vs~V of a 285~$\mu$m thick $n-on-p$ diode.}
+\end{figure}  
+  
+The bulk depletion corresponds to a linear increase of   $C^{-2}$, up to a ``kink'', after which the 
+capacitance C is basically constant. The voltage at which the ``kink'' happens is a good estimate 
+of the depletion voltage $V_{depl}$.
   
 The depleted region of a $p-n$ junction is out of equilibrium; in particular, since $pn<n_i^2$, in the 
 depleted region  the generation process is dominant over recombination. Thermally generated 
@@ -567,7 +578,7 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
       Saturation velocity $v_{sat}$ & $\sim$10$^{7}$ cm/s & fast charge collection \\
       \bottomrule
    \end{tabular}
-   \caption{Summary of silicon properties relevant for high energy physics applications~\cite{Lutz:411172}.}
+   \caption{\label{tab:SiProp}Summary of silicon properties relevant for high energy physics applications~\cite{Lutz:411172}.}
    \label{tab:SiProperties}
 \end{table}
 
@@ -951,7 +962,8 @@ expected to be the following:
 N_{eff}=N_{d,0}e^{-c_d\Phi}-N_{a,0}e^{-c_a\Phi}+b_d\Phi-b_a\Phi
 \label{eq:Neff_Fl}
 \end{equation}
-with $N_{d,0}$, $N_{a,0}$ donator and acceptor concentration before irradiation and $c_d$,$c_a$, $b_d$, $b_a$ constants to be determined experimentally~\cite{Lutz:411172}.
+with $N_{d,0}$, $N_{a,0}$ donator and acceptor concentration before irradiation and $c_d$,
+$c_a$, $b_d$, $b_a$ constants to be determined experimentally~\cite{Lutz:411172}.
  
  It has been observed that initial $n-$type material becomes $p-$type after moderate fluences 
  ($\Phi\sim2-5\times10^{12}$~n$_{\rm eq}$/cm$^2$); this phenomenon is called {\it type inversion}. 
@@ -972,9 +984,54 @@ dependence on the fluence $\Phi$.
 
 
 
-In the studies performed to determine the fluence and time dependence of the full depletion voltage 
-simple unstructured diodes were used and the full depletion voltage was deduced from CV 
-measurements (Eq.~\ref{eq:CV}). This method assumes a constant space charge which is not given 
+
+
+\subsubsection{Annealing and Effective Doping Concentration}
+%Here we will go back to a simplified scenario where  we assume a constant space charge as done 
+%in the so-called ``Hamburg model''~\cite{moll-thesis}. Under this assumption we will briefly 
+%describe the evolution 
+%of the space charge density and the depletion voltage with time and temperature. 
+
+ 
+As already mentioned in the discussion on the leakage current,  some defects can move freely 
+through the crystal, they can anneal, {\it e.g.} a silicon interstitial 
+could fill a vacancy in the lattice. The velocity of the annealing process depends on the average 
+velocity of the movable defects, which in turn depends heavily on the temperature.
+
+
+With respect to the normalised rate of increase of leakage current $\alpha$, where the annealing 
+is always {\it beneficial} ($\alpha$ is never increasing), the effective doping concentration $N_{eff}$
+is subject to a {\it reverse} annealing too, which leads to an increase of $N_{eff}$
+An example of the interplay of beneficial and reverse annealing on $N_{eff}$ is shown in 
+Figure~\ref{fig:Neff_annealing}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{Neff_annealing.pdf}
+\caption{\label{fig:Neff_annealing}Annealing behaviour of the radiation induced change in effective 
+doping concentration $\Delta N_{eff}$ at 60$^{\circ}$C. The shown example is a $n-$type high 
+resistivity sample, neutron-irradiated with a fluence of 1.4$\times$10$^{13}$. 
+(After~\cite{moll-thesis})}
+\end{figure}
+
+
+For the effective doping or the bias voltage respectively the annealing process is subdivided into 
+two periods. 
+The beneficial annealing period which extends roughly for the first 80 minutes at 60$^{\circ}$C; 
+after the beneficial annealing period the effective doping concentration, hence the depletion voltage 
+$V_{depl}$, is  reduced to a minimum. Afterwards, the reverse annealing process sets in and leads 
+to an increase 
+of the $V_{depl}$, exceeding the initial $V_{depl}$ directly after 
+irradiation.
+
+\subsubsection{Heavily Irradiated Silicon Detectors}
+
+In the studies presented in the previous Sections the determination of the fluence and time 
+dependence of the effective doping concentration  $N_{eff}$
+simple unstructured diodes were used~\cite{moll-thesis} 
+and the full depletion voltage was deduced from CV 
+measurements (Eq.~\ref{eq:CV}). This method assumes a constant space charge which is not 
+given 
 for highly irradiated sensors where the field shows a double peak~\cite{Li1992}. This can be 
 qualitatively explained by defects being filled by carriers drifting under reverse bias voltage. 
 In a $n-on-n$ detector electrons will flow toward the $n^+$ electrode while holes toward the $p^+$ one. 
@@ -1009,13 +1066,46 @@ An example of a CV measurement for an irradiated device is shown in Figure~\ref{
  200~V; the curves reach a pleateau around 300~V. These two slopes are connected with the 
  electric field setting on from both the front and the back side of the detector.
 
-\subsubsection{Annealing and Effective Doping Concentration}
-Here we will go back to a simplified scenario where  we assume a constant space charge as done 
-in the so-called ``Hamburg model''~\cite{moll-thesis}. Under this assumption we will briefly 
-describe the evolution 
-of the space charge density and the depletion voltage with time and temperature. 
-
-Due to the mobility of defects the net doping concentration changes after the end of the irradiation. 
 
 \subsection{Trapping}
 \label{sec:trapping}
+Radiation-induced defects are responsible not only for generation-recombination centers increasing 
+the leakage current and charged defects with dramatic influence on the full depletion voltage but 
+also for trapping centers. Traps are mostly unoccupied in the depletion region due to the lack of free 
+charge carriers and can hold or trap parts of the signal charge for a time longer than the charge 
+collection time and so reduce the signal height. 
+
+The typical trapping time $\tau_{tr}$ gets shorter and shorter with larger and larger fluence $\Phi$; it 
+has 
+been found it is proportional to the inverse of fluence:
+
+\begin{equation}
+\tau_{tr}^{-1}=\beta\Phi
+\label{eq:trappingtime}
+\end{equation}
+
+Measured values for $\beta$ are about $4-6\times10^{-16}$~cm$^2$/ns for electrons 
+and $6-8\times10^{-16}$~cm$^2$/ns for holes~\cite{KRAMBERGER2002297}. Larger $\beta$ 
+values for holes than for electrons mean that trapping is most severe for the former than the latter. 
+It has also to be noticed that the hole mobility is about 1/3 of the electron one; so holes move 
+slower and gets trapped more. Given these two conditions nowadays electrons collecting 
+silicon detectors, like $n-on-n$ and $n-on-p$, are favoured over holes collecting ones, like
+ $p-on-n$.  
+
+Given that in the saturation regime carriers take about 1~ns to traverse 100~$\mu$m in Silicon, 
+the trapping effect starts to be the most impacting radiation damage effect after fluences in excess of $
+\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$. In Appendix~\ref{sec:CCEirr} some estimations 
+for the expected charge collection efficiency (CCE) in irradiated silicon pads are presented. 
+For example, after  $\Phi=1\times10^{16}$~n$_{\rm eq}$/cm$^2$ a 100~$\mu$m thick pad diode 
+will be able to collect only about 27\% of the signal amplitude prior to irradiation.
+
+After irradiation segmented detectors, like DSSDs and HPDs, will allow to achieve CCE higher than 
+the one for pads thanks to the steeper slope of the Ramo potential close to the collecting electrode; 
+this will be discussed in more details in Section~\ref{sec:digitizer}.
+
+Trapping time $\tau_{tr}$ evolves with time and temperature as leakage current and depletion voltage 
+do. In~\cite{KRAMBERGER2007762} it is shown that the trapping asymptotic probabilities  of
+holes (electrons) will be around 30\% larger (15\% smaller)
+than initial probabilities at the same total fluence.
+
+   
