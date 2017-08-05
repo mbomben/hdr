@@ -213,7 +213,8 @@ across the matrix; the threshold dispersion over the pixels was estimated be abo
 \section{The Striplets Detector}
 \label{sec:Striplets}
 
-Within the SLIM5 project the DSSD detector prototype development was called ``striplets''.
+The DSSD detector prototype  developed within the SLIM5 project was called ``striplets''. 
+The striplets detector was designed and fabricated at FBK-IRST\footnote{now FBK-CMM: \url{http://cmm.fbk.eu/}}.
 The striplets detector was indeed a double-sided strip detector, realised on high-resistivity 
 $n-$type bulk. A picture of the striplets detector can be seen in Figure~\ref{fig:striplets}.
 
@@ -223,12 +224,167 @@ $n-$type bulk. A picture of the striplets detector can be seen in Figure~\ref{fi
 \caption{\label{fig:striplets} Detail of a corner of the SLIM5 striplet detectors.}
 \end{figure}
 
+The striplet geometry was optimized to limit the strip length (18 mm) and the material budget 
+(double-sided, 200~$\mu$m thick). The strips were tilted by 45$^{\circ}$ with respect to the 
+detector edge, as shown in Figure~\ref{fig:striplets}. The short strip length reduces the average 
+occupancy per channel and allows coping with the increased strip-to-backside capacitance, given 
+the thin bulk. The strips pitch was 50~$\mu$m on both sides; the detector active area was 
+of 27$\times$12.9 mm$^2$. The design allowed a long DSSD with short strips on both sides.
+The strips were AC coupled, with integrated capacitors and polisilicon biasing-resistors. 
+In order to minimize the dead area along the edges, the resistors are placed outside the guard ring. 
+The detector is fully depleted at 10~V bias.
+
+The striplet sensor was read out by the data-driven FSSR2 chip~\cite{Re:2006zw}, 
+the second release of the Fermilab Silicon Strip Readout Chip, derived from the one originally designed 
+for the silicon pixel detector of the BTeV experiment. The chip is completely data-driven and can be 
+readout at up to~70~MHz. The chip features 128 analog channels, with address and time information 
+for all hits; the output is purely digital; the chip measures 7.5~mm~$\times$~5~mm and the input pads have an effective pitch of 50~$\mu$m. A picture of the FSSR2 chip is shown in Figure~\ref{ig:fssr2}
 
 
-\section{Discussion of the Performance of SLIM5 Detectors}
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{fssr2.pdf}
+\caption{\label{fig:fssr2}Annotated picture of the FSSR2 chip with input pads at the top. (Adapted from~\cite{Re:2006zw})}
+\end{figure}
+
+
+FSSR2 chip offers 8 programmable thresholds, with the first one acting as hit/no hit discriminator, 
+so each hit has a 3-bits adc information. The design was optimised for positive signals; 
+here for the first time it was used to read out negative signals too (ohmic side of the striplets). 
+Due to the limited dynamic range for $n$-side just a hit/no hit information for negative signals was 
+extracted.
+
+In Figure~\ref{fig:assembled_striplets} a striplet detector module is shown.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.95\textwidth]{assembeld_striplets.pdf}
+\caption{\label{fig:assembled_striplets}Annotated picture of an assembled striplet module. The 
+sensor, the fanout circuit and the readout card, hosting 3 FSSR2 chips, are visible.}
+\end{figure}
+
+One striplet sensor was read out by 3 FSSR2 chips per side, for a total of 384 wirebonded channels 
+on each side. 
+
+\section{Performance of SLIM5 Detectors}
 \label{sec:SLIM5Results}
-A demonstrator was built~\cite{BETTARINI2010942}, it was composed of CMOS MAPS 
- and thin silicon DSSDs and tested it on beam at the T9 facility of the CERN PS. 
+To fully test the detector prototypes a demonstrator was built~\cite{BETTARINI2010942} and put  on 
+beam at the T9 facility of the CERN PS in September 2008.
+
+\subsection{The experimental set-up}
+
+At T9 facility of the CERN PS protons of 12~GeV/c, with spills of 400 ms and typically from 10$^4$ to
+ 10$^6$ particles/spill, where impinging on the demonstrator, which was set-up as shown if 
+ Figure~\ref{fig:slim5_tb}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.45\textwidth]{slim5_tb.jpg}
+\includegraphics[width=0.45\textwidth]{tbpic.pdf}
+\caption{\label{fig:slim5_tb}(left)The SLIM5 Beam Test Setup. (right)Picture of the SLIM5 demonstrator at the T9 facility of the CERN PS in September 2008. The telescope, 2 striplets modules and 
+one Apseld4D are visible.}
+\end{figure}
 
 
-\section{Summary}
+
+For the reference telescope, we used four 2~$\times$~2~cm$^{2}$ DSSDs where used; 
+the strips where AC-coupled, with 25~(50)~$\mu$m pitch on $p-(n-)$side. The readout pitch 
+was the same (50~$\mu$m) for both sides, as the telescope modules too were readout by 
+the FSSR2 chip. One pair was positioned upstream and the other downstream of the devices 
+under test (DUTs). The scintillators ($S1$, $S2$ and $S3$) were used for trigger studies.
+
+\subsection{Apsel4D Results}
+Two Apsel4Ds were studied, one having with nominal thickness (300~$\mu$m) and the other 
+thinned down to 100~$\mu$m only. The maximum efficiency was observed for the 
+thinned chip; at the lowest threshold (400~e, about 40\% of a MIP signal) it reached~92\%, which roughly corresponds to 
+the Apseld4D fill factor. 
+Efficiency vs threshold results for Apsel4D are shown in~Figure~\ref{fig:maps_eff}
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.45\textwidth]{maps_eff.jpg}
+\includegraphics[width=0.45\textwidth]{maps_res.jpg}
+\caption{\label{fig:maps_eff}(left)Efficiency results for two MAPS detectors, taken from a single threshold 
+scan. The statistical uncertainty on each point is smaller than the size of the plotting symbol. The point 
+of low efficiency at the lowest threshold was probably due to temperature fluctuations during the 
+measurements.(right) MAPS hit efficiencies measured as a function of position within the pixel. The picture, which is not to scale, represents a single pixel divided into nine sub-cells. The values are the efficiencies obtained in each sub-cell after taking into account track migration among cells. The uncertainties include the statistical uncertainty plus a systematic contribution coming from the track migration.}
+\end{figure}
+The efficiency within the Apsel4D pixel cell was performed; given the tracking resolution 
+of about~7~$\mu$m the Apsel4D pixel cell was divided in a 3~$\times$~3 matrix. The results 
+are reported in~Figure~\ref{fig:maps_eff}
+
+
+One observes a significant variation of sensibility within the pixel area, as expected. In particular, the central region is seen to be virtually 100\% efficient, while the upper part of the pixel, especially the upper right-hand sub-cell, shows lower efficiency due to the presence of competitive n-wells.
+
+The measured intrinsic hit resolution was about 14~$\mu$m for the X-coordinate and slightly better 
+for the Y-coordinate: a modest improvement with respect to the single pixel hit resolution of 
+50~$\mu\,/\,\sqrt{12}$=14.4~$\mu$m, mainly due 
+to the absence of analog information and to the modest fraction of clusters of two or more pixels.
+
+\subsection{Striplets Results}
+
+The results from the testbeam of a striplet module are outlined in this Section; in the following one
+a discussion on the impact of threshold on residuals will be presented.
+
+We have evaluated the input noise charge by measuring the fraction of hits over
+ threshold as a
+function of the input charge at a given discriminator threshold.
+The results of the calibrations are summarised in Table~\ref{tab:FSSR2Calib}.
+
+
+\begin{table}[hbt]
+\begin{center}
+\caption{Calibration results for the striplet detectors.
+\label{tab:FSSR2Calib}}
+\vspace{\baselineskip}
+\begin{tabular}{|c|c|c|}
+\hline
+
+Polarity & positive  & negative \\
+
+\hline
+Noise (e$^-$)& 630       & 1020   \\
+S/N      & 25        & 16         \\
+Gain (mV/fC)& 96     & 67         \\
+Thr.Dis. (e$^-$)& 880       & 780\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Cluster of strips were created by grouping neighbouring strips that have fired. The charge pulse height 
+distribution of clusters are shown in Figure~\ref{fig:clu_ph_striplets}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.45\textwidth]{p_side_striplets.png}
+\includegraphics[width=0.45\textwidth]{n_side_striplets.png}
+\caption{\label{fig:clu_ph_striplets}Cluster pulse height distribution for a striplet module. (left) $p-$ side; 
+(right) $n-$side. Data is fitted with a Landau function.}
+\end{figure}
+
+The fitted MPV was found to be well compatible with the expected  value for a MIP in 200~$\mu$m 
+thick silicon detector.
+
+The hit-efficiency was of above 98\% for both the $p-$ and the $n-$side. A detailed analysis 
+of the hit-efficiency as a function of the position along the detector is shown in 
+Figure~\ref{fig:striplets_eff}.
+
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.95\textwidth]{striplets_eff.png}
+\caption{\label{fig:striplets_eff}Efficiency of a striplet module as a function of the track impact position. 
+Dead strips where removed from the analysis by selecting strips with efficiency greater than 1.0\%; 
+their position is marked by magenta arrows.}
+\end{figure}
+
+As it can be seen efficiency was quite uniformover the entire sensor. Strips with efficiency below 1\% where declared as dead and removed from the 
+analysis. An electrical analysis after the testbeam confirmed that  the dead strips 
+were indeed disconnected/malfunctioning channels. 
+
+The spatial resolution performance of the striplets will be discussed in a separate Section (\ref{sec:striplets_res}).
+
+\section{Discussion of the Striplets Spatial Resolution}
+\label{sec:striplets_res}
+
+ \section{Summary}
