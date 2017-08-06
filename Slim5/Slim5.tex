@@ -378,7 +378,8 @@ Dead strips where removed from the analysis by selecting strips with efficiency 
 their position is marked by magenta arrows.}
 \end{figure}
 
-As it can be seen efficiency was quite uniformover the entire sensor. Strips with efficiency below 1\% where declared as dead and removed from the 
+As it can be seen efficiency was quite uniform
+over the entire sensor. Strips with efficiency below 1\% where declared as dead and removed from the 
 analysis. An electrical analysis after the testbeam confirmed that  the dead strips 
 were indeed disconnected/malfunctioning channels. 
 
@@ -386,5 +387,127 @@ The spatial resolution performance of the striplets will be discussed in a separ
 
 \section{Discussion of the Striplets Spatial Resolution}
 \label{sec:striplets_res}
+
+In this Section the spatial resolution of the striplets will be discussed in detail. 
+
+\subsection{Residuals and Spatial Resolution}
+
+Spatial resolution is usually estimated by taking the RMS of the residuals distribution. Residuals are 
+defined as the difference between the position of the DUT hit associated to a track and 
+the extrapolated position on the DUT plane of the track itself. 
+The width of the residuals distribution depends on many factors: the intrinsic resolution of the 
+DUT (about the detector pitch divided by $\sqrt{12}$), the pointing resolution of the tracking system 
+(about the intrinsic resolution of each telescope plane divided by the square root of the number of 
+telescope planes) and the RMS deviation due to MS,
+
+\begin{equation}
+\sigma_{res}=\sigma_{DUT}\oplus\sigma_{trk}\oplus\sigma_{MS}
+\label{eq:res}
+\end{equation}
+
+If the contribution of tracking and MS to the residuals is negligible with respect to the DUT 
+one then the DUT elementary cell, strip or pixel, can be resolved (examples can be found 
+in~\ref{sec:radhardpixels}); if not, then the residuals distribution 
+is usually well described by a Gaussian distribution. 
+
+Charge sharing between neighbouring strips (or pixels) allow the formation of clusters with 2 
+or more. Focusing on strips, when more than 1 strip fires it is important to assign to the 
+multi-strips clusters the positions that give as a result the smallest possible residuals distribution, 
+hence, the ultimate spatial resolution for the detector. 
+
+
+In~\cite{TURCHETTA} an excellent and complete discussion on the best algorithms to find 
+the position of particle hits is given; the influence of detector parameters (thickness, pitch, 
+floating strips, etc.) and of the track angle are investigated.
+The best algorithm for clusters of 2 strips is the so-called $\eta$ position-finding algorithm (PFA), 
+where:
+
+\begin{equation}
+\eta=\dfrac{S_R}{S_R+S_L}
+\label{eq:eta}
+\end{equation} 
+where $S_{R(L)}$ is the signal amplitude of the right (left) strip in the cluster.
+Using the $\eta$  PFA the cluster position $x_{\eta}$ is defined as:
+ \begin{equation}
+\dfrac{x_{\eta}}{P}=f(\eta)+\dfrac{x_L}{P}
+\label{eq:xeta}
+\end{equation} 
+
+where $P$ is the detector pitch, $x_L$ is the center position of the left strip in the cluster and 
+$f(\eta)$ is a function that can be estimated directly on data:
+
+\begin{equation}
+f(\eta)=\dfrac{\int_0^\eta \dfrac{{\rm d}N}{{\rm d}\eta'}{\rm d}\eta'}{\int_0^1 \dfrac{{\rm d}N}{{\rm d}\eta'}{\rm d}\eta'}
+\end{equation}
+
+under the assumption that the distribution of the number of tracks $N$ is uniform between 
+the left and right strip.
+
+The uncertainty  on the position identified using the  $\eta$ PFA $\sigma_{\eta}$, hence the detector spatial 
+resolution, is about the detector pitch $P$ 
+divided by the signal (S) over noise (N) ratio:
+
+\begin{equation}
+\dfrac{\sigma_{\eta}}{P}\sim\dfrac{N}{S}
+\label{eq:etanoise}
+\end{equation}
+
+The $\eta$ algorithm is the optimal one for tracks at normal incidence or impinging at small angles. 
+Despite it was used for the analysis of striplets data the width of residuals was much 
+larger than expectations, about 16~$\mu$m with respect to $\sim$14~$\mu$m that is the 
+expected value  for hits formed by just 1 strip. The reason for this poor resolution 
+was investigated and the results are discussed in what follows.
+
+\subsection{Striplets Residuals and the Effect of Thresholds}
+
+In Figure~\ref{fig:res_pside} the residuals distribution for hits registered on the $p-$side of a striplet 
+module. The width of the fitted gaussian is about 16~$\mu$m.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{res_pisde.pdf}
+\caption{\label{fig:res_pside}Residuals distribution for hits registered on the $p-$side of a 
+striplets module.}
+\end{figure}
+
+More than 82\% of the analysed clusters contained just 1 strip when particles where impinging 
+at normal incidence; 16\% of the total had 2 strips. Hence the expected residuals width when all 
+clusters are analysed together should have been slightly smaller than 
+$50/\sqrt{12}\approx 14.4\, \mu$m. 
+
+The reason for the poor performance was found to be related to the high hit/no hit threshold set 
+on the FSSR2 chip. In case of asymmetric charge sharing between two strips one of the two 
+can have a signal that is below threshold, hence a true cluster of 2 strips is reconstructed as a single 
+strip. In this case the cluster position is assigned to the center of the only strip whose signal is 
+above threshold, so, on average, the error made in position assignment is about half of the pitch, 
+{\it i.e.} 25~$\mu$m.
+
+To confirm the hypothesis clusters with charge about or less than
+ a third (6600~e) the one expected for a MIP where 
+studied; the residuals distribution for these clusters is show in 
+Figure~\ref{fig:annotated_res_pside_1stPHbin}.Two peaks around $P/2\approx25\,\mu$m are clearly visible: they correspond to the aforementioned true 2 strips clusters reconstructed as 1 strip only 
+hit.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{annotated_res_pside_1stPHbin.pdf}
+\caption{\label{fig:annotated_res_pside_1stPHbin}Residuals distribution for hits registered on the $p-$side of a 
+striplets module when only clusters with $\le$6600~e charge are considered. The fitted function is 
+superimposed. More details in the text.}
+\end{figure}
+
+The residuals distribution was then fitted with a function containing three components: a core 
+gaussian, to model correctly reconstructed clusters; a double guassian, with mean fixed at 
+$\pm 25\, \mu$m, to model the mis-reconstructed 2 strips clusters; and finally an outlier gaussian, 
+with mean fixed at 0~$\mu$m, to take into account spurious hits.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{striplets_residuals.jpg}
+\caption{\label{fig:striplets_residuals}Residual fit for the striplets as a DUT for (a) p-side and (b) n-side.}
+\end{figure}
+
+
 
  \section{Summary}
