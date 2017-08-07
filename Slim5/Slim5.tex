@@ -89,7 +89,7 @@ mainly related to the increased instantaneous luminosity of about a factor of 10
 
 The planned beam pipe featured a reduced radius of about $1.0~\cm$  which allows the positioning of 
 Layer0 at
-the desired average radius of about $1.5~\cm$. The additional  (with respect to \babar SVT) 
+the desired average radius of about $1.5~\cm$. The additional  (with respect to \babar\ SVT) 
  Layer0 measurement,
 along with the low radial material budget of the beam pipe ($0.42\%~X_0$)
 and of Layer0 ($0.45\%~X_0$ with the striplet option - see Section~\ref{sec:Striplets}),
@@ -213,7 +213,8 @@ across the matrix; the threshold dispersion over the pixels was estimated be abo
 \section{The Striplets Detector}
 \label{sec:Striplets}
 
-The DSSD detector prototype  developed within the SLIM5 project was called ``striplets''. 
+The DSSD detector prototype  developed within the SLIM5 project was called ``striplets''. They 
+were the baseline option for the Layer0 of the SuperB SVT.
 The striplets detector was designed and fabricated at FBK-IRST\footnote{now FBK-CMM: \url{http://cmm.fbk.eu/}}.
 The striplets detector was indeed a double-sided strip detector, realised on high-resistivity 
 $n-$type bulk. A picture of the striplets detector can be seen in Figure~\ref{fig:striplets}.
@@ -248,7 +249,8 @@ for all hits; the output is purely digital; the chip measures 7.5~mm~$\times$~5~
 \end{figure}
 
 
-FSSR2 chip offers 8 programmable thresholds, with the first one acting as hit/no hit discriminator, 
+FSSR2 chip offers 8 programmable thresholds, with the first one acting as hit/no hit discriminator
+({\it zero suppression} mode), 
 so each hit has a 3-bits adc information. The design was optimised for positive signals; 
 here for the first time it was used to read out negative signals too (ohmic side of the striplets). 
 Due to the limited dynamic range for $n$-side just a hit/no hit information for negative signals was 
@@ -340,13 +342,14 @@ The results of the calibrations are summarised in Table~\ref{tab:FSSR2Calib}.
 \begin{tabular}{|c|c|c|}
 \hline
 
-Polarity & positive  & negative \\
+Side & $p$  & $n$ \\
 
 \hline
-Noise (e$^-$)& 630       & 1020   \\
+Noise (e)& 630       & 1020   \\
 S/N      & 25        & 16         \\
 Gain (mV/fC)& 96     & 67         \\
-Thr.Dis. (e$^-$)& 880       & 780\\ \hline
+Threshold (e) & 4400 & 6300 \\
+Thr.Dis. (e)& 880       & 780\\ \hline
 \end{tabular}
 \end{center}
 \end{table}
@@ -363,7 +366,8 @@ distribution of clusters are shown in Figure~\ref{fig:clu_ph_striplets}.
 \end{figure}
 
 The fitted MPV was found to be well compatible with the expected  value for a MIP in 200~$\mu$m 
-thick silicon detector.
+thick silicon detector. The region above 100 threshold DAC for the $n-$side was severely impacted 
+by the limited dynamical range of the ADC, as it can be seen in Figure~\ref{fig:clu_ph_striplets}.
 
 The hit-efficiency was of above 98\% for both the $p-$ and the $n-$side. A detailed analysis 
 of the hit-efficiency as a function of the position along the detector is shown in 
@@ -396,7 +400,7 @@ Spatial resolution is usually estimated by taking the RMS of the residuals distr
 defined as the difference between the position of the DUT hit associated to a track and 
 the extrapolated position on the DUT plane of the track itself. 
 The width of the residuals distribution depends on many factors: the intrinsic resolution of the 
-DUT (about the detector pitch divided by $\sqrt{12}$), the pointing resolution of the tracking system 
+DUT (about the detector pitch divided by $\sqrt{12}$ - the so-called {\it digital resolution}~\cite{TURCHETTA}), the pointing resolution of the tracking system 
 (about the intrinsic resolution of each telescope plane divided by the square root of the number of 
 telescope planes) and the RMS deviation due to MS,
 
@@ -461,13 +465,13 @@ was investigated and the results are discussed in what follows.
 \subsection{Striplets Residuals and the Effect of Thresholds}
 
 In Figure~\ref{fig:res_pside} the residuals distribution for hits registered on the $p-$side of a striplet 
-module. The width of the fitted gaussian is about 16~$\mu$m.
+module. The width of the fitted Gaussian is about 16~$\mu$m.
 
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.5\textwidth]{res_pisde.pdf}
 \caption{\label{fig:res_pside}Residuals distribution for hits registered on the $p-$side of a 
-striplets module.}
+striplets module. Points are data, the red line is the result of a Gaussian fit to the distribution.}
 \end{figure}
 
 More than 82\% of the analysed clusters contained just 1 strip when particles where impinging 
@@ -493,21 +497,115 @@ hit.
 \centering
 \includegraphics[width=0.5\textwidth]{annotated_res_pside_1stPHbin.pdf}
 \caption{\label{fig:annotated_res_pside_1stPHbin}Residuals distribution for hits registered on the $p-$side of a 
-striplets module when only clusters with $\le$6600~e charge are considered. The fitted function is 
-superimposed. More details in the text.}
+striplets module when only clusters with $\le$6600~e charge are considered. Data are represented as points with error bars. The fit function (blue solid line) is given in Equation~\ref{eq:res_pdf}; the red solid line 
+is the outlier Gaussian contribution.}
 \end{figure}
 
 The residuals distribution was then fitted with a function containing three components: a core 
-gaussian, to model correctly reconstructed clusters; a double guassian, with mean fixed at 
-$\pm 25\, \mu$m, to model the mis-reconstructed 2 strips clusters; and finally an outlier gaussian, 
-with mean fixed at 0~$\mu$m, to take into account spurious hits.
+Gaussian, to model correctly reconstructed clusters; a double guassian, with mean fixed at 
+$\pm 25\, \mu$m, to model the mis-reconstructed 2 strips clusters; and finally an outlier Gaussian, 
+with mean fixed at 0~$\mu$m, to take into account spurious hits. 
+The probability density function (PDF) as a function of the residual value $x$ was:
+
+\begin{equation}
+f(x)=f_S S(x)+(1-f_S)\Big[  f_DD(x)+(1-f_D)O(x) \Big]
+\label{eq:res_pdf}
+\end{equation}
+
+where S, D and O are the core, double and outlier Gaussian, respectively, and $f_{S,D}$ are 
+weights constrained between 0 and 1. 
+
+The distribution of residuals of all clusters are shown in Figure~\ref{fig:striplets_residuals}. 
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{striplets_residuals.jpg}
-\caption{\label{fig:striplets_residuals}Residual fit for the striplets as a DUT for (a) p-side and (b) n-side.}
+\caption{\label{fig:striplets_residuals}Residual fit for the striplets as a DUT for (a) p-side and (b) n-side. Data are points.  The solid  line 
+is the   fit function  given in Equation~\ref{eq:res_pdf}; the dot-dashed line is the outlier Gaussian 
+contribution, while the dashed line is all but the core Gaussian.}
 \end{figure}
 
+The fit results indicated that, once the dead strips are removed, the outlier component is negligible. 
+On the contrary, about 7\% of the data were described by the double Gaussian component.
+
+The intrinsic resolution was obtained using Equation~\ref{eq:res}, where $\sigma_{res}$ is taken as 
+the width of the narrow core Gaussian of the fit function. We found an intrinsic resolution of 
+13.6~$\mu$m for the $p-$side and 14.1~$\mu$m or the $n-$side, slightly better than the digital 
+resolution for a 50~$\mu$m readout pitch and in agreement with the expected values for strip detectors with similar $S/N$.
+
+\subsubsection{Spatial Resolution as a Function of the Track Angle}
+
+The spatial resolution of striplets was studied as a function of of the incident track angle; 
+the results are reported in Figure~\ref{fig:cluster_rotation}, where the average cluster size 
+is shown too.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=1.0\textwidth]{cluster_rotation.jpg}
+\caption{\label{fig:cluster_rotation}(a) Average cluster size for the striplets as a function of track angle. (b) Resolutions for the striplets as a function of track angle.}
+\end{figure}
+
+The average cluster size increases and therefore the resolutions improve considerably as a function 
+of the incident angle up to 30$^{\circ}$, after which the performance degrades. This is 
+in good agreement with expectations~\cite{TURCHETTA}. At 45$^{\circ}$ the resolution is 
+about 20\% worse than that at normal incidence. 
+
+Cluster size was smaller for $n-$side than $p-$side for all angles investigated; as a consequence 
+the resolution was worse for $n-$side than $p-$side. This is the result of higher noise, higher 
+threshold and limited ADC range for $n-$side (see Table~\ref{tab:FSSR2Calib}).
+
+The residuals distributions as a function of the incident track angle are presented in 
+Figure~\ref{fig:res_angles}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.39\textwidth]{res_pside_5deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_nside_5deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_pside_10deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_nside_10deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_pside_20deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_nside_20deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_pside_30deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_nside_30deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_pside_45deg.pdf}
+\includegraphics[width=0.39\textwidth]{res_nside_45deg.pdf}
+\caption{\label{fig:res_angles}Residuals distribution of striplets detector at different incident track angle. From top to bottom raw the incident track angle was 5, 10, 20, 30 and 45$^{\circ}$. 
+(a) is for $p-$side, (b) for $n-$side. Points are data, the fit function is given in Equation~\ref{eq:res_pdf}.}
+\end{figure}
+
+As it can be seen the contribution of the double peak Gaussian is less and less important as the 
+angle increases; this is due to the charge sharing being more and more symmetric. This analysis 
+confirmed the validity of the hypothesis about the influence of the threshold on the residuals 
+distribution.
 
 
- \section{Summary}
+ \section{Summary and Discussion}
+ 
+ Thin and excellent spatial resolution silicon detectors are mandatory to fulfil the physics program 
+ of Super Flavour Factories and Linear Colliders. 
+ The solutions proposed by the SLIM5 collaboration, the CMOS MAPS Apsel4D and the DSSD 
+ striplets, proved to be an excellent starting point for the development of tracking and vertexing 
+ detectors for those experiments. 
+ 
+ Indeed they were both ``light'' in terms of material budget, 0.1\% and 0.2\% of $X_0$ for the 
+ 100~$\mu$m thick Apsel4D and for the striplets (sensor only but no readout electronics present in 
+ the active area) respectively. The possibility for striplets to have the readout electronics outside 
+ the active area made them the preferred option for the layer0 of the proposed SuperB SVT.
+ Hit-efficiency was high and matched the expectations for both Apsel4D and striplets. The 
+ Apsel4D chip hit efficiency was limited by the fill factor due to the competitive wells; 
+ for the striplets no major showstopper was found and the efficiency was very close to 100\%.
+
+ For what concerns 
+ the space-point resolution, both detectors matched the expected performance for  50~$\mu$m pitch 
+ detectors, 
+ but they suffered for the low number of clusters with more than 1 cell and, more important, 
+ from the high threshold. 
+  
+ Smaller pitches and better noise control were needed to 
+ match the specifications. In particular, as it was investigated throughly for striplets, zero suppression 
+ impacts severely the spatial resolution if thresholds are relatively high and their effects are not 
+ corrected for. 
+ 
+ Research continued for CMOS MAPS~\cite{Rizzo:2013aza}, improving the efficiency by increasing 
+ the fill factor, reducing the pitch to 40~$\mu$m and exploring vertical integration.
+
