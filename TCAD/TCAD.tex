@@ -208,6 +208,111 @@ from the energy band curvature, Silvaco inserts the rest mass of the electron.
 Such a difference in the  carriers thermal velocities affect the carriers transport phenomena, 
 the leakage current level and the effects due to radiation damage defects. 
  
+ The second parameter that was investigated was the bandgap energy $E_g$. The default value in 
+ Silvaco for $E_g$ at $T=$300~K is of 1.08~eV. This is surprisingly low compared to values in literature 
+ (see for example~\cite{Lutz:411172,Sze1981,Wang1989,Shockley}) which are comprised 
+ in the range 1.11-1.12~eV.
+The temperature dependence of $E_g$ is based on~\cite{Sze1981}:
+\begin{equation}
+E_g(T)=E_g(0) -\dfrac{\alpha T^2}{T+\beta}=E_g(300)+\alpha\Bigg[ \dfrac{(300)^2}{300+\beta}-\dfrac{T^2}{T+\beta}  \Bigg] \equiv E_g(T_{ref})+\alpha\Bigg[ \dfrac{(T_{ref})^2}{T_{ref}+\beta}-\dfrac{T^2}{T+\beta}  \Bigg] 
+\label{eq:EgT}
+\end{equation}
+where $T_{ref}$ is some reference temperature.
+Both TCAD products agree on the $\alpha$ and $\beta$ parameters values:
+
+\begin{table}[!htbp]
+\caption{\label{eq:Egalphabeta}Parameter values for the temperature dependence of the bandgap. 
+See also Equation~\ref{eq:EgT}}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+parameter & value \\
+\hline 
+$\alpha$ & 4.73$\times$10$^{-4}$~eV/K \\
+\hline 
+$\beta$ & 636~K \\
+\hline
+\end{tabular}
+\end{table}
+
+Silvaco tools are built on the value $E^{Sil}_g(300)=$1.08~eV while Synopsys on $E^{Syn}_g(0)=$1.1696~eV. 
+Extrapolating $E_g^{Syn}(0)$ to $T=$300K from the one gets the expected 
+$E_g^{Syn}(300)\sim$1.12~eV, in agreement with literature.
+
+Silvaco developers explained\footnote{private communication} the abnormal $E^{Sil}_g(300)$ value 
+because of very low resistivity 
+Silicon wafers used to estimate the bandgap energy when their TCAD tool was developed. 
+They are aware of the issue and claim that the Silvaco TCAD tools are anyhow consistent with 
+the $E^{Sil}_g(300)$ value chosen and predictions are reliable. The 
+
+To test the latter statement the $E^{Sil}_g(300)$ value was changed in the simulation package, 
+and results compared. 
+A 200~$\mu$m thick, 50~$\mu$m wide $n-on-p$ diode was simulated using Silvaco 2D device 
+simulator. Temperature was varied between -20$^{\circ}$ and +20$^{\circ}$ in 5$^{\circ}$ steps. 
+Several scenarios have been invetigated:
+
+\begin{itemize}
+\item[\bf default] using default Silvaco parameters values
+\item[\bf EG112] setting $E^{Sil}_g(300)=1.12$~eV
+\item[\bf Syn. Th. Vel.] setting thermal velocities to the values used by Synopsys tool
+\item[\bf EG112 \& Syn. Th. Vel.] combination of the two above 
+\item[\bf NO BGN] turning off the model for bandgap narrowing based on the concentrations~\cite{SLOTBOOM1977279}.
+\end{itemize}
+
+Several studies were performed which will now be discussed.
+
+\subsubsection{Leakage Current Level}
+
+
+
+
+In Figure~\ref{fig:ILeak20C} a comparison of the simulated leakage current in the five scenarios for $t=20^{\circ}$C is presented.
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{currents_T20_scenarios.pdf}
+\caption{\label{fig:ILeak20C}Simulated current density as a function of the bias voltage for different 
+scenarios at $t=20^{\circ}$C. See text for more details.}
+\end{figure}
+It is evident that the only parameter playing a major role, as expected, is the bandgap energy $E^{Sil}_g(300)$. 
+
+
+
+To verify the validity of leakage current level  from Silvaco tools the result at $V_{op}$ bias 
+were compared with the theoretical value evaluated using~\ref{eq:Ileak2}. Assuming the same value
+for generation and recombination lifetimes and taking the intrinsic concentration value $n_i$ from 
+the simulation itself a current density of $J\sim1.6\times10^{-13}$~A/cm is expected, which 
+is in excellent agreement with the value observed in simulations when the default value of 
+$E^{Sil}_g(300)$ is chose ({\it i.e.} 1.08~eV); on the contrary, as it can be seen from Figure~\ref{fig:ILeak20C}, when $E^{Sil}_g(300)$ is set to 1.12~eV the simulation results don't match 
+the theoretical expected values.
+
+It has to be noted that  the simulated current is purely bulk generated; this is also clear from 
+Figure~\ref{fig:ILeak20C}: the current level is stable after the depletion voltage. This feature 
+is not realistic~\cite{CALZOLARI19721003} but for the sake of understing bulk generated 
+current properties in TCAD simulations is very well suited since it allows to study the 
+phenomenon without having to deconvolve from the current surface effects, trap assisted tunnelling 
+and others.
+
+\subsubsection{Temperature Dependence of Simulated Leakage Current}
+
+For all temperature $T$ times scenario $S$ combination the leakage current $I_{leak}(V_{op};T;S)$ at a 
+operational voltage 
+$V_{op}$ defined as:
+
+\begin{equation}
+V_{op}=V_{depl}+50\,{\rm V}
+\label{eq:Vop}
+\end{equation} 
+was extracted. It was verified that the depletion voltage $V_{depl}$ didn't depend on scenarios nor temperatures.
+
+ The leakage current was then studied as a function of the reciprocal of the 
+temperature and fitted with a function inspired by Equation~\ref{eq:IleakT}:
+
+\begin{equation}
+I = I_{ref}\Bigg(\dfrac{T}{T_{ref}}\Bigg)^n exp^{\Bigg[ -\dfrac{E_{a}}{2k_B}\Bigg( \dfrac{1}{T}- \dfrac{1}{T_{ref}} \Bigg) \Bigg]}
+\label{eq:ITfunc}
+\end{equation}
+where $n$ and $E_{a}$ are free parameters, $I_{ref}$ the simulated current at the reference 
+temperature $T_{ref}$ and $k_B$ the Boltzmann constant.
 
 \section{Modelling Radiation Damage in TCAD Simulations}
 \label{sec:TCADRadDamage}
