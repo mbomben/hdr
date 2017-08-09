@@ -439,5 +439,57 @@ from the measured ones.
 \section{Modelling Radiation Damage in TCAD Simulations}
 \label{sec:TCADRadDamage}
 
+In this Section the implementation, modelling and some case studies of Radiation Damage in TCAD 
+Simulations will be presented. This Section is an introduction to a subject that will be 
+discussed more in detail later, in Chapters~\ref{chap:ATLAS}~and~\ref{chap:ITk}.
+
+\subsection{Implementation of Radiation Damage in TCAD Simulations}
+As it was discussed in Section~\ref{sec:RadDam} energetic particles above a certain energy threshold 
+create defects called Frenkel pairs. 
+It is possible to simulate defects using TCAD tools by adding trap centers, or simply {\it traps}, to the 
+energy bandgap. 
+Trap centers, whose associated energy lies in a forbidden gap, exchange charge with the conduction 
+and valence bands through the emission and capture of electrons. The trap centers influence the 
+density of space charge in semiconductor bulk and the recombination statistics.
+Device physics has established the existence of three different mechanisms, which add to the space 
+charge term in Poissons?s equation in addition to the ionized donor and acceptor impurities. These are 
+interface fixed charge, interface trap states and bulk trap states. Here only bulk traps 
+will be discussed. In particular this Section will describe the definition of bulk trap states and the implementation of these bulk trap states into Silvaco TCAD device simulations\footnote{\url{https://www.silvaco.com/products/tcad/device_simulation/atlas/atlas.html}}.
+
+A donor-type trap can be either positive or neutral like a donor dopant. An acceptor-type trap can be 
+either negative or neutral like an acceptor dopant. A donor-like trap is positively charged (ionized) when 
+empty and neutral when filled (with an electron). An empty donor- type trap, which is positive, can 
+capture an electron or emit a hole. A filled donor-type trap, which is neutral, can emit an electron or 
+capture a hole. An acceptor-like trap is neutral when empty and negatively charged (ionized) when filled 
+(with an electron). A filled acceptor-like trap can emit an electron or capture a hole. An empty acceptor-
+like trap can capture an electron or emit a hole. 
+
+Figure~\ref{fig:TCAD_Defects} shows the terminology used within Silvaco TCAD to define the type of trap. The position of the trap is defined relative to the conduction or valence bands using $E.LEVEL$ so for instance, an acceptor trap at 0.4eV would be 0.4eV below the conduction band~\cite{SilvacoAtlas}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.65\textwidth]{TCAD_traps.pdf}
+\caption{\label{fig:TCAD_Defects}Definition of the trap energy level for acceptor and donor traps in reference to thec onduction and valence band edges. (After~\cite{SilvacoAtlas})}
+\end{figure}
+
+The total charge caused by the presence of traps is added to the right side of the Poisson Equation; 
+the generation-recombination equations will be modified including terms for talking into account 
+that electrons are being emitted or captured by the donor and acceptor-like traps.
+
+
+
+\subsection{Radiation Damage Modelling in TCAD Simulations}
+
+We will now discuss which traps are to be added to TCAD Simulations to reproduce the 
+experimental observations presented in~\ref{sec:RadDam}.
+A list of defects relevant for silicon diode used in HEP was shown 
+in Figure~\ref{fig:Defects}.  Including all these defects is presently infeasible  due to the overwhelming computational effort required and the large uncertainties associated with some levels. 
+Simplified approaches are therefore applied where only a subset of defects are simulated~\cite{Passeri1998,Passeri2001,Moscatelli-2002,bib:DP,Moscatelli-2004,Chiochia2005,CHIOCHIA2006,Moscatelli-2006,Pennicard:2008zz,dalal2014simulation,Passeri2015}. 
+Historically a simple model which accounts for the bulk damage just by means of one ``equivalent'' 
+deep level was tried~\cite{Passeri1998,Passeri2001} but it was failing at reproducing the 
+double peak effect in the electric field distribution of heavily irradiated devices as shown in~\cite{Li1992}.
+Two traps, one acceptor-like and one donor-like are more suited for this; several models where 
+proposed, like~\cite{bib:DP,Chiochia2005,CHIOCHIA2006,dalal2014simulation}.
+
 \section{Summary}
 \label{sec:TCADSummary}
