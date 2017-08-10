@@ -439,7 +439,7 @@ from the measured ones.
 \section{Modelling Radiation Damage in TCAD Simulations}
 \label{sec:TCADRadDamage}
 
-In this Section the implementation, modelling and some case studies of Radiation Damage in TCAD 
+In this Section the implementation, modelling and a  study case of Radiation Damage in TCAD 
 Simulations will be presented. This Section is an introduction to a subject that will be 
 discussed more in detail later, in Chapters~\ref{chap:ATLAS}~and~\ref{chap:ITk}.
 
@@ -585,6 +585,23 @@ Figure~\ref{fig:EField_Profile_Perugia2006}.
 \caption{\label{fig:EField_Profile_Perugia2006}Simulated electric field profile for an $n-on-p$ 200~$\mu$m thick pixel modules irradiated to a fluence of 
 $\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$. The radiation damage model used was~Perugia 2006\cite{Moscatelli-2006}.}
 \end{figure}
+As it can be seen the simulated electric field is depending linearly on the bulk depth position, 
+as it happens before irradiation. 
+
+
 
 \section{Summary}
 \label{sec:TCADSummary}
+
+In this Chapter the basics of TCAD simulation of silicon detectors for HEP were presented. 
+The motivations for such simulations were discussed and some examples outlined. 
+It was shown that, despite some inconsistencies on measured fundamental parameters, TCAD 
+simulations can be used to get reliable predictions. 
+
+The interest of using TCAD simulations together with beam test data from heavily irradiated detectors 
+was discussed. The issue of the proper choice of radiation damage models for TCAD simulations 
+was briefly mentioned; it will be discussed more in detail in Chapter~\ref{chap:ITk}. 
+In Appendix~\ref{sec:TCADComparison} a detailed discussion on comparing Silvaco and Synopsys 
+TCAD tools when used for radiation damage modelling will be given.
+
+
