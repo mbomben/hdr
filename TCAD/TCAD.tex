@@ -484,12 +484,107 @@ We will now discuss which traps are to be added to TCAD Simulations to reproduce
 experimental observations presented in~\ref{sec:RadDam}.
 A list of defects relevant for silicon diode used in HEP was shown 
 in Figure~\ref{fig:Defects}.  Including all these defects is presently infeasible  due to the overwhelming computational effort required and the large uncertainties associated with some levels. 
+
 Simplified approaches are therefore applied where only a subset of defects are simulated~\cite{Passeri1998,Passeri2001,Moscatelli-2002,bib:DP,Moscatelli-2004,Chiochia2005,CHIOCHIA2006,Moscatelli-2006,Pennicard:2008zz,dalal2014simulation,Passeri2015}. 
 Historically a simple model which accounts for the bulk damage just by means of one ``equivalent'' 
-deep level was tried~\cite{Passeri1998,Passeri2001} but it was failing at reproducing the 
+deep acceptor-like level was tried~\cite{Passeri1998,Passeri2001} but it was failing at reproducing the 
 double peak effect in the electric field distribution of heavily irradiated devices as shown in~\cite{Li1992}.
 Two traps, one acceptor-like and one donor-like are more suited for this; several models where 
-proposed, like~\cite{bib:DP,Chiochia2005,CHIOCHIA2006,dalal2014simulation}.
+proposed, like~\cite{bib:DP,Chiochia2005,CHIOCHIA2006,dalal2014simulation}. 
+Further development involved the introduction of a second acceptor-like trap, very close to the midgap; 
+this helped to better model the type inversion and the leakage current increase with 
+fluence~\cite{Moscatelli-2004,Moscatelli-2006,Pennicard:2008zz,Passeri2015}. At some point also 
+4 traps were considered but this was kind of unique trial~\cite{Moscatelli-2002}.
+
+An example of radiation damage model for TCAD simulations in given in Table~\ref{tab:raddammodelpars}; the traps characteristics are taken from~\cite{Pennicard:2008zz}.
+
+\begin{table}[!htbp]
+\centering
+\caption{\label{tab:raddammodelpars}Relevant parameters for  acceptors (A) and donor (D) deep levels in the bandgap, describing the radiation damage. (After~\cite{Pennicard:2008zz})}
+\begin{tabular}{ccccc}
+  Type & Energy (eV) & $\sigma_e (\rm{cm}^2)$ & $\sigma_h (\rm{cm}^2)$ & $\eta  (\rm{cm}^{-1})$ \\ 
+  \hline
+  A &   $E_C $ -0.42 &  $9.5 \times10^{-15} $ &  $9.5 \times 10^{-14} $ & 1.613 \\
+  A &   $E_C $ -0.46  &  $5.0 \times10^{-15} $ &  $5.0 \times 10^{-14} $ & 0.9 \\
+  D &   $E_V $ +0.36  &  $3.23 \times10^{-13} $ &  $3.23 \times 10^{-14} $ & 0.9 
+\end{tabular}
+\end{table}
+For each trap it is specified if it is a donor- or an acceptor-like trap, its energy with respect to 
+the relevant band edge (conduction / valence for an acceptor-/donor-like trap), the capture 
+cross sections~$\sigma_{e,h}$ for electrons and holes, respectively, and the introduction rate $\eta$ 
+which is the density of traps $N_t$ per unit of fluence $\Phi$.
+
+In general the energy of the trap $E_t$ is located some units of thermal energy $k_B T$ away from the 
+intrinsic energy level $E_i$, the introduction rate $\eta$ is close to unity and the 
+capture cross sections $\sigma$ are included in the range $10^{-16}-10^{13}$~cm$^2$.
+
+\subsection{Radiation Damage in TCAD Simulations Case studies}
+
+After the short review of radiation damage models for TCAD Simulations available in literature 
+we now discuss briefly how to chose among them.
+The choice of the radiation damage model depends of course 
+on the level of agreement with real data from irradiated detectors, but there is not a single model 
+that can fit all possible real data. This is particularly evident when the electric field profile inside 
+the irradiated device is investigated. 
+
+Combining beam test data with TCAD simulations in what is called the {\it grazing angle} 
+technique~\cite{Henrich:687041,Lari:2001qqa}  
+it is possible to extract the electric field profile along the bulk depth of the irradiated detector.
+An example of such studies can be found in~\cite{Chiochia2005,CHIOCHIA2006}; the 
+authors investigated $n-on-n$ pixel detectors irradiated at CERN with  24~GeV/c protons. 
+The authors measured charge collection profiles as in Figure~\ref{fig:chiochia2006_profiles}. 
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=1.00\textwidth]{chiochia2006_profiles.jpg}
+\caption{\label{fig:chiochia2006_profiles}Measured (full dots) and simulated (histogram) charge collection profiles for a sensor irradiated to a fluence of $\Phi = 0.5\times10^{14}$~n$_{\rm eq}$/cm$^2$  (a-c) and of $\Phi = 2.0\times10^{14}$~n$_{\rm eq}$/cm$^2$  (d-g), and operated at several bias voltages. (After~\cite{CHIOCHIA2006})}
+\end{figure}
+
+To model the local maxima around position~1000~$\mu$m a double peak distribution of  the electric 
+field is necessary; they show that a uniform space charge distribution cannot reproduce the 
+measured charge profile. 
+They propose a radiation damage model based on the work of~\cite{bib:DP}, adapting the 
+capture cross sections $\sigma$ and the traps introduction rate $\eta$. Their predictions for the electric field distribution 
+are shown in Figure~\ref{fig:chiochia2006_field_profiles}.
+
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=1.00\textwidth]{chiochia2006_field_profiles.jpg}
+\caption{\label{fig:chiochia2006_field_profiles}The $z$-component of the simulated electric field  is shown as a function of $z$ for a sensor irradiated to a fluence of  $\Phi = 0.5\times10^{14}$~n$_{\rm eq}$/cm$^2$  (a) and of $\Phi = 2.0\times10^{14}$~n$_{\rm eq}$/cm$^2$  (b).  (c) Space charge density as a function of the $z$ coordinate for different fluences and bias voltages. (After~\cite{CHIOCHIA2006})}
+\end{figure}
+
+Recent works~\cite{Macchiolo:2016xzi} that exploited the same technique with 
+$n-on-p$ 200~$\mu$m pixel modules irradiated to a fluence of 
+$\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$ with 23~MeV protons at 
+KIT\footnote{\url{http://www.etp.kit.edu/english/irradiation_center.php}} reported a charge collection 
+profile more flat. 
+
+A comparison with TCAD simulations was performed and presented in~\cite{bomben_rd50_Santander}. 
+Several models were tried and the best agreement was found when the Perugia 2006 model~\cite{Moscatelli-2006} was used.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.39\textwidth]{Savic_high_phi.jpg}
+\includegraphics[width=0.59\textwidth]{Pixel_Profile_Perugia2006.pdf}
+\caption{\label{fig:Pixel_Profile_Perugia2006}Comparison between (left) measured and (right) 
+simulated charge collection profiles for $n-on-p$ 200~$\mu$m thick  pixel modules irradiated to a fluence of 
+$\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$. Tracks were impinging at 80$^{\circ}$ with 
+respect to detector surface. (After~\cite{Macchiolo:2016xzi,bomben_rd50_Santander})}
+\end{figure}
+The agreement is qualitative but no other model gave better agreement. In particular models 
+predicting a double peak distribution of the electric field where producing charge collection profiles 
+more close to the ones presented in Figure~\ref{fig:chiochia2006_profiles} rather the one 
+reported here. 
+
+The prediction for the electric field profile from the Perugia 2006 model is presented in 
+Figure~\ref{fig:EField_Profile_Perugia2006}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{EField_Natascha_fl2e15_Petasecca.pdf}
+\caption{\label{fig:EField_Profile_Perugia2006}Simulated electric field profile for an $n-on-p$ 200~$\mu$m thick pixel modules irradiated to a fluence of 
+$\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$. The radiation damage model used was~Perugia 2006\cite{Moscatelli-2006}.}
+\end{figure}
 
 \section{Summary}
 \label{sec:TCADSummary}
