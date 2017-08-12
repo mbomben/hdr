@@ -142,7 +142,7 @@ be fully commissioned by the end of 2017.
 
 
 
-\section{The ATLAS Pixel Detector}
+\section{The ATLAS Pixel Detector and the Insertable B Layer}
 \label{sec:ATLASPixelDetector}
 
 This Section is devoted to the silicon pixel tracking system for the ATLAS experiment. 
@@ -218,9 +218,9 @@ eight identical sectors in each disk. The concept of  pixel module is illustrate
 \end{figure}
 
 
-A description of the pixel sensors characteristics follows.
+A description of the pixel sensors and electronics characteristics follows.
 
-\subsubsection{Pixel sensors}
+\subsubsection{Pixel Sensors}
 \label{sec:pixelsensors}
 
 The total number of pixels in the system is approximately 67 million in the barrel and 13 million in the endcaps, covering a total active area of about 1.7~m$^2$.
@@ -256,9 +256,213 @@ A sketch of the pixel sensor edge, with the read out electronics on top is given
 Figure~\ref{fig:sensorbb}.
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=1.00\textwidth]{sensorbb.png}
+\includegraphics[width=0.65\textwidth]{sensorbb.png}
 \caption{\label{fig:sensorbb} Cross section sketch of the ATLAS pixel module (After~\cite{Altenheiner:2012zz})}
 \end{figure}
+
+\subsubsection{Pixel Electronics}
+\label{sec:pixelsensors}
+A block diagram that illustrates the principal elements of the system architecture of pixel 
+electronics is shown in~\ref{fig:pixelel}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{pixelel.png}
+\caption{\label{fig:pixelel}Block diagram of the pixel detector system architecture. (After~\cite{AtlasPixels})}
+\end{figure}
+There are 16 FEI3~\cite{FEI3} front-end chips (FE) in each pixel module and these are arranged in two rows of eight chips. 
+The readout chip for the ATLAS pixel detector contains 2880 pixel cells of 400~$\times$~50~$\mu$m$^2$ size arranged in an 18$\times$160 matrix. Each pixel cell contains 
+an analogue block where the sensor charge signal is amplified and compared to a programmable
+threshold using a comparator. The digital readout part transfers the hit pixel address,
+a hit leading edge (LE) timestamp, and a trailing edge (TE) timestamp to the buffers at the chip
+periphery. In these buffers a Time-over-Threshold (ToT) is calculated by subtracting the TE from
+the LE timestamp. Hits marked by trigger signals are
+selected for readout. Triggered hit data are then transmitted serially out of the chip in the same
+order as the trigger arrival.
+ The duration of the ToT is measured by counting the cycles of the 40~MHz master chip
+clock. Due to the pulse shape of
+the preamplifier the ToT is a nearly linear function of the deposited charge. 
+Evaluating this ToT
+information can therefore be used to infer the charge deposi
+ted by a passing particle.  The ToT  mechanism is presented in Figure~\ref{fig:tot}.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{tot.png}
+\caption{\label{fig:tot} (left)Time-over-Threshold mechanism (ToT) and its dependence on the injected charge; (center) ToT dependence on threshold value; (right) ToT dependence on feedback current.
+ (top) Shaper output; (bottom) discriminator output. (After~\cite{AtlasVertexing2009})}
+\end{figure}
+
+The 16 FEs are read out by a Module Control Chip (MCC). Each module is then connected to the off-
+detector Read-out Drivers (RODs) through optical-fiber links (opto-links).
+One down link is used to transmit
+clock, trigger, commands and configuration data, while one or two up-links are used for event
+readout.
+The readout (R/O) architecture is ``datapush''.
+This means that each component in the chain (FE, MCC) always transmits at the maximum
+rate, and there is no busy mechanism to stop transmission when buffers are full. 
+
+The power supply system uses a combination of customized-commercial components and
+fully-custom components for the low (electronics) and high (sensor bias) voltages.
+The optical-links are custom made using commercial diode and laser array bare die with custom integrated circuits (DORIC and VDC) and packaging. An optical-interface card (Back of Crate or BOC) is also used for each ROD.
+
+\subsubsection{Pixel Support and Services}
+\label{sec:pixelservices}
+
+As already mentioned in the system overview, the pixel system consists of three barrel layers and two identical endcap regions, each with three disk layers. Figure~\ref{fig:pixstruc} shows the salient 
+features of the pixel structure.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{pixstruc.png}
+\caption{\label{fig:pixstruc} A schematic view of the active region of the pixel detector consisting of barrel and endcap layers. (After~\cite{AtlasPixels})}
+\end{figure}
+
+Modules are mounted on mechanical/cooling supports, called staves, in the barrel region. Thirteen 
+modules are mounted on a stave and the stave layout is identical for all layers. The active length of 
+each barrel stave is about 801 mm. The staves are mounted in half-shells manufactured from a carbon-
+fiber composite material. Two half-shells are joined to form each barrel layer.
+The two endcap regions are identical. Each is composed of three disk layers, and each disk layer is 
+identical. Modules are mounted on mechanical/cooling supports, called disk sectors. There are eight 
+identical sectors in each disk.
+
+The barrel shells and the endcap disks are supported by a spaceframe also manufactured from a 
+carbon-fiber composite material (see Figure~\ref{fig:pixstruc}). Electrical, optical and cooling services 
+are con- nected and routed within service panels (four on each end of the pixel detector) from patch 
+panels (Patch Panel 0-PP0) at the ends of the supporting spaceframe to the end of the Pixel Support 
+Tube.
+These services are supported by carbon fiber structures that also hold the beryllium vacuum pipe within 
+the Pixel Support Tube. Electrical, optical and cooling connections are made at the end of the Pixel 
+Support Tube at Patch Panel 1 (PP1). Connections and control of external services are made at 
+additional patch panels (PP2, PP3 and PP4) located within the ATLAS detector or near the ATLAS 
+control room complex.
+
+\subsection{Performance Requirements for the IBL and System Overview}
+\label{sec:IBLoverview}
+
+The Insertable B-Layer (IBL) is a fourth layer added to the present Pixel detector between a
+new beam pipe and the pixel B-layer. The principal motivations for the IBL were:
+
+\begin{itemize}
+\item tracking robustness, to cope with predicted failures of the pixel layers, in particular the B-layer; 
+  a loss of data in the B-layer
+seriously deteriorates the impact parameter resolution, directly affecting the $b$-tagging. The
+IBL estores the full $b$-tagging efficiency even in case of a complete B-layer failure.
+  \item Coping with luminosity effects, like increased event pileup which leads to to high occupancy that can induce readout inefficiencies. The presence of event pileup requires redundancy in
+the measurement of tracks in order to control the fake rate arising from random combinations
+of clusters in events with high pileup background. The addition of the IBL layer, with
+comparably low occupancy, helps to preserve tracking performance in face of luminosity
+effects.
+  \item Tracking precision: The IBL located close to the interaction point improves the quality of
+impact parameter reconstruction for tracks, and thereby improves vertexing and b tagging
+performance. As a result, sensitivity for signals in physics channels involving $b$ jets is improved,
+for instance for a low mass SM Higgs in the channel $WH,\,H\to b\bbar$.
+\end{itemize}
+
+Strong constraints and project specifications had a substantial impact on the technologies
+required for the IBL:
+
+\begin{itemize}
+\item the smaller radius of the IBL required development of a more radiation hard technology for
+sensors and electronics.
+\item The small radius between the new beam pipe needed to be able to insert the IBL
+ and the existing pixel detector does not allow
+for tilting of modules in the longitudinal direction (along the beam). Sensors with either
+an active edge or a slim guard ring must therefore be developed to reduce geometrical inefficiencies.
+Full coverage in $\phi$ is possible by constructing modules with the same active
+width, but with only one row of front-end chips. The new front-end chip has five times the
+area of the chip in the existing pixel detector and covers an active area that is 90\% of the
+sensor. (The active fraction of the present pixel modules is 75\%.)
+ \item Minimizing material is very important in the optimization of tracking and vertexing performance.
+The IBL radiation length will represent just 60\% of the pixel B-layer. Low
+radiation length was achieved by considering more aggressive technology solutions, in addition
+to new module design, technologies such as: local support structures (staves) made of low
+density carbon foams; CO$_2$ evaporative cooling, which is more efficient in term of mass flow
+and pipe size.
+\end{itemize}
+
+The IBL modules are supported by means of fourteen local supports, the Staves, arranged cylindrically
+around the beam pipe. Some overlap between modules is provided by tilting each stave
+about 14$^{\circ}$. The nominal layer radius, that is the distance from the beam axis to the sensor's
+centre-of-mass, is $R$ = 33.25~mm. The $r\phi$ view of the IBL layout is shown in Figure~\ref{fig:IBLrphi}. The stave is $L$ = 724~mm long. 
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{IBLrphi.png}
+\caption{\label{fig:IBLrphi}IBL layout: $r\phi$ view (After~\cite{IBLTDR})}
+\end{figure}
+
+\subsubsection{IBL Pixel sensors}
+Two sensor technologies are used in the IBL: planar $n-on-n$ sensors of the same type
+that was used for the pixel detector, and 3D sensors, which are a 
+technology that has not
+been used in a HEP experiment before. In 3D sensors the electrodes are columns in
+the silicon~\cite{PARKER1997328}. There can be varying numbers of electrodes per pixel which will 
+have an influence on charge collection and noise. For IBL a design with two electrodes per pixel was chosen. Aschematic view of the 3D sensors is shown in Figure~\ref{fig:tredi}.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{tredi.png}
+\caption{\label{fig:tredi} Schematic cross-section of the 3D detector with passing-through columns from FBK (left) andwith partial columns from CNM (right) fabricated on a $p-$type substrate (not to scale)(After~\cite{Darbo:2014kma})}
+\end{figure}
+
+The properties of the sensors are summarised in Table~\ref{tab:IBLsensors}.
+
+\begin{table}[!htpb]
+\caption{\label{tab:IBLsensors}Comparison of parameters between planar and 3D IBL sensors.}
+\centering
+\begin{tabular}{|r|l|l|}
+\hline
+ & Planar & 3D\\
+ \hline
+ \hline
+ Vendor & CiS & FBK/CNM \\
+ Wafer Thickness & 200~$\mu$m & 230~$\mu$m \\
+ Size in FE chips & 2 & 1\\
+ Depletion voltage before irradiation & 35-50~V & 15~V \\
+ Depletion voltage at the end of the life & 1000~V & 180~V\\
+ \hline
+ \end{tabular}
+\end{table}
+
+
+
+Pixel pitch is 50~$\mu$m~$\times$~250~$\mu$m for both technologies. 
+Both sensor types have a slim edge of 200~$\mu$ which is needed to avoid gaps in the coverage in $z$ since shingling of the sensors in $z$ is not possible for IBL. 
+To reduce the area at the detector edge to 200~$\mu$, with respect to 1.1~mm for pixel modules, 
+two strategies were implemented: planar ``moved'' GRs inward, inside the area defined by $n^+$ 
+pixel implants (see also Figure~\ref{fig:IBLSlimEdge});  3D sensors has a forest of $p^+$ columns 
+at bias voltage (CNM had a fence of $n^+$ columns shorted together to form a GR).
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{IBLSlimEdge.png}
+\caption{\label{fig:IBLSlimEdge}Top view of the sensor edge region of the ATLAS pixel (a), the conservative(b) and the slim edge (c) IBL design. The $n^+$ implantation is seen in blue the $p^+$ implantation in red. By reducing the number of guard rings, narrowing of the safety margin and by extending the edge pixels beyond the high voltage pad, the inactive edge could be reduced from 1100~$\mu$m for the ATLAS pixel design to 200~$\mu$ for the slim edge IBL design. (After~\cite{WittigPHD})} 
+\end{figure}
+
+Instead of choosing one technology over the other it was decided in the end to use a mix of sensors: 75\% planar in the center of each stave, and 25\% 3D on the outsides~\cite{AtlasVertexing2012}.
+
+
+\subsubsection{IBL Pixel Electronics}
+
+The frontend readout chip for IBL is the FE-I4~\cite{FEI4}. One FEI4 contains 26880 pixels which are arranged in 80 columns in $z$ and 336 rows in $\phi$. The size of one pixel is of course 
+50~$\mu$m~$\times$~250~$\mu$m.
+A crucial new feature of this chip with respect to the FEI3 readout chip is that the hits are stored in the 
+pixel cells. A hit is only read out if a trigger request matches its timestamp. Otherwise the hit is deleted. 
+This reduces bandwidth use and power consumption inside the chip and allows for far higher 
+occupancies.
+
+The chip provides 4-bit ToT information for each hit compared to 8 of FEI3. To reduce data size the data of two neighboring pixels in $\phi$ are sent out in a single data word.
+
+Figure~\ref{fig:TwoFEIs} shows the FEI3 and FEI4 chip side-by-side.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{TwoFEIs.pdf}
+\caption{\label{fig:TwoFEIs}FEI3 and FEI4 chip side-by-side. Chip dimensions are indicated.}
+\end{figure}
+
+\subsubsection{IBL Structure}
+Each stave contains 12 double-chip sensors in planar technology and 8 single-chip sensors in 3D technology. The total length of the active are is 640~mm.
+
 
 \section{Radiation Damage to the ATLAS Pixel Detector}
 \label{sec:digitizer}

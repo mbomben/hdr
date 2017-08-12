@@ -77,39 +77,43 @@
 			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
 			\tableofcontents
 		% Liste des figures
-			\listoffigures
+			%\listoffigures
 		% Liste des tableaux
-		\listoftables
+		%\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
 %        Contenu du document        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\setcounter{mtc}{3}	% "Corrige" les minitocs décallés à cause des chapter* (ex : table des matières)
 	\pagenumbering{arabic}
-	\includefrom{.}{Foreword}
+	%\includefrom{.}{Foreword}
 	%\addcontentsline{toc}{chapter}{Foreword}
 	
 	
-	\includefrom{HEP/}{HEP}
-	\includefrom{Silicon/}{Silicon}	
-	\includefrom{Slim5/}{Slim5}
-	\includefrom{TCAD/}{TCAD}
+	%\includefrom{HEP/}{HEP}
+	%\includefrom{Silicon/}{Silicon}	
+	%\includefrom{Slim5/}{Slim5}
+	%\includefrom{TCAD/}{TCAD}
 	\includefrom{ATLAS/}{ATLAS}
-	\includefrom{ITk/}{ITk}
-	\includefrom{Perspectives/}{Perspectives}
+	%\includefrom{ITk/}{ITk}
+	%\includefrom{Perspectives/}{Perspectives}
 	
 	
 	% Annexes
-	\begin{appendix}
-		\pagenumbering{Roman}
-		\includefrom{Appendix/}{Appendix}				% Figures en annexe
+	%\begin{appendix}
+		%\pagenumbering{Roman}
+		%\includefrom{Appendix/}{Appendix}				% Figures en annexe
 			
 		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
-		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
-		\printglossary[title=Glossaire,toctitle=Glossaire]
-		\printglossary[type=notation,title={Liste des symboles}, toctitle={Liste des symboles}]
+		%\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
+		%\printglossary[title=Glossaire,toctitle=Glossaire]
+		%\printglossary[type=notation,title={Liste des symboles}, toctitle={Liste des symboles}]
 	
-	\end{appendix}
+	%\end{appendix}
+	% Liste des figures
+			\listoffigures
+		% Liste des tableaux
+		\listoftables
 
 \bibliography{biblio}{}
 \bibliographystyle{unsrt}
