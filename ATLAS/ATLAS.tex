@@ -389,8 +389,9 @@ centre-of-mass, is $R$ = 33.25~mm. The $r\phi$ view of the IBL layout is shown i
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{IBLrphi.png}
-\caption{\label{fig:IBLrphi}IBL layout: $r\phi$ view (After~\cite{IBLTDR})}
+\caption{\label{fig:IBLrphi}IBL layout: $r\phi$ view. (After~\cite{IBLTDR})}
 \end{figure}
+The IBL was successfully installed in May 2014.
 
 \subsubsection{IBL Pixel sensors}
 Two sensor technologies are used in the IBL: planar $n-on-n$ sensors of the same type
@@ -398,14 +399,14 @@ that was used for the pixel detector, and 3D sensors, which are a
 technology that has not
 been used in a HEP experiment before. In 3D sensors the electrodes are columns in
 the silicon~\cite{PARKER1997328}. There can be varying numbers of electrodes per pixel which will 
-have an influence on charge collection and noise. For IBL a design with two electrodes per pixel was chosen. Aschematic view of the 3D sensors is shown in Figure~\ref{fig:tredi}.
+have an influence on charge collection and noise; for IBL a design with two electrodes per pixel was chosen. A schematic view of the 3D sensors is shown in Figure~\ref{fig:tredi}.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{tredi.png}
 \caption{\label{fig:tredi} Schematic cross-section of the 3D detector with passing-through columns from FBK (left) andwith partial columns from CNM (right) fabricated on a $p-$type substrate (not to scale)(After~\cite{Darbo:2014kma})}
 \end{figure}
 
-The properties of the sensors are summarised in Table~\ref{tab:IBLsensors}.
+
 
 \begin{table}[!htpb]
 \caption{\label{tab:IBLsensors}Comparison of parameters between planar and 3D IBL sensors.}
@@ -423,16 +424,13 @@ The properties of the sensors are summarised in Table~\ref{tab:IBLsensors}.
  \hline
  \end{tabular}
 \end{table}
-
-
-
+The properties of the sensors are summarised in Table~\ref{tab:IBLsensors}.
 Pixel pitch is 50~$\mu$m~$\times$~250~$\mu$m for both technologies. 
 Both sensor types have a slim edge of 200~$\mu$ which is needed to avoid gaps in the coverage in $z$ since shingling of the sensors in $z$ is not possible for IBL. 
 To reduce the area at the detector edge to 200~$\mu$, with respect to 1.1~mm for pixel modules, 
 two strategies were implemented: planar ``moved'' GRs inward, inside the area defined by $n^+$ 
 pixel implants (see also Figure~\ref{fig:IBLSlimEdge});  3D sensors has a forest of $p^+$ columns 
-at bias voltage (CNM had a fence of $n^+$ columns shorted together to form a GR).
-
+at bias voltage; in addition to that CNM sensor had a fence of $n^+$ columns shorted together to form a GR.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{IBLSlimEdge.png}
@@ -445,7 +443,7 @@ Instead of choosing one technology over the other it was decided in the end to u
 \subsubsection{IBL Pixel Electronics}
 
 The frontend readout chip for IBL is the FE-I4~\cite{FEI4}. One FEI4 contains 26880 pixels which are arranged in 80 columns in $z$ and 336 rows in $\phi$. The size of one pixel is of course 
-50~$\mu$m~$\times$~250~$\mu$m.
+250~$\mu$m~$\times$~50~$\mu$m.
 A crucial new feature of this chip with respect to the FEI3 readout chip is that the hits are stored in the 
 pixel cells. A hit is only read out if a trigger request matches its timestamp. Otherwise the hit is deleted. 
 This reduces bandwidth use and power consumption inside the chip and allows for far higher 
@@ -461,7 +459,28 @@ Figure~\ref{fig:TwoFEIs} shows the FEI3 and FEI4 chip side-by-side.
 \end{figure}
 
 \subsubsection{IBL Structure}
-Each stave contains 12 double-chip sensors in planar technology and 8 single-chip sensors in 3D technology. The total length of the active are is 640~mm.
+The IBL is composed of 14 staves.
+Each stave contains 12 double-chip sensors in planar technology and 8 single-chip sensors in 3D 
+technology. The total length of the active area of the save is 640~mm; including stave services it 
+extends to 7~m.
+
+The stave design is based on carbon foam material that provides a path for the heat generated in the sensors and in the front-end chips, to the cooling fluid boiling at low temperature in the cooling channel. 
+The stiffness of the structure is provided by a quasi-isotropic carbon fiber laminate, the {\it Omega}, that is bonded to the foam. Figure~\ref{fig:Omega} shows the cross section and a 3D view of the stave.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{omega.png}
+\caption{\label{fig:Omega}Cross section and 3D model of the IBL stave. Dimensions are in millimeters.
+ (After~\cite{IBLTDR})}
+\end{figure}
+
+The cooling pipe is sandwiched between the carbon foam and the {\it Omega}. The pipe is hard bondedto the structure, the thermal contact being provided by a thermal compound based on epoxy-loadedresins. Inside the pipe $CO_2$ boiling assures the needed evacuation of the power dissipated 
+by the IBL pixel modules. The target temperaturefor operating the IBL sensors is approximately -15$^{\circ}$C, in order to minimise effects of reverseannealing on the sensors and to avoid thermal runaway. At the end of their lifetime 
+planar sensors are expected to dissipate between 200~and~500~mW/cm$^2$, depending 
+on the annealing history. The chip adds another 400~mW/cm$^2$, for a total of slightly less than 
+1~W/cm$^2$. After performing thermal simulations it was chosen to set a $CO_2$ evaporation 
+temperature of $-40^{\circ}$C and a mass flow per stave in the range of 1.5 to 2 g/s.
+
 
 
 \section{Radiation Damage to the ATLAS Pixel Detector}
