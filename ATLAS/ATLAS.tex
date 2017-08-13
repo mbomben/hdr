@@ -1,15 +1,13 @@
 \chapter{ATLAS}
 \label{chap:ATLAS}
 
-In this Chapter the ATLAS Pixel detector will be discussed, with a special focus on radiation
- damage. 
+In this Chapter the ATLAS Pixel detector will be discussed.
 After a short introduction to the Large Hadron Collider (LHC) Physics program in 
 Section~\ref{sec:LHCPhysics}, the ATLAS detector, one of the experiments at the LHC, will be 
 presented (Section~\ref{sec:ATLASDetector}). Particular emphasis will be devoted to the 
-the ATLAS Pixel Detector (Section~\ref{sec:ATLASPixelDetector}), before moving to the 
-core of this Chapter - Section~\ref{sec:digitizer} -
- where the modelization of the radiation damage to the ATLAS Pixel 
-Detector will be discussed. 
+the ATLAS Pixel Detector (Section~\ref{sec:ATLASPixelDetector}),
+The radiation damage effects to the ATLAS Pixel Detector will be presented 
+in the next  Chapter.
 
 \section{The LHC Physics Program}
 \label{sec:LHCPhysics}
@@ -261,7 +259,7 @@ Figure~\ref{fig:sensorbb}.
 \end{figure}
 
 \subsubsection{Pixel Electronics}
-\label{sec:pixelsensors}
+\label{sec:pixelel}
 A block diagram that illustrates the principal elements of the system architecture of pixel 
 electronics is shown in~\ref{fig:pixelel}.
 
@@ -399,11 +397,12 @@ that was used for the pixel detector, and 3D sensors, which are a
 technology that has not
 been used in a HEP experiment before. In 3D sensors the electrodes are columns in
 the silicon~\cite{PARKER1997328}. There can be varying numbers of electrodes per pixel which will 
-have an influence on charge collection and noise; for IBL a design with two electrodes per pixel was chosen. A schematic view of the 3D sensors is shown in Figure~\ref{fig:tredi}.
+have an influence on charge collection and noise; for IBL a design with two electrodes per pixel was chosen. A schematic view of the 3D sensors is shown in Figure~\ref{fig:IBLtredi}.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{tredi.png}
-\caption{\label{fig:tredi} Schematic cross-section of the 3D detector with passing-through columns from FBK (left) andwith partial columns from CNM (right) fabricated on a $p-$type substrate (not to scale)(After~\cite{Darbo:2014kma})}
+\caption{\label{fig:IBLtredi} Schematic cross-section of the 3D detector with passing-through columns from FBK (left) and
+with partial columns from CNM (right) fabricated on a $p-$type substrate (not to scale)(After~\cite{Darbo:2014kma})}
 \end{figure}
 
 
@@ -474,15 +473,16 @@ The stiffness of the structure is provided by a quasi-isotropic carbon fiber lam
  (After~\cite{IBLTDR})}
 \end{figure}
 
-The cooling pipe is sandwiched between the carbon foam and the {\it Omega}. The pipe is hard bondedto the structure, the thermal contact being provided by a thermal compound based on epoxy-loadedresins. Inside the pipe $CO_2$ boiling assures the needed evacuation of the power dissipated 
-by the IBL pixel modules. The target temperaturefor operating the IBL sensors is approximately -15$^{\circ}$C, in order to minimise effects of reverseannealing on the sensors and to avoid thermal runaway. At the end of their lifetime 
+The cooling pipe is sandwiched between the carbon foam and the {\it Omega}. The pipe is hard bonded
+to the structure, the thermal contact being provided by a thermal compound based on epoxy-loaded
+resins. Inside the pipe $CO_2$ boiling assures the needed evacuation of the power dissipated 
+by the IBL pixel modules. The target temperature
+for operating the IBL sensors is approximately -15$^{\circ}$C, in order to minimise effects of reverse
+annealing on the sensors and to avoid thermal runaway. At the end of their lifetime 
 planar sensors are expected to dissipate between 200~and~500~mW/cm$^2$, depending 
 on the annealing history. The chip adds another 400~mW/cm$^2$, for a total of slightly less than 
 1~W/cm$^2$. After performing thermal simulations it was chosen to set a $CO_2$ evaporation 
 temperature of $-40^{\circ}$C and a mass flow per stave in the range of 1.5 to 2 g/s.
 
 
-
-\section{Radiation Damage to the ATLAS Pixel Detector}
-\label{sec:digitizer}
 
