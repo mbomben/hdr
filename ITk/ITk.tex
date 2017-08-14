@@ -38,16 +38,18 @@ reducing the error halving time. Indeed, taking data beyond 2023 at the same ins
 Run~3 would imply  to take data for more than 15 years to reduce the statistical error by a factor of 2.
 
 The large dataset at the end of the so-called Phase 2 (or {\it} Phase-II) for the experiments should enable 
-a  large program of precision measurements of the Higgs boson and discoveries. 
+a  large program of precision measurements of the Higgs boson and New Physics (NP) discoveries. 
 As an example of the potential of the HL-LHC dataset, the projected precision on coupling of the Higgs
  boson to $\mu$s is of about 7\% with  3000~\invfb; the Higgs 
 trilinear self coupling parameter $\lambda_{HHH}$ can be probed at about 1 $\sigma$ significance 
 in the range $-0.8<\lambda_{HHH}/\lambda_{SM}<7.7$ ($\lambda_{SM}$ is the SM predicted value) 
 in the final state $HH\to\b\bbar\gamma\gamma$~\cite{ATL-PHYS-PUB-2014-016}. 
-For what concerns physics beyond SM (BSM), the supersymmetric\footnote{Supersymmetry (SUSY) is a proposed type of spacetime symmetry where  each SM particle is associated with another particle, known as its superpartner, the spin of which differs by a half-integer; for an introduction to SUSY~\cite{SusyPrimer}} top quark partner $\widetilde{t}$, 
-the {\it stop}, discovery mass range is up to 480~GeV, and an exclusion one to 700~GeV~\cite{ATL-PHYS-PUB-2016-022} with the HL-LHC dataset; with the same amount of data the SUSY partners of Higgs and 
-vector bosons, the so-called charginos and neutralinos, can be investigated up to about 1~TeV of mass, 
-and excluded up to 1.3~TeV~\cite{ATL-PHYS-PUB-2015-032}. Other than SUSY the physics program 
+For what concerns NP potential discoveries, as an example, with the expected HL-LHC the 
+supersymmetric\footnote{Supersymmetry (SUSY) is a proposed type of spacetime symmetry where  each 
+SM particle is associated with another particle, known as its superpartner, the spin of which differs by a half-
+integer; for an introduction to SUSY~\cite{SusyPrimer}} top quark partner $\widetilde{t}$, 
+the {\it stop}, discovery mass range extends up to 480~GeV, and the exclusion one to 700~GeV~\cite{ATL-PHYS-PUB-2016-022};
+for the electroweak SUSY particles a factor of ten increase in luminosity translates into a 30-40\% increase in mass reach. Other than SUSY the physics program 
 during the Phase-II of the LHC experiments include searches of higher  vector bosons resonances like 
 $W',Z'$, 
 extra dimensions and more~\cite{ATLASLoIPhaseII}.
@@ -84,16 +86,122 @@ Parameter & LHC & HL-LHC \\
 \hline
 instantaneous luminosity $L$	 [cm$^{-2}$s$^{-1}$] & $1.0\times10^{34}$ &  $7.5\times10^{34}$ \\
 number of pileup events $\mu$ & 25 & 200\\
+track rate density for the innermost pixel layer $\mathcal{N}$ [MHz~cm$^{-2}$] & 0.25 & 2 \\ 
 fluence to the innermost pixel layer $\Phi$ [ 1 MeV $n_\text{eq}/\text{cm}^2$] & 5$\times10^{15}$ & 2$\times10^{16}$ \\
-
+total ionising dose to the innermost pixel layer TID [MRad] & 160  & 1700 \\
+\hline
 \end{tabular}
 \end{table}
+
+Within this hostile environment the ITk will have to guarantee the same level of performance  or better 
+of the ATLAS Inner Detector (ID).
+The project is presented  in a series of documents, from the ``Letter of Intent for the Phase-II Upgrade of the ATLAS Experiment''~\cite{ATLASLoIPhaseII} to the ``ATLAS Phase-II Upgrade Scoping Document''~\cite{ATLASITkScopingDocument}. Technical Design Report (TDR) for strip detector of the 
+ITk was recently published~\cite{ITkStripsTDR}; the ITk pixel detector TDR is due by the end of 2017.
+This Section is built on those documents.
+
+
+
+
+\subsection{Performance Requirements of the ITk}
+In what follows a short list of performance requirements of the ITk.
+
+\paragraph{Track Reconstruction Efficiency}
+The required 
+track reconstruction efficiency in the central part ($|\eta|<2.7$) has to be above 99\% for muons with 
+$p_T$ above 3~GeV/c, above 85\% for pions (electrons) with 
+$p_T$ above 1(5)~GeV/c.  Fake tracks rate has to be kept below 1\% to avoid degrading resolution of 
+objects built using tracks, like jets.
+
+\paragraph{Track Resolution and Vertex Reconstrucion}
+The resolution on transverse momentum will be better than 0.5\% up $|\eta|=1$ for muons of 100~GeV/c 
+$p_T$ and will degrade moderately till $|\eta|=2$. For $|\eta|\ge2.7$ the solenoid field diminishes, 
+particularly at low radius, leading to poorer $p_T$ resolution. 
+Resolution on longitudinal (transverse) parameter $d_0(z_0)$ are required to be better than 100~$\mu$m 
+in the very central region $|\eta|<0.5$ for tracks with $p_T$~=~1GeV/c and better than 8 (50)~$\mu$m  
+in the limit of very large transverse momentum.  
+ 
+ With 200 pile-up events, the mean separation of primary vertices is typically less than 1~mm.
+ It is therefore not possible for all vertices in a triggered event to be reconstructed individually. However, it is important that high transverse momentum objects (muons, electrons and tracks in high transverse energy jets) coming from a common vertex can all be correctly associated to the same vertex with good efficiency.
+  This requirement corresponds, in the case of $\t\tbar$ events, to the probability of the $\t\tbar$  vertex being among the reconstructed vertices having to be greater than 0.95. In addition, the probability that the 
+$\t\tbar$  decay is associated to the correct reconstructed vertex should be greater than 0.90.
+ 
+ 
+ Tracking-reconstruction efficiency and minimisation of multiple scattering effects requirements impose a 
+ low material budget. For the ITk, generally it is required to be in total <1 $\X_0$ up to $|\eta|\le2.7$.
+ In Figure~\ref{fig:ITk_X0}.
+  The ITk material budget is around 30\% lower in the region $|\eta|\le4.0$, compared to the Run~2 detector.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.49\textwidth]{ID_X0.png}
+\includegraphics[width=0.49\textwidth]{ITk_X0.png}
+\caption{\label{fig:ITk_X0}Material budget expressed as fraction of radiation lengths as a function of the 
+pseudorapidity. (left) ATLAS ID (right) ATLAS ITk. (After~\cite{ITkStripsTDR})}
+\end{figure}
+  
+\subsection{ITk detector layout}
+
+The ITk will be an all silicon tracker; the main reason for abandoning the TRT is the projected occupancy 
+in its straw tubes, which is about 100\% at $L=5.0\times10^{34}$cm$^{-2}$s$^{-1}$. 
+The ITk will consist of an inner detector made of pixel modules and an outer one made of strips. 
+In the central region of the ITk Detector, sensors are arranged in cylinders around the beam axis, with (starting from inside) five pixel layers followed by two short-strip layers of paired stereo modules then two long-strip layers of paired stereo modules. The forward regions will be covered by six strip disks and a number of pixel rings leading to one or more hits depending on the ring layer and $\eta$ position. 
+The ITk layout is presented in Figure~\ref{fig:ITk_Layout}. The new tracker will cover a pseudorapidity range down to $|\eta|=4$. 
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{ITk_Layout.pdf}
+\caption{\label{fig:ITk_Layout}Schematic layout of the ITk for the HL-LHC phase of ATLAS. Here only one quadrant and only active detector elements are shown. The horizontal axis is the axis along the beam line with zero being the interaction point. The vertical axis is the radius measured from the IP. The outer radius is set by the bore of the solenoid. (After~\cite{ITkStripsTDR})}
+\end{figure}
+
+The peculiarity of the chosen ITk baseline layout, the so called ``Inclined'' layout, is the presence of 
+inclined sensors in the forward part of the barrel layers; the inlined sensor hangs from the a long 
+barrel stave.
+   This allows the material transversed by particles at 
+large  $\eta$ to be minimised and at the same time requires less silicon surface to cover the full  $\eta$  
+range. In addition, these inclined sensors provide two or more hits in the first layer, providing redundancy for the local track finding close to the interaction point even at large pseudorapidity.
+One possible  support design of the Inclined layout is called ALPINE; a detail of the ALPINE stave 
+prototype is shown in Figure~\ref{fig:ALPINE}.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[height=0.25\textheight]{ALPINE.pdf}
+\caption{\label{fig:ALPINE}ALPINE design for the inclined layout (After~\cite{ITkStripsTDR})}
+\end{figure}
+The sensor modules are located on the stave face closer to the interaction point so that incoming particles 
+are detected by a pixel sensor before crossing the inactive material (local support structure, cooling tubes 
+and electrical services).
 
 \section{Pixels Detectors for ITK}
 \label{sec:ITkPixels}
 
+The innermost pixel barrel layer, Layer 0, of the ITk will be at about 40~mm; the Layer 1 at 85~mm. 
+Layer 2, 3 and 4 will be placed respectively at 155, 213 and 271~mm from the beam axis. 
+
+The expected fluences for the ITk are reported in Figure~\ref{fig:ITk_Fluence}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{ITk_Fluence.png}
+\caption{\label{fig:ITk_Fluence} The 1 MeV neutron equivalent fluence  for the ITk layout 
+(After~\cite{ITkStripsTDR})}
+\end{figure}
+
+As it can be seen the maximum fluence predicted for the Layer 0 at the end of the Phase-II program is about 1.5-2$\times10^{16}$~n$_{\rm eq}$/cm$^2$; for the pixel end-cap the largest fluence will be  of about 
+5$\times10^{15}$~n$_{\rm eq}$/cm$^2$ is predicted, similar to what it is expected for barrel Layer 1.
+
+3D silicon detectors are candidates to be used for the inner most layer(s) of the barrel pixel system and some of the inner end-cap rings due to their excellent radiation hardness at low operational voltages and moderate temperatures with low power dissipation compared to planar sensors.
+
+Pixels will have a smaller pitch than today ATLAS detector and IBL; this is mandatory to keep  the 
+occupancy below 1\%, in order to assure a good two particle separation and limit dead time. 
+The proposed ITk layouts are designed to meet this requirement, thus the pixel and strips pitches 
+are dictated by this constraint. 
+Moreover physics and performance simulations indicated that   50~$\mu$m~$\times$~50~$\mu$m pitch 
+pixels, or 25~$\mu$m~$\times$~100~$\mu$m are suited (the smaller pitch is to achieve better 
+momentum resolution). Pixel sensor thicknesses will be 
+
 \section{Radiation Hard Pixel Sensors}
 \label{sec:radhardpixels}
+
+
+
 \section{Edgeless Pixel Sensors}
 \label{sec:edgeless}
 
