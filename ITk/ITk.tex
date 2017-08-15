@@ -314,7 +314,342 @@ determined usingedge TCT measurements~\cite{1748-0221-12-02-P02021,5402213}.
 \section{Radiation Hard Planar Pixel Sensors}
 \label{sec:radhardpixels}
 
-The ATLAS Upgrage Planar Pixel Sensor R\&D Project~\cite{PPS:proj}
+The ATLAS Upgrade Planar Pixel Sensor (PPS) R\&D Project~\cite{PPS:proj} carried out the optimisation of the 
+well-known technology of planar silicon pixel sensors for the Phase-II of the ATLAS experiment. 
+The PPS R\&D project existed from 2009 to 2014 and investigated the radiation hardness of 
+pixels sensors realised in planar technology. The main research directions were: optimisation 
+of the $n-$bulk material; exploration of $p-$bulk sensors; reduction of thickness; novel biasing 
+structures.  
+Reduction of the dead are at the detector periphery was investigated too, but this will be discussed in the 
+next Section. 
+These efforts were then continued within the ITk forming collaboration. 
+
+In what follows some results from the PPS activities.
+
+\subsection{Radiation hardness of $n-in-n$ FE-I3 samples.}
+In~\cite{BOMBEN2012940,1748-0221-7-10-P10028} examples of the searches within the PPS group 
+are reported. Using pixel modules based on the ATLAS Pixel FE-I3 readout chip the charge collection 
+efficiency (CCE) of $n-in-n$ modules was tested up to fluences 
+$\Phi$=2.0$\times10^{16}$~n$_{\rm eq}$/cm$^2$. Table~\ref{tab:n-in-n} summarizes the fluences to which 
+the sensors were irradiated.
+
+\begin{table}[!htb]
+\caption{\label{tab:n-in-n}Summary of irradiated n-in-n samples in the testbeams. KIT stands for 25\,MeV energy proton irradiation; reactor neutrons for the TRIGA reactor~\cite{SNOJ2011136}.
+}
+\begin{center}
+\begin{tabular}{l|c|c|l}
+name & thickness ($\mu$m)  & fluence ($10^{15}$\,n$_{\rm eq}$/cm$^2$) & irradiation type\\
+\hline \hline
+DO6 & 285 & 0 & -- \\
+DO7 & 250 & 1 & protons (KIT)  \\
+DO8 & 250 & 1 & reactor neutrons  \\
+DO9 & 250 & 5 & reactor neutrons \\
+DO10 & 250 & 20 & reactor neutrons \\
+\hline
+\end{tabular}
+\end{center}
+\end{table} 
+
+These modules have been evaluated in several beam tests in 2009 and 2010.
+Data presented in~\cite{1748-0221-7-10-P10028}  were taken in two different periods in 2010 at the CERN 
+SPS beamline H6; in both periods pion beams of 120\,GeV/c were used.
+Measurements on  samples have been carried out at temperatures well
+below 0$^{\circ}$~C to reduce the large leakage current from irradiated
+sensors. As an example, we measured a leakage current of 24~${\rm \mu A}$
+ (10~${\rm \mu A}$) for DO10 (DO9), at a bias voltage of 1200~V and at
+ -47$^{\circ}$~C.
+
+\paragraph{Hit Efficiency}
+
+Hit efficiency was studied as a function of the bias voltage, for the
+module irradiated with $5\times 10^{15} n_{eq}/cm^{2}$.
+Results are in table~\ref{tab:n-eff}.
+
+\begin{table}[!htb]
+\caption{\label{tab:n-eff}Hit efficiency of an irradiated (fluence = $5\times 10^{15} n_{eq}/cm^{2}$)
+FEI3 $n-in-n$ 200~$\mu$m thick module at different bias voltages.}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Bias voltage (V) & Hit efficiency (\%) \\
+\hline
+350 & 93.2 \\
+\hline
+500 & 97.3 \\
+\hline
+1000 & 99.6 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{table}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{5E15_onlyElectrons.png}
+\includegraphics[width=0.44\textwidth]{EffMap_DO13_1000V.png}
+\end{center}
+\caption{\label{fig:5e15}left: Collected charge as a function of the bias for sensors irradiated
+with fluence of $5\times 10^{15} n_{eq}/cm^{2}$; right: Hit efficiency map for the same assembly}
+\end{figure}
+
+In figure~\ref{fig:5e15}, on the left, a study of the collected charge vs bias voltage
+ for a module irradiated with a fluence of $5\times 10^{15} n_{eq}/cm^{2}$ is shown\footnote{as
+ a comparison data from~\cite{Casse} are reported too.} (only data collected with the
+ $^{90}$Sr  source are shown).  In the figure the expected threshold for the FE-I4
+ chip is shows too. A signal of about 10 ke$^-$ is observed at 1000 V. This was very
+ promising for the  ATLAS IBL~\cite{IBLTDR}, and
+  the outer pixel layers at HL-LHC.
+
+In figure~\ref{fig:5e15}, on the right, the hit-efficiency map for the module irradiated with a
+fluence of $5\times 10^{15} n_{eq}/cm^{2}$, as measured at the testbeam for particles
+at normal incidence. The pixel module was biased at 1000 V and the hit-efficiency was 99.6\%.
+
+
+\paragraph{Charge Collection Efficiency}
+One of the main effects of irradiation is the increased trapping, which leads to a reduced signal amplitude. 
+As the trapping probability depends on the charge carrier velocity, the collected charge was measured as a 
+function of the bias voltage. Figure~\ref{fig:DO_all_Save} shows the results for all irradiated $n-in-n$ 
+samples in the two beam test periods; see also Table~\ref{tab:n-in-n}. A systematic error on the collected 
+charge of 400\,e is assumed, due to the finite charge resolution of the ToT mechanism;  a 5\% systematic 
+uncertainty is also taken into account, due to non-uniformity in the injection capacitances.\\
+After $5\times 10^{15}$\,n$_{\rm eq}$/cm$^2$, the collected charge still exceeds 10~ke at a bias voltage of 
+1000\,V. Even if the collected charge is shared equally between two neighboring pixels, this charge is 
+sufficient to detect the hit with FE-I3.
+
+\begin{figure}[!htpb]
+ \begin{center}
+  \includegraphics[width=0.65\textwidth]{DO_all_Save.pdf}
+ \end{center}
+ \caption{\label{fig:DO_all_Save}Collected charge as a function of bias voltage for $n-in-n$ samples irradiated to different fluences
+ (see details in the text).
+ A threshold of 3200~e is indicated.}
+\end{figure}
+
+Figure \ref{fig:n-in-n:Oct_P5_D11_qeff} top, shows that charge is predominantly
+ lost in the region of the punch-through bias grid system.
+
+ At very high fluences ($2\times 10^{16}$\,n$_{\rm eq}$/cm$^2$, DO10 sample)
+ it is no longer possible to say which region is less efficient than the others, using the charge collection method
+ (Figure \ref{fig:n-in-n:Oct_P5_D11_qeff}, bottom).
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[width=1\textwidth]{Oct_P8_1_9_9_1_D10_qeff.pdf}
+  \includegraphics[width=1\textwidth]{Oct_P5_D11_qeff.pdf}
+ \end{center}
+ \caption{\label{fig:n-in-n:Oct_P5_D11_qeff}Charge collection within a pixel. Top: DO9 at V$_{bias}$=1200\,V. Bottom: DO10 at V$_{bias}$=1000\,V.}
+\end{figure}
+
+\paragraph{Charge Sharing Probability}
+
+To calculate the charge sharing probability for each hit within a cluster, it is determined whether a hit is found in a pixel cell adjacent to the one matched to a track.
+This probability increases towards the edge of the pixel since charge carriers are more likely to drift to the neighbouring pixel. The corresponding plot, referred to as a charge sharing map, is centred on one pixel, also showing half of the adjacent pixel in each direction.
+The overall charge sharing is defined as the number of tracks with at least one hit in a neighbouring pixel divided by the number of all tracks.
+
+Figure \ref{fig:n-in-n:DO9_qshare} shows the charge sharing probability for DO9 at a bias voltage of 1200\,V.
+Reduced charge sharing probability is visible in the region of the bias dot
+ and the bias grid network.\footnote{The bias grid network is an aluminum trace
+ arranged on top of the intermediate pixel region connecting all bias dots.}
+ Less charge is deposited here, so there is a higher probability for the second pixel in a two-pixel cluster to be below threshold.
+As only the bias trace makes the difference between both pixel sides, it might cause the lower charge sharing probability. Furthermore, one can see that the region of the bias dot is not affected.
+
+ While for DO9 a clear increase in charge sharing probability towards the edges of the pixel is visible, at higher fluence the collected charge becomes too small for any significant charge sharing to be observable. 
+\begin{figure}[!htpb]
+ \begin{center}
+ \hspace{-.28cm}
+  \includegraphics[width=0.887\textwidth]{n_pixel_charge_share_v5_2.png}
+  \includegraphics[width=\textwidth]{Oct_P8_1_9_9_1_D10_qshare.pdf}
+ \end{center}
+ \caption{Top: Design of the sample of the region shown in the plot below. Bottom: Charge sharing probability for DO9 at V$_{bias}$=1200V. Note the reduced charge sharing in the bias grid region on the right-hand side of the central pixel. \label{fig:n-in-n:DO9_qshare}}
+\end{figure}
+
+\paragraph{Residuals}
+To estimate the intrinsic spatial resolution of the devices under test (DUTs),
+ the distribution of hit residuals was studied. The intrinsic spatial resolution was estimated by the RMS of the 
+ residual distribution for clusters of all sizes, while the residual distribution of 2-pixel clusters is used to 
+ estimate the width of the area between pixels, where charge sharing occurs. The distribution is fitted with 
+ the sum of two Gaussian functions, where one accounts for misreconstructed hits, resulting in large 
+ residual values (equal to 2 times the pixel pitch or more), and the other for correctly reconstructed hits. The 
+ width of this ``core'' Gaussian gives the width of the charge sharing region.
+ 
+ Figure \ref{fig:n-in-n:residuals} shows the residual distributions in the 50\,$\mu$m pixel direction for the unirradiated sample (DO6) and the sample irradiated to
+\mbox{$2\times10^{16}\,{\rm n_{eq}}/{\rm cm}^2$}, respectively. The widths of the distributions are 16\,$\mu$m and 15.4\,$\mu$m, comparable with the expected digital resolution of 14.4\,$\mu$m. Thus, no influence of radiation damage on the spatial resolution can be observed.
+
+\begin{figure}[!htb]
+ \begin{center}
+  \includegraphics[width=.49\textwidth]{Oct_Period1-residuals2-11-fitResY.pdf}
+  \includegraphics[width=.49\textwidth]{Oct_Period5-residuals2-11-fitResY.pdf}
+ \end{center}
+ \caption{Residual distributions in the short pixel direction for an unirradiated sample (DO6, left) and a sample irradiated to $2\times 10^{16}$\,n$_{\rm eq}$/cm$^2$ operated at a bias voltage of 1000\,V (DO10, right). No deterioration of the spatial distribution with irradiation is visible. \label{fig:n-in-n:residuals}}
+\end{figure}
+
+
+Plotting the residual distribution for two-pixel clusters only allows the width of the charge sharing region between pixels to be determined. Figure \ref{fig:n-in-n:CS2-residuals} shows the distributions for DO9 ($5\times 10^{15}$\,n$_{\rm eq}$/cm$^2$) and DO10 ($2\times 10^{16}$\,n$_{\rm eq}$/cm$^2$). After correcting for the telescope resolution, the widths of the charge sharing regions are 7.1\,$\mu$m and 7.7\,$\mu$m. These values correspond very well with the width found for an unirradiated sample of 6.4\,$\mu$m. This indicates that the lateral diffusion of the charge cloud does not change significantly with irradiation.
+
+\begin{figure}[!hbt]
+ \begin{center}
+  \includegraphics[width=.49\textwidth]{Oct_Period5_1-residuals2-10-cluSize2-multiG_resY.pdf}
+  \includegraphics[width=.49\textwidth]{Oct_Period8_1-residuals2-11-cluSize2-multiG_resY.pdf}
+ \end{center}
+ \caption{Residual distributions for 2-pixel clusters only. Shown are distributions samples irradiated to $5\times 10^{15}$\,n$_{\rm eq}$/cm$^2$ (left: DO9, bias voltage 1000\,V) and $2\times 10^{16}$\,n$_{\rm eq}$/cm$^2$ (right, DO10, bias voltage 1200\,V), respectively. \label{fig:n-in-n:CS2-residuals}}
+\end{figure}
+
+\paragraph{Comments}
+The radiation hardness of $n-$bulk sensors was tested up to unprecedented fluences, with a maximum of
+ $20\times10^{15}\,{\rm n_{eq}}/{\rm cm}^{2}$.
+ At a bias voltage of 1.2\,kV a collected charge of about 6\,ke was observed, corresponding to about one 
+ third of the collected charge before irradiation. A much thinner detector should be able to collect a much 
+ larger fraction of charge at a bias voltage lower than 1000~V.
+ Despite the rather small collected charge and the reduced 
+ charge sharing between pixels, no significant deterioration of the
+ spatial resolution was observed. 
+ Important charge losses were observed in proximity of the punch-through dot used for polarising 
+ the sensor.
+
+\subsection{Thin $n-in-p$ FE-I4 samples.}
+
+While $n-$type bulk sensors require patterned guard rings on the back side of the sensor, for $p-$type material these can be moved to the pixelated side of the sensor (front side); then metallisation is the only process for the back side. This makes it a very cost-effective material for future pixel detectors. 
+
+Thin $n-on-p$ planar pixel sensors have been realised at FBK\footnote{FBK-CMM (Trento, Italy): \url{http://cmm.fbk.eu/}} on high resistivity type 6" 
+wafers within 
+the  framework of the INFN Phase-2 program~\cite{DALLABETTA2016388}.
+Si-Si Direct Wafer Bonded (DWB) wafers were chosen to fabricate pixel detectors;  Si-Si DWB  are obtained bonding together two different wafers: a high-resistivity (HR) Float Zone sensor wafer and a low-resistivity (LR) Czochralski handle wafer. The FZ wafer is thinned to the desired thickness value, so as to obtain a wafer with a thin active layer plus a relatively thick mechanical support layer. P-type wafers of two different active depths (100 and 130~$\mum$) with 500~$\mum$  thick handle wafer were purchased. 
+In Figure~\ref{fig:wafer.png} a picture of one wafer from this production.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.45\textwidth]{wafer.png}
+\caption{\label{fig:wafer.png} Wafer from the $n-on-p$ planar technology production~\cite{DALLABETTA2016388}  whose layout was mainly based on ATLAS FEI4 and CMS PSI46 designs. The red rectangle 
+encircles one pixel sensors compatible with the FE-I4~\cite{FEI4} 
+readout chip.}
+\end{figure}
+
+\subsubsection{Beam test studies}
+Radiation hardness of that production was tested  using pixel sensors compatible with the FE-I4~\cite{FEI4} 
+readout chip. The sensors were indeed bump bonded to an FE-I4 chip at IZM, 
+Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and measured 
+on beam before and after irradiation. In Figure~\ref{fig:W80W30} some pictures of the pixel modules on 
+PCB are shown. 
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.35\textwidth]{scm.png}
+\includegraphics[width=0.35\textwidth]{w80_irrad1.png}
+\includegraphics[width=0.70\textwidth]{in_the_box.jpeg}
+\caption{\label{fig:W80W30}Thin $n-on-p$ planar pixel sensor modules. (top left) Module mounted 
+on a PCB card. (top right) Module inside the CERN PS irradiation area; (bottom) module inside 
+the DUT cooling box at the CERN H6 beamline; W80 is the second module from the left; outside 
+of the box the six planes of the ACONITE telescope~\cite{Jansen2016}.}
+\end{figure}
+
+Irradiations were carried at CERN PS using the 24~GeV/c proton beam. The irradiation was staged; 
+in Table~\ref{tab:W30W80Irr} the detail of the irradiation program for the two modules tested from 
+that production, $W80$ and $W30$. The two modules were taken from two different wafers, 
+and had different number of GRs,  2 and 5, respectively. The final sensor assembly 
+is 100~$\mum$; the 500~$\mum$  thick handle wafer was not thinned.
+
+\begin{table}[!htpb]
+\caption{\label{tab:W30W80Irr}Irradiation program for the two FE-I4 pixel modules $W80$ and $W30$.}
+\centering
+\begin{tabular}{cccc}
+\hline 
+\hline
+Module name & Beam spot size & Fluence $\phi$& Cumulative fluence at  peak $\Phi$\\ 
+(\# of GRs) & (FWHM - [mm$^2$]) &  [10$\times{15}$ n$_\text{eq}/\text{cm}^2$]  &  [10$\times{15}$ n$_\text{eq}/\text{cm}^2$] \\
+\hline
+W80 (2) & 20$\times$20 & 3 & same\\
+\hline
+W30 (5) & 12$\times$12 & 4 & same\\
+\hline
+\hline
+W80 (2) & 20$\times$20 & 7 & 10 \\
+\hline
+W30 (5) & 20$\times$20 & 7 & 11\\
+\hline
+\end{tabular}
+\end{table}
+
+The modules were tested on beam after each irradiation step at CERN H6 beam line (120~GeV/c pions) and at DESY T21 beam line (4~GeV/c electrons).
+ In both cases tracks were reconstructed thanks to  a EUDET-type beam telescope~\cite{Jansen2016}, 
+ composed of six pixel detector planes equipped with fine-pitch MIMOSA 26 sensors~\cite{mimosa26}. 
+ The DUTs where mounted inside a box that shed them from light and kept them cold 
+ ($\sim$-35$^{\circ}$C).
+ 
+
+
+\paragraph{Hit Efficiency}
+Hit efficiency were tested as a function of the bias voltage for both W80 and W30 after each irradiation 
+step~\cite{TrentoWS2017}. 
+The results are reported in Figure~\ref{fig:HitEffW80W30} after the first irradiation step
+(see Table~\ref{tab:W30W80Irr}).
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=1.0\textwidth]{ZoomHitEffLowFl.pdf}
+\caption{\label{fig:HitEffW80W30}Hit efficiency as a function of the bias voltage for W80 and W30 modules 
+after the first irradiation step. The laboratory where the data were taken, the threshold and the tuning 
+are indicated (HDC is a register to correct time walk effects). The red dashed line indicate the 97\% 
+hit efficiency. (After~\cite{TrentoWS2017}.}
+\end{figure}
+
+The modules hit efficiency is above 97\% for bias voltages larger than 500~V. These results are good 
+but somewhat below the expectations as the detectors are only 100~$\mu$m thick and the fluences 
+not so elevated (3-4$\times{15}$ n$_\text{eq}/\text{cm}^2$). One possible explanation for this not 
+so large hit efficiency is the threshold: 1000-1100~e were probably too high for such detectors. 
+
+In Figure~\ref{fig:Hit_Eff_W80} the hit efficiency of W80 is reported after the second irradiation step; 
+the first step is added for comparison.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{newHit_Eff_W80.pdf}
+\caption{\label{fig:Hit_Eff_W80}Hit efficiency as a function of the bias voltage for the W80 module after each irradiation step.The fluence, the threshold and the tuning 
+are indicated. The red dashed line indicate the 97\% 
+hit efficiency.}
+\end{figure}
+
+The W80 module is 97\% efficient at a bias voltage of 600 V for a threshold of 700~e (the signal amplitude 
+for a MIP in an un-irradiated module of the same thickness is about 8000~e). This result is very 
+promising and it meets  the specifications for the Layer 1 of the ITk pixel detector.
+
+
+The hit efficiency within the pixel cell was investigated too. In Figure~\ref{fig:NPTW80InpixelEff.pdf} 
+the result for W80 after the first irradiation step. It can be seen that there are inefficient regions 
+at the short sides of the pixel cell. This is consistent with the presence of permanent biasing structures 
+like the $n^+$ bias dot implant and the bias rail shorting the bias dots together.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=1.00\textwidth]{NPTW80InpixelEff.pdf}
+\caption{\label{fig:NPTW80InpixelEff.pdf} (top) Hit efficiency within a pixel of the W80 module after the first irradiation step. (bottom) The pixel cell layout is superimposed.}
+\end{figure}
+
+\paragraph{Charge Collection Efficiency}
+
+The charge collection efficiency was studied for the W30 module after the  irradiation. The cluster charge distribution, measured in Time-over-Threshold bins of 25~ns~\cite{FEI4} was 
+fitted with a Landau function convoluted with a Gaussian. In Figure~\ref{fig:IrrCCE} the comparison 
+of the cluster charge distribution before and after the first irradiation step.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.75\textwidth]{IrrCCE.pdf}
+\caption{\label{fig:IrrCCE}Cluster charge distribution, measured in ToT,  for the W30 module before and after the first irradiation 
+step.The fluence, the threshold, the tuning, the bias voltages and the fit results are indicated.}
+\end{figure}
+
+The module was tuned always with a threshold of 1000~e and 6 ToT corresponded to 6000e. 
+It can be seen that after the irradiation the most probable value (MPV) of the distribution is reduced 
+by about 33\%, going from 9 to 6.
+
+\paragraph{Comments}
+Thin planar detectors are envisaged for the ITk pixel detector. The results reported here for 100~$\mu$m 
+thick $n-on-p$ pixel modules are very promising since they exhibit an hit efficiency in excess of 
+97\% at a bias voltage of 600~V after a fluence of 1.0$\times{16}$ n$_\text{eq}/\text{cm}^2$. The tested 
+modules were just 
+prototypes that used the existing FE-I4 readout chip. New thin pixels sensors prototypes, compatible 
+with the RD53A chip are in preparation; thanks to new readout chip, which should have 
+the possibility to get lower in threshold, it should be possible to recover full hit efficiency even at  
+bias voltages lower than 600~V. 
+ 
 
 \section{Edgeless Pixel Sensors}
 \label{sec:edgeless}
