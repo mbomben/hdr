@@ -654,8 +654,15 @@ the possibility to get lower in threshold, it should be possible to recover full
 bias voltages lower than 600~V. 
  
 
-\section{Edgeless Pixel Sensors}
+\section{Edgeless $n-on-p$ Planar Pixel Sensors}
 \label{sec:edgeless}
+
+ITk pixel sensors, other than meeting radiation hardness specifications, have to assure highest 
+possible geometrical acceptance, being ``active'' almost till the physical detector edge.
+In what follows edgeless sensors using the active technology will be discussed.  
+In particular the results from the joint LPNHE-FBK  active edge planar pixel sensors production will be presented. They are documented in a series of documents which will be referred to.
+
+\subsection{Edgeless Pixel Sensors and the Active Edge Technology}
 
 As for the IBL (see Section~\ref{sec:IBLoverview}) for the ITk pixel barrel layers too there will be no 
 space for module tiling in the $z$ (beam) direction. So the fractions of inactive regions have to be kept 
@@ -665,10 +672,10 @@ region while still preventing voltage breakdown.
 
 
 
-The 3D sensor technology inherently allows for slim edges of 15-150~$\mu$m~\cite{1748-0221-10-03-C03031}; planar sensors can adopt slim edge designs, as it was done for the IBL pixels sensors, or 
+The 3D sensor technology inherently allows for slim edges of 15-150~$\mu$m~\cite{1748-0221-10-03-C03031} 
+Planar sensors can adopt slim edge designs, as it was done for the IBL pixels sensors, or 
 an edgeless design, through the ``active edge'' technology.
 
-\subsection{The Active Edge Technology}
 
 The active edge is one of the possible choices to realize ``edgeless'' detectors, {\it i.e.} detectors with no (or very limited) insensitive area. Along the sensor border a trench is dug by deep reactive ion etch (DRIE), reaching through the whole thickness of the substrate (hence a support wafer is required).  The  trench is then doped with boron (for $p-$type bulks) and  filled with polysilicon. The cut realized through DRIE produces an edge region
 much less damaged than the one resulting from a standard diamond-saw cut. This leads to less generation centers hence lower leakage current generated at the border. Moreover, the edge doping prevents the depletion region from reaching the physical trench walls, hence carriers created at the edge  do not experience an electric field, are not effectively separated and just recombine, without contributing significantly to the device leakage current.
@@ -681,7 +688,8 @@ Active edge technology can routinely obtain very uniform, well defined and narro
 \end{center}
 \end{figure}
 
-\subsection{Edgeless $n-on-p$ Planar Pixel Sensors}
+
+\subsection{Joint LPNHE-FBK  Active Edge Planar Pixel Sensors Production}
 The active edge technology was chosen  by LPNHE~\footnote{Laboratoire de Physique Nucleaire et de Hautes \'Energies (LPNHE), Paris, France; \url{http://lpnhe.in2p3.fr/}} for a  planar pixel production
  with reduced inactive zone~\cite{bib:nim2012}.
 The production, composed of 200~$\mu$m thick $n-on-p$ sensors, was realised at FBK\footnote{FBK-CMM (Trento, Italy): \url{http://cmm.fbk.eu/}}.
@@ -763,8 +771,8 @@ Pictures of FE-I4 sensor pixels before and after the metal layer removal can be 
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.39\textwidth]{annotated_temporarymetal.png}\\
-\includegraphics[width=0.39\textwidth]{notemporarymetal-izm.png}
+\includegraphics[width=0.49\textwidth]{annotated_temporarymetal.png}
+\includegraphics[width=0.49\textwidth]{notemporarymetal-izm.png}
 % where an .eps filename suffix will be assumed under latex, 
 % and a .pdf suffix will be assumed for pdflatex; or what has been declared
 % via \DeclareGraphicsExtensions.
@@ -781,7 +789,7 @@ once the support wafer has been completely lapped, each sensor can separated fro
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.35\textwidth]{edgelesslapping.pdf}
+\includegraphics[width=0.55\textwidth]{edgelesslapping.pdf}
 \caption{Sensors separation from wafer.}
 \label{fig:lapping}
 \end{figure}
@@ -833,7 +841,7 @@ and (possibly) after irradiation, in order to find the best sensor configuration
 bump-bonded to the read-out chip and to select the best combination of GR number and trench distance 
 for  possible future productions.
 
-\subsubsection{Electrical Characterization}
+\subsection{Electrical Characterization}
 Only one out of 20 processed wafers was not usable due to bad wafer-bonding. The electrical characterization of the production for non-irradiated sensors was been performed~\cite{Bomben:2013cia}.
 It started with measurements on specially designed test structures, to assess mainly bulk and surface 
 properties, then tests on large sensors followed.
@@ -891,31 +899,32 @@ Using the interpixel structure  the interpixel resistance $\rm{R_{int}}$ was eva
 p-spray doses. It can be seen that for the high p-spray dose value, at depletion voltage, the interpixel resistance is four times larger than  the low
 p-spray dose corresponding value; nonetheless, excellent pixel isolation is already assured by low p-spray dose.
 After irradiation, this test will be  crucial  to prove the pixels isolation.
-
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[width=0.65\textwidth]{edgelessabsCompareRint.pdf}
-\caption{\label{fig:Rint}Interpixel resistance $\rm{R_{int}}$ as a function of the bias voltage for two different p-spray doses.}
+\includegraphics[width=0.44\textwidth]{edgelessabsCompareRint.pdf}
+\includegraphics[width=0.55\textwidth]{W95_test_structures_ITOT_100um.png}
+\caption{\label{fig:Rint}(left) Interpixel resistance $\rm{R_{int}}$ as a function of the bias voltage for two different p-spray doses. (right) Current-Voltage curves for
+ test structures featuring different number of GRs. The
+innermost GR, if present, was kept at ground voltage. The  shortest distance from the pixels to the trench is 100~$\mu m$. The measurement for the test structure with 2 GRs was taken at a lower temperature with respect to the other two samples.}
 \end{center}
 \end{figure}
 
  FE-I4 test structures  were used to evaluate the current voltage characteristics  of the production.
-The effect of GRs on the breakdown voltage can be seen in Figure~\ref{fig:IV_GRs},
+The effect of GRs on the breakdown voltage can be seen in Figure~\ref{fig:Rint},
 where the current-voltage curves of test structures featuring FEI4-like pixels and different number of GRs are reported;  the distance between the last pixels and the doped trench is 100~$\mu m$~\cite{1748-0221-12-05-P05006}. The breakdown voltage increases by more than 70\% (from 70 to 120~V) by adding a second, floating GR.
+%\begin{figure}[!htpb]
+%\centering
+%\includegraphics[width=0.65\textwidth]{W95_test_structures_ITOT_100um.png}
+%\caption{\label{fig:IV_GRs}Current-Voltage curves for
+ %test structures featuring different number of GRs. The
+%innermost GR, if present, was kept at ground voltage. The  shortest distance from the pixels to the trench is 100~$\mu m$. The measurement for the test structure with 2 GRs was taken at a lower temperature with respect to the other two samples.}
+%\end{figure}
 
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=0.65\textwidth]{W95_test_structures_ITOT_100um.png}
-\caption{\label{fig:IV_GRs}Current-Voltage curves for
- test structures featuring different number of GRs. The
-innermost GR, if present, was kept at ground voltage. The  shortest distance from the pixels to the trench is 100~$\mu m$. The measurement for the test structure with 2 GRs was taken at a lower temperature with respect to the other two samples.}
-\end{figure}
 
+\subsection{Beam test results}
+Three sensors were bump-bonded to FE-I4 readout chips at IZM Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and were evaluated on beam~\cite{1748-0221-12-05-P05006}.
 
-\subsubsection{Beam test results}
-Three sensors were bump-bonded to FE-I4 readout chips at IZM Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and were evaluated on beam.
-
-\paragraph{Description of Tested Devices}
+\subsubsection{Description of Tested Devices}
 The main difference among the three sensors is  the number of guard rings (GRs) surrounding the active area, ranging from zero to two. In Figure~\ref{fig:lpnhe5_4_7_pic} a detail of the
 sensor edge can be seen for all the three samples.
 
@@ -947,13 +956,15 @@ LPNHE7 & 2 & no\\
 
 
 The LPNHE4 module was used in an irradiation experiment before the beam tests. Laboratory measurements after irradiation showed that, due to the lack of  electrical insulation layer
-between the sensor and the FEI4-B readout chip (for a discussion of this issue see for example~\cite{rossi2006pixel}), it couldn't be biased up to full depletion. Hence there won't be results for irradiated detectors from this pixel sensors production.
+between the sensor and the FEI4-B readout chip (for a discussion of this issue see for example~\cite{rossi2006pixel}), it couldn't be biased up to full depletion. Hence there will not be
+beam test results for irradiated detectors from this pixel sensors production but only laboratory 
+measurements with radioactive sources which will be presented at the end of the Section.
 
 
 During all measurements the innermost GR, if present, was kept at
  ground voltage by the FE-I4 readout chip; the second GR, when present, was left floating. The depletion voltage for all three devices was about 20~V.
 
-\paragraph{Detector Configuration}
+\subsubsection{Detector Configuration and Experimental Setup}
 Before laboratory and beam tests the threshold and gain settings of the readout electronics are carefully tuned. When choosing the threshold, a compromise has to be found between a high threshold, which decreases the number of noise hits but decreases the signal efficiency as well, and a low threshold, with opposite effects. For our detectors, a typical threshold is 1400~e, which corresponds to a tenth of the expected most probable value signal amplitude due to a minimum ionizing particle (MIP) crossing the sensor at normal incident angle. A typical result from  threshold tuning\cite{FEI4,USBpix} can be see in Figure~\ref{fig:threshold}; the threshold dispersion is of the order 200~e. The signal amplitude in the sensor is measured in  units of Time over Threshold (ToT): a clock counts when the shaped signal  goes above threshold and stops when the signal falls below threshold; the difference between those two crossings is the ToT~\cite{FEI4}. During the tuning of the electronics, the correspondence between ToT value and input charge is calibrated.\\
 \begin{figure}[!htb]
 \centering
@@ -962,6 +973,258 @@ Before laboratory and beam tests the threshold and gain settings of the readout 
 The tuning target value was 1400~e; the sensor bias voltage was 40~V.}
 \end{figure}
 
+
+The results presented here are based on data
+taken at the DESY beam test facility\footnote{http://testbeam.desy.de/} and at the CERN
+North Area experimental area\footnote{http://sba.web.cern.ch/sba/}.
+At DESY 4~GeV/c momentum electrons were used; at CERN 120~GeV/c momentum positive pions were used.
+
+
+At both laboratories the data were recorded using a copy of the Eudet/AIDA telescope~\cite{Jansen2016} 
+already presented elsewhere. 
+The data from the DUTs were recorded using two different Data Acquisition (DAQ) systems: the 
+Reconfigurable Cluster Element (RCE)~\cite{RCE} system and the UsbPix~\cite{USBpix} system.
+The typical averaged\footnote{Averaged over a supercycle at CERN} trigger rate was in the range of 
+250-1000~Hz, depending on the
+beam conditions and on the DAQ system used for the devices under test (DUTs).
+
+
+
+The DUTs were located between the two arms of the telescope (each arm having three detection planes). To screen the DUTs from the light, they were operated inside a cooling box, capable  of maintaining the DUT temperature constant.
+
+\subsubsection{Data Reconstruction and Analysis}
+
+Raw data were processed into tracks using the algorithms implemented in the EUTelescope 
+framework~\cite{eutelescope}.
+At the end of the process a ROOT~\cite{root} file is created containing basic observables  ready to be analyzed in the data analysis framework, TBmon2 software~\cite{tbmon2}.
+TBmon2 allows studying the quantities discussed below.
+
+\paragraph{Global, In-Pixel and Edge Hit Efficiency}
+The global hit efficiency is defined as the  fraction of reconstructed tracks crossing a sensor that have an associated hit in that sensor. A bad bump bonding can degrade severely the efficiency of the sensor.
+The quoted efficiency is measured in a fiducial region, defined by the surface of the pixel module where each pixel cell is
+hit by at least 1 track. From Figure~\ref{fig:hitmap} it can be seen that the fiducial region,  defined by the trigger scintillators area, is smaller than the surface of the detector. Nonetheless
+the uniformity in threshold show in Figure~\ref{fig:threshold} is a good
+indication that the performance measured in the fiducial area can be taken as valid also outside it,
+hence the hit efficiency be interpreted as global.
+
+\begin{figure}[htbp]
+\centering % \begin{center}/\end{center} takes some additional vertical space
+\includegraphics[width=.45\textwidth,origin=c,angle=0]{hitmap_center.png}
+\qquad
+\includegraphics[width=.45\textwidth,origin=c,angle=0]{hitmap_edge.png}
+% "\includegraphics" from the "graphicx" permits to crop (trim+clip)
+% and rotate (angle) and image (and much more)
+\caption{\label{fig:hitmap} Hit map of a tested sensor in beam. On the abscissa is the pixel column index, on the ordinate axis is the pixel row index. (Left) the beam is focused on the center of the sensor; (right) the beam  is focused on the edge, which allows to perform edge efficiency scan. The area where hits are seen is a 1 $ cm^2$ rectangle and correspond to the area of the trigger scintillator.}
+\end{figure}
+
+The in-pixel hit efficiency is obtained by superimposing the 2D maps of efficiency as a function of the local position in each pixel cell of the sensor, the granularity of this analysis being of the order of the total pointing resolution (sum of the telescope resolution and the multiple scattering average shift). The in-pixel efficiency gives valuable information on the homogeneity of the charge collection, stressing the presence of low efficiency areas due, for instance, to permanent biasing structures. Our sensors do not include permanent biasing structures, since for testing purposes they are polarized thanks to a temporary metal line~\cite{bib:metal}, which is then removed before bump bonding.
+
+To assess whether the active edge ensures a high hit efficiency in the  area between the last pixels and the doped trench, an efficiency measurement as a function of the track position in the edge area is performed, using data collected with the beam focused on the edge area; see also Figure~\ref{fig:hitmap}.
+The impact of the GRs on the efficiency is studied by comparing numerical device simulations with the edge hit efficiency profiles. The lateral depletion can be investigated looking at the edge efficiency performance
+ for several values of the bias voltage.
+
+\subsubsection{Efficiency Results for the Edgeless Sensors}
+
+In what follows the global hit, in-pixel and edge hit efficiency results from the beam tests  will be presented.
+
+\paragraph{Global Hit Efficiency}
+\begin{figure}[htbp]
+\centering % \begin{center}/\end{center} takes some additional vertical space
+\includegraphics[width=.65\textwidth,origin=c,angle=0]{eff_open.png}
+
+% "\includegraphics" from the "graphicx" permits to crop (trim+clip)
+% and rotate (angle) and image (and much more)
+\caption{\label{fig:eff} Global hit efficiency for the 2 sensors (LPNHE7 and LPNHE5), for various bias points, threshold configurations (1600 e or 1400e ) and beam tests (CERN or DESY). ``Edge'' identifies data taken when the
+beam was focused at the detector periphery.}
+
+
+
+\end{figure}
+
+The hit efficiency has been investigated at CERN SPS and DESY with a set of two thresholds corresponding to an input charge of 1400 electrons or 1600 electrons and for various bias points.
+The global hit efficiency is higher than 97.5 $\%$ for both the LPNHE5 and LPNHE7 sensors, as shown in Figure~\ref{fig:eff}.
+For LPNHE7 at the CERN SPS with a threshold of 1400 electrons, two beam configurations were investigated, one with the beam focused on the center of the sensor (open triangles), the other with the beam focused on the edge of the sensor (full triangles).
+Biasing the sensor above 25~V allows the sensors to reach a 98~$\%$ efficiency whatever the threshold.
+
+\paragraph{In-Pixel Hit Efficiency}
+
+
+\begin{figure}[htbp]
+\centering % \begin{center}/\end{center} takes some additional vertical space
+\includegraphics[width=.7\textwidth,origin=c,angle=0]{rsz_schemepix.png}
+
+\includegraphics[width=.75\textwidth,origin=c,angle=0]{pixeff-center.png}
+% "\includegraphics" from the "graphicx" permits to crop (trim+clip)
+% and rotate (angle) and image (and much more)
+\caption{\label{fig:pix} Pixel scheme (top) with inner structures: n$^+$-implant, metal contacts, bump bond pad, p-stop... and in pixel efficiency (bottom) for LPNHE7 at 40~V.}
+
+
+\end{figure}
+As observed in Figure \ref{fig:pix}, the in-pixel efficiency is very homogeneous. This high homogeneity shows the interest of using a temporary metal to bias the sensors for electrical tests before bump-bonding instead of adding a permanent structure such as punch-through bias dots. A tiny drop of efficiency can be observed at the pixel corner, where it decreases to  95$\%$. This is due to the charge sharing occurring between 3 or 4 neighboring pixels. In those clusters, the charge induced in one of the pixels could be under threshold and then not taken into account, which biases the hit reconstruction and the hit efficiency.
+
+This result is to be compared to the one in Figure~\ref{fig:n-in-n:Oct_P5_D11_qef} where charge is lost 
+in the bias grid area and Figure~\ref{fig:NPTW80InpixelEff.pdf} where the bias rail is responsible for 
+lower hit efficiency.
+
+\paragraph{Edge Efficiency}
+The hit efficiency at the detector edge for both LPNHE5 and LPNHE7 is presented in Figure \ref{fig:edge_comparison}. LPNHE5 and LPNHE7 were measured at DESY and at CERN respectively; the threshold was set to 1600~(1400)~e for LPNHE5 (LPNHE7), while the bias voltage was 40~V for both detectors.
+\begin{figure}[!htbp]
+\centering 
+\includegraphics[width=0.75\textwidth,origin=c,angle=0]{edgeeff_full_range_pics.png}
+\caption{\label{fig:edge_comparison}
+Edge efficiency profiles for  LPNHE5 (no GRs - full markers) and LPNHE7 (2 GRs - open markers). Laboratory were the data were taken, device bias voltage and threshold are indicated too. The horizontal dashed line marks the
+50\%-point efficiency. The devices photograph on top helps in visualizing which physical area of the pixel is related to the efficiency profile.}
+\end{figure}
+
+Thanks to the active edge technology both detectors are efficient even in the un-instrumented area: for both LPNHE5 and LPNHE7 the efficiency is higher than 50$\%$ up to about 90 $\mu m$ away from the last pixel, that is only 10 $\mu m$ from the cut edge. This performance meets the specifications of ATLAS ITk pixel modules~\cite{ITkStripsTDR} in terms of distance from the active region to the cut edge.
+
+As a reminder, LPNHE7 has 2 GRs, one connected to ground laying between 13~$\mu m$ and 50~$\mu m$ from the last pixel, one floating between 55~$\mu m$ and 80~$\mu m$; LPNHE5 has no GRs.
+The behavior of the 2 samples is rather similar in the first 30~$\mu m$, where the efficiency is basically flat. Then the efficiency  drops faster  for LPNHE5, while  for LPNHE7 the efficiency is a plateau between 0 and -50~$\mu m$ then it smoothly decreases to reach 90~$\%$ at -80~$\mu m$, before sharply dropping to 0.
+
+Even if data taking conditions were different and clearly sub-optimal for LPNHE5 (higher threshold, multiple scattering,~...), the detector is still quite efficient in the edge area. In particular, it is to be noted that the slope of the hit efficiency curve is consistent with the smearing in the telescope tracking resolution due to the multiple scattering. Nevertheless, further tests on active edge sensors without GRs are necessary, with better experimental conditions.
+
+For LPNHE7, the good performance in terms of efficiency in the edge area indicates that the presence of GRs does not degrade too much the  hit efficiency, even in the area of the innermost connected GR.
+
+
+To better understand the efficiency in the GRs region,, two dimensional numerical simulations (for details see~\cite{bib:nim2012}) were run; the edge area of  sensors with 0 and 2 GRs and
+a 100~$\mu m$ distance between the last pixel
+and the doped trench were studied. The results are shown in Figure~\ref{fig:EFtcad_edge} for a simulated bias voltage value of 40~V.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.497\textwidth,origin=c,angle=0]{smaller2GR_0.png}
+\includegraphics[width=0.497\textwidth,origin=c,angle=0]{GR_2.png}
+\caption{\label{fig:EFtcad_edge}Numerical simulation  of the electric field. Left: 0 GRs; right: 2 GRs. The simulated bias voltage value was 40~V.}
+\end{figure}
+
+
+
+
+ From Figure~\ref{fig:EFtcad_edge} it can be seen that the GRs do not  deeply influence the electric field lines. The charge carriers, following the electric field lines, are collected by the last pixels if they are electrons or by the trench or backside if they are holes. This seems to be the case from the simulation results, except for electrons generated within a small depth below the GRs. This picture is consistent with the efficiency
+ results shown in Figure~\ref{fig:edge_comparison}.
+
+From Figure~\ref{fig:EFtcad_edge} it can also be  seen that the depleted area is slightly larger for the sensors with 2 GRs and extends till the sensor edge: the GRs are contributing to the depletion of the
+ sensor bulk.
+The simulated electric field magnitude in Figure~\ref{fig:EFtcad_edge} shows a weak electric field region in the bottom left corner; this is due to the presence of two close equipotential planes, the doped trench and the sensor backside. Carriers generated here drift so slowly that they do not produce a signal during the useful integration time of the read-out electronics, and the efficiency drops.
+
+In summary, based on the above results, supported by numerical  simulations, it can be stated that GRs do not preclude the possibility to have edgeless detectors; their presences make possible at the same time high hit efficiency at the detector edge, by extending laterally the depletion region, and high breakdown voltage (as shown in Figure~\ref{fig:Rint}).
+
+
+
+
+In order to further investigate the lateral depletion of the LPNHE7 sensor in the un-instrumented area between the last pixel and the trench, the hit efficiency   was measured as a function of the track distance from  the edge  for several values of the bias voltage, as shown in Figure~\ref{fig:comparison2}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.65\textwidth,origin=c,angle=0]{eff_40V_bin4.png}
+\caption{\label{fig:comparison2} Comparison of edge efficiency profile of LPNHE7 for several bias voltages}
+\end{figure}
+
+The edge efficiency is highest at 40~V, where the lateral depletion is such that the efficiency exceeds 50$\%$ up to a distance of 90~$\mu m$ from the pixel edge. At 20~V, the lateral depletion is clearly not completed as the 50$\%$ efficiency point is reached at 60 $\mu m$. The 30~V efficiency profile is quite close to the 40~V curve, although the high efficiency (>95\%) in the region between 50~$\mu m$ and 70~$\mu m$ is possible only at the 40~V. A few events yield non zero efficiency up to 20~$\mu m$ beyond the edge. This is consistent with the spatial resolution of the hits formed by one pixel cell.
+
+\subsubsection{Comments on the Irradiated Irradiated Pixel Module LPNHE4}
+
+
+
+The LPNHE4 module was irradiated  at KIT\footnote{\url{http://www.etp.kit.edu/english/irradiation_center.php}}
+ with 25~MeV protons at a fluence  $\Phi=1\times10^{15}$~$(1 {\rm MeV})\,n_{\rm eq}/{\rm cm}^{2}$. 
+After irradiation the LPNHE4 detector was then tested at low temperature 
+to limit reverse annealing which could degrade its performance, but also 
+to avoid possible thermal runaways due to the expected high level of 
+leakage current after irradiation. 
+As it can be seen in Figure~\ref{fig:LPNHE4_IV} unfortunately the irradiated LPNHE4 detector goes into breakdown at very low bias voltage 
+values, when the detector bulk is not completely depleted.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.65\textwidth]{LPNHE4_IV.pdf}
+\caption{\label{fig:LPNHE4_IV}IV curves at different temperatures for LPNHE4}
+\end{figure}
+
+
+Two concurring causes have been identified about the origin of this too early 
+breakdown. The first one deals with  electrical discharges at the 
+detector periphery. In Figure~\ref{fig:sparks} a sketch to illustrate the problem can be found. 
+
+
+
+As already discussed in the introduction the doped trench is equipotential with the detector backside (at High Voltage, HV, as it can be seen in Figure~\ref{fig:sparks}). The trench is electrically connected with the front-side detector periphery through the bulk 
+and the isolation implants (either p-spray or p-stop). The pixels are kept at ground via the connection to the readout chip. The readout chip area extends beyond the sensor pixel area, overlapping with the sensor front-side part that is at a voltage very close to HV. So there is an area 
+where a voltage difference of 100 V drops on less than 20~$\mu m$. For a more detailed discussion please refer to~\cite{rossi2006pixel}. In addition no electrical insulation layer was deposited on the sensor 
+surface, nor on the readout chip one.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.65\textwidth]{sparks.png}
+\includegraphics[width=0.3\textwidth]{bbs_over_gr.png}
+\caption{\label{fig:sparks}(left) Sketch to illustrate the problem of electrical discharges at the edge of the detector. (right) Sketch to illustrate the problem of electrical discharges at the edge of the detector.}
+\end{figure}
+The second cause for the too early breakdown is related to the fact that 
+the GR was kept at 0 V thanks to a bump-bond connection to the 
+readout chip; see also Figure~\ref{fig:bbs_over_gr}. This reduces the area where the voltage can drop from HV to 0 V. 
+
+
+
+
+Despite the too early breakdown voltage it was possible to use LPNHE4 to record events from a  $^{90}$Sr source. The detector was biased at  
+$V_{bias} = $~80~V, 2 million events were recorded and the resulting 
+hit map is reported in Figure~\ref{fig:lpnhe4_source_scan}; the source halo is clearly visible. This result makes us confident that the sensor itself is still alive.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.65\textwidth]{LPNHE4_source_scan.pdf}
+\caption{\label{fig:lpnhe4_source_scan}LPNHE4: $^{90}$Sr source scan after two million events. The bias voltage was $V_{bias} = $~80~V.}
+\end{figure}
+
+\subsection{Conclusions on the Edgeless Sensors}
+It was shown that the active edge technology allows a drastic reduction of the  dead area at the detector periphery. The doped trench at the detector edge allows the depleted area to extend almost to the border of the silicon sensor, without drawing any current from the edge,
+and making it possible to have a hit efficiency higher than 90$\%$ up to 80 $\mu$m from the last pixel cell,
+hence
+assuring very high hit efficiency almost everywhere in the detector volume.
+It was also shown that the presence of guard rings does not degrade the hit  efficiency; on the contrary, guard rings help the lateral extension of the depleted region and don't interfere severely with charge collection, making it possible at the same time to achieve a high hit efficiency in the sensor edge area and fairly large operation voltages.
+
+New planar pixel productions exploiting the active edge technology are under development at FBK-Trento, in collaboration with LPNHE-Paris and INFN-Italy. The goal is to reduce the sensor thickness, to better cope with the radiation damage, to further reduce the size of the insensitive edge area and to have smaller pixels for better performance at higher particle rates.
+
 \section{Summary and Outlook}
 \label{sec:itksummary}
+
+The High Luminosity LHC will allow to achieve instantaneous luminosities a factor of five larger than the 
+LHC nominal value, thereby enabling the experiments to enlarge their data sample by one order of 
+magnitude compared with the LHC baseline programme.
+
+With the integrated luminosity of 3000\invfb expected by the end of the HL-LHC phase, ATLAS and CMS 
+collaborations will be able to make Higgs couplings measurements at the \% level; 
+these and other measurements are crucial because deviations of the Higgs boson properties from the SM 
+expectations would indicate the existence of new physics. 
+Furthermore, the HL-LHC will provide experimental access, for the first time, to Higgs boson couplings to particles of the second family through studies of the rare Higgs decays.
+Direct searches for new physics will continue at 
+the HL-LHC with enhanced sensitivity. The discovery potential will increase  in terms of 
+masses of new particles compared with the baseline LHC programme, reaching several TeVs for singly-
+produced particles.
+
+Due to the higher beam luminosity in the HL-LHC era, in particular the larger number of protons per bunch, 
+the ATLAS and CMS experiments will have to cope with an average of 140 simultaneous proton-proton 
+interactions occurring at each crossing of the two beams every 25 ns, with maximum 
+values extending up to 200 interaction events per crossing. This is only one example of the challenges the 
+experiments will have to face to operate at the HL-LHC.
+ ATLAS  will undergo substantial upgrades to be able to cope with the increased luminosity of the HL-LHC 
+and with the harsher environment arising from the larger event pileup. Furthermore, some of the detector 
+components will near the end of their lifetime at the beginning of the next decade due to radiation damage, 
+and will need to be replaced. The higher luminosity  requires highly-granular, very radiation-hard silicon 
+tracking devices in the regions closer to the beam line.
+
+
+The development of the components for the new ATLAS Inner Tracker (ITk) detector are ongoing.
+ R\&D activities in the sensor, read-out chip and infrastructure area show already feasible solutions for 
+ future modules concepts.
+
+ITk pixels sensors will have to face radiation fluences and doses 10 times higher and more than today. 
+Results on thin planar detectors are very promising in terms of hit efficiency. Active edge detectors 
+will assure the needed hermeticity close to the interaction point; this is crucial to avoid 
+degradation in vertexing efficiency and resolution, which would affect severely the  
+discovery potential in many important physics channels.
+
+The large radiation fluences will impact the charge collection efficiency of the ITk pixel modules. 
+It will be essential to optimise clustering, tracking, vertexing and flavour tagging algorithms to 
+make sure the highest precision physics results can be achieved even with a detector severely hit 
+by radiation damage. 
 
