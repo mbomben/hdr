@@ -16,7 +16,7 @@ will be presented in Section~\ref{sec:microchannels}.
 
 \section{Radiation Hard Pixels Sensors}
 \label{sec:PerspPixels}
-The results for  thin pixel detectors presented in~\ref{PAE2pixels} and for edgeless 
+The results for  thin pixel detectors presented in~\ref{sec:PAE2pixels} and for edgeless 
 ones in~\ref{sec:edgeless} are very promising in terms of hit-efficiency after irradiation of the former 
 and of performance at the detector edge for the latter. The next step is to prove that 
 thin edgeless pixel detectors are suited for the HL-LHC phase of ATLAS. For this a new 
@@ -91,36 +91,117 @@ than that of the calorimeter
 It is clear that the ATLAS Inner Tracker is of the uttermost importance for all
 the searches and studies of ATLAS. 
 As it was already mentioned in the previous Section, clustering, tracking, vertexing and flavour tagging 
-algorithms will need to be updated to reflect the 
-
-
-Finally, the impact of Radiation Damage on Higgs Analysis 
-will be presented in Section~\ref{sec:raddamHiggs}; 
-
-\subsection{Impact of Radiation Damage on Higgs Analysis}
-\label{sec:raddamHiggs}
+algorithms will need to be updated to reflect the changes in the inner tracker detector.
 
 A good  test case to 
-study the radiation damage impact  on physics analysis is offered by the $H\to\b\bbar$ decay channel; 
+study the radiation damage impact  on physics  performance and analysis is offered by 
+the $H\to\b\bbar$ decay channel; 
 this is a study case that is in 
 perspective very important given the excellent luminosity performance of LHC as we write.
 
-
+\subsection{Impact of Radiation Damage on Higgs Analysis}
+\label{sec:raddamHiggs}
+The decay of the SM Higgs boson to pairs of  $b-$quarks is expected to have a branching ratio of 58\% 
+for a mass of the Higgs boson $m_H$ of 125~GeV~\cite{ATLASHbb2017}.
+At the LHC the very large backgrounds arising from multi-jet production make the inclusive search
+extremely challenging. Careful reconstruction of secondary vertices is needed, to ensure 
+the correct association of $b-$vertices to the same primary vertex, rejecting the huge QCD $\b\bbar$ 
+background, but also to identify the flavour of the jets with good efficiency and high purity. 
+All these ingredients of course strongly depend on the tracker performance. 
+As shown in Chapter~\ref{chap:digi} radiation damage effects can already be measured in the actual 
+detector. Hence it would be very interesting to produce Monte Carlo simulations with a pixel 
+detector at a reduced charge collection efficiency and then process them using un-optimised 
+tracks reconstruction algorithms to see which is the impact of silicon pixel sensors hit by radiation 
+damage on jets flavour tagging and then on the $H\to\b\bbar$ analysis itself. 
+Two scenarios are possible:
+\begin{enumerate}
+ \item if algorithms performance are still acceptable then scenarios with different levels of charge collection 
+ losses can be simulated and analysed, to understand when the  algorithms will need to be optimised;
+ \item if there is the need to retune algorithms a study of their performance should be performed
+  as a function of the integrated fluence by the pixel detector; this could help in assessing better 
+  the systematic uncertainties to jet reconstruction and flavour tagging.
+\end{enumerate}
 
 
 
 \section{Microchannel Cooling for the ITK Pixels}
 \label{sec:microchannels}
-The cooling system for the ITk Strip and Pixel Detectors will be based on evaporating CO$_2$ in a liquid 
+
+The need of highly performing cooling systems using small amounts of fluids is nowadays mandatory for silicon detectors in fundamental physics and in general for all the applications requiring a high level of miniaturisation. There are indeed two conflicting trends concerning many modern devices: the need to dissipate increasing amounts of heat and and the quest for more compact and lightweight designs.
+
+One very promising solution consists in exploiting CO$_2$ latent and sensible heat, rather than sensible 
+heat only. 
+Indeed the cooling system for the ITk Strip and Pixel Detectors will be based on evaporating CO$_2$ in a 
+liquid 
 pumped cycle cooled by an external primary chilling source.  CO$_2$ cooling is chosen as this gives 
 significant mass savings inside the detector due to the possibility of having smaller diameter tubing than 
-conventional refrigerants or liquid cooling applications
+conventional refrigerants or liquid cooling applications.
 
 
-The two innermost barrel layers and the innermost end-cap ring layer are placed inside an Inner Support 
+The two innermost barrel layers and the innermost endcap ring layer are placed inside an Inner Support 
 Tube, allowing for their potential replacement. In contrast, the three outer barrel layers and three outer end-
-cap ring layers are between the Inner Sup- port Tube (IST) and the Pixel Support Tube (PST), and are, like 
+cap ring layers are between the Inner Support Tube (IST) and the Pixel Support Tube (PST), and are, like 
 the Strip Detector, designed to operate for the entire lifetime of the HL-LHC.
+
+The replacement of the innermost layers of the ITk pixel detector could offer the possibility to move from 
+a cooling system based on metal pipes to one based on microchannels etched in the silicon.
+
+Channels with a hydraulic diameter below 1 mm are defined as microchannels. Microchannels have been etched on many materials, like Polyimide, Silica Glass, Quartz, Steel, Silicon, Copper, 
+and more~\cite{KOSAR2010635}.
+In Figure~\ref{fig:uChannels} a sketch of pixel detector module with micro channel cooling system integrated.
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=1.0\textwidth]{uChannels.pdf}
+\caption{\label{fig:uChannels}Schematic sketch of a pixel detector module with micro channel cooling system integrated.}
+\end{figure}
+
+A cooling system based on CO$_2$ evaporating in microchannels etched in silicon   offers:
+\begin{itemize}
+\item very uniform and efficient heat removal; the channels position can be optimised to maximise the 
+cooling efficiency;
+\item reduction of all possible thermic transmission inefficiencies and  reflections to interfaces between 
+materials with different thermal properties thanks to the fact that the cooling unit is made of silicon as the 
+detector module;
+\item for the same reason above also mechanical stress due to thermal expansion will be minimised being 
+the system more homogenous;
+\item the system will be more lightweight in terms of material budget since made of silicon only, and 
+the material distribution will be more uniform with respect to a stave with a metal pipe.
+\end{itemize}
+
+
+For the future LHCb vertex detector a microchannel based cooling system was 
+proposed~\cite{1748-0221-8-04-P04004}. This is very promising since the LHCb experiment has 
+a fixed target geometry and mass can be placed immediately outside active elements. 
+For more classical collider experiments geometries like ATLAS the problem of having long barrel staves 
+(500-1000~mm) dictates the need of connecting many cooling units together. Low mass and high 
+pressure resistant connector are at the moment object of intense research. 
+
+Within the {\it REFLECS} and {\it REFLECS2} projects~\cite{REFLECS} microchannels-based cooling units, 
+created by etching silicon wafers, were created, with two scientific goals: realize cooling prototype units 
+for the future ATLAS Inner Tracker (ITk); study the basics of the two-phase microfluidics. If the first research 
+axe should be by now clear, for the second it must be said that at the moment a valid numerical model for 
+the two-phase fluid flowing in microchannels is missing~\cite{KIM201474}, especially in high pressure applications (50-200 
+bars and more).
+Once etched the silicon wafers where sealed by a pyrex wafer through anodic bonding. 
+Figure~\ref{fig:reflecs} shows details of the wafers produced at FBK within the project. 
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.49\textwidth]{Wafer.pdf}
+\includegraphics[width=0.46\textwidth]{restrictions.pdf}
+\caption{\label{fig:reflecs}Silicon etched microchannels. (left) Wafer of microchannels prototypes, 
+sealed by a pyrex wafer. (right) Channel restrictions to favour the start of the fluid boiling; channels are 
+120~$\mu$m deep and 60~(200)~$\mu$m in the narrow (wide) section.}
+\end{figure}
+Another research axis within these projects is the idea of using 3D printed ceramics connectors, 
+exploiting the good thermal specifications of ceramics. 
+
+The first samples from the REFLECS2 project wafers were cut and they will be soon connected 
+to a CO$_2$ plant for tests, using a high resolution camera to study the bubbles formation and the 
+biphasic flow. These data will be valuable to better understand the flow and boiling of two-phase fluid 
+in microchannels at high pressure. 
+
+These studies could lead to a microchannel based cooling stave for the replacement of the innermost 
+ITk layers.
 
 \chapter*{Summary}
 {\it La la la}
