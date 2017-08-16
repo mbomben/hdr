@@ -1,17 +1,85 @@
 \chapter{Perspectives}
+\label{chap:perspectives}
+In this Chapter future research topics in the domain of tracking at high luminosity colliders will be 
+presented.
+ The search for thin and edgeless pixel sensors will continue with new productions which will 
+ be tested throughly after irradiation to fluences expected at the HL-LHC (Section~\ref{sec:PerspPixels}). 
+ The data extracted from beam test measurements of irradiated 
+ pixel modules can be used to improve the modelling of radiation damage (Section~\ref{sec:PerspTCAD}).
+ Some comments will be made on the importance of optimising the 
+algorithm of clustering, vertexing, tracking and flavour tagging when the pixel sensors 
+will be severely hit by radiation damage (Section~\ref{sec:algos}).
+A novel solutions for thermal management and mechanical structures for  future silicon detector system 
+will be presented in Section~\ref{sec:microchannels}.
 
-Finally, the impact of Radiation Damage on Higgs Analysis 
-will be presented in Section~\ref{sec:raddamHiggs}; this is a study case that is in 
-perspective very important given the excellent luminosity performance of LHC as we write.
 
 
+\section{Radiation Hard Pixels Sensors}
+\label{sec:PerspPixels}
+The results for  thin pixel detectors presented in~\ref{PAE2pixels} and for edgeless 
+ones in~\ref{sec:edgeless} are very promising in terms of hit-efficiency after irradiation of the former 
+and of performance at the detector edge for the latter. The next step is to prove that 
+thin edgeless pixel detectors are suited for the HL-LHC phase of ATLAS. For this a new 
+planar pixel production was realised~\cite{SabinaTrentoWS2017} on high resistivity 6" $p-$bulk material 
+wafers; sensor wafers active thickness is as thin as 100~$\mu$m. Edgeless pixels detectors 
+compatible with the FE-I4 chip  have been designed, featuring a pixel-to-edge distance 
+as low as 50~$\mu$m. As we write some of these new pixel sensors prototypes are being bump-bonded 
+to FE-I4 chip and should be tested before the end of the year.
+Sensors compatible with the new RD53A chip prototype were included in the production, 
+with both 50~$\mu$m~$\times$~50~$\mu$m  and 25~$\mu$m~$\times$~100~$\mu$m pitch pixels. 
+The plan is to have some of them connected to  the  RD53A chip and test them on beam 
+next year.
+
+For both FE-I4 and RD53A modules the plan is to irradiate them at fluences of the order of
+ 1.0$\times10^{16}$~n$_{\rm eq}$/cm$^2$ and retest them on beam after irradiation. 
+This time, thanks to the deposition of   a layer of Benzocyclobutene (BCB) on the readout chip surface at 
+wafer level it will be possible to verify the efficiency at the detector edge after those very large fluences. 
+
+Diodes, test-structures and baby detectors will be irradiated too, to be then studied in laboratory 
+to extract valuable information to be used to better understand and model the effects of the radiation 
+damage in silicon.
+
+\section{Improved TCAD and Monte Carlo Pixels Simulations}
+\label{sec:PerspTCAD}
+
+Concerning radiation damage modelling for TCAD based simulations, as already mentioned in 
+Chapter~\ref{chap:TCAD} all of the radiation damage models work fine for certain type of sensors and 
+conditions even more so if they were tuned for specific measurements. 
+A nice review of the situation can be found in~\cite{GregorVertex2016}. 
+Despite the fact that the detector properties after irradiation depend on the initial detector material, particle  
+and energy of the irradiation step (one recent example is here~\cite{Allport2016}), an effort to 
+define a minimal set of radiation damage models should be pursued. This is very important in 
+view of the HL-LHC phase of ATLAS, where a mix of several hadrons with different 
+energies spectra will be responsible for the radiation damage to the tracking detector.
+Data from beam test campaigns will be fundamental, but also collision data from LHC Run~2~and~3 
+will be valuable for this purpose; indeed, given the excellent luminosity performance of LHC as we write, 
+effects due to radiation damage are already visible in the actual ATLAS tracker, as 
+shown in Chapter~\ref{chap:digi}.
+
+
+During the Phase-II  data taking of ATLAS it will be important to update often  the  Monte Carlo 
+simulations, following the changing conditions of the pixel detector due to the accumulated fluence. 
+Using more accurate radiation damage models in combination with a good knowledge of  the composition in 
+energy and particles of the radiation received by the detector, through an approach as the one outlined 
+in Chapter~\ref{chap:digi} reliable simulation of the  the detector behaviour will be prepared.   
+
+Accurate and detailed simulations of the pixel detectors after large irradiation fluences will be 
+also important during the preparation of the data taking at the HL-LHC but also during the actual 
+and next LHC Run. Clustering, tracking, vertexing and flavour tagging algorithms will need to be updated 
+to assure they will still deliver high performance on physics objects, even with a damaged tracking 
+detector. 
+
+\section{ITk Performance Optimisation}
+\label{sec:algos}
+
+The possibilities offered by the dataset foreseen at the HL-LHC are many. 
 For the search of Higgs boson decaying to second generation fermions, for other Higgs sector 
-studies, and for many New Physics (NP) scenarios not only outstanding tracking and vertexing of charged particles are needed but  excellent reconstruction of jets is mandatory  too. 
+studies, and for many New Physics (NP) scenarios not only outstanding tracking and vertexing of charged 
+particles are needed but  excellent reconstruction of jets is mandatory  too. 
 To achieve the highest possible performance tracker information should be exploited at maximum 
 together with calorimeter. 
 The chief advantages of integrating tracking and calorimetric information into one hadronic reconstruction
 step are~\cite{ATLASParticleFlow}:
-
 \begin{itemize}
 \item the momentum resolution of the tracker is significantly better than the energy resolution of the
 calorimeter for low-energy charged particles
@@ -20,11 +88,41 @@ than that of the calorimeter
 \item better association of low $p_T$ charged particles to the right jet
 \item better association to the correct production vertex so important reduction of degradation due to pile-up  
 \end{itemize}
+It is clear that the ATLAS Inner Tracker is of the uttermost importance for all
+the searches and studies of ATLAS. 
+As it was already mentioned in the previous Section, clustering, tracking, vertexing and flavour tagging 
+algorithms will need to be updated to reflect the 
 
-It is clear that the ATLAS tracking and vertexing detector, {\it i.e. the Inner Detector} is of the uttermost importance for all
-the searches and studies of ATLAS.
 
-\section{Impact of Radiation Damage on Higgs Analysis}
+Finally, the impact of Radiation Damage on Higgs Analysis 
+will be presented in Section~\ref{sec:raddamHiggs}; 
+
+\subsection{Impact of Radiation Damage on Higgs Analysis}
 \label{sec:raddamHiggs}
 
+A good  test case to 
+study the radiation damage impact  on physics analysis is offered by the $H\to\b\bbar$ decay channel; 
+this is a study case that is in 
+perspective very important given the excellent luminosity performance of LHC as we write.
+
+
+
+
+
 \section{Microchannel Cooling for the ITK Pixels}
+\label{sec:microchannels}
+The cooling system for the ITk Strip and Pixel Detectors will be based on evaporating CO$_2$ in a liquid 
+pumped cycle cooled by an external primary chilling source.  CO$_2$ cooling is chosen as this gives 
+significant mass savings inside the detector due to the possibility of having smaller diameter tubing than 
+conventional refrigerants or liquid cooling applications
+
+
+The two innermost barrel layers and the innermost end-cap ring layer are placed inside an Inner Support 
+Tube, allowing for their potential replacement. In contrast, the three outer barrel layers and three outer end-
+cap ring layers are between the Inner Sup- port Tube (IST) and the Pixel Support Tube (PST), and are, like 
+the Strip Detector, designed to operate for the entire lifetime of the HL-LHC.
+
+\chapter*{Summary}
+{\it La la la}
+\addcontentsline{toc}{chapter}{Summary}
+
