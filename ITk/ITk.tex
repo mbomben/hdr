@@ -273,7 +273,8 @@ radiation hard processed with multiple nested wells to allow CMOS electronics em
 shielding into the sensor substrate; and backside processing and
 thinning for material minimisation and backside voltage application.
 
-A typical CMOS sensor pixel cell with sensing substrate and a CMOS electronics layerembedded in multiple cells is shown in Figure~\ref{fig:DMAPS}.
+A typical CMOS sensor pixel cell with sensing substrate and a CMOS electronics layer
+embedded in multiple cells is shown in Figure~\ref{fig:DMAPS}.
 
 \begin{figure}[!htbp]
    \centering
@@ -295,7 +296,8 @@ The results within the demonstrator programme can be summarised as follows:
 and with spatial resolutions similar to those as hybrid pixels 
 \item DMAPS pixel sensors can stand radiation fluences of more than 1.0$\times10^{15}$~n$_{\rm eq}$/cm$^2$ when properly designed. This is demonstrated in Figure~\ref{fig:Eff_DMAPS} showing the 
 collection width obtained after irradiation to a neutron fluence of 8.0$\times10^{15}$~n$_{\rm eq}$/cm$^2$ 
-determined usingedge TCT measurements~\cite{1748-0221-12-02-P02021,5402213}.
+determined using
+edge TCT measurements~\cite{1748-0221-12-02-P02021,5402213}.
 \item  Test beam measurements have shown high rate capability as detectors bonded to the FE-I4.
 \item Fully monolithic DMAPS pixel sensors have been designed incorporating read-out architectures suitable to cope with the expected rates at the HL-LHC (such as column- drain architectures and direct hit transfer architectures). Such designs have been sub- mitted for fabrication in 2016 and are currently being evaluated.
 \end{itemize}
@@ -307,7 +309,8 @@ determined usingedge TCT measurements~\cite{1748-0221-12-02-P02021,5402213}.
    technique  as a function of bias voltage after 
    different irradiation fluences up to 8.0$\times10^{15}$~n$_{\rm eq}$/cm$^2$ for un-thinned detector 
    (700~$\mu$m thick) without back plane (full symbols) and 300~$\mu$m
-    sample with back plane(empty symbols). 
+    sample with back plane
+(empty symbols). 
 (After~\cite{1748-0221-12-02-P02021})}
 \end{figure}
 
@@ -654,9 +657,311 @@ bias voltages lower than 600~V.
 \section{Edgeless Pixel Sensors}
 \label{sec:edgeless}
 
-The fractions of inactive regions are kept low by having larger pixels at the edge and in the regions between chips, and by minimising the edge region while still preventing voltage breakdown.
+As for the IBL (see Section~\ref{sec:IBLoverview}) for the ITk pixel barrel layers too there will be no 
+space for module tiling in the $z$ (beam) direction. So the fractions of inactive regions have to be kept 
+low by having larger pixels at the edge and in the regions between chips, and by minimising the edge 
+region while still preventing voltage breakdown. 
+ The ITk specifications indicate that the distance from the active region to the cut edge of pixel modules has to be smaller than 100~$\mu$m~\cite{ITkStripsTDR} in all pixel layers and rings.
 
-The 3D sensor technology inherently allows for slim edges of 15-150~$\mu$m~\cite{1748-0221-10-03-C03031}.
+
+
+The 3D sensor technology inherently allows for slim edges of 15-150~$\mu$m~\cite{1748-0221-10-03-C03031}; planar sensors can adopt slim edge designs, as it was done for the IBL pixels sensors, or 
+an edgeless design, through the ``active edge'' technology.
+
+\subsection{The Active Edge Technology}
+
+The active edge is one of the possible choices to realize ``edgeless'' detectors, {\it i.e.} detectors with no (or very limited) insensitive area. Along the sensor border a trench is dug by deep reactive ion etch (DRIE), reaching through the whole thickness of the substrate (hence a support wafer is required).  The  trench is then doped with boron (for $p-$type bulks) and  filled with polysilicon. The cut realized through DRIE produces an edge region
+much less damaged than the one resulting from a standard diamond-saw cut. This leads to less generation centers hence lower leakage current generated at the border. Moreover, the edge doping prevents the depletion region from reaching the physical trench walls, hence carriers created at the edge  do not experience an electric field, are not effectively separated and just recombine, without contributing significantly to the device leakage current.
+Active edge technology can routinely obtain very uniform, well defined and narrow trenches, as shown for example in Figure~\ref{fig:trench}. For a 200~${\rm \mu}$m thick bulk the typical trench width is of~5~${\rm \mu}$m.
+
+\begin{figure}[!htpb]
+\begin{center}
+\includegraphics[width=0.40\textwidth]{trench.pdf}
+\caption{\label{fig:trench}SEM picture of  a test trench, after cleaving the wafer perpendicularly to the surface and to the trench itself.(After~\cite{bib:nim2012})}
+\end{center}
+\end{figure}
+
+\subsection{Edgeless $n-on-p$ Planar Pixel Sensors}
+The active edge technology was chosen  by LPNHE~\footnote{Laboratoire de Physique Nucleaire et de Hautes \'Energies (LPNHE), Paris, France; \url{http://lpnhe.in2p3.fr/}} for a  planar pixel production
+ with reduced inactive zone~\cite{bib:nim2012}.
+The production, composed of 200~$\mu$m thick $n-on-p$ sensors, was realised at FBK\footnote{FBK-CMM (Trento, Italy): \url{http://cmm.fbk.eu/}}.
+
+\subsubsection{The Active Edge Sensor Fabrication at FBK}
+Since the trench extends all the way through the sensor wafer thickness, the support wafer has to 
+be bonded to the sensor one before starting the etching step.
+Given the presence of the  support wafer  accessing the backside  after wafer-bonding is impossible.
+Thus, as first process steps, a uniform high-dose boron implant has been performed on the back side, 
+followed by a thermal oxide growth on
+both sides.
+
+Up to the trench definition, the process follows standard steps. Since the read-out electrodes are n-type, they will be shorted together by the electron
+inversion layer, induced by the positive fixed charge present in the oxide, unless a p-type implant, compensating such charge, surrounds the pixels.
+Both homogeneous (``p-spray'') and patterned (``p-stop'') implants have been used;
+the process splittings adopted in the fabrication batch only concern the presence and the doses of these implants,  as detailed in table~\ref{tab:isolation}.
+
+
+
+\begin{table}[!htpb]
+\caption{\label{tab:isolation}List of the different isolation solutions adopted in the process.}
+\begin{center}
+\begin{tabular}{cc}
+\hline
+p-spray    & p-stop \\
+\hline
+\hline
+  low dose &      absent\\
+  high   dose  &   absent\\
+  low   dose &     present\\
+  high  dose  &   present\\
+  absent  &   present
+\end{tabular}
+\end{center}
+\end{table}
+
+Two patterned high dose implants, a  phosphorus implant forming the pixel and GR junctions  and a boron implant for  the ohmic contact
+ to the substrate (``bias tab''), are then performed.
+
+The etching of the trench is accomplished by a Deep Reactive Ion Etching (DRIE) machine, the same used for the fabrication of
+3D detectors~\cite{bib:3DFBK}.
+In the latter case, a 10~${\rm \mu}$m diameter and 200~${\rm \mu}$m deep hole has to be etched; the etching mask is made  by multiple stacks of dielectrics
+ (oxide and nitride) plus a thick  photoresist.
+
+The trenches in an active edge sensor must be fully passing, {\it i.e.} their bottom  has to reach  the silicon oxide, which separates the active wafer from the 
+support wafer.
+In the etching of a trench, a problem arises from the fact that the photoresist tends to wear out and/or lift along the sides  of the trench, and then to be
+  a less effective mask. Thicker stacks of dielectrics are thus needed.
+
+After the trench is etched, its walls are boron-doped in a diffusion furnace.
+Thus, a continuous ohmic contact to the substrate  is created on the trench wall and to the backside.
+
+The trenches are then oxidized and filled with polysilicon.
+The remaining processing, arriving at the final device, whose cross-section is sketched in Figure~\ref{fig:pixel},
+is quite standard, and includes the following steps:
+\begin{itemize}
+\item contact opening
+\item metal deposition and patterning
+\item deposition of a passivation layer  (PECVD  oxide)  and patterning of the same in the
+ pad and bump-bonding regions.
+\end{itemize}
+
+\begin{figure}[!htpb]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{pixel_design_v3.png}
+\caption{\label{fig:pixel}Schematic section of the pixel sensor. The region close to the sensor's edge is portrayed, including the pixel closest to the edge,
+the edge region, including GRs (when present), the bias tab (present only on one edge of the device), the vertical doped trench, and the support wafer.}
+\end{center}
+\end{figure}
+
+Since some sensors were intended to  be bump-bonded to  FE-I4~\cite{FEI4} read-out chips, 
+it was necessary to select good sensors at the wafer level, by measuring their I-V characteristics.
+ For this purpose, an additional layer of metal was deposited over the passivation and patterned into stripes, each of them shorting together a row of pixels, contacted through
+ the small passivation openings foreseen for the bump bonding.
+This so-called {\it temporary metal} solution has already been adopted for the selection of good 3D FE-I4 sensors for the ATLAS IBL~\cite{bib:metal}.
+After the automatic current-voltage  measurement
+ on each FE-I4 sensor, the metal was removed by  wet etching, which does not affect the electrical characteristics  of the devices.
+Pictures of FE-I4 sensor pixels before and after the metal layer removal can be seen in Figure~\ref{fig:tempmetal}.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.39\textwidth]{annotated_temporarymetal.png}\\
+\includegraphics[width=0.39\textwidth]{notemporarymetal-izm.png}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Pictures of the pixels-side of a FE-I4 sensor. (left) Sensors before temporary metal removal; region covered with temporary metal and the trench are highlighted. (right)
+Same sensor as above (different scale, though)  after temporary metal removal.}
+\label{fig:tempmetal}
+\end{figure}
+
+To further proceed in module construction  the support wafer has to be removed. The approach followed is illustrated in Figure~\ref{fig:lapping}~\cite{Bomben:2013vua}. Each FE-I4 sensor is
+surrounded by the trench on all sides, so  the sensor is effectively isolated  on all sides from the silicon wafer.
+After having deposited a dicing tape on the pixel side, the support wafer can be back-lapped completely. Since the trench penetrates  the whole sensor wafer thickness,
+once the support wafer has been completely lapped, each sensor can separated from the others by removing the tape.
+
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.35\textwidth]{edgelesslapping.pdf}
+\caption{Sensors separation from wafer.}
+\label{fig:lapping}
+\end{figure}
+
+
+After the temporary metal and the support wafer removed, the diced sensors were ready to be 
+bump-bonded to the FE-I4 readout chip.
+
+
+\subsubsection{The Wafer Layout}
+The production included nine FE-I4 compatible pixel sensors, differing in the pixel-to-trench distance (100, 200, 300, and 400~${\rm \mu}$m) and in the number of the guard rings (0, 1, 2, 3, 5, and 10)
+surrounding the pixel area (see Figure~\ref{fig:pixel}).
+
+The sensor with 3 GRs and a 200~$\mu$m pixel-to-trench distance featured two different GR designs, and
+each of them is repeated twice.
+A list of the different FE-I4 sensor versions is reported in Table~\ref{tab:layout_split}.
+
+
+\begin{table}[!htpb]
+\caption{\label{tab:layout_split}List of FEI4 sensors.  The number of the sensors (first column) is reported for each combination of number of GRs and pixel-to-trench distance.
+Two different designs are envisaged for the sensor with 3 GRs and 200~$\mu$m pixel-to-trench distance. See text for more details.}
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+Multiplicity & Number of GRs & \begin{tabular}[x]{@{}c@{}}pixel-to-trench\\ distance (${\rm \mu m}$)\end{tabular}   \\
+\hline
+\hline
+1 & 0 & 100 \\
+1 & 1 & 100 \\
+1 & 2 &100 \\
+%3 & 200 \footnote{2 different designs} \\ 
+4 & 3 & 200 \\
+1 & 5 & 300 \\
+1 & 10 & 400
+\end{tabular}
+\end{center}
+\end{table}
+
+A bias tab for substrate biasing (either by probing or by wire bonding),
+ located internally to the surface delimited by the trench, was placed at about 1.5~mm from the pixelated area on
+one of the sides (see also Figure~\ref{fig:pixel}).
+
+The production included FE-I3~\cite{FEI3} compatible pixels, baby strips detectors and a  large number of test structures, {\it i.e.} square diodes and small arrays of FE-I4-like pixels, which differ in the number of
+GRs surrounding the active area and in the trench-to-pixel distance.  Several possible combinations  
+have been implemented, including all  those used for the FE-I4 sensors.
+The aim of these structures was to  test the isolation and to measure the high-voltage behavior before 
+and (possibly) after irradiation, in order to find the best sensor configuration
+ to be
+bump-bonded to the read-out chip and to select the best combination of GR number and trench distance 
+for  possible future productions.
+
+\subsubsection{Electrical Characterization}
+Only one out of 20 processed wafers was not usable due to bad wafer-bonding. The electrical characterization of the production for non-irradiated sensors was been performed~\cite{Bomben:2013cia}.
+It started with measurements on specially designed test structures, to assess mainly bulk and surface 
+properties, then tests on large sensors followed.
+The first part of the measurement program was carried mainly on structures reported in Figure~\ref{fig:pix_cap_struct}.
+
+ \begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=0.29\textwidth]{pixel_cap_struct.png}
+\includegraphics[height=0.335\textwidth]{testStruct.png}
+\caption{\label{fig:pix_cap_struct}Left: test structures consisting of 2 arrays of 9~$\times$~13 FE-I4-like pixel cells each (``interpixel structure'');
+the pixels in the left (right) structure have (no) field-plate.
+Right: test structures consisting of an array of 6~$\times$~30 FE-I4-like
+ pixel cells (``FE-I4 test structure''), where  all the pixels were shorted together.}
+\end{center}
+\end{figure}
+
+ A test structure consisting of an array
+ of 9~$\times$~13 FE-I4-like pixel cells was used to measure the interpixel  and the pixel-to-backside capacitance; the central pixel was isolated with respect to all the other pixels;
+ the first 8 neighbours were shorted together, but isolated from all the other remaining (which, again,  were shorted together). These structures are shown on the
+ left in Figure~\ref{fig:pix_cap_struct}, where two versions are present: one with metal field-plate and one without. ``Interpixel structure'' will be used for the sake of
+ brevity in the remaining of the text to refer to this structure.
+
+
+In Figure~\ref{fig:pix_cap_struct}, on the right, an array of 6~$\times$~30 FE-I4-like
+ pixel cells is shown; all the pixels were shorted together allowing the measurement of the current voltage characteristics  of the whole array and of the inner GR (if present),
+ and the break-down (BD) voltage dependence on
+ the number of GRs and on the pixel-to-trench distance. Several combinations of values for the latter parameters are present on the wafer; in
+ Figure~\ref{fig:pix_cap_struct}, on the right, a structure with a 200~$\mu$m pixel-to-trench distance and 2 GRs is shown. ``FE-I4 test structure'' will be used for the sake of
+ brevity in the remaining of the text to refer to this structure.
+
+For the interpixel structure, in Figure~\ref{fig:cv-testpixels}, the inverse of the square
+ capacitance between all the pixels and the sensor backside is presented
+ as a function of the bias voltage; the measurement was performed at a frequency of 10~kHz. From this measurement the sensors' depletion voltage was derived ($\sim$20~V).
+For the same structure, in Figure~\ref{fig:cv-testpixels}, the capacitance between the central pixel and  all the other ones 
+ is presented as a function of the bias voltage; the measurement has been carried out at three different frequencies $\nu$: 10, 100~kHz and 1~MHz.
+  It can be seen that the presence of a field-plate increases the interpixel capacitance. The coupling is particularly important due 
+ to the presence of the uniform p-spray implant. However, the level of capacitive coupling, even with  a field-plate, is acceptable in term of electronic noise for the read-out.
+
+
+
+\begin{figure}[tbp]
+\begin{center}
+\includegraphics[width=0.49\textwidth]{edgelessC-2V.pdf}
+\includegraphics[width=0.49\textwidth]{edgelessInterpixelCV.pdf}
+\caption{\label{fig:cv-testpixels}Measurements results for the intepixel structure; (left) inverse squared capacitance between all the  pixels and the sensor backside as a function of
+the bias voltage; both pixels with  and without field-plate were tested; (right)
+ interpixel capacitance for test structure with FEI4-like cells; the capacitance between the central pixel and
+all the other pixels surrounding it in the test structure  is reported as a function of
+the bias voltage for pixel cells with a field-plate, and
+without it; the results are reported for three different frequencies: 10, 100~kHz and 1~MHz.}
+\end{center}
+\end{figure}
+
+Using the interpixel structure  the interpixel resistance $\rm{R_{int}}$ was evaluated; the results are reported in Figure~\ref{fig:Rint} for the 2 different
+p-spray doses. It can be seen that for the high p-spray dose value, at depletion voltage, the interpixel resistance is four times larger than  the low
+p-spray dose corresponding value; nonetheless, excellent pixel isolation is already assured by low p-spray dose.
+After irradiation, this test will be  crucial  to prove the pixels isolation.
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{edgelessabsCompareRint.pdf}
+\caption{\label{fig:Rint}Interpixel resistance $\rm{R_{int}}$ as a function of the bias voltage for two different p-spray doses.}
+\end{center}
+\end{figure}
+
+ FE-I4 test structures  were used to evaluate the current voltage characteristics  of the production.
+The effect of GRs on the breakdown voltage can be seen in Figure~\ref{fig:IV_GRs},
+where the current-voltage curves of test structures featuring FEI4-like pixels and different number of GRs are reported;  the distance between the last pixels and the doped trench is 100~$\mu m$~\cite{1748-0221-12-05-P05006}. The breakdown voltage increases by more than 70\% (from 70 to 120~V) by adding a second, floating GR.
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.65\textwidth]{W95_test_structures_ITOT_100um.png}
+\caption{\label{fig:IV_GRs}Current-Voltage curves for
+ test structures featuring different number of GRs. The
+innermost GR, if present, was kept at ground voltage. The  shortest distance from the pixels to the trench is 100~$\mu m$. The measurement for the test structure with 2 GRs was taken at a lower temperature with respect to the other two samples.}
+\end{figure}
+
+
+\subsubsection{Beam test results}
+Three sensors were bump-bonded to FE-I4 readout chips at IZM Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and were evaluated on beam.
+
+\paragraph{Description of Tested Devices}
+The main difference among the three sensors is  the number of guard rings (GRs) surrounding the active area, ranging from zero to two. In Figure~\ref{fig:lpnhe5_4_7_pic} a detail of the
+sensor edge can be seen for all the three samples.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.30\textwidth]{fei4_100um_0GRs.jpeg}
+\includegraphics[width=0.30\textwidth]{fei4_100um_1GRs.jpeg}
+\includegraphics[width=0.30\textwidth]{fei4_100um_2GRs.jpeg}
+\caption{\label{fig:lpnhe5_4_7_pic}Microscope picture of corners of the  (left) LPNHE5, (middle) LPNHE4  and (right) LPNHE7 sensor. The black line at the top and on the right is the trench. The  shortest distance from the pixels to the trench is 100~$\mu m$ for all the three sensors. For LPNHE4 there is  one GR surrounding the pixel matrix; for LPNHE7 there are two GRs. The pictures show also a temporary metal strip~\cite{bib:metal} shorting the pixels: it was used at wafer level for checking the sensor current  but it was removed from the detectors tested in this work.}
+\end{figure}
+LPNHE5 has no GRs, LPNHE4 has one GR and LPNHE7 has two GRs. All sensors are 200~$\mu$m thick n-on-p and include a uniform p-spray implant on the pixels side to provide enough insulation among them. LPNHE4 and LPNHE5 sensors have, in addition, p-stops implants that surround the implants of pixels and GRs.
+The main  characteristics of the devices are summarized in Table~\ref{tab:device_charact}.
+
+\begin{table}[!htbp]
+\centering
+\caption{\label{tab:device_charact}Tested devices characteristics.}
+\smallskip
+\begin{tabular}{lcc}
+\hline
+\hline
+Name&Number of GRs& p-stop implant\\
+\hline
+LPNHE5 & 0 & yes\\
+LPNHE4 & 1 & yes\\
+LPNHE7 & 2 & no\\
+\hline
+\end{tabular}
+\end{table}
+
+
+The LPNHE4 module was used in an irradiation experiment before the beam tests. Laboratory measurements after irradiation showed that, due to the lack of  electrical insulation layer
+between the sensor and the FEI4-B readout chip (for a discussion of this issue see for example~\cite{rossi2006pixel}), it couldn't be biased up to full depletion. Hence there won't be results for irradiated detectors from this pixel sensors production.
+
+
+During all measurements the innermost GR, if present, was kept at
+ ground voltage by the FE-I4 readout chip; the second GR, when present, was left floating. The depletion voltage for all three devices was about 20~V.
+
+\paragraph{Detector Configuration}
+Before laboratory and beam tests the threshold and gain settings of the readout electronics are carefully tuned. When choosing the threshold, a compromise has to be found between a high threshold, which decreases the number of noise hits but decreases the signal efficiency as well, and a low threshold, with opposite effects. For our detectors, a typical threshold is 1400~e, which corresponds to a tenth of the expected most probable value signal amplitude due to a minimum ionizing particle (MIP) crossing the sensor at normal incident angle. A typical result from  threshold tuning\cite{FEI4,USBpix} can be see in Figure~\ref{fig:threshold}; the threshold dispersion is of the order 200~e. The signal amplitude in the sensor is measured in  units of Time over Threshold (ToT): a clock counts when the shaped signal  goes above threshold and stops when the signal falls below threshold; the difference between those two crossings is the ToT~\cite{FEI4}. During the tuning of the electronics, the correspondence between ToT value and input charge is calibrated.\\
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.65\textwidth]{lpnhe7_threshold_40V.png}
+\caption{\label{fig:threshold}Pixel threshold values for LPNHE7. On the abscissa is the pixel column index, on the ordinate axis is the pixel row index.
+The tuning target value was 1400~e; the sensor bias voltage was 40~V.}
+\end{figure}
+
 \section{Summary and Outlook}
 \label{sec:itksummary}
 
