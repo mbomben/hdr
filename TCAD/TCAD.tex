@@ -194,7 +194,30 @@ In a test to see how much the two products differ in terms of physics models it 
 that at least in two fundamental semiconductor physics observables they were quite far apart. 
 The result of the investigations are documented in~\cite{bomben_rd50_Torino}.
 
-The first observable under investigation was the thermal velocities of the carriers. The results 
+The first observable under investigation was the thermal velocities of the carriers. 
+Synopsys Sentaurus uses the following formulation as default for the carrier thermal velocities $v_{th,Syn}^{n,p}$:
+\begin{equation}
+v_{th,Syn}^{n,p} = v_0^{n,p}\sqrt{\dfrac{T}{300 K}},
+\label{eq:SynThVel}
+\end{equation}
+and the default values for $v_0^{n,p}$ are 2.04(1.56)$\times10^{7}$~cm/s.
+
+Silvaco Atlas default for the carrier thermal velocities $v_{th,Sil}^{n,p}$ is:
+\begin{equation}
+v_{th,Sil}^{n,p} = \sqrt{\dfrac{3kT}{M.VTHN(M.VTHP)m_0}},
+\label{eq:SilThVel}
+\end{equation}
+where $m_0$ is the electron rest mass. 
+For silicon the M.VTHN and M.VTHP parameters are functions of the temperature $T$:
+
+\begin{align}
+M.VTHN & = 1.045 + 4.5\times10^{-4}\,T\\
+M.VTHP & =    0.523 + 1.4 \times10^{-3}\,T -1.48\times10^{-6}\,T^2
+\end{align}
+
+The carrier thermal velocities $v_{th}$ where evaluated between T = 250~K and T = 350~K for both 
+Silvaco Atlas and Synopsys Sentaurus; 
+the results 
 are illustrated in Figure~\ref{fig:vtherm}.
 
 \begin{figure}[!htbp]
@@ -591,6 +614,8 @@ $\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$. The radiation damage model used w
 As it can be seen the simulated electric field is depending linearly on the bulk depth position, 
 as it happens before irradiation. 
 
+\subsection{Discussion on Radiation Damage Modelling and TCAD Simulations}
+\label{sec:TCADComparison}
 
 
 \section{Summary}
