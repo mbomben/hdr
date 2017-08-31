@@ -9,8 +9,11 @@
 \label{sec:CCEirr}
 
 In this Section estimates of the expected charge collection efficiencies 
-for irradiated pads will be derived under some simplicistic assumptions.
+for irradiated pads will be derived under some simplistic assumptions.
 
+\section{Introduction}
+In this part the assumptions made will be outlined after having reminded how signal is formed when 
+carrier moves towards the collecting electrodes.
 \subsection{Ramo theorem}
 \label{sec:CCEramo}
 The instantaneous current $i(t)$ appearing on the electrodes of a silicon pad can be expressed 
@@ -107,7 +110,7 @@ CCE=\dfrac{Q}{Q_0}=\Big[\dfrac{d_e+d_h}{w}\Big]-\Big(\dfrac{d_e}{w}\Big)^2\Big(1
 From Equation~\ref{eq:Qe} and~\ref{eq:Qh} it is also possible to get the contribution to $CCE$ 
 for electrons and holes separately. 
 
-\subsection{Predictions for interesting cases: unirradiated vs large fluences}
+\section{Predictions for interesting cases: unirradiated vs large fluences}
 
 \subsubsection{Unirradiated sensor}
 
@@ -146,7 +149,7 @@ The result  in Equation~\ref{eq:CCE_irr} means that in case of heavily irradiati
 can be effectively collected only within a distance from the electrode that is equal to the collection distance $d$; all the remaining $w-d$ have a negligible contribution. As for the unirradiated case, if holes are neglected the $CCE$ would be only about 1/2 of what it should be (in general
  the collection distances are different for electrons and holes).
 
-\subsection{Estimates for some scenarios}
+\section{Estimates for some scenarios}
 
 In Table~\ref{tab:cce_scenarios} some estimates for the CCE at certain fluences $\Phi$ for 
 certain diode thicknesses $w$ are reported.
@@ -199,8 +202,141 @@ than the diode one $w$.
 \chapter{Trap occupation probability}
 \label{sec:trapoccprob}
 
-\chapter{Additional Model Predictions}
-\label{sec:additional}
+The purpose of this section is to motivate the variations in the electric field profiles in Sec.~\ref{sec:Efieldmodelcomparisons} with changes in the defining parameters of the two-trap radiation damage model presented in Sec.~\ref{sec:Efieldmodelcomparisons}.  Many of the concepts described here are discussed in more detail in Ref.~\cite{LUTZ1996}.
+
+Variations in the electric field profile are driven by modifications to the space charge distribution.   The contribution to the space charge density from radiation damage is due to charged traps.  The Chiochia model has two non-degenerate traps with two possible charge states, one of them neutral.  A trap is occupied if it can emit an electron; a donor-like trap is charged if it is not occupied and an acceptor-like trap is charged if it is occupied.  For one of the two traps $t$ in the Chiochia model, the occupation probability $P_t$ can be estimated from its energy level $E_t$ and its electron and hole capture cross sections $\sigma_{n,p}$. Once the trap occupation probability is known, its average charge state $Q_t$  can be calculated.  In particular, $Q_t = (1-P_t)$ for donors and $Q_t=-P_t$ for acceptors.
+
+%Only non-degenerate traps with 2 possible charge states, one of them neutral, are treated.  A trap is called ``donor'' if it can be either neutral or positively charged; on the contrary, a trap is called ``acceptor'' if it can be either neutral or negatively charged. In the following we will refer to a trap in the non neutral state as ``ionized''.
+
+It is useful to start with the limiting cases.  When $E_t\sim E_c$ a donor trap is a shallow donor, which is most of the time ionized ($Q_t\approx +1$); on the contrary, when $E_t\sim E_v$ an acceptor trap is a shallow acceptor, which is most of the time ionized ($Q_t\sim -1$).  In contrast, the occupation probability is exactly 50\% at the Fermi energy level.  The intrinsic energy level $E_i= \dfrac{E_v+E_c}{2}+\dfrac{1}{2}k_BT\ln\Big(\dfrac{N_v}{N_c}\Big)\sim$~0.534~eV is almost exactly half way between the valence and conduction bands: $E_g=E_c-E_v$=1.09~eV.  In the Chiochia model, the acceptor (a) and donor (d) states are very close to the intrinsic energy: $E_a=0.525$~e and  $E_d=0.48$~eV ($kT\sim 0.023$~eV).  As the acceptor trap is only 0.031~eV above the intrinsic level (about 1.4~$kT$) and the donor trap is only 0.054~eV below the  intrinsic level (about 2.4~$kT$), small changes to the model parameters can result in significant changes in the space charge.
+
+%If the traps are within few $kT$ from $E_i$ the trap occupation probability $P_t$ will be not simply 0 or 1. For the sake of radiation damage we are indeed interested in traps close to the intrinsic energy level, $E_i$. For reference the TCAD simulations presented in this paper where run at $T=263.15$~K; hence the value of thermal energy  was $V_{th}\sim 0.023$~eV, to be compared to the intrinsic energy level, $E_i= \dfrac{E_v+E_c}{2}+\dfrac{1}{2}k_BT\ln\Big(\dfrac{N_v}{N_c}\Big)\sim$~0.534~eV; for the sake of completeness: $E_g=E_c-E_v$=1.09~eV, $N_c$=2.3$\times$10$^{19}/\text{cm}^3$ and $N_v$=8.54$\times$10$^{18}/\text{cm}^3$. For example, in Chiochia model~\cite{Chiochia1}  we have $E_a=0.525$~eV and  $E_d=0.48$~eV. So the acceptor trap is 0.031~eV above the intrinsic level (about 1.4~$V_{th}$); the donor trap is 0.054~eV below the  intrinsic level (about 2.4~$V_{th}$).
+
+The full expression for the occupation probability for a trap $t$ is given by~\cite{LUTZ1996}
+
+\begin{equation}
+  P_t=\dfrac{1}{1+\dfrac{c_pp+c_nn_ix_t}{c_nn+c_pn_i/x_t}},
+  \label{eq:Pt}
+\end{equation}
+
+%\begin{equation}
+ % (1-P_t)=\dfrac{1}{1+\dfrac{c_nn+c_pn_i/x_t}{c_pp+c_nn_ix_t}}
+ % \label{eq:oneminusPt}
+%\end{equation}
+
+\noindent where $x_t(E_t)=e^{\dfrac{E_t-E_i}{kT}}$, $c_{n,p}=v_{th_{n,p}}\sigma_{n,p}$ for electron/hole thermal velocities $v_{th_{n,p}}$, and $n_i$ denotes the intrinsic carrier concentration.  If the bulk is depleted, hence the electron and hole concentrations are negligible with respect to the intrinsic one ($n,p\ll n_i$), then the Eq.~\ref{eq:Pt} simplifies to:
+
+\begin{equation}
+P_t=\dfrac{c_p/x_t}{c_nx_t+c_p/x_t}=\dfrac{1}{1+\dfrac{c_nx_t}{c_p/x_t}}
+\label{eq:simplePt}
+\end{equation}
+
+%With ~\cite{LUTZ1996} we define:
+%\begin{equation}
+ % x(E)=e^{\dfrac{E-E_i}{kT}}
+  %\label{eq:xE}
+%\end{equation}
+
+%and the capture coefficients for electrons and holes, $c_{n,p}=v_{th_{n,p}}\sigma_{n,p}$ ($v_{th_{n,p}}$ are the elecontron/hole thermal velocities).
+
+%Using the above definitions, we can then write $P_t$ and $1-P_t$:
+
+%\begin{equation}
+ % P_t=\dfrac{1}{1+\dfrac{c_pp+c_nn_ix_t}{c_nn+c_pn_i/x_t}}
+  %\label{eq:Pt}
+%\end{equation}
+
+%\begin{equation}
+ % (1-P_t)=\dfrac{1}{1+\dfrac{c_nn+c_pn_i/x_t}{c_pp+c_nn_ix_t}}
+ % \label{eq:oneminusPt}
+%\end{equation}
+
+%($n_i$ is the intrinsic concentration).
+
+%If the bulk is depleted, hence the electron and hole concentrations are negligible with respect to the intrinsic one ($n,p<<n_i$), then the Equations~\ref{eq:Pt} and~\ref{eq:oneminusPt} simplify to:
+
+%\begin{equation}
+%P_t=\dfrac{c_p/x_t}{c_nx_t+c_p/x_t}=\dfrac{1}{1+\dfrac{c_nx_t}{c_p/x_t}}
+%\label{eq:simplePt}
+%\end{equation}
+
+%and:
+%\begin{equation}
+%1-P_t=\dfrac{c_nx_t}{c_nx_t+c_p/x_t}=\dfrac{1}{1+\dfrac{c_p/x_t}{c_nx_t}}
+%\label{eq:simpleoneminusPt}
+%\end{equation}
+
+The space charge density (in units of elementary charge per volume) is then given by $\mathcal{Q}_t = N_t(1-P_t)$ for donors and $\mathcal{Q}_t = N_tP_t$ for acceptors.  By substituting Eq.~\ref{eq:simplePt} into these formulae, it is possible to assess the impact of changes in $E_a,E_d,\sigma_{d,n},\sigma_{d,p},\sigma_{a,n},\sigma_{a,p},\eta_a$, and $\eta_d$ on the space charge density.  The relationships are concisely summarized in Table~\ref{tab:trapEnergy} for the energy levels and Eq.~\ref{tab:cross_sections} for the capture cross-sections and introduction rates.  An upward or downward pointing arrow indicates how the parameter in the second columns of the table is changed.  Then, the penultimate and final columns indicate the trend in the occupation probability and average charge.  For $\eta$, a higher rate (lower) rate results in a higher (lower) space charge density: positive for donors, negative for acceptors.  The more negative the space charge, the stronger the electric field is near the front (bias electrode) side of the sensor and vice versa.
+
+%Trap energy is defined in Silvaco\footnote{www.silvaco.com} as shown in Figure~\ref{fig:SilvacoTraps}. For consistency with what indicated in notes etc., we rename the trap energies in the following way: $E_a=E_{tA}$ and $E_d=E_{tD}$.
+
+%\begin{figure}[htbp]
+  %   \centering
+    %    \includegraphics{figures/efield_maps/SilvacoTraps.png} 
+     %   \caption{Definition of trap energy in Silvaco. \url{www.silvaco.com}}
+      %        \label{fig:SilvacoTraps}
+       %     \end{figure}
+
+%Before moving to the detailed study of the impact of each parameter on trap occupation probability, hence space charge, it is worth comment quickly on the energy of the deep level. Let's start with donor traps. Moving its energy $E_t$ from the valence to the conduction band the occupation probability goes from 1 to 0, hence the status from neutral to positively charged. For the acceptor trap the opposite goes: moving the energy  $E_t$ from the valence to the conduction band the occupation probability goes from 1 to 0, hence the status from negatively  charged to neutral.
+
+%So if we now use the $E_d$ and $E_a$ symbols we can summarise the situation as in Table~\ref{tab:trapEnergy}.
+
+
+\begin{table}[htbp]
+   \centering
+   \begin{tabular}{lccccc} 
+      Parameter   & Increasing? Decreasing? & closer to?& $P_t$ & $Q_t$  \\
+      \hline
+      \hline
+      $E_d$   & $\nearrow$  &      $E_c$& $1\to0$ & $0\to+$  \\
+      $E_d$    & $\searrow$ &      $E_v$     & $0\to1$ & $+\to0$  \\
+      \hline
+      $E_a$   & $\nearrow$ &      $E_v$& $0\to1$ & $0\to-$  \\
+      $E_a$    & $\searrow$ &     $E_c$ & $1\to0$ & $-\to0$  \\
+      \hline
+   \end{tabular}
+   \caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
+   trap energy values.}
+   \label{tab:trapEnergy}
+\end{table}
+
+%As already mentioned, all the changes mentioned above happen within few $kT$ around the intrinsic energy $E_i$.
+
+%Let's now consider the introduction rate $\eta$. Looking at Eq.~\ref{eq:Qdonors} and~\ref{eq:Qacceptors} it is clear that the higher (lower) $\eta$ the higher (lower) the space charge density, positive for donors, negative for acceptors.
+
+%Let's now focus on capture cross sections. The Table~\ref{tab:cross_sections} summarises the findings, based on Equations~\ref{eq:simplePt},~\ref{eq:simpleoneminusPt},~\ref{eq:Qdonors} and~\ref{eq:Qacceptors}.
+
+\begin{table}[!htbp]
+   \centering
+   \begin{tabular}{lccccc} % Column formatting, @{} suppresses leading/trailing space
+    Trap type&  Parameter   & Increasing? Decreasing? & $P_t$ & $Q_t$  \\
+      \hline
+      \hline
+      \hline
+     Donor & $\sigma_n$   & $\nearrow$  &       $1\to0$ & $0\to+$  \\
+     Donor &$\sigma_n$    & $\searrow$ &      $0\to1$ & $+\to0$  \\
+      \hline
+     Donor & $\sigma_p$   & $\nearrow$  &       $0\to1$ & $+\to0$  \\
+     Donor &$\sigma_p$    & $\searrow$ &      $1\to0$ & $0\to+$  \\
+      \hline
+      \hline
+    Acceptor  & $\sigma_n$   & $\nearrow$ &       $1\to0$ & $-\to0$  \\
+    Acceptor  & $\sigma_n$    & $\searrow$ &      $0\to1$ & $0\to-$  \\
+      \hline
+       Acceptor  & $\sigma_p$   & $\nearrow$ &       $0\to1$ & $0\to-$  \\
+    Acceptor  & $\sigma_p$    & $\searrow$ &      $1\to0$ & $-\to0$  \\
+      \hline
+   \end{tabular}
+   \caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
+   trap cross sections values.}
+   \label{tab:cross_sections}
+\end{table}
+
+
+
+
+%\chapter{Additional Model Predictions}
+%\label{sec:additional}
 
 %\chapter{Flavour Tagging Algorithm}
 	%\blindtext

@@ -578,11 +578,12 @@ The modules were tested on beam after each irradiation step at CERN H6 beam line
  The DUTs where mounted inside a box that shed them from light and kept them cold 
  ($\sim$-35$^{\circ}$C).
  
+ In what follows some results are presented for hit and charge collection efficiency~\cite{TrentoWS2017,AudreyPSD11}.
 
 
 \paragraph{Hit Efficiency}
 Hit efficiency were tested as a function of the bias voltage for both W80 and W30 after each irradiation 
-step~\cite{TrentoWS2017}. 
+step. 
 The results are reported in Figure~\ref{fig:HitEffW80W30} after the first irradiation step
 (see Table~\ref{tab:W30W80Irr}).
 
@@ -631,23 +632,48 @@ like the $n^+$ bias dot implant and the bias rail shorting the bias dots togethe
 
 The charge collection efficiency was studied for the W30 module after the  irradiation. The cluster charge distribution, measured in Time-over-Threshold bins of 25~ns~\cite{FEI4} was 
 fitted with a Landau function convoluted with a Gaussian. In Figure~\ref{fig:IrrCCE} the comparison 
-of the cluster charge distribution before and after the first irradiation step.
+of the cluster charge distribution for the W30 module before and after the first irradiation step, at 100~V and 600~V 
+bias voltage respectively.
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.75\textwidth]{IrrCCE.pdf}
+%\includegraphics[width=0.75\textwidth]{IrrCCE.pdf}
+\includegraphics[width=0.75\textwidth]{CCE_4e15_W30.pdf}
 \caption{\label{fig:IrrCCE}Cluster charge distribution, measured in ToT,  for the W30 module before and after the first irradiation 
-step.The fluence, the threshold, the tuning, the bias voltages and the fit results are indicated.}
+step; the bias voltages were 100~V and 600~V, respectively.}
 \end{figure}
 
 The module was tuned always with a threshold of 1000~e and 6 ToT corresponded to 6000e. 
 It can be seen that after the irradiation the most probable value (MPV) of the distribution is reduced 
 by about 33\%, going from 9 to 6.
 
+In Figure~\ref{fig:new_mpv_bias} the  cluster charge distribution for the for the W80 module  after the second irradiation 
+step, {\it i.e.} after a total fluence of 1$\times{16}$ n$_\text{eq}/\text{cm}^2$, at different bias voltages. 
+\begin{figure}[!htpb]
+\centering
+%\includegraphics[width=0.75\textwidth]{IrrCCE.pdf}
+\includegraphics[width=0.75\textwidth]{new_mpv_bias.pdf}
+\caption{\label{fig:new_mpv_bias}Cluster charge distribution, measured in ToT,  for the W80 module  after the second irradiation 
+step.}
+\end{figure}
+
+The module was tuned always with a threshold of 700~e and 8 ToT corresponded to 4000e. 
+The MPV of the cluster charge in ToT increases from $\sim$6 to $\sim$9 as the bias voltage
+ changes from 400 to 600~V. 
+ 
+ A crude estimation of the loss in the amount of collected charge 
+ can be made comparing Figures~\ref{fig:IrrCCE} and~\ref{fig:new_mpv_bias}. At 600~V, after 
+ a fluence of 1$\times{16}$ n$_\text{eq}/\text{cm}^2$, the 130~$\mu$m thick W80 detector 
+ collects about half of the charge it was collecting before irradiation.
+ 
+ 
+
 \paragraph{Comments}
 Thin planar detectors are envisaged for the ITk pixel detector. The results reported here for 100~$\mu$m 
-thick $n-on-p$ pixel modules are very promising since they exhibit an hit efficiency in excess of 
-97\% at a bias voltage of 600~V after a fluence of 1.0$\times{16}$ n$_\text{eq}/\text{cm}^2$. The tested 
+thick $n-on-p$ pixel modules are very promising since they exhibit an hit efficiency close to 
+97\% at a bias voltage of 600~V after a fluence of 1.0$\times{16}$ n$_\text{eq}/\text{cm}^2$; 
+the charge collected is half of the original one before irradiation.
+ The tested 
 modules were just 
 prototypes that used the existing FE-I4 readout chip. New thin pixels sensors prototypes, compatible 
 with the RD53A chip are in preparation; thanks to new readout chip, which should have 

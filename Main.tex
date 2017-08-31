@@ -32,7 +32,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   			Liste des fichiers à compiler					%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\includeonly{TCAD,Appendix,Foreword}
+%\includeonly{
+%dedication,
+%thanks,
+%Tk,
+%Perspectives
+%}
 
 
 
@@ -73,6 +78,10 @@
 		% Table des matières
 			\setcounter{tocdepth}{1}	% Pas besoin de trop détailler le sommaire ici (chapitres/sections)
 			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
+\includefrom{.}{dedication}
+	\newpage
+%\addcontentsline{toc}{chapter}{Acknowledgements}
+\includefrom{.}{Acknowledgements}
 			\tableofcontents
 		% Liste des figures
 			%\listoffigures
@@ -84,6 +93,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\setcounter{mtc}{3}	% "Corrige" les minitocs décallés à cause des chapter* (ex : table des matières)
 	\pagenumbering{arabic}
+	
 	\includefrom{.}{Foreword}
 	%\addcontentsline{toc}{chapter}{Foreword}
 	
@@ -116,7 +126,7 @@
 \clearpage
 \clearpage
 %\addcontentsline{toc}{chapter}{Bibliography}
-\bibliography{biblio}{}
 \bibliographystyle{atlasnote}
+\bibliography{biblio}{}
 
 \end{document}
