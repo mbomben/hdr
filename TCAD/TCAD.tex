@@ -3,7 +3,7 @@
 In this Chapter the basics of Technology Computer Aided Design, {\it TCAD}, simulations will be given. 
 After introducing TCAD simulation tools (Section~\ref{sec:TCADIntro}) and explaining their importance
  for the development of silicon detectors for HEP applications, some examples of TCAD based 
- studies will be given, both for sensor design optimisation and sensor simulation 
+ studies will be given, both for sensor design optimisation and device simulation 
  (Sections~\ref{sec:sensordesign} and~\ref{sec:sensorsimulation}). 
  In Section~\ref{sec:TCADfund} a discussion on the comparison of different TCAD tools is given, 
  with a particular focus on the modelling of fundamental semiconductor physics.
@@ -12,7 +12,8 @@ TCAD simulation, a topic of very large interest in view of the new trackers for 
 Pixel Detector (Chapter~\ref{chap:digi}), but also for the 
 the High Luminosity phase of the Large Hadron Collider (more details in Chapter~\ref{chap:ITk}).
 In Section~\ref{sec:TCADComparison} a detailed discussion on comparing Silvaco and Synopsys 
-TCAD tools when used for radiation damage modelling will be given. A summary will close this Chapter.
+TCAD tools when used for radiation damage modelling will be given. A general summary (\ref{sec:TCADSummary}) will close this 
+Chapter.
 
 
 \section{Introduction}
@@ -130,10 +131,10 @@ etching, oxide growing, doping implantation and diffusion and many more can be s
 These kind of studies are beyond the scope of this report; an example of such studies 
 can be found in~\cite{CISSIMDET2014}. 
 
-\section{Sensor Simulation}
+\section{Device Simulation}
 \label{sec:sensorsimulation}
 
-Sensor simulation allows to study the detector behaviour under numerous conditions like 
+Device simulation allows to study the detector behaviour under numerous conditions like 
 forward~/~reverse voltage, application of sinusoidal signals on electrodes, illumination with lasers or 
 generally light, generation of charge in the 
 bulk by charged particles, radiation induced traps in the bulk and at the surface, low temperature 
@@ -194,7 +195,9 @@ detectors  (see also~\ref{sec:edgeless}).
 
 \section{Discussion on Fundamental Parameters and TCAD Simulations}
 \label{sec:TCADfund}
-The two most used commercial TCAD products in the HEP community are Silvaco\footnote{\url{https://www.silvaco.com/products/tcad.html}} and Synopsys\footnote{\url{https://www.synopsys.com/silicon/tcad.html}}.
+The two most used commercial TCAD products in the HEP community for device simulations 
+are Silvaco Atlas\footnote{\url{https://www.silvaco.com/products/tcad.html}} and Synopsys 
+Sentaurus\footnote{\url{https://www.synopsys.com/silicon/tcad.html}}.
 
 In a test to see how much the two products differ in terms of physics models it turned out 
 that at least in two fundamental semiconductor physics observables they were quite far apart. 
@@ -216,7 +219,8 @@ v_{th,Sil}^{n,p} = \sqrt{\dfrac{3kT}{M.VTHN(M.VTHP)m_0}},
 \label{eq:SilThVel}
 \end{equation}
 where $m_0$ is the electron rest mass. 
-For silicon the M.VTHN and M.VTHP parameters are functions of the temperature $T$:
+For silicon the M.VTHN and M.VTHP parameters (the former for electrons, the latter for holes) 
+ are functions of the temperature $T$:
 
 \begin{align}
 M.VTHN & = 1.045 + 4.5\times10^{-4}\,T\\
@@ -301,7 +305,7 @@ theoretical expectations,  evaluation of the activation energy $E_{a}$ (Equation
 and scaling of leakage current with temperature. In what follows the findings of these 
 studies and the discussion.
 
-\subsubsection{Leakage Current Level}
+\paragraph{Leakage Current Level}
 
 
 
@@ -332,7 +336,7 @@ current properties in TCAD simulations is very well suited since it allows to st
 phenomenon without having to deconvolve from the current surface effects, trap assisted tunnelling 
 and others.
 
-\subsubsection{Temperature Dependence of Simulated Leakage Current and Activation Energy}
+\paragraph{Temperature Dependence of Simulated Leakage Current and Activation Energy}
 
 The change of leakage current was studied for the different scenarios outlined before. 
 For all temperature $T$ times scenario $S$ combination the leakage current $I_{leak}(V_{op};T;S)$ 
@@ -391,7 +395,7 @@ mechanism of temperature scaling is the same for all the configuration explored.
 not presented here, of setting the parameter $\alpha$ of Equation~\ref{eq:EgT} was tested too 
 but the results were deviating too largely from Equation~\ref{eq:ITfunc} hence considered 
 unphysical. 
-\newpage
+
 In all scenarios the parameter $n$, when unconstrained, is compatible with the value of 2. So 
 in the rest of the discussion we will consider only the case when $n=2$ (Figure~\ref{fig:Ea_Fit}).
 A couple more scenarios where studied ($E^{Sil}_g(300)=1.09$~eV~and~1.11~eV) with the 
@@ -415,7 +419,7 @@ The activation energy range obtained from Equation~\ref{eq:Ea_vs_Eg} does not in
 the value found in literature of 1.21~eV~\cite{Chilingarov_tscale} for bandgap energies between 
 1.08~and~1.12~eV.
 
-\subsubsection{Leakage Current Rescaling Based on Temperature}
+\paragraph{Leakage Current Rescaling Based on Temperature}
 
 The relation~\ref{eq:Ea_vs_Eg} was  used with Equation~\ref{eq:IleakT} to rescale 
 leakage currents from different temperatures to the reference temperature, $T=293.15$~K 
@@ -453,11 +457,12 @@ The average value of the ratio is about 0.4522$\pm$0.0022 which is very close to
 prediction based on Equation~\ref{eq:IleakT} used with relation~\ref{eq:Ea_vs_Eg}.
 
 
-\subsubsection{Summary}
+\paragraph{Summary}
 It was shown that there are significant differences between the Synopsys and Silvaco TCAD tools 
-on what concerns fundamental parameters like thermal velocities and bandgap energy. 
-If for the former a simple rescaling of the carrier effective masses seem sufficient (more in 
-the next section), the bandgap energy difference needs a more careful treatment. 
+on what concerns fundamental parameters like thermal velocities and bandgap energy. It is likely the 
+two tools differ on other important aspects but  two rather fundamental ones were already reported here.
+If for  thermal velocities a simple rescaling of the carrier effective masses seem sufficient (more in 
+the Section~\ref{sec:TCADComparison}), the bandgap energy difference needs a more careful treatment. 
 
 It was shown that, despite the very low default value in Silvaco (1.08~eV at 300~K), the 
 simulated leakage current level is in agreement with expectations based on intrinsic concentration 
@@ -467,9 +472,11 @@ in simulated data is is very low, though: 1.17~eV maximum with respect to 1.21~e
 It was proved that it is possible to effectively rescale the simulated leakage currents from different temperatures to 20$^{\circ}$~C as it is done for real data, once the appropriate activation energy 
 value for simulations is used.
 
-In conclusion it seems possible to use TCAD Silvaco tools to perform reliable simulation studies 
-on Silicon detectors using the default parameters values, even if they appear to differ significantly 
-from the measured ones. 
+In conclusion a working solution has been found for the Silvaco Atlas tool  for what concerns the bandgap 
+energy and the carriers thermal velocities, to make its predictions in agreement with data. 
+Still it is a non perfect solution; it would preferable to have reliable results from simulations
+ when the bandgap energy is set to its known value from literature and the derived activation energy close 
+ to the published data.
 
 
 \section{Modelling Radiation Damage in TCAD Simulations}
@@ -626,7 +633,7 @@ $\Phi = 2.0\times10^{15}$~n$_{\rm eq}$/cm$^2$. The radiation damage model used w
 As it can be seen the simulated electric field is depending linearly on the bulk depth position, 
 as it happens before irradiation. 
 
-\section{Discussion on Radiation Damage Modelling and TCAD Simulations}
+\section{Comparison of Radiation Damage Modelling in TCAD tools}
 \label{sec:TCADComparison}
 As done for the un-irradiated detectors, a comparison between Silvaco Atlas and Synopsys Sentaurus 
 was done for detectors simulated as if they were irradiated. The goal was to see if the results in terms of 
@@ -754,7 +761,10 @@ each other:
 \subsection{Conclusions}
 As for the un-irradiated case, also for irradiated detectors it was shown that the default bandgap energy 
 value in Silvaco Atlas is the one that gives the best results, both in terms of agreement with Synopsys 
-Sentaurus and in reproducing real data. 
+Sentaurus and in reproducing real data. It is very important to validate radiation damage models 
+developed on one tool using the other one, as it was shown above. 
+Similar studies are planned for other radiation damage 
+models. 
 
 \section{Summary}
 \label{sec:TCADSummary}
@@ -762,11 +772,14 @@ Sentaurus and in reproducing real data.
 In this Chapter the basics of TCAD simulation of silicon detectors for HEP were presented. 
 The motivations for such simulations were discussed and some examples outlined. 
 It was shown that, despite some inconsistencies on measured fundamental parameters, TCAD 
-simulations can be used to get reliable predictions. 
+simulations can be used to get reliable predictions once some important corrections are applied. 
+The situation is far from optimal, in particular when it comes to the simulations of irradiated 
+detectors. The best would be to find a common set of parameters for both simulation tools, 
+verify that the predictions from the two programs are compatible when this set is used and then 
+stick to that set. This is part of an activity ongoing within the RD50 collaboration~\cite{RD50}.
 
-The interest of using TCAD simulations together with beam test data from heavily irradiated detectors 
-was discussed. The issue of the proper choice of radiation damage models for TCAD simulations 
-was  mentioned; its importance will be evident  in Chapter~\ref{chap:digi} and~\ref{chap:ITk} . 
-
+The issue of the proper choice of radiation damage models for TCAD simulations 
+and the interest of using TCAD simulations together with beam test data from heavily irradiated detectors 
+was discussed; its importance will be evident  in Chapter~\ref{chap:digi} and~\ref{chap:ITk} . 
 
 
