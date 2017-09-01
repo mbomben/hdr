@@ -390,7 +390,7 @@ over the entire sensor. Strips with efficiency below 1\% where declared as dead 
 analysis. An electrical analysis after the testbeam confirmed that  the dead strips 
 were indeed disconnected/malfunctioning channels. 
 
-The spatial resolution performance of the striplets will be discussed in a separate Section (\ref{sec:striplets_res}).
+The spatial resolution performance of the striplets will be discussed in detail in the next Section.
 
 \section{Discussion of the Striplets Spatial Resolution}
 \label{sec:striplets_res}
@@ -398,6 +398,19 @@ The spatial resolution performance of the striplets will be discussed in a separ
 In this Section the spatial resolution of the striplets will be discussed in detail. 
 
 \subsection{Residuals and Spatial Resolution}
+
+The spatial resolution performance of position sensitive silicon detectors depends on various factors; 
+some of them are related to the physics processes of charge creation and transport, others to 
+the detector characteristics. 
+Among the former there is the statistical fluctuation 
+of the energy loss 
+ and the diffusion of the charge carriers produced by the MIP: the carriers created by a traversing MIP 
+ spreads  due to diffusion according to $\sigma = \sqrt{2Dt}$ where $D$ is the diffusion constant and 
+ $t$ is the time the carriers travel to reach the collecting electrode; typical values of the diffusion 
+ spread $\sigma$ are of few $\mu$m for detector thicknesses of 100-200~$\mu$m when the  
+  carriers velocities are saturated.
+Factors that influence the spatial resolution that are related to the  detector characteristics are the 
+analog or digital readout, the detector pitch and the signal-to-noise ratio.
 
 Spatial resolution is usually estimated by taking the RMS of the residuals distribution. Residuals are 
 defined as the difference between the position of the DUT hit associated to a track and 
@@ -413,7 +426,7 @@ telescope planes) and the RMS deviation due to MS,
 \end{equation}
 
 If the contribution of tracking and MS to the residuals is negligible with respect to the DUT 
-one then the DUT elementary cell, strip or pixel, can be resolved (examples can be found 
+one, then the DUT elementary cell, strip or pixel, can be resolved (examples can be found 
 in~\ref{sec:radhardpixels}); if not, then the residuals distribution 
 is usually well described by a Gaussian distribution. 
 

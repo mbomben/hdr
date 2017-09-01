@@ -585,7 +585,7 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
 Other important characteristics that can explain the success of silicon are its large abundance, 
 the possibility of changing its properties by doping, the existence of a natural oxide~\cite{Hartmann2012}.
 
-\section{Silicon Trackers}
+\section{Silicon Detectors}
 \label{sec:Trackers}
 We now focus on Silicon ionising particle detectors. They are all based on depleted $p-n$ junctions.  
 We will first review the formation of signals and then the different detectors that were and are used 
@@ -595,7 +595,9 @@ in high energy physics, in particular those relevant to this report.
 \label{sec:SigForm}
 
 A charged particle traversing the silicon sensor bulk produces electron holes pairs with a most 
-probable value (MPV) of 80 pairs per $\mu$m. Because of the sensor's reverse
+probable value (MPV) of 80 pairs per $\mu$m (the energy loss
+probability distribution is  described by the  Landau distribution~\cite{Landau:1944if}). 
+Because of the sensor's reverse
 polarization, the created charge carriers drift toward the sensor electrodes under the influence of
 the electric field present in the depleted region. This movement of the charge carriers in the electric 
 field induces signals on the readout electrodes.
@@ -696,7 +698,7 @@ strips crossing the surface
  improve the spatial resolution without increasing the number of channels to be 
  readout~\cite{TURCHETTA}. We will come back to the strip detectors and their spatial resolution in 
  more detail in 
- Chapter~\ref{chap:SLIM5}.
+ Section~\ref{sec:striplets_res}.
  
  Microstrip detectors where  the ohmic side is segmented too  are called {\it double-sided microstrip 
  detectors} (DSSDs); a scheme presenting the salient features of the DSSDs is shown in 
@@ -710,8 +712,7 @@ strips crossing the surface
 
   DSSDs allow the reconstruction of two coordinates in one detector layer; 
  this is very important to avoid deteriorating too much the spatial resolution 
- due to the so called ``multiple scattering'' effect - see for example~\cite{pdg}. This issue too 
- will be discussed in more detail in Chapter~\ref{chap:SLIM5}.
+ due to the multiple scattering. 
 
 One important limitation of the DSSDs is the non unambiguous particle position measurement when 
 more than one track is hitting the detector at the same time. As shown in the example 
@@ -890,7 +891,8 @@ temperature-dependent it is clear that radiation-induced changes of sensor prope
 annealing behaviour due to the many possible secondary defects~\cite{rossi2006pixel}.
 
 
-Among several defects detected with various techniques, there are some that prove to have a significant impacton the silicon diodes, being charged at ambient temperatures and thus, directly influencing the 
+Among several defects detected with various techniques, there are some that prove to have a significant impact
+on the silicon diodes, being charged at ambient temperatures and thus, directly influencing the 
 effective doping concentration $N_{eff}$. Their electrical parameters, energy level $E_a$ 
 and capture cross section $\sigma$ are given in Figure~\ref{fig:Defects}~\cite{DefectsVertexing2016}.
 

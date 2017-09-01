@@ -35,7 +35,8 @@
 %\includeonly{
 %dedication,
 %thanks,
-%Tk,
+%Digi,
+%ITk,
 %Perspectives
 %}
 
@@ -52,21 +53,11 @@
 \jurye{Anna Macchiolo}{Max-Planck-Institut for Physics, M\"unich}{Examinateur}
 \juryf{Daniela Bortoletto}{University of Oxford, Oxford}{Examinateur}
 \juryb{Achille Stocchi}{LAL, Orsay}{Rapporteur}
-%\ecole{l'\'{E}cole Nationale Supérieure des Mines de Paris}
 
-% Méta-données du PDF
-%\hypersetup{
-   % pdfauthor={Dorian Depriester},
-   % pdfsubject={Manuscrit de thèse de doctorat},
-   % pdftitle={Fluotournage à froid de tubes en TA6V},
-    %pdfkeywords={Fluotournage, déformation plastique, titane, TA6V}
-%}
+
 
 \input{babarsym}
 
-%\usepackage{mathptmx} % - sets \rmdefault to 'ptm', i.e. times
-%\renewcommand{\familydefault}{ptm} % using \rmdefault here doesn't work
-%\usepackage{kpfonts}
 
 \begin{document}
 
@@ -80,6 +71,7 @@
 			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
 \includefrom{.}{dedication}
 	\newpage
+ \pagestyle{fancy}
 %\addcontentsline{toc}{chapter}{Acknowledgements}
 \includefrom{.}{Acknowledgements}
 			\tableofcontents
