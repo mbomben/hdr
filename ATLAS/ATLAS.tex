@@ -15,27 +15,26 @@ Understanding the nature of electroweak symmetry breaking, and in particular  sp
 deciphering the Higgs mechanism, is the main goal of the ATLAS~\cite{AtlasDetector} and 
 CMS~\cite{CMSDetector} experiments at the LHC~\cite{LHCMachine}. 
 
-The LHC is an hadron accelerator and collider located about 100~m underground, in the former 
-Large Electron Positron (LEP) collider tunnel, at the French-Swiss border in the vicinity of Geneva. As LEP, LHC too was built by CERN, the European 
+The LHC is a hadron accelerator and collider located about 100~m underground, in the former 
+Large Electron Positron (LEP) collider tunnel, at the French-Swiss border in the vicinity of Geneva. As LEP, 
+the LHC too was built by CERN, the European 
 Organization for Nuclear Research. The LHC has a circumference of 27~km and uses 
 superconducting magnets to bend proton beams with energy up to a design value of 7~TeV; hence 
 the maximum achievable center-of-mass energy $\sqrt{s}$ for $pp$ collisions is of 14~TeV. The design instantaneous 
-luminosity of the LHC is of $L=1.0\times10^{34}$/cm$^{2}$/s, which is equivalent to 10/nb/s. 
-The $pp$ total cross section $\sigma_{tot}$ at $\sqrt{s}$ of 14~TeV is about 10$^8$~nb, 
-so the event rate at LHC is in the order of 10$^9$~Hz. 
+luminosity of the LHC is  $L=1.0\times10^{34}$/cm$^{2}$/s, which is equivalent to 10/nb/s. 
+The $pp$ total inelastic  cross section $\sigma_{tot}$ at $\sqrt{s}$ of 14~TeV is about 10$^8$~nb, 
+so the event rate at the LHC is in the order of 10$^9$~Hz. 
 The protons are packed in bunches of about 10$^{11}$ particles; the bunch crossing frequency $\nu$ is 
 of 40~MHz.  The ratio of event rate to $\nu$ gives the average number of $pp$ collisions per 
-bunch crossing, the so-called {\it pile-up}; it is customary indicated with $\mu$ and for the LHC 
+bunch crossing, the so-called {\it pile-up}; it is customarily indicated with $\mu$ and for the LHC 
 design values is of about 25 interactions per bunch crossing.
 
-At the LHC the physics cross-sections are dominated by QCD 
-jet production, which
-is many orders of magnitude larger than the production of the
+At the LHC the most probable inelastic event is the production of QCD jets, whose   cross-section is  many orders of magnitude larger than the production of the
 most interesting physics
-channels. The latter are usually characterised by electroweak cross-sections. Figure~\ref{fig:sec1_cross_lhc} shows the production cross-sections for several
+channels; the latter are usually characterised by electroweak cross-sections. Figure~\ref{fig:sec1_cross_lhc} shows the production cross-sections for several
 representative processes at hadron colliders, as a function of the center-of-mass energy.
-It can be seen that the  production cross section of a light Higgs is of the order of several tens of nb so 
-the Higgs boson is produced about once every billion collisions of the LHC.
+It can be seen that the  production cross section of a light Higgs boson ($m=150$~GeV) is of the order of a 
+few  nb so the Higgs boson is produced about once every billion collisions of the LHC.
 
 \begin{figure}[!htbp]
 \centering
@@ -44,15 +43,18 @@ the Higgs boson is produced about once every billion collisions of the LHC.
 \end{figure}
 
 As already mentioned in Chapter~\ref{chap:context}
-the two collaborations have both observed a boson compatible with the SM Higgs in 2012; 
+the ATLAS and CMS collaborations have both observed a particle (with mass $\sim$~125~GeV) 
+compatible with the SM Higgs boson in 2012; 
 since then the nature of that particle and its coupling to fundamental SM bosons and fermions 
-keep being pursued.  Recently ATLAS reported evidence of $H\to\b\b$ decay~\cite{ATLASHbb2017} 
-when produced in association with a $W$ or $Z$ boson; the CMS collaboration announced 
-the first observation of Higgs boson decays to $\tau$ leptons~\cite{CMSHtautau2017}. 
+keep being pursued.  Recently ATLAS reported evidence of the $H\to\b\b$ decay~\cite{ATLASHbb2017} 
+when it is produced in association with a $W$ or $Z$ boson; the CMS collaboration announced 
+the first observation (by a single experiment)
+ of Higgs boson decays to $\tau$ leptons~\cite{CMSHtautau2017}. 
 The search for the Higgs boson decaying to second generation fermions is next on the 
-agenda of the ATLAS and CMS collaborations (example:~\cite{ATLASHmumu2017}).
+agenda of the ATLAS and CMS collaborations (see for instance~\cite{ATLASHmumu2017}).
 
-Other than the Higgs, a central goal of the physics program of the LHC is the exploration of particles and 
+Other than the study of the Higgs boson,
+ a central goal of the physics program of the LHC is the exploration of particles and 
 interactions at the TeV energy scale, which may hold answers to some of the most profound questions in 
 particle physics, like what is dark matter made of and how the Higgs boson mass gets stabilised.
 
@@ -63,11 +65,11 @@ Figure~\ref{fig:intlumivsyear}~\cite{ATLASLumi}.
 \centering
 \includegraphics[width=0.62\textwidth]{intlumivsyear.png}
 \caption{\label{fig:intlumivsyear}Cumulative luminosity versus day delivered to ATLAS during stable 
-beams and for high energy p-p collisions. (After~\cite{ATLASLumi})}
+beams and for high energy $pp$ collisions. (After~\cite{ATLASLumi})}
 \end{figure}
 
 To exploit at best this dataset, to perform precision measurements 
-and to face the high interaction rates, radiation doses, particle multiplicities and energies of 
+and to face the high interaction rates, radiation doses, particle multiplicities and energies of the
 LHC $pp$ collisions the ATLAS detector was built. In the next Section the salient features of this 
 detector will be presented.
 
@@ -122,17 +124,15 @@ The outermost part of the detector is the muon spectrometer, which measures the 
 
 The proton-proton interaction rate at the design luminosity of $L=1.0\times10^{34}$/cm$^{2}$/s 
 is approximately 1 GHz, while the event data recording, based on technology and resource limitations, 
-is limited to about 200 Hz. For this purpose ATLAS designed 
-a three-level trigger system selects events to be recorded for offline analysis, to assure 
+is limited to about 1~kHz. For this purpose ATLAS designed 
+a  two-level trigger system selects events to be recorded for offline analysis, to assure 
 an overall rejection factor of $5\times10^{6}$ against minimum-bias processes while maintaining 
 maximum efficiency for the new physics. 
 The Level-1 (L1) trigger system uses a subset of the total detector information to make a decision on 
-whether or not to continue processing an event, reducing the data rate to approximately 75~kHz (limited 
-by the bandwidth of the readout system, which was upgraded to 100~kHz between Run~1 and Run~2). 
-The subsequent two levels, 
-collectively known as the high-level trigger, are the Level-2 (L2) trigger and the event filter. They provide 
-the reduction to a final data-taking rate of approximately 200~Hz (upgraded to 100~kHz between 
-Run~1 and Run~2)~\cite{AtlasTrigger2015}. A new Fast TracKer (FTK) system~\cite{FTKTDR} will 
+whether or not to continue processing an event, reducing the data rate to approximately 100~kHz between. 
+The subsequent  level is a software-based high-level trigger that 
+ provides 
+the reduction to a final data-taking rate of approximately 1~kHz~\cite{AtlasTrigger2015}. A new Fast TracKer (FTK) system~\cite{FTKTDR} will 
 provide global ID track reconstruction at the L1 trigger rate
 using lookup tables stored in custom associative memory chips for the pattern recognition.  This 
 system is currently being installed and expected to
@@ -144,7 +144,7 @@ be fully commissioned by the end of 2017.
 \label{sec:ATLASPixelDetector}
 
 This Section is devoted to the silicon pixel tracking system for the ATLAS experiment. 
-The pixel detector was initially composed of three barrel layers plus s a total of six disk layers, three at 
+The pixel detector was initially composed of three barrel layers plus  a total of six disk layers, three at 
 each end of the barrel region~\cite{AtlasPixels}. During the Long Shutdown 1 (LS1), between 
 the LHC Run~1 and Run~2 (see Figure~\ref{fig:HL-LHC-plan-2016-01}), a fourth barrel layer was inserted, at a smaller radius than the existing 
 pixel detector; it is called the Insertable B-Layer (IBL)~\cite{IBLTDR}.
@@ -157,12 +157,12 @@ detector length is 1442~mm.
 On top the different pixel layers are indicated; at the bottom the radii of the four barrel layers are shown, together with the distance from the interaction point of the beam pipe and support structures. (After~\cite{BACKHAUS201665})}
 \end{figure}
 
-This Section will cover first the physics motivations and the salient features of the original pixel detector, and later discuss the IBL. The material presented here is taken from~\cite{AtlasPixels}~and~\cite{IBLTDR}.
+This Section will cover first the physics motivations and the salient features of the original pixel detector, and later discuss the IBL. The material presented here is taken from~\cite{AtlasPixels,IBLTDR}.
 
 \subsection{Performance Requirements for the Pixel Detector and System Overview}
 \label{sec:pixeloverview}
 The pixel detector system is the innermost element of the ATLAS ID. The pixel detector contains 
-approximately 80 million channels and provides pattern recognition capability in order to meet the track 
+more than 80 million channels and provides pattern recognition capability in order to meet the track 
 reconstruction requirements of ATLAS at the full luminosity of the LHC ($L=1.0\times10^{34}$/cm$^{2}$/s). It is the most important detector used in the identification and reconstruction of secondary vertices from the decay of, for example, particles containing a $b$-quark or for $b$-tagging of jets. In addition, it provides excellent spatial resolution for reconstructing primary vertices coming from the $pp$ interaction region within ATLAS even in the presence of the multiple interactions at the LHC design luminosity. 
 
 In what follows the  performance requirements for the pixel detector will be presented, then 
@@ -300,9 +300,9 @@ The readout (R/O) architecture is ``datapush''.
 This means that each component in the chain (FE, MCC) always transmits at the maximum
 rate, and there is no busy mechanism to stop transmission when buffers are full. 
 
-The power supply system uses a combination of customized-commercial components and
-fully-custom components for the low (electronics) and high (sensor bias) voltages.
-The optical-links are custom made using commercial diode and laser array bare die with custom integrated circuits (DORIC and VDC) and packaging. An optical-interface card (Back of Crate or BOC) is also used for each ROD.
+%The power supply system uses a combination of customized-commercial components and
+%fully-custom components for the low (electronics) and high (sensor bias) voltages.
+%The optical-links are custom made using commercial diode and laser array bare die with custom integrated circuits (DORIC and VDC) and packaging. An optical-interface card (Back of Crate or BOC) is also used for each ROD.
 
 \subsubsection{Pixel Support and Services}
 \label{sec:pixelservices}
@@ -331,9 +331,7 @@ panels (Patch Panel 0-PP0) at the ends of the supporting spaceframe to the end o
 Tube.
 These services are supported by carbon fiber structures that also hold the beryllium vacuum pipe within 
 the Pixel Support Tube. Electrical, optical and cooling connections are made at the end of the Pixel 
-Support Tube at Patch Panel 1 (PP1). Connections and control of external services are made at 
-additional patch panels (PP2, PP3 and PP4) located within the ATLAS detector or near the ATLAS 
-control room complex.
+Support Tube.
 
 \subsection{Performance Requirements for the IBL and System Overview}
 \label{sec:IBLoverview}
@@ -345,8 +343,8 @@ new beam pipe and the pixel B-layer. The principal motivations for the IBL were:
 \item tracking robustness, to cope with predicted failures of the pixel layers, in particular the B-layer; 
   a loss of data in the B-layer
 seriously deteriorates the impact parameter resolution, directly affecting the $b$-tagging. The
-IBL estores the full $b$-tagging efficiency even in case of a complete B-layer failure.
-  \item Coping with luminosity effects, like increased event pileup which leads to to high occupancy that can induce readout inefficiencies. The presence of event pileup requires redundancy in
+IBL restores the full $b$-tagging efficiency even in case of a complete B-layer failure.
+  \item Coping with luminosity effects, like increased event pileup which leads to  high occupancy that can induce readout inefficiencies. The presence of event pileup requires redundancy in
 the measurement of tracks in order to control the fake rate arising from random combinations
 of clusters in events with high pileup background. The addition of the IBL layer, with
 comparably low occupancy, helps to preserve tracking performance in face of luminosity
@@ -382,14 +380,14 @@ and pipe size.
 The IBL modules are supported by means of fourteen local supports, the Staves, arranged cylindrically
 around the beam pipe. Some overlap between modules is provided by tilting each stave
 about 14$^{\circ}$. The nominal layer radius, that is the distance from the beam axis to the sensor's
-centre-of-mass, is $R$ = 33.25~mm. The $r\phi$ view of the IBL layout is shown in Figure~\ref{fig:IBLrphi}. The stave is $L$ = 724~mm long. 
+centre-of-mass, is $R$ = 33.25~mm. The $r\phi$ view of the IBL layout is shown in Figure~\ref{fig:IBLrphi}. The stave is $L$ = 724~mm long. The IBL was successfully installed in May 2014.
+
 
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{IBLrphi.png}
 \caption{\label{fig:IBLrphi}IBL layout: $r\phi$ view. (After~\cite{IBLTDR})}
 \end{figure}
-The IBL was successfully installed in May 2014.
 
 \subsubsection{IBL Pixel sensors}
 Two sensor technologies are used in the IBL: planar $n-on-n$ sensors of the same type
@@ -400,7 +398,7 @@ the silicon~\cite{PARKER1997328}. There can be varying numbers of electrodes per
 have an influence on charge collection and noise; for IBL a design with two electrodes per pixel was chosen. A schematic view of the 3D sensors is shown in Figure~\ref{fig:IBLtredi}.
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.65\textwidth]{tredi.png}
+\includegraphics[width=1.00\textwidth]{tredi.png}
 \caption{\label{fig:IBLtredi} Schematic cross-section of the 3D detector with passing-through columns from FBK (left) and
 with partial columns from CNM (right) fabricated on a $p-$type substrate (not to scale)(After~\cite{Darbo:2014kma})}
 \end{figure}
@@ -444,7 +442,7 @@ Instead of choosing one technology over the other it was decided in the end to u
 The frontend readout chip for IBL is the FE-I4~\cite{FEI4}. One FEI4 contains 26880 pixels which are arranged in 80 columns in $z$ and 336 rows in $\phi$. The size of one pixel is of course 
 250~$\mu$m~$\times$~50~$\mu$m.
 A crucial new feature of this chip with respect to the FEI3 readout chip is that the hits are stored in the 
-pixel cells. A hit is only read out if a trigger request matches its timestamp. Otherwise the hit is deleted. 
+pixel cells. A hit is only read out if a trigger request matches its timestamp, otherwise the hit is deleted. 
 This reduces bandwidth use and power consumption inside the chip and allows for far higher 
 occupancies.
 
@@ -454,7 +452,7 @@ Figure~\ref{fig:TwoFEIs} shows the FEI3 and FEI4 chip side-by-side.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.65\textwidth]{TwoFEIs.pdf}
-\caption{\label{fig:TwoFEIs}FEI3 and FEI4 chip side-by-side. Chip dimensions are indicated.}
+\caption{\label{fig:TwoFEIs}FEI3 and FEI4 chip side-by-side. Chips dimensions are indicated.}
 \end{figure}
 
 \subsubsection{IBL Structure}
