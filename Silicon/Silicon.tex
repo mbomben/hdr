@@ -12,10 +12,11 @@ the fundamental ideas about the $p-n$ junction (Section~\ref{sec:pnjunction}), a
 the Silicon dominance over the other semiconductors will be presented in Section~\ref{sec:Silicon}. 
 Silicon detectors and trackers will be presented in Section~\ref{sec:Trackers}, before concluding 
 the Chapter introducing the basic ideas about radiation 
-damage in silicon (Section~\ref{sec:RadDam}).
+damage in silicon (Section~\ref{sec:RadDam}), and with a short summary (\ref{sec:SiliconSummary}).
+ 
 \section{Semiconductor Basics}
 \label{sec:SCBase}
-In this Section only the concepts and equations that will be relevant for the discussion in the following 
+In this Section only the concepts and equations that will be relevant for the discussion in the subsequent 
 Chapters will be reviewed. 
 \subsection{Crystals and Energy Bands}
 
@@ -23,7 +24,7 @@ The physics of semiconductor devices is naturally dependent on the physics of se
 themselves~\cite{Sze1981}. In this brief introduction only crystalline semiconductors will be treated, 
 with a particular focus on silicon. Most commonly used semiconductors are crystals with 
 diamond (Si and Ge) or zinc blende ({\it e.g.} GaAs) lattice type. In Figure~\ref{fig:diamondLattice} 
-a schematic view of the diamond lattice is presented.
+a schematic view of the two arrangements is presented. 
 
 
 \begin{figure}[htbp]
@@ -52,10 +53,9 @@ the minimum total energy of the electrons and the lattice, not very far from the
  At low temperature one has a completely filled valence band and an empty conduction band; at room 
  temperature the thermal energy is high enough to lift a few electrons to the conduction band, thus 
  creating a weak conductivity due to free electrons and electrons vacancies, {\it i.e.} holes.
-In Figure~\ref{fig:EnergyBandGap} the energy band structures of several materials are reported. 
-From that Figure it can be seen that in semiconductors at low temperature one has a completely filled valence band and an empty conduction band; at room 
-temperature the thermal energy is high enough to lift a few electrons to the conduction band, thus 
-creating a weak conductivity due to free electrons and holes.
+In Figure~\ref{fig:EnergyBandGap} the energy band structures of several materials are reported, 
+including semiconductors.
+
  
  \begin{figure}[htbp]
    \centering
@@ -66,7 +66,7 @@ creating a weak conductivity due to free electrons and holes.
 \end{figure}
 
 
- The structure of an isolator, or insulator, is similar,  except that the band gap is much larger so that 
+ The structure of an isolator, or insulator, is similar to that of a semiconductor,  except that the band gap is much larger so that 
  the occupation probability of states in the conduction band is zero.   Conductors may either have 
  overlapping valence and conduction bands  or a partially filled conduction band. 
  We can conclude that the main difference between conductors, semiconductors and insulators 
@@ -104,8 +104,8 @@ between indirect semiconductors, like Silicon and Germanium, and direct ones, li
 For indirect semiconductors, the process of creation or annihilation of an electron-hole pair requires 
 not only a quantum of energy, like a photon, but also a net lattice momentum transfer, thanks to 
 phonons. In Silicon at room temperature the bandgap energy value is of about $E_g\sim1.12$~eV, 
-while the mean ionization energy is $\epsilon~3.6$~eV: the difference is due to the distance in the 
-lattice reciprocal space of the edge of conductive and valence band. 
+while the mean ionisation energy $\epsilon$ is $\sim$~3.6~eV: the difference is due to the distance in the 
+lattice reciprocal space of the edge of the conductive and the valence band. 
 
 \subsection{Extrinsic Semiconductors and Doping}
 
@@ -125,7 +125,6 @@ pairs, so we have:
 p=n,
 \label{eq:n=p}
 \end{equation}
-
 {\it i.e.} the concentration of electrons $n$ equals that of holes $p$. 
 We will assert the mass action law for semiconductors:
 \begin{equation}
@@ -141,10 +140,11 @@ $E_g$~\cite{Lutz:411172}.
 Intrinsic semiconductors are rarely used in semiconductor 
 devices since it is extremely difficult to obtain sufficient purity in the material. Moreover, in most cases 
 one intentionally alters the property of the material by adding small fractions of specific impurities. 
-This procedure is called doping.  Doping is the replacement of a small number of atoms in the lattice by 
+This procedure is called {\it doping}. 
+ Doping is the replacement of a small number of atoms in the lattice by 
 atoms of neighbouring columns from the atomic table (with one valence electron more or less compared 
-to the basic material). Depending on the type of added material, one obtains n-type 
-semiconductors with an excess of electrons in the conduction band or p-types with additional holes in 
+to the basic material). Depending on the type of added material, one obtains $n-$type 
+semiconductors with an excess of electrons in the conduction band or $p-$types with additional holes in 
 the valence band. 
 
 Doping Silicon with an element of the V group (P, As, Sb) leaves a valence electron of dopant atom 
@@ -161,7 +161,7 @@ minority ones.
    \includegraphics[width=0.45\textwidth]{nDopingBonds.pdf} 
    \includegraphics[width=0.35\textwidth]{nDopingBands.pdf} 
    \caption{\label{fig:nDoping}Doping Silicon with donor atoms. (Left) atom bonds with donor dopant; 
-   (right) energy bands diagram after donor doping. (After~\cite{Krammer}).}
+   (right) energy bands diagram after donor doping. (After~\cite{Krammer})}
 \end{figure}
 
 Doping Silicon with an element of the III group (B, Al, Ga, In) leaves one valence bond open; 
@@ -180,9 +180,9 @@ minority ones.
    \includegraphics[width=0.45\textwidth]{pDopingBonds.pdf} 
    \includegraphics[width=0.35\textwidth]{pDopingBands.pdf} 
    \caption{\label{fig:pDoping}Doping Silicon with acceptor atoms. (Left) atom bonds with acceptor 
-   dopant; (right) energy bands diagram after acceptor doping.(After~\cite{Krammer}).}
+   dopant; (right) energy bands diagram after acceptor doping.(After~\cite{Krammer})}
 \end{figure}
-In a doped semiconductor the relation $n=p$ doesn't hold, while the mass action law  
+In a doped semiconductor the relation $n=p$ does not hold, while the mass action law  
 (Eqution~\ref{eq:massLawAction}) still does. Semiconductors where $n\neq p$ are called
  {\it extrinsic}.
 In a doped semiconductor electrons are merely redistributed among the various energy states, 
@@ -246,6 +246,7 @@ review very briefly the mechanisms of transport of the
 carriers, the drift and the diffusion.
 
 If an electric field is present the charge carriers will be accelerated in between random collisions  
+with the lattice 
 (the typical time between collisions $\tau_c$ is of about 10$^{-12}$~s), 
 in a direction determined by the electric field and a net average drift velocity will be obtained, 
 equal to:
@@ -253,15 +254,15 @@ equal to:
 \vec{v}_n=-\dfrac{q\tau_c}{m_n}\vec{E}&=-\mu_n\vec{E}\label{eq:nDrift}\\
 \vec{v}_p=\dfrac{q\tau_c}{m_p}\vec{E}&=\mu_p\vec{E}\label{eq:pDrift}
 \end{align}
-$\vec{v}_n$ and $\vec{v}_p$ are the drift velocities.
+where $\vec{v}_n$ and $\vec{v}_p$ are the drift velocities.
 The parameters $\mu_n,\mu_p$ are the electrons and holes mobilities, respectively. 
 For fields small enough the mobilities are constant, while at large fields the carrier velocities 
-reach their saturation values $v_{s,n}$ and $v_{s,p}$. Mobilities depend on temperature and 
-doping levels too, other than on the electric field.
+reach their saturation values $v_{s,n}$ and $v_{s,p}$. Other than on the electric field mobilities depend on 
+temperature, and doping levels too.
 
 If we now consider an inhomogeneous distribution of free charge carriers in a semiconductor crystal 
 and neglect all effects that are due to electric fields it can be shown that there is a net flow 
-of charges to smooth the charge distribution. This effect is called diffusion and it is mathematically 
+of charges that smooths the charge distribution. This effect is called diffusion and it is mathematically 
 described by the diffusion equation:
 \begin{align}
 \vec{F}_n=-D_n\nabla{n}\label{eq:nDiff}\\
@@ -275,6 +276,7 @@ Combining the effects of drift and diffusion, one obtains the current densities:
 \vec{J}_n=q\mu_nn\vec{E}+qD_n\nabla{n}\label{eq:nCurrf}\\
 \vec{J}_p=q\mu_pp\vec{E}-qD_p\nabla{p}\label{eq:pCurr}
 \end{align}
+$q$ is the absolute value of the charge of the electron.
 
 Mobility and diffusion are related to each other by the Einstein equation:
 
@@ -315,14 +317,6 @@ The electric field $\vec{E}$ is linked to the charge distribution $\rho$ by the 
 where $\epsilon_{sc}$ is the relative permittivity of the semiconductor.
 %\showthe\font
 
-\begin{figure}[htbp]
-   \centering
-   \includegraphics[width=0.45\textwidth]{p_close_to_n.pdf} 
-   \includegraphics[width=0.45\textwidth]{pn_junction.pdf} 
-   \caption{\label{fig:pnJunction}P-n junction formation. (Left) Two oppositely doped semiconductors 
-   are compared. (Rigth) The p-n junction is formed. (After~\cite{Krammer}).}
-\end{figure}
-
 
 
 If in addition of an electric field a magnetic field is present too 
@@ -357,6 +351,14 @@ space charge and an electric field stopping further diffusion.
 The stable space charge region is free of charge carries and is called the depletion zone. 
 In Figure~\ref{fig:pnJunction} a p-n junction in thermal equilibrium, before and after its parts are 
 brought in contact.
+
+\begin{figure}[!htbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{p_close_to_n.pdf} 
+   \includegraphics[width=0.45\textwidth]{pn_junction.pdf} 
+   \caption{\label{fig:pnJunction}P-n junction formation. (Left) Two oppositely doped semiconductors 
+   are compared. (Rigth) The p-n junction is formed. (After~\cite{Krammer}).}
+\end{figure}
 
 
 
@@ -412,7 +414,7 @@ using again the Poisson's equation. It is instructive to express the result usin
 $\varrho$ of the doped semiconductor:
 
 \begin{equation}
-\varrho^{-1}=q(N_a\mu_h+N_d\mu_e)\simeq qN_{eff}\mu
+\varrho^{-1}=q(N_a\mu_p+N_d\mu_n)\simeq qN_{eff}\mu
 \label{eq:resisitivity}
 \end{equation}
 
@@ -443,13 +445,13 @@ In nowadays trackers for experiments at high energy colliders
 In $p-n$ junctions under reverse bias an electric field is present; if we refer to the case represented 
 in Figure~\ref{fig:AAJunction} the electric field distribution at depletion voltage along the bulk is like 
 the one shown in Figure~\ref{fig:AAEField}.
-
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
    \centering
    \includegraphics[width=0.45\textwidth]{E_Abrupt_Junction.pdf} 
     \includegraphics[width=0.45\textwidth]{Overdepleted_E_Abrupt_Junction.pdf}
-   \caption{\label{fig:AAEField}Electric field distribution in an abrupt asymmetric $n^+-p$ junction.
-   A doping profile like the one reported in Figure~\ref{fig:AAJunction} is assumed. (Left) at 
+   \caption{\label{fig:AAEField}Electric field profiles in an abrupt asymmetric $n^+-p$ junction.
+   A doping profile like the one reported in Figure~\ref{fig:AAJunction} is assumed. 
+   Electric field profile (left) at 
    depletion voltage; (right) in over depletion.}
 \end{figure}
 The electric field depends linearly on the bulk depth $z$, with a maximum at the 
@@ -470,7 +472,7 @@ have the following dependence on bulk depth $z$:
  the applied (reverse) voltage $V$ (Eq.~\ref{eq:dunderdepleted}). A partially depleted 
  abrupt asymmetric junction can be modelled as  a parallel plate capacitor where 
  metallic plates are separated by $d_{depl}$. In the limit when $V<V_{depl}$
- it's then easy to derive that:
+ it's then easy to derive the junction capacitance $C$:
  
  \begin{equation}
  C=\dfrac{A\epsilon_0\epsilon_{sc}}{w}\sqrt{\dfrac{V_{depl}}{V}}=A\sqrt{\dfrac{qN_{eff}\epsilon_0\epsilon_{sc}}{2}\dfrac{1}{V}}
@@ -521,12 +523,12 @@ leakage current roughly doubles every seven degrees. The formula relating leakag
 current at different temperatures is the following:
 
 \begin{equation}
-\dfrac{I(T)}{I(T_0)}=\dfrac{T^2}{T_0^2}exp\Big[-\dfrac{E_a}{2k_B}\Big(\dfrac{1}{T}-\dfrac{1}{T_0}\Big)\Big]
+\dfrac{I(T)}{I(T_0)}=\dfrac{T^2}{T_0^2}exp\Big[-\dfrac{E_a}{2k}\Big(\dfrac{1}{T}-\dfrac{1}{T_0}\Big)\Big]
 \label{eq:IleakT}
 \end{equation}
 where $E_a$ is the equivalent of an activation energy (the experimental value of~$E_a$~for Silicon 
 is~$\sim$1.21~eV~\cite{Chilingarov_tscale}) and
-$k_B$ the Boltzmann constant.
+$k$ the Boltzmann constant.
 
 
 
@@ -543,7 +545,7 @@ From Figure~\ref{fig:IV_LPNHE5} it can be seen that a kind of plateau in the cur
 between 20 and 80~V; after that voltage the increase in current is huge. Indeed around 80~V 
 an {\it avalanche breakdown} occurred. If an electron or hole is created in, or moved into, a high-field 
 region inside a semiconductor, it may be accelerated strongly enough in between collisions to obtain 
-sufficient energy for the creation of an electron?hole pair: an avalanche may thereafter 
+sufficient energy for the creation of an electron-hole pair: an avalanche may thereafter 
 develop~\cite{Lutz:411172}.
 Fields higher or of the order of 3$\times$10$^5$~V/cm trigger a multiplication regime that gives rise to a 
 breakdown. The voltage at which the phenomenon occurs is called {\it breakdown voltage}.
@@ -569,6 +571,7 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
       \cmidrule(r){1-3} % Partial rule. (r) trims the line a little bit on the right; (l) & (lr) also possible
       Feature    & Value & Comments \\
       \midrule
+      \midrule
       Density  $\rho$    & 2.33~g/cm${^3}$ & compact and thin detectors  \\
       Energy bandgap $E_g$ & 1.12~eV & non-cryogenic operation \\
       Mean ionisation energy $\epsilon$ & 3.6~eV & large signals\\
@@ -583,7 +586,9 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
 \end{table}
 
 Other important characteristics that can explain the success of silicon are its large abundance, 
-the possibility of changing its properties by doping, the existence of a natural oxide~\cite{Hartmann2012}.
+the possibility of changing its properties by doping, the existence of a natural oxide, 
+and thanks to its stiffness it does not a container, in contrast to 
+gases~\cite{Hartmann2012}.
 
 \section{Silicon Detectors}
 \label{sec:Trackers}
@@ -782,18 +787,17 @@ featuring columnar electrode implants driven into the Si substrate perpendicular
       \caption{\label{fig:tredi}Single sided 3D-Si sensors with columns going completely through the 
       sensor bulk. (After~\cite{Garcia-Sciveres:2017ymt})}
 \end{figure}
-
 The electrode distance is made smaller (50~$\mu$m) than the typical sensor thickness 
 (200-250~$\mu$m), thus rendering a shorter average drift distance for particles impinging on the sensor 
 face than in the case of planar sensors. In addition high drift fields are obtained with still moderate bias 
 voltages. Both these facts result in an increased radiation tolerance due to a reduced trapping 
-probability (see~\ref{sec:trapping})~\cite{	}.
+probability (see~\ref{sec:trapping}).
 
 \subsection{Monolithic Pixel Detectors}
 \label{sec:MAPS}
 The high number of interconnections and the total material budget are the main limitations imposed 
-by the HPDs. One solution is to have on the same substrate the sensor and the electronics: 
- simple electronics circuits, like the first stage of the amplifier of each pixel, are integrated the 
+by the HPDs. One solution is to have on the same substrate the sensor and the  frontend electronics: 
+ simple electronics circuits, like the first stage of the amplifier of each pixel, are integrated on the 
  same silicon substrate. 
  One example of sensor and frontend electronics integrations are the Monolithic Active Pixel Detectors 
  (MAPS~\cite{CLAUS2001120}), which are realised  in  
@@ -807,7 +811,7 @@ by the HPDs. One solution is to have on the same substrate the sensor and the el
   \includegraphics[width=0.55\textwidth]{maps.pdf} 
       \caption{\label{fig:maps} Conceptual drawing of an example of MAPS (After~\cite{ReApsel})}
 \end{figure}
-The $p-n$ junction is realized between the n-well and the p-type epitaxy\footnote{epitaxy is 
+The $p-n$ junction is realized between the n-well and the $p-$type epitaxy\footnote{epitaxy is 
 semiconducting material made by epitaxial growth}, but, because of the low resistivity, the depletion is 
 partial even on the very thin ($\approx$10~$\mu$m) epitaxy layer and the collected charge is small 
 ($\approx$1000e). The 
@@ -826,13 +830,13 @@ and high collection efficiency (for low light operation). Such a combination of 
 resistivity silicon with CMOS readout sounds like a requirement from particle physics, not from 
 consumer electronics, but smartphone image sensors have independently evolved in this 
 direction. Recently depleted monolithic active pixel sensors 
-(DMAPS) started to be developed; they exploit ,edium to high (>100$\Omega$cm) resistivity 8" silicon substrate wafers. A depletion layer develops due the high resistivity with only moderate bias voltages applied from the electronics side or a (specially processed) backside 
+(DMAPS) started to be developed; they exploit medium to high (>100$\Omega$cm) resistivity 8" silicon substrate wafers. A depletion layer develops due the high resistivity with only moderate bias voltages applied from the electronics side or a (specially processed) backside 
 contact~\cite{Garcia-Sciveres:2017ymt}.
 
 \section{Radiation Damage}
 \label{sec:RadDam}
 
-Silicon detectors are at the core of the modern High Energy Physics experiments at colliders. 
+Silicon detectors are at the core of the modern High Energy Physics (HEP) experiments at colliders. 
 High collision rates 
 and high track densities translate into fluence of particles of several $10^{11}$ per square centimetre 
 per hour for the detector layers closest to the interaction point~\cite{rossi2006pixel}. This flux of 
@@ -849,7 +853,9 @@ The following is a short description of the microscopic defects and the induced 
 \subsection{Microscopic description}
 Inelastic collision between an incident particle and the silicon lattice can produce a displacement 
 of an atom from its lattice site. This event creates an interstitial site and a vacancy, which 
-collectively is called a {\it Frenkel defect}. 
+collectively is called a {\it Frenkel defect}. An illustration of these defects, called also {\it point defects}, 
+is give in Figure~\ref{fig:Interstitial}.
+
 
 \begin{figure}[!htbp]
 \centering
@@ -858,8 +864,8 @@ collectively is called a {\it Frenkel defect}.
 \end{figure}
 
 
-Several defects can form a cluster; the probability 
-depends on the incident particle and its energy. 
+Several point defects can group together to form a cluster; the probability 
+depends on the incident particle type and its energy. 
 An electron whose kinetic energy is above 255~keV produce a Frenkel pair; above 8~MeV it 
 produces a cluster. For neutrons the thresholds are of 185~eV and 35~keV, 
 respectively~\cite{moll-thesis}. In Figure~\ref{fig:clusters} the results of a Monte Carlo simulation 
@@ -959,7 +965,8 @@ It has been measured that after 80 minutes at 60$^\circ$C the $\alpha$ value is 
  but one has to bear in mind that 
  it is the result of a particular annealing scenario.
 
-It was shown~\cite{Chilingarov_tscale} that Equation~\ref{eq:IleakT} is adequate even after irradiation 
+It was shown~\cite{Chilingarov_tscale} that the scaling of leakage current with temperature 
+reported in Equation~\ref{eq:IleakT} is adequate even after irradiation 
 to fluences largely exceeding $\Phi$=$10^{15}$~n$_{\rm eq}$/cm$^2$.
  
 \subsection{Operational Voltage Shifts}
@@ -1019,7 +1026,8 @@ As already mentioned in the discussion on the leakage current,  some defects can
 through the crystal, they can anneal, {\it e.g.} a silicon interstitial 
 could fill a vacancy in the lattice. The velocity of the annealing process depends on the average 
 velocity of the movable defects, which in turn depends heavily on the temperature.
-
+Here we give a first description of the phenomena of annealing for the space charge 
+distribution in the irradiated bulk; we will come back on this topic in more detail in Chapter~\ref{chap:digi}.
 
 With respect to the normalised rate of increase of leakage current $\alpha$, where the annealing 
 is always {\it beneficial} ($\alpha$ is never increasing), the effective doping concentration $N_{eff}$
@@ -1027,7 +1035,7 @@ is subject to a {\it reverse} annealing too, which leads to an increase of $N_{e
 An example of the interplay of beneficial and reverse annealing on $N_{eff}$ is shown in 
 Figure~\ref{fig:Neff_annealing}.
 
-\begin{figure}
+\begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.5\textwidth]{Neff_annealing.pdf}
 \caption{\label{fig:Neff_annealing}Annealing behaviour of the radiation induced change in effective 
@@ -1064,14 +1072,14 @@ The mechanism was first proposed in~\cite{bib:DP};
 \begin{figure}[htpb]
  \centering
  \includegraphics[width=0.5\textwidth]{Chiochia2005DP.pdf}
- \caption{\label{fig:Chiochia2005DP} An illustrative sketch of the explanation of the double peak effect in electric field  for a reverse biased irradiated device (After~\cite{Chiochia2005}.)}
+ \caption{\label{fig:Chiochia2005DP} An illustrative sketch of the explanation of the double peak effect in electric field  for a reverse biased irradiated device. (After~\cite{Chiochia2005})}
  \end{figure}
 
 In case of double peak in the electric field distribution the numbers derived for depletion voltage and 
 effective doping concentration form the CV measurements 
 are effective or average numbers.
 
-An example of a CV measurement for an irradiated device is shown in Figure~\ref{fig:irrCV}.
+An example of a $C^{-2}$V measurement for an irradiated device is shown in Figure~\ref{fig:irrCV}.
 \begin{figure}[htpb]
  \centering
 \includegraphics[width=0.5\textwidth]{irrad2011-fl1e15-best.png}
@@ -1079,8 +1087,7 @@ An example of a CV measurement for an irradiated device is shown in Figure~\ref{
  with 24~GeV/c protons, with an integrated fluence of $\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$, 
  after having being annealed for 80 minutes at 60$^\circ$C. Results from three diodes, 
  coming from 2 different 
- wafers, and with different number of GRs are reported.  
-}  
+ wafers, and with different number of GRs are reported.}  
  \end{figure}
  
  The $C^{-2}$ vs V curves reported in Figure~\ref{fig:irrCV}, whose slope is proportional to the 
@@ -1094,8 +1101,8 @@ An example of a CV measurement for an irradiated device is shown in Figure~\ref{
 Radiation-induced defects are responsible not only for generation-recombination centers increasing 
 the leakage current and charged defects with dramatic influence on the full depletion voltage but 
 also for trapping centers. Traps are mostly unoccupied in the depletion region due to the lack of free 
-charge carriers and can hold or trap parts of the signal charge for a time longer than the charge 
-collection time and so reduce the signal height. 
+charge carriers and can hold or trap part of the signal charge for a time longer than the charge 
+collection time and so reduce the signal amplitude. 
 
 The typical trapping time $\tau_{tr}$ gets shorter and shorter with larger and larger fluence $\Phi$; it 
 has 
@@ -1123,11 +1130,21 @@ will be able to collect only about 27\% of the signal amplitude prior to irradia
 
 After irradiation segmented detectors, like DSSDs and HPDs, will allow to achieve CCE higher than 
 the one for pads thanks to the steeper slope of the Ramo potential close to the collecting electrode; 
-this will be discussed in more details in Chapter~\ref{chap:digi}.
+this will be treated in Chapter~\ref{chap:digi}.
 
 Trapping time $\tau_{tr}$ evolves with time and temperature as leakage current and depletion voltage 
 do. In~\cite{KRAMBERGER2007762} it is shown that the trapping asymptotic probabilities  of
 holes (electrons) will be around 30\% larger (15\% smaller)
 than initial probabilities at the same total fluence.
+
+\section{Summary}
+\label{sec:SiliconSummary}
+
+In this Chapter we reviewed the basics of semiconductor physics and the reasons for the 
+success of silicon tracking sensors for HEP experiments. Advantages and limitations of the 
+different silicon detectors were discussed. In the end radiation damage, one of the biggest challenges for 
+actual and future silicon detectors at hadron colliders, was presented.
+This introduction will serve as a base for the next chapters.
+
 
    
