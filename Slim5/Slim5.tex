@@ -5,25 +5,26 @@ motivations, goals and timeline (Section~\ref{sec:SLIM5Project}), the Physics mo
 and the tracker requirements for SuperB and ILC will be briefly discussed in Section~\ref{sec:HLExp}. 
 The pixel  (Section~\ref{sec:Apsel4D}) and strip (Section~\ref{sec:Striplets}) 
 detector prototypes developed 
-within the SLIM5 project will be presented. In Section~\ref{sec:SLIM5Results} the results 
+within the SLIM5 project will be then presented. In Section~\ref{sec:SLIM5Results} the results 
 in~\cite{BETTARINI2010942,BOMBEN2010159,NERI2010195} will be discussed. 
-A special Section (~\ref{sec:striplets_res}) is devoted to the spatial resolution of the striplets. 
+A special Section (\ref{sec:striplets_res}) is devoted to the spatial resolution results of the striplets. 
 Wrap up of the SLIM5 project will be finally outlined in Section~\ref{sec:Slim5Summary}.
 
 
 \section{The Project}
 \label{sec:SLIM5Project}
 The SLIM5 project~\cite{SLIM5:proj} aimed at advancing the state-of-the-art in the development of thin 
-tracking systems to be applied in High-Energy Physics. The project was financed for three years
+tracking systems to be applied in High Energy Physics. The project was financed for three years
  (2006-2008) by INFN - National Scientific Committee 5~\cite{INFN_V} and involved several 
  italian research institutes. 
  
  The SLIM5 collaboration worked on developing tracking systems for experiments at 
  high luminosity flavour 
- factories, like the proposed SuperB (\cite{Baszczyk:2013xua}) and linear colliders. The goal was to deliver thin silicon tracking detectors with possibility 
+ factories, like the proposed SuperB~\cite{Baszczyk:2013xua}, and linear colliders. The goal was to deliver thin silicon tracking detectors with possibility 
  of self-triggering thanks to the combination of data-driven data acquisition and pattern matching 
- algorithm with very low latency.
-Let's know see the required performance for such detectors. 
+ algorithm with very low latency. Double sides strip detectors (DSSDs) and monolithic active pixel sensors 
+ (MAPS) prototypes were produced in the framework of the project.
+Before describing them we know illustrate the required performance for such detectors. 
 
 \section{Tracking and Vertexing Requirements for SuperB and ILC Experiments}
 \label{sec:HLExp}
@@ -31,7 +32,7 @@ Experiments at high luminosity colliders have to accomplish a high precision mea
 exploiting at maximum the large dataset they are expected to integrate. 
 This means that the experiments have to be very efficient and show excellent performance, 
 even in presence of a very intense particle rate; this is particularly true for the tracking and 
-vertexing detectors, which are the closest to the beams interaction point. It has also to be stressed 
+vertexing detectors, which are the closest to the beams interaction point. It is also to be stressed 
 that with sub-optimal tracking and vertexing performance there's no physics case for such 
 experiments; hence the tracking and vertexing detectors are the crucial parts of experiments at 
 high luminosity colliders.
@@ -40,19 +41,19 @@ We now review quickly some physics cases for SuperB and ILC and the related cons
 tracking detectors.
 \subsection{SuperB}
 
-The SuperB project~\cite{Baszczyk:2013xua} was the proposal of a super flavour $\epem$ factory operating at the 
- center-of-mass energy of the \Y4S, capable of an instantaneous 
- luminosity of  $10^{36}\cms$, with the goal of integrating 50--75~\invab.
+The SuperB project~\cite{Baszczyk:2013xua} was the proposal of a $\epem$ super flavour  factory operating at the 
+ center-of-mass energy of the \Y4S resonance, capable of an instantaneous 
+ luminosity of  $10^{36}\cms$, with the goal of integrating a 50--75~\invab dataset.
 
 The SuperB physics program was to 
 \begin{itemize}
-\item[a)]determine the flavor structure of whatever New Physics discovered at the LHC, 
+\item[a)]determine the flavor structure of whatever New Physics (NP) discovered at the LHC, 
 using the information on rare $b$, $c$, and $\tau$ decays, and on \CP
-violation in $b$ and $c$ quark decays, or, if  signatures of New Physics were not observed at the LHC,
+violation in $b$ and $c$ quark decays, or, if  signatures of NP were not observed at the LHC,
 then
 \item[b)]  exploit the excellent sensitivity provided at the luminosity frontier by
-a super $B$ factory, to
-observing New Physics at mass scales up to 10~\tev or more through
+a SuperB factory, to
+observe NP at mass scales up to 10~\tev or more through
 observation of rare processes involving $B$ and $D$ mesons and studies
 of lepton flavour violation in $\tau$ decays.
 \end{itemize}
@@ -66,7 +67,7 @@ and performance, required significant R\&D
 to be able to implement this upgrade.
 
 
-The SuperB Vertex Tracker (SVT) was intended to be an evolution of the \babar\ 
+The planned vertexing and tracking detector, the SuperB Vertex Tracker (SVT), was intended to be an evolution of the \babar\ 
 SVT; see Figure~\ref{fig:svt} for a comparison. The main difference was the extra layer, Layer0, 
 at a radius of 1.5~cm.
 
@@ -78,7 +79,7 @@ at a radius of 1.5~cm.
 \end{figure}
 
 
-Precise vertex information, primarily extracted from precise position measurements near the 
+Precise vertex information, primarily extracted from accurate position measurements near the 
 interaction point (IP) by the SVT  is crucial to the measurement of time-dependent \CP asymmetries 
 in \Bz decays, which was the  key element of the SuperB physics program. As in \babar, the SuperB 
 had to be able to provide efficient and accurate tracking for  charged particles with transverse 
@@ -90,7 +91,8 @@ measurements
 ($\beta\gamma = 0.24$ compared to $\beta\gamma = 0.55$ of \babar) and much higher background,
 mainly related to the increased instantaneous luminosity of about a factor of 100 larger than \babar.
 
-The planned beam pipe featured a reduced radius of about $1.0~\cm$  which allows the positioning of 
+The planned beam pipe featured a reduced radius of about $1.0~\cm$  which would have allowed
+ the positioning of 
 Layer0 at
 the desired average radius of about $1.5~\cm$. The additional  (with respect to \babar\ SVT) 
  Layer0 measurement,
@@ -122,7 +124,10 @@ $\sqrt{s}=250-550$~GeV, with an option for 1~TeV~\cite{ILCTDR}.
 In 2009, two detector projects (ILD \& SiD) provided a Letter Of Intent (LOI)~\cite{ILDLOI,SIDLOI}.
 
 The ILC physics goals cover a wide and ambitious program including top quark physics, electroweak 
-precision measurements, direct and indirect searches beyond the Standard Model (BSM) like SUSY, 
+precision measurements, direct and indirect searches beyond the Standard Model (BSM) like 
+supersymmetry\footnote{Supersymmetry (SUSY) is a proposed type of spacetime symmetry where  each 
+SM particle is associated with another particle, known as its superpartner, the spin of which differs by a 
+half-integer; for an introduction to SUSY see~\cite{SusyPrimer}}, 
 dark matter searches, exotic searches, etc., and a complete and extensive Higgs physics program 
 covering mass, couplings to fermions and bosons, quantum numbers and total width 
 measurements.  The expected level of precision for the majority of them will 
@@ -135,9 +140,11 @@ The  figure of merit of the future ILC vertex detector  is the impact parameter 
 expected to be:
 
 \begin{equation}
-\sigma_{ip}=5\,\mu{\rm m}\oplus\dfrac{10}{p\beta(\sin\theta)^{3/2}}\,\,\mu{\rm m\, GeV/c}
+\sigma_{ip}=5\,\mu{\rm m}\oplus\dfrac{10}{p\beta(\sin\theta)^{3/2}}\,\,\mu{\rm m}
 \label{eq:ILCipres}
 \end{equation}
+when the momentum $p$ is expressed in~GeV/c ($\theta$ is the track angle with respect to the beam 
+axis; see also Section~\ref{sec:SPmeas}).
 
 This condition demands then for: a space-point resolution of about 3~$\mu$m (hence a pitch of less 
 than 20~$\mu$m; a material budget per layer of about 0.1\% of $X_0$; capabilities of performant    
@@ -161,7 +168,7 @@ budget (example:~\cite{mimosa26}).
 
 In Summary, for the experiment at the future ILC a vertex detector with a space point resolution of 
 3~$\mu$m, a material budget per layer of about 0.1\% of $X_0$ and the possibility  of    
-tracking down to $p_T$ of 100~MeV/c and even less is needed.
+tracking down to $p_T$ of 100~MeV/c and even less are needed.
 
 
 
@@ -190,10 +197,10 @@ In Figure~\ref{fig:apsel} a picture of the Apsel4D chip is presented, together w
 
 The elementary pixel cell includes a collecting electrode, featuring a buried deep n-type layer, and the full readout chain for signal processing~\cite{Ratti:2006zz}. The processing chain consisted of a charge 
 preamplifier with charge to voltage conversion independent of the detector capacitance, a shaping 
-stage featuring a 200 or 400~ns peaking time and finally a discriminator used to compare the signal witha chip-wide threshold to provide digital information. 
+stage featuring a 200 or 400~ns peaking time and finally a discriminator used to compare the signal with a chip-wide threshold to provide digital information. 
 The design of the front-end minimized the amount of PMOS transistors and related n-wells, which act 
 like competitive parasitic electrodes. The fraction of deep n-well area (electrode) over the total n-well 
-area was of about 90\%. 
+area was of about 90\% (known also as the {\it fill factor}). 
 
 
 
@@ -236,15 +243,13 @@ the thin bulk. The strips pitch was 50~$\mu$m on both sides; the detector active
 of 27$\times$12.9 mm$^2$. The design allowed a long DSSD with short strips on both sides.
 The strips were AC coupled, with integrated capacitors and polisilicon biasing-resistors. 
 In order to minimize the dead area along the edges, the resistors are placed outside the guard ring. 
-The detector is fully depleted at 10~V bias.
+The detector was fully depleted at 10~V bias.
 
 The striplet sensor was read out by the data-driven FSSR2 chip~\cite{Re:2006zw}, 
 the second release of the Fermilab Silicon Strip Readout Chip, derived from the one originally designed 
 for the silicon pixel detector of the BTeV experiment. The chip is completely data-driven and can be 
 readout at up to~70~MHz. The chip features 128 analog channels, with address and time information 
 for all hits; the output is purely digital; the chip measures 7.5~mm~$\times$~5~mm and the input pads have an effective pitch of 50~$\mu$m. A picture of the FSSR2 chip is shown in Figure~\ref{fig:fssr2}
-
-
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.5\textwidth]{fssr2.pdf}
@@ -260,7 +265,8 @@ Due to the limited dynamic range for $n$-side just a hit/no hit information for 
 extracted.
 
 In Figure~\ref{fig:assembled_striplets} a striplet detector module is shown.
-
+One striplet sensor was read out by 3 FSSR2 chips per side, for a total of 384 wirebonded channels 
+on each side. 
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.95\textwidth]{assembeld_striplets.pdf}
@@ -268,8 +274,7 @@ In Figure~\ref{fig:assembled_striplets} a striplet detector module is shown.
 sensor, the fanout circuit and the readout card, hosting 3 FSSR2 chips, are visible.}
 \end{figure}
 
-One striplet sensor was read out by 3 FSSR2 chips per side, for a total of 384 wirebonded channels 
-on each side. 
+
 
 \section{Performance of SLIM5 Detectors}
 \label{sec:SLIM5Results}
@@ -292,7 +297,7 @@ one Apseld4D are visible.}
 
 
 
-For the reference telescope, we used four 2~$\times$~2~cm$^{2}$ DSSDs where used; 
+For the reference telescope four 2~$\times$~2~cm$^{2}$ DSSDs were used; 
 the strips where AC-coupled, with 25~(50)~$\mu$m pitch on $p-(n-)$side. The readout pitch 
 was the same (50~$\mu$m) for both sides, as the telescope modules too were readout by 
 the FSSR2 chip. One pair was positioned upstream and the other downstream of the devices 
@@ -359,7 +364,6 @@ Thr.Dis. (e)& 880       & 780\\ \hline
 
 Cluster of strips were created by grouping neighbouring strips that have fired. The charge pulse height 
 distribution of clusters are shown in Figure~\ref{fig:clu_ph_striplets}.
-
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.45\textwidth]{p_side_striplets.png}
@@ -375,14 +379,12 @@ by the limited dynamical range of the ADC, as it can be seen in Figure~\ref{fig:
 The hit-efficiency was of above 98\% for both the $p-$ and the $n-$side. A detailed analysis 
 of the hit-efficiency as a function of the position along the detector is shown in 
 Figure~\ref{fig:striplets_eff}.
-
-
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.95\textwidth]{striplets_eff.png}
+\includegraphics[width=0.75\textwidth]{striplets_eff.png}
 \caption{\label{fig:striplets_eff}Efficiency of a striplet module as a function of the track impact position. 
 Dead strips where removed from the analysis by selecting strips with efficiency greater than 1.0\%; 
-their position is marked by magenta arrows.}
+dead strips position is marked by magenta arrows.}
 \end{figure}
 
 As it can be seen efficiency was quite uniform
@@ -414,7 +416,7 @@ analog or digital readout, the detector pitch and the signal-to-noise ratio.
 
 Spatial resolution is usually estimated by taking the RMS of the residuals distribution. Residuals are 
 defined as the difference between the position of the DUT hit associated to a track and 
-the extrapolated position on the DUT plane of the track itself. 
+the extrapolated position of the track itself on the DUT plane . 
 The width of the residuals distribution depends on many factors: the intrinsic resolution of the 
 DUT (about the detector pitch divided by $\sqrt{12}$ - the so-called {\it digital resolution}~\cite{TURCHETTA}), the pointing resolution of the tracking system 
 (about the intrinsic resolution of each telescope plane divided by the square root of the number of 
@@ -460,8 +462,8 @@ $f(\eta)$ is a function that can be estimated directly on data:
 f(\eta)=\dfrac{\int_0^\eta \dfrac{{\rm d}N}{{\rm d}\eta'}{\rm d}\eta'}{\int_0^1 \dfrac{{\rm d}N}{{\rm d}\eta'}{\rm d}\eta'}
 \end{equation}
 
-under the assumption that the distribution of the number of tracks $N$ is uniform between 
-the left and right strip.
+under the assumption that the distribution of the number of tracks $N$ is uniform over the  
+detector.
 
 The uncertainty  on the position identified using the  $\eta$ PFA $\sigma_{\eta}$, hence the detector spatial 
 resolution, is about the detector pitch $P$ 
@@ -481,7 +483,7 @@ was investigated and the results are discussed in what follows.
 \subsection{Striplets Residuals and the Effect of Thresholds}
 
 In Figure~\ref{fig:res_pside} the residuals distribution for hits registered on the $p-$side of a striplet 
-module. The width of the fitted Gaussian is about 16~$\mu$m.
+module is presented. The width of the fitted Gaussian is about 16~$\mu$m.
 
 \begin{figure}[!htpb]
 \centering
@@ -497,8 +499,8 @@ $50/\sqrt{12}\approx 14.4\, \mu$m.
 
 The reason for the poor performance was found to be related to the high hit/no hit threshold set 
 on the FSSR2 chip. In case of asymmetric charge sharing between two strips one of the two 
-can have a signal that is below threshold, hence a true cluster of 2 strips is reconstructed as a single 
-strip. In this case the cluster position is assigned to the center of the only strip whose signal is 
+can have a signal that is below threshold, hence a true cluster of 2 strips is reconstructed as one with 
+ a single strip. In this case the cluster position is assigned to the center of the only strip whose signal is 
 above threshold, so, on average, the error made in position assignment is about half of the pitch, 
 {\it i.e.} 25~$\mu$m.
 
@@ -598,7 +600,7 @@ distribution.
  \section{Summary and Discussion}
  \label{sec:Slim5Summary}
  
- Thin and excellent spatial resolution silicon detectors are mandatory to fulfil the physics program 
+ Thin  silicon detectors with excellent spatial resolution  are mandatory to fulfil the physics program 
  of Super Flavour Factories and Linear Colliders. 
  The solutions proposed by the SLIM5 collaboration, the CMOS MAPS Apsel4D and the DSSD 
  striplets, proved to be an excellent starting point for the development of tracking and vertexing 
@@ -610,7 +612,7 @@ distribution.
  the active area made them the preferred option for the layer0 of the proposed SuperB SVT.
  Hit-efficiency was high and matched the expectations for both Apsel4D and striplets. The 
  Apsel4D chip hit efficiency was limited by the fill factor due to the competitive wells; 
- for the striplets no major showstopper was found and the efficiency was very close to 100\%.
+ for the striplets no major showstopper was found and the efficiency was  close to 100\%.
 
  For what concerns 
  the space-point resolution, both detectors matched the expected performance for  50~$\mu$m pitch 
@@ -622,8 +624,8 @@ distribution.
   70~MHz.
   
  Smaller pitches and better noise control were needed to 
- match the specifications. In particular, as it was investigated throughly for striplets, zero suppression 
- impacts severely the spatial resolution if thresholds are relatively high and their effects are not 
+ match the specifications. In particular, as it was investigated throughly for striplets, the zero suppression 
+ mechanism  impacts severely the spatial resolution if thresholds are relatively high and their effects are not 
  corrected for. 
  
  Research continued for CMOS MAPS~\cite{Rizzo:2013aza}, improving the efficiency by increasing 
