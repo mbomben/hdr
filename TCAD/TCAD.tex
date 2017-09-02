@@ -64,7 +64,8 @@ the detector, how large their implants should be, which total area they should c
 some of the questions that TCAD simulations can address. 
 
 In order for the answers to be really reliable it is important to have access to information 
-like the doping profiles of the various detector implants. This is often not possible, since 
+like the doping profiles of the various detector implants and dielectric thicknesses. 
+This is often not possible, since 
 the silicon foundries don't disclose these information. Some {\it a posteriori} analysis is possible, 
 like Secondary Ion Mass Spectroscopy, {\it SIMS}. SIMS is a vacuum based technique 
 which relies on the bombardment of a sample surface with a primary ion 
@@ -91,7 +92,7 @@ Figure~\ref{fig:IV_BD}.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{IV_simulations}
-\includegraphics[width=0.39\textwidth]{IV_data}
+\includegraphics[width=0.39\textwidth]{newIV_data.pdf}
 \caption{\label{fig:IV_BD}IV curves for edgeless $n-on-p$ pixel test structures. (left) TCAD simulations 
 (right) Real data from~\cite{bib:nim2012}. Detectors with the same pixel-to-edge minimal distance 
 and different number of GRs are compared. In the right figure a photo of the tested detector is 
@@ -144,11 +145,10 @@ All these correspond to working condition for HEP detectors, hence predictions c
 for example for a heavily irradiated silicon detector in terms of charge collection efficiency, operating 
 voltage and leakage current level.
 
-Again such studies allow to make detector choices that save money and time and give access to 
+Such studies again allow to make detector choices that save money and time and give access to 
 quantities like carriers distribution otherwise impossible to measure. An example is given in 
 Figure~\ref{fig:carr_conc}, where the result of 2D simulations of an  $n-on-p$ detector 
 are reported.
-
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.45\textwidth]{econ_early.png}
@@ -160,21 +160,19 @@ are reported when the detector is over depleted and a MIP stroke at $t=0$~s.
 (Top) Carriers distribution during the MIP strike. (Bottom) After 1~ns. (Left) electron concentration. 
 (Right) Hole concentration. MIP was impinging at 20$^{\circ}$ with respect to the sensor surface.}
 \end{figure}
-
 Three collecting electrodes are simulated; the detector is 250~$\mu$m thick and the pitch 
-is 250~$\mu$m. The detector is hit my a MIP when it is in over-depletion; the MIP strikes at 
+is 250~$\mu$m. The over-depleted detector is hit by a MIP; the MIP strikes at 
 an angle of 20$^{\circ}$ with respect to the sensor surface. The detector was simulated after 
 an irradiation fluence of $\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$
 It can be seen from the Figure that electrons drift faster than holes; a large fraction of holes 
 have moved little from the original position while electrons have gained much more distance 
 after 1~ns. 
-
-This kind of simulation are needed to interpret data from test beams when tracks are impinging 
+This kind of simulation are needed to interpret data from  beam tests when tracks are impinging 
 at shallow angle. The charge profile in data can be compared over the signal amplitude from pixels in 
 long clusters to the one predicted by TCAD simulations; this will allow to infer the electric field 
 distribution inside the irradiated detector thanks to so-called {\it grazing angle} 
 technique~\cite{Henrich:687041,Lari:2001qqa,LARI2004349}; more 
-on this in the next Section.
+on this in Section~\ref{sec:TCADRadDamage}.
 
 In case of edgeless sensors it is interesting to investigate the charge collection efficiency (CCE) 
 in the un-instrumented area between the last collecting electrode and the detector edge. 
@@ -193,19 +191,18 @@ The simulations indicate that it is possible to collect at least 50\% of the sig
 up to 50~$\mu$m away from the last collecting electrode. This is very promising for {\it active edge} 
 detectors  (see also~\ref{sec:edgeless}).
 
-\section{Discussion on Fundamental Parameters and TCAD Simulations}
+\section{Discussion on Fundamental  Semiconductor Parameters and TCAD Simulations}
 \label{sec:TCADfund}
 The two most used commercial TCAD products in the HEP community for device simulations 
 are Silvaco Atlas\footnote{\url{https://www.silvaco.com/products/tcad.html}} and Synopsys 
 Sentaurus\footnote{\url{https://www.synopsys.com/silicon/tcad.html}}.
-
 In a test to see how much the two products differ in terms of physics models it turned out 
 that at least in two fundamental semiconductor physics observables they were quite far apart. 
-A  200~$\mu$m thick,  50 ~$\mu$m wide $n-on-p$ diode was simulated in 2D for these studies. More details can be found in~\cite{bomben_rd50_Torino}.
+A  200~$\mu$m thick,  50~$\mu$m wide $n-on-p$ diode was simulated in 2D for these studies. More details can be found in~\cite{bomben_rd50_Torino}.
 
 
 
-The first observable under investigation was the thermal velocities of the carriers. 
+The first observable under investigation was the thermal velocity of the carriers. 
 Synopsys Sentaurus uses the following formulation as default for the carrier thermal velocities $v_{th,Syn}^{n,p}$:
 \begin{equation}
 v_{th,Syn}^{n,p} = v_0^{n,p}\sqrt{\dfrac{T}{300 K}},
@@ -213,7 +210,7 @@ v_{th,Syn}^{n,p} = v_0^{n,p}\sqrt{\dfrac{T}{300 K}},
 \end{equation}
 and the default values for $v_0^{n,p}$ are 2.04(1.56)$\times10^{7}$~cm/s.
 
-Silvaco Atlas default for the carrier thermal velocities $v_{th,Sil}^{n,p}$ is:
+\noindent Silvaco Atlas default for the carrier thermal velocities $v_{th,Sil}^{n,p}$ is:
 \begin{equation}
 v_{th,Sil}^{n,p} = \sqrt{\dfrac{3kT}{M.VTHN(M.VTHP)m_0}},
 \label{eq:SilThVel}
@@ -237,18 +234,18 @@ are illustrated in Figure~\ref{fig:vtherm}.
 \includegraphics[width=0.65\textwidth]{vtherm}
 \caption{\label{fig:vtherm}Carrier thermal velocities as a function of the temperature.}
 \end{figure}
-As it can be seen there is almost a factor of 2 of difference between the two tools for the electrons 
+\noindent As it can be seen there is almost a factor of 2 of difference between the two tools for the electrons 
 thermal velocities. The reason for this disagreement has to be found in the carriers  mass value
 used in the thermal velocities calculation. While Synopsys uses the effective  mass derived 
 from the energy band curvature, Silvaco inserts the rest mass of the electron. 
-Such a difference in the  carriers thermal velocities affect the carriers transport phenomena, 
+Such a difference in the  carriers thermal velocities should affect the carriers transport phenomena, 
 the leakage current level and the effects due to radiation damage defects. 
  
  The second parameter that was investigated was the bandgap energy $E_g$. The default value in 
  Silvaco for $E_g$ at $T=$300~K is of 1.08~eV. This is surprisingly low compared to values in literature 
  (see for example~\cite{Lutz:411172,Sze1981,Wang1989,Shockley}) which are comprised 
  in the range 1.11-1.12~eV.
-The temperature dependence of $E_g$ is based on~\cite{Sze1981}:
+The temperature dependence of $E_g$ in both TCAD tools is the following~\cite{Sze1981}:
 \begin{equation}
 E_g(T)=E_g(0) -\dfrac{\alpha T^2}{T+\beta}=E_g(300)+\alpha\Bigg[ \dfrac{(300)^2}{300+\beta}-\dfrac{T^2}{T+\beta}  \Bigg] \equiv E_g(T_{ref})+\alpha\Bigg[ \dfrac{(T_{ref})^2}{T_{ref}+\beta}-\dfrac{T^2}{T+\beta}  \Bigg] 
 \label{eq:EgT}
@@ -260,10 +257,11 @@ Both TCAD products agree on the $\alpha$ and $\beta$ parameters values:
 \caption{\label{eq:Egalphabeta}Parameter values for the temperature dependence of the bandgap. 
 See also Equation~\ref{eq:EgT}}
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{cc}
 \hline
 parameter & value \\
 \hline 
+\hline
 $\alpha$ & 4.73$\times$10$^{-4}$~eV/K \\
 \hline 
 $\beta$ & 636~K \\
@@ -271,19 +269,18 @@ $\beta$ & 636~K \\
 \end{tabular}
 \end{table}
 
-Silvaco tools are built on the value $E^{Sil}_g(300)=$1.08~eV while Synopsys on $E^{Syn}_g(0)=$1.1696~eV. 
+\noindent Silvaco tools are built on the value $E^{Sil}_g(300)=$1.08~eV while Synopsys on $E^{Syn}_g(0)=$1.1696~eV. 
 Extrapolating $E_g^{Syn}(0)$ to $T=$300K from the one gets the expected 
 $E_g^{Syn}(300)\sim$1.12~eV, in agreement with literature.
-
-Silvaco developers explained\footnote{private communication} the abnormal $E^{Sil}_g(300)$ value 
+\noindent Silvaco developers explained\footnote{private communication} the abnormal $E^{Sil}_g(300)$ value 
 because of very low resistivity 
-Silicon wafers used to estimate the bandgap energy when their TCAD tool was developed. 
+Silicon wafers used to estimate the bandgap energy when their TCAD tools was developed. 
 They are aware of the issue and claim that the Silvaco TCAD tools are anyhow consistent with 
-the $E^{Sil}_g(300)$ value chosen and predictions are reliable. The 
+the $E^{Sil}_g(300)$ value chosen and predictions are reliable.  
 
-To test the latter statement the $E^{Sil}_g(300)$ value was changed in the simulation package, 
+To test the latter statement the $E^{Sil}_g(300)$ value was changed in the Silvaco Atlas simulation package, 
 and results compared. 
-A 200~$\mu$m thick, 50~$\mu$m wide $n-on-p$ diode was simulated using Silvaco 2D device 
+Again, a 200~$\mu$m thick, 50~$\mu$m wide $n-on-p$ diode was simulated using Silvaco 2D device 
 simulator. Temperature was varied between -20$^{\circ}$ and +20$^{\circ}$ in 5$^{\circ}$ steps. 
 Several scenarios have been investigated:
 
@@ -303,7 +300,7 @@ Several studies were performed using the Silvaco TCAD tools,
  including comparison of simulated leakage current level with 
 theoretical expectations,  evaluation of the activation energy $E_{a}$ (Equation~\ref{eq:IleakT}) 
 and scaling of leakage current with temperature. In what follows the findings of these 
-studies and the discussion.
+studies and a discussion of the results are presented.
 
 \paragraph{Leakage Current Level}
 
@@ -321,7 +318,8 @@ It is evident that the only parameter playing a major role, as expected, is the 
 
 
 
-To verify the validity of leakage current level  from Silvaco tools the result at $V_{op}$ bias 
+To verify the validity of leakage current level  from Silvaco tools the result at $V_{op}=V_{depl}+50\,{\rm V}$ 
+bias 
 were compared with the theoretical value evaluated using~\ref{eq:Ileak2}. Assuming the same value
 for generation and recombination lifetimes and taking the intrinsic concentration value $n_i$ from 
 the simulation itself a current density of $J\sim1.6\times10^{-13}$~A/cm is expected, which 
@@ -333,8 +331,8 @@ It has to be noted that  the simulated current is purely bulk generated; this is
 Figure~\ref{fig:ILeak20C}: the current level is stable after the depletion voltage. This feature 
 is not realistic~\cite{CALZOLARI19721003} but for the sake of understating bulk generated 
 current properties in TCAD simulations is very well suited since it allows to study the 
-phenomenon without having to deconvolve from the current surface effects, trap assisted tunnelling 
-and others.
+phenomenon without having to deconvolve from the leakage current the surface effects, the trap assisted 
+tunnelling contribution, etc. 
 
 \paragraph{Temperature Dependence of Simulated Leakage Current and Activation Energy}
 
@@ -342,12 +340,7 @@ The change of leakage current was studied for the different scenarios outlined b
 For all temperature $T$ times scenario $S$ combination the leakage current $I_{leak}(V_{op};T;S)$ 
 at a 
 operational voltage 
-$V_{op}$ defined as:
-
-\begin{equation}
-V_{op}=V_{depl}+50\,{\rm V}
-\label{eq:Vop}
-\end{equation} 
+$V_{op}$ 
 was extracted. It was verified that the depletion voltage $V_{depl}$ didn't depend on scenarios nor temperatures.
 
  The leakage current was then studied as a function of the reciprocal of the 
@@ -362,7 +355,7 @@ temperature $T_{ref}$ and $k_B$ the Boltzmann constant.
 The results are reported in Figure~\ref{fig:Ea_Fit}. A 0.01~K error was assigned to the 
 simulated temperature, the leakage current was evaluated at $V_{op}\pm1.0$~V too and the largest 
 shift used as an uncertainty estimate.
-In Figure~\ref{fig:Ea_Fit_fixn} the  parameter $n$ was fixed to 2.
+In Figure~\ref{fig:Ea_Fit_fixn} the  parameter $n$ of the fit function was fixed to 2.
 
 \begin{figure}[!htbp]
 \centering
@@ -392,12 +385,12 @@ on the right. Data are points with error bars; data were fit with Equation~\ref{
 The fit function~\ref{eq:ITfunc} represent very well the data, whatever the scenario and the choice 
 made for the parameter $n$ (free to float or fixed to 2). This is an indication that the  
 mechanism of temperature scaling is the same for all the configuration explored. The case, 
-not presented here, of setting the parameter $\alpha$ of Equation~\ref{eq:EgT} was tested too 
-but the results were deviating too largely from Equation~\ref{eq:ITfunc} hence considered 
+not presented here, of setting the parameter $\alpha$ of Equation~\ref{eq:EgT} to zero was tested too 
+but the results were deviating too largely from Equation~\ref{eq:ITfunc} and considered 
 unphysical. 
 
 In all scenarios the parameter $n$, when unconstrained, is compatible with the value of 2. So 
-in the rest of the discussion we will consider only the case when $n=2$ (Figure~\ref{fig:Ea_Fit}).
+in the rest of the discussion we will consider only the case when $n=2$ (Figure~\ref{fig:Ea_Fit_fixn}).
 A couple more scenarios where studied ($E^{Sil}_g(300)=1.09$~eV~and~1.11~eV) with the 
 goal of studying the dependence of $E_a$ on $E^{Sil}_g(300)$. The result are reported in 
 Figure~\ref{fig:Ea_vs_Eg}
@@ -414,7 +407,6 @@ From the Figure is manifest that the following relations hold:
 E_a=E^{Sil}_g(300)+0.05\,{\rm eV}
 \label{eq:Ea_vs_Eg}
 \end{equation}
-
 The activation energy range obtained from Equation~\ref{eq:Ea_vs_Eg} does not include 
 the value found in literature of 1.21~eV~\cite{Chilingarov_tscale} for bandgap energies between 
 1.08~and~1.12~eV.
@@ -422,7 +414,8 @@ the value found in literature of 1.21~eV~\cite{Chilingarov_tscale} for bandgap e
 \paragraph{Leakage Current Rescaling Based on Temperature}
 
 The relation~\ref{eq:Ea_vs_Eg} was  used with Equation~\ref{eq:IleakT} to rescale 
-leakage currents from different temperatures to the reference temperature, $T=293.15$~K 
+leakage currents in the default scenario 
+from different temperatures to the reference temperature, $T=293.15$~K 
 in this case. The rescaling was done separately for each voltage point. 
  To verify the validity of the rescaling the scaled IV curves 
 where divided by the IV curve at the reference temperature. For each 
@@ -458,8 +451,8 @@ prediction based on Equation~\ref{eq:IleakT} used with relation~\ref{eq:Ea_vs_Eg
 
 
 \paragraph{Summary}
-It was shown that there are significant differences between the Synopsys and Silvaco TCAD tools 
-on what concerns fundamental parameters like thermal velocities and bandgap energy. It is likely the 
+It was shown that there are significant differences between the  TCAD tools Synopsys Sentaurus and 
+Silvaco Atlas on what concerns fundamental parameters like thermal velocities and bandgap energy. It is likely the 
 two tools differ on other important aspects but  two rather fundamental ones were already reported here.
 If for  thermal velocities a simple rescaling of the carrier effective masses seem sufficient (more in 
 the Section~\ref{sec:TCADComparison}), the bandgap energy difference needs a more careful treatment. 
@@ -484,11 +477,11 @@ Still it is a non perfect solution; it would preferable to have reliable results
 
 In this Section the implementation, modelling and a  study case of Radiation Damage in TCAD 
 Simulations will be presented. This Section is an introduction to a subject that will be 
-discussed more in detail later, in Chapters~\ref{chap:ATLAS}~and~\ref{chap:ITk}.
+discussed again in  Chapter~\ref{chap:digi}.
 
 \subsection{Implementation of Radiation Damage in TCAD Simulations}
 As it was discussed in Section~\ref{sec:RadDam} energetic particles above a certain energy threshold 
-create defects called Frenkel pairs. 
+create defects to the silicon lattice. 
 It is possible to simulate defects using TCAD tools by adding trap centers, or simply {\it traps}, to the 
 energy bandgap. 
 Trap centers, whose associated energy lies in a forbidden gap, exchange charge with the conduction 
@@ -501,7 +494,7 @@ will be discussed. In particular this Section will describe the definition of bu
 
 A donor-type trap can be either positive or neutral like a donor dopant. An acceptor-type trap can be 
 either negative or neutral like an acceptor dopant. A donor-like trap is positively charged (ionized) when 
-empty and neutral when filled (with an electron). An empty donor- type trap, which is positive, can 
+empty and neutral when filled (with an electron). An empty donor-type trap, which is positive, can 
 capture an electron or emit a hole. A filled donor-type trap, which is neutral, can emit an electron or 
 capture a hole. An acceptor-like trap is neutral when empty and negatively charged (ionized) when filled 
 (with an electron). A filled acceptor-like trap can emit an electron or capture a hole. An empty acceptor-
@@ -558,7 +551,7 @@ the relevant band edge (conduction / valence for an acceptor-/donor-like trap), 
 cross sections~$\sigma_{e,h}$ for electrons and holes, respectively, and the introduction rate $\eta$ 
 which is the density of traps $N_t$ per unit of fluence $\Phi$.
 
-In general the energy of the trap $E_t$ is located some units of thermal energy $k_B T$ away from the 
+In general the energy of the trap $E_t$ is located some units of thermal energy $k T$ away from the 
 intrinsic energy level $E_i$, the introduction rate $\eta$ is close to unity and the 
 capture cross sections $\sigma$ are included in the range $10^{-16}-10^{13}$~cm$^2$.
 
@@ -574,7 +567,7 @@ the irradiated device is investigated.
 
 Combining beam test data with TCAD simulations in what is called the {\it grazing angle} 
 technique~\cite{Henrich:687041,Lari:2001qqa,LARI2004349}  
-it is possible to extract the electric field profile along the bulk depth of the irradiated detector.
+it makes possible to extract the electric field profile along the bulk depth of the irradiated detector.
 An example of such studies can be found in~\cite{Chiochia2005,CHIOCHIA2006}; the 
 authors investigated $n-on-n$ pixel detectors irradiated at CERN with  24~GeV/c protons. 
 The authors measured charge collection profiles as in Figure~\ref{fig:chiochia2006_profiles}. 
@@ -638,7 +631,7 @@ as it happens before irradiation.
 As done for the un-irradiated detectors, a comparison between Silvaco Atlas and Synopsys Sentaurus 
 was done for detectors simulated as if they were irradiated. The goal was to see if the results in terms of 
 depletion voltage, leakage current and charge collection efficiency  by the two tools for 
-the same radiation damage were 
+the same radiation damage model were 
 compatible . 
 The radiation damage model developed by the Perugia group with 
 Synopsys Sentaurus and documented in~\cite{PASSERI2016443} was 
@@ -647,10 +640,10 @@ researchers of the Perugia group.
 The same 2D $n-on-p$ diode used for the studies reported in 
 Section~\ref{sec:TCADfund} was used.
 The result of the investigations are documented in~\cite{bomben_rd50_Torino} and some of them 
-are reported and discussed here. First the investigated scenarios are presented, then the results of these 
-studies and discussion will follow.
+are reported and discussed here. First the investigated scenarios and then the results are presented;  
+discussion will follow.
 
-Similar to what was done for the carrier thermal  velocities and the bandgap energy here too several 
+Similar to what was done for the carrier thermal  velocities and the bandgap energy, several 
 scenarios were investigated: 
 
 \begin{center}
@@ -659,7 +652,8 @@ scenarios were investigated:
 \item[\bf base] setting $E^{Sil}_g(300)=1.11$~eV
 \item[\bf ${\bf E_g}$ = 1.08 eV] using default Silvaco parameters values
 \item[\bf Synopsys. Vel.] setting thermal velocities to the values used by Synopsys tool
-\item[\bf  Synopsys. Vel. \& $E_g$ = 1.08 eV] combination of the two above 
+\item[\bf Synopsys. Vel.]  
+\item [\bf \& $E_g$ = 1.08 eV]combination of the two above 
 \item[\bf Moscatelli] the results obtained by the Perugia group using Synopsys Sentaurus
 \end{itemize}
 \end{varwidth}
@@ -686,7 +680,8 @@ As it can be seen at this moderate fluence all the curves look similar but the d
 changing from one scenario to the other.
 The analysis was carried on for all the investigated fluences $\Phi$  and the results are presented in 
 Figure~\ref{fig:vdepl_Perugia_2015}. The best agreement between the two tools is obtained 
-when the scenario Synopsys. Vel. \& $E_g$ = 1.08 eV is considered. This is in agreement with what already 
+when the  {\it Synopsys. Vel. \& $E_g$ = 1.08 eV} 
+scenario is considered. This is in agreement with what already 
 presented in Section~\ref{sec:TCADfund} for what concerns the band gap energy, 
 but here the different carrier thermal velocity values play 
 an important role. This is not surprising since the  electron and hole 
@@ -709,21 +704,22 @@ $\Phi$ =  0.5$\times10^{15}$ n$_{\rm eq}$ cm$^{-2}$ for the five different scena
 \caption{\label{fig:read_and_draw_alpha_Perugia2015_fl1e15} (left) I vs V curves for a simulated fluence $\Phi$ =  0.5$\times10^{15}$ n$_{\rm eq}$ cm$^{-2}$ for the  different scenarios. (right) Normalised rate of increase of leakage current $\alpha$  for a simulated fluence $\Phi$ =  1$\times10^{15}$ n$_{\rm eq}$ cm$^{-2}$  for the  different scenarios.}
 \end{figure}
 
-For all fluences the pattern looks similar: the best agreement is realised in the $E_g$ = 1.08 eV scenario. 
+Also for the other fluences $\Phi$ the best agreement is realised in the {\it $E_g$ = 1.08 eV} 
+scenario. 
 The normalised rate of increase of leakage current $\alpha$ (Equation~\ref{eq:alpha})  was evaluated 
 for all simulated fluences (but the largest one) in all scenarios; the result for 
 $\Phi$ =  1$\times10^{15}$ n$_{\rm eq}$ cm$^{-2}$  is presented in 
 Figure~\ref{fig:read_and_draw_alpha_Perugia2015_fl1e15}. As it can be seen, if it is true that the best 
-agreement with the results published by the Perugia group is indeed obtained in the $E_g$ = 1.08 eV 
-scenario, it is in the Synopsys. Vel. \& $E_g$ = 1.08 eV scenario that the value of $\alpha$ 
+agreement with the results published by the Perugia group is indeed obtained in the {\it $E_g$ = 1.08 eV} 
+scenario, it is in the {\it Synopsys. Vel. \& $E_g$ = 1.08 eV} scenario that the value of $\alpha$ 
 gets closer to its typical value, about 4$\times10^{-17}$~A/cm~\cite{moll-thesis}; Perugia model 
 predicts $\alpha\sim3\times10^{-17}$~A/cm.
 Lower bandgap energy and larger carrier thermal velocities mean of course larger current value and this 
 is indeed  what  is shown in Figure~\ref{fig:read_and_draw_alpha_Perugia2015_fl1e15}.
 
 From the analysis of the depletion voltage and the leakage current it is clear that the scenario 
-that gives the best results is the Synopsys. Vel. \& $E_g$ = 1.08 eV one.
-So for the charge collection efficiency (CCE) study only the Synopsys. Vel. \& $E_g$ = 1.08 eV scenario 
+that gives the best results is the {\it Synopsys. Vel. \& $E_g$ = 1.08 eV} one.
+So for the charge collection efficiency (CCE) study only the {\it Synopsys. Vel. \& $E_g$ = 1.08 eV} scenario 
 was considered.
 
 \subsection{Charge Collection Efficiency}
@@ -772,14 +768,14 @@ models.
 In this Chapter the basics of TCAD simulation of silicon detectors for HEP were presented. 
 The motivations for such simulations were discussed and some examples outlined. 
 It was shown that, despite some inconsistencies on measured fundamental parameters, TCAD 
-simulations can be used to get reliable predictions once some important corrections are applied. 
+simulations can be used to get reliable predictions once some  corrections are applied. 
 The situation is far from optimal, in particular when it comes to the simulations of irradiated 
 detectors. The best would be to find a common set of parameters for both simulation tools, 
 verify that the predictions from the two programs are compatible when this set is used and then 
-stick to that set. This is part of an activity ongoing within the RD50 collaboration~\cite{RD50}.
+use consistently  that set. This is part of an activity ongoing within the RD50 collaboration~\cite{RD50}.
 
 The issue of the proper choice of radiation damage models for TCAD simulations 
 and the interest of using TCAD simulations together with beam test data from heavily irradiated detectors 
-was discussed; its importance will be evident  in Chapter~\ref{chap:digi} and~\ref{chap:ITk} . 
+was discussed; its importance will be evident  in Chapter~\ref{chap:digi}. 
 
 
