@@ -119,7 +119,7 @@ Figure~\ref{fig:app:raddamge1} presents a schematic overview of the physics mode
 \begin{figure}[htpb!]
 \centering
 \includegraphics[width=0.65\textwidth]{NewDigitizerSchematic.pdf}
-\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential.  }
+\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential.}
 \label{fig:app:raddamge1}
 \end{figure}
 
@@ -654,14 +654,15 @@ As a result of irradiation, defects form in the silicon and are sites for charge
 \subsection{Ramo Potential and the Induced Charge}
 \label{sec:ramo}
 
-Even though radiation damage causes charges to be trapped, the measured signal need not be zero.  This is because charge is registered as soon as the electrons or holes start to move.  One can compute the total induced charge without modeling the detailed time-dependent current via the the \textit{Ramo potential} from the Shockley-Ramo theorem (see Section~\ref{sec:SigForm}).  As a reminder, the theorem states that the amount of induced charge is the particle charge multiplied by the difference in the Ramo potential $\phi$ from its starting and ending (trapped) location:
+Even though radiation damage causes charges to be trapped, the measured signal need not be zero.  This is because charge is registered as soon as the electrons or holes start to move.  One can compute the total induced charge without modeling the detailed time-dependent current via the the \textit{Ramo potential} from the Shockley-Ramo theorem (see Section~\ref{sec:SigForm}).  As a reminder, the theorem states that the amount of induced charge is the particle charge multiplied by the difference in the Ramo potential $V_w$ from its starting and ending (trapped) location:
 
 \begin{align}
 \label{eq:ramo}
-Q_\text{induced} = -Q[\phi(\vec{x}_\text{end})-\phi(\vec{x}_\text{start})],
+Q_\text{induced} = -Q[V_w(\vec{x}_\text{end})-V_w(\vec{x}_\text{start})],
 \end{align}
 
-where $Q$ is the charge of the drifting carrier.  The Ramo potential for a particular electrode is computed by calculating the electrostatic potential with the boundary condition of the electrode held at unit voltage and setting all other electrodes to have zero potential.  For example, for a an infinite parallel plate capacitor, the field is constant in between the plates, so the Ramo potential is linear (starting at 1 and decreasing to zero).  This potential depends only on geometry and therefore can be computed once prior to any event simulation.   
+where $Q$ is the charge of the drifting carrier.  The Ramo potential for a particular electrode is computed by calculating the electrostatic potential with the boundary condition of the electrode held at unit voltage and setting all other electrodes to have zero potential.  For example, for a an infinite parallel plate capacitor, the field is constant in between the plates, so the Ramo potential is linear (starting at 1 and decreasing to zero
+ - see also Appendix~\ref{sec:CCEirr}).  This potential depends only on geometry and therefore can be computed once prior to any event simulation.   
 
 %Figure~\ref{fig:ramo:schematic} schematically demonstrates the combination of charge trapping and the Ramo potential by re-simulating three initial electrons many times, including diffusion.  As the electrons drift toward the electrode under the influence of the electric field, there is a chance that they are trapped.  If the electrons do not move very far, the induced charge is small compared to the charged induced if they travel nearly the entire distance to the electrode.  Note that the charge of one electron is only induced if both the electron and hole in one pair travel their full drift distance.  Since the Ramo potential of the collecting electrode is 1 and that of the backplane or $p^+$ electrode is zero: $Q_\text{induced}^e+Q_\text{induced}^h=-Q[\phi(\vec{x}_\text{end}^e)-\phi(\vec{x}_\text{end}^h)]=-Q[1-0]=-Q$.  This is what is meant by charge being `collected'.
 
@@ -686,10 +687,10 @@ In the digitizer code, if the user does not supply a Ramo potential calculated w
 
 \begin{align}
 \label{eq:doublexp}
-\phi_z(z)=[e^{-z/\alpha L}+e^{-z/L}-e^{-\alpha}-e^{-1}]/(2-e^{-\alpha}-e^{-1}),
+V_{w,z}(z)=[e^{-z/\alpha L}+e^{-z/L}-e^{-\alpha}-e^{-1}]/(2-e^{-\alpha}-e^{-1}),
 \end{align}
 
-where $L=200$ $\mu m$ and the denominator is chosen to make $\phi_z(0)=1$.  Good agreement is found for $\alpha\sim 3L/p$, where $p$ is the sensor pitch in the short direction (see Figure~\ref{fig:ramo:planar}). 
+where $L=200$ $\mu m$ and the denominator is chosen to make $V_{w,z}(0)=1$.  Good agreement is found for $\alpha\sim 3L/p$, where $p$ is the sensor pitch in the short direction (see Figure~\ref{fig:ramo:planar}). 
 
 
 The implementation of the Ramo potential and charge trapping are illustrated in Figure~\ref{fig:ramo:check} for planar sensors.  On the electrode from the same pixel as the electrons and holes originate, the induced charge equals the electron charge as the time to be trapped exceeds the time to drift toward the electrode.   The average collected charge is an asymmetric function of the depth inside the sensor because the drift and trapping times are different for electrons and holes and the Ramo potential is very asymmetric: the average fraction is lower far away from the collecting electrode.  In addition to inducing a charge on the electrode from the same pixel as the electron-hole pair generation, charge is induced in the neighboring pixels.  This is demonstrated in the middle and right plots of Figure~\ref{fig:ramo:check}.  In the limit where the induced charge is the electron charge in the same pixel as the electron-hole pair, the induced charge in the neighbors approaches zero.  For some combinations of starting location and time to trap, the induced charge can even be negative.  This happens when holes are trapped very close to the pixel implants.  Even though the Ramo potential map extends beyond one neighbor pixel, in practice the nearest neighbor pixels are considered in the simulation.  The right plot of Figure~\ref{fig:ramo:check} indicates that this is good approximation.

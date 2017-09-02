@@ -603,16 +603,15 @@ the electric field present in the depleted region. This movement of the charge c
 field induces signals on the readout electrodes.
 To calculate the induced signal on the electrodes by the charge carriers drift the Shockley-Ramo 
 theorem~\cite{ShockleyPot,Ramo,HE2001250} can be used.
-The theorem states that the charge $Q$ and current $i$ on an electrode induced by a moving point 
-charge $q$ are given by:
-\begin{eqnarray}
-Q &=&-qV_{w}(\vec{r})\\ 
-i &=&q\vec{v}\cdot\vec{E}_{w}(\vec{r}) 
-\end{eqnarray}
-where $\vec{v}$ is the instantaneous velocity of charge $q$. $V_{w}$ and $\vec{E}_{w}$ are the 
-electric potential and field that would exist at the instantaneous position $\vec{r}$ of $q$ under the 
+The theorem states that the current $i$ on an electrode induced by a moving point 
+charge $q$ is given by:
+\begin{equation}
+  i(t) =q\vec{v}\cdot\vec{E}_{w}(\vec{r}) 
+\end{equation}
+where $\vec{v}$ is the instantaneous velocity of charge $q$. $\vec{E}_{w}$ is  the 
+electric field that would exist at the instantaneous position $\vec{r}$ of $q$ under the 
 following circumstances: the selected electrode at unit potential, all other electrodes at zero potential 
-and all charges removed.
+and all charges removed. $\vec{E}_{w}$ is called Ramo field or {\it weighting field}.
 
 The sum of all the induced currents gives the total instantaneous current $I(t)$:
 \begin{equation}
@@ -627,16 +626,23 @@ where the carrier drift velocity is the product of the drift electric field $\ve
 %As shown in Equation~\ref{eq:carrierV}, the carrier mobility $\mu_{e,h}$ depends on the electric field, the temperature, and the nature of the carrier. 
 %Conveniently for the digitizer calculations, the calculation of the induced signal for each charge carrier is completely independent from all the other carriers (see Section~\ref{sec:Athena}).
 A carrier that completes its path to the collecting electrode by moving from the position $\vec{r}_i$ where it was created to the
-final (electrode) position $\vec{r}_f$ induces the total charge $Q$ given by the Ramo theorem, where $\vec{V}_w(\vec{r})$ represents the weighting (Ramo) potential evaluated at the position $\vec{r}$ :
+final (electrode) position $\vec{r}_f$ induces the total charge $Q$ given by the Ramo theorem, where 
+$V_w(\vec{r})$ represents the {\it weighting} (or Ramo) potential evaluated at the position $\vec{r}$ :
 \begin{equation}
 Q = - q\left(V_w(\vec{r}_f)-V_w(\vec{r}_i)\right)
 \label{eq:signal}
 \end{equation}
+The relation between the weighting potential and field is of course:
+
+\begin{equation}
+\vec{E}_w = - \nabla V_w
+\label{eq:weightrel}
+\end{equation}
+
 A carrier $q$ that is produced at position $\vec{r}_i$ and trapped at position $\vec{r}_f$, before 
 reaching the electrode, induces a smaller charge $Q$ on the electrode by the same formula 
-(carrier trapping will be presented in detail in Section~\ref{sec:trapping}). Both 
-trapped electrons and trapped holes reduce the final signal amplitude, as shown in 
-Equation~\ref{eq:signal}.
+(carrier trapping will be presented in detail in Section~\ref{sec:trapping}). It has to be noticed that both 
+trapped electrons and trapped holes reduce the final signal amplitude.
 
 \subsection{Pad detectors}
 \label{sec:pads}
