@@ -5,7 +5,7 @@ This Chapter presents a model for radiation damage to silicon sensors~\cite{Digi
 group.
 
 
-Figure~\ref{fig:atlassim} shows the flowchart of the ATLAS Monte Carlo simulation, from 
+\noindent Figure~\ref{fig:atlassim} shows the flowchart of the ATLAS Monte Carlo simulation, from 
 event generation to analysis; digitization step intervenes before reconstruction.
 
 
@@ -16,7 +16,7 @@ event generation to analysis; digitization step intervenes before reconstruction
 \end{figure}
 
  
-After introducing the motivations and the the fluences predictions for the actual detector in 
+\noindent After introducing the motivations and the the fluences predictions for the actual ATLAS Pixel detector in 
 Section~\ref{sec:expflu}, a model of charge deposition and measurement that includes radiation 
 damage effects is documented in Section~\ref{sec:fullmodel}. Comparisons of the models with data are 
 presented in Setion~\ref{sec:digivalidation}; conclusions and plans will be drawn in Section~\ref{sec:digiconclusions}.
@@ -30,7 +30,7 @@ detectors are subjected to an
 unprecedented amount of radiation over their lifetime:  the innermost layers will receive 
 fluences in excess of $10^{15}$  $n_\text{eq}/\text{cm}^2$. The modules comprising the detector are designed to be as radiation tolerant as possible, but their performance will still degrade over time.  It is therefore critical to model the impact of radiation damage for an accurate simulation of charged particle interactions with the detector and the reconstruction of their trajectories.  
 
-Modelling radiation damage effects is especially relevant for the high luminosity upgrade of the LHC (HL-LHC - see also Chapter~\ref{chap:ITk}); the instantaneous and integrated luminosity will exceed current values by a factor of 100.  The simulations for the present and future ATLAS detectors currently do not model the effect of radiation damage on the silicon sensors of the Pixel detector~\cite{Aad:2010ah,ATL-PHYS-PUB-2016-025}.
+\noindent Modelling radiation damage effects is especially relevant for the high luminosity upgrade of the LHC (HL-LHC - see also Chapter~\ref{chap:ITk}); the instantaneous and integrated luminosity will exceed current values by a factor of 100.  The simulations for the present and future ATLAS detectors currently do not model the effect of radiation damage on the silicon sensors of the Pixel detector~\cite{Aad:2010ah,ATL-PHYS-PUB-2016-025}.
 
 As already discussed in Section~\ref{sec:RadDam}, 
 radiation damage in silicon occurs from both ionising and 
@@ -106,8 +106,11 @@ $\Phi=2\times 10^{15}$ $n_\text{eq}/\text{cm}^{2}$.
 
 
 
-The CMS collaboration has developed a model of radiation 
-damage~\cite{Contardo:2020886,Swartz2002,Chiochia:2004qh,Swartz:2005vp}, validated with beam test data, but is used to apply corrections to simulation from a model without inherent radiation damage effects.  The next Section describes the physics of the digitization model and the first collision data comparisons are shown in Section~\ref{sec:digivalidation}.
+%The CMS collaboration has developed a model of radiation 
+%damage~\cite{Contardo:2020886,Swartz2002,Chiochia:2004qh,Swartz:2005vp}, validated with beam test 
+%data, but is used to apply corrections to simulation from a model without inherent 
+%radiation damage effects.  
+The next Section describes the physics of the digitization model and the first collision data comparisons are shown in Section~\ref{sec:digivalidation}.
 
 
 \section{Digitization Modeling}
@@ -118,8 +121,8 @@ damage~\cite{Contardo:2020886,Swartz2002,Chiochia:2004qh,Swartz:2005vp}, validat
 Figure~\ref{fig:app:raddamge1} presents a schematic overview of the physics models included in the digitization model.   
 \begin{figure}[htpb!]
 \centering
-\includegraphics[width=0.65\textwidth]{NewDigitizerSchematic.pdf}
-\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential.}
+\includegraphics[width=0.65\textwidth]{New2DigitizerSchematic.pdf}
+\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential. Pixel local coordinate system is indicated; it will be used through out the Chapter.}
 \label{fig:app:raddamge1}
 \end{figure}
 
@@ -131,7 +134,7 @@ Digitiser inputs are:
 \item the electric field, including radiation damage effects (Section~\ref{sec:ElecFieldMod}); TCAD simulations are used to model the electric field.
  \end{itemize}
  
-   Ionisation energy is converted into electron-hole pairs ($\sim 3.6$ eV/pair) which experience random motion from diffusion.  Chunks of fundamental charge carriers drift toward the electrode (electrons) or backplane (holes) under the influence of the electric field, with a field- and temperature-dependent mobility.  The number of fundamental charges per chunk is tuned to save time and a correction is applied to account for an over-estimation of fluctuations.  In addition to drifting toward the electrodes under the influence of the electric field, there is a transverse component to the drift due to the 2 T magnetic field in the ATLAS inner detector.  A field- and temperature-dependent Lorentz angle is combined with the mobility to compute the time for a charge carrier to be collected (Section~\ref{sec:maps},\ref{sec:mapsLorentz}).  This time is compared to a fluence-dependent trapping time (Section~\ref{sec:chargetrapping}), the characteristic time a charge carrier will travel for before it is trapped.  If the drift time is longer than the trapping time, the chunk is declared trapped.  The location of the chunk at the trapped position is calculated based on the starting position and trapping time (Section~\ref{sec:maps}).  Since moving charges induce a current in the collecting electrode, signal is induced on electrodes from trapped charges as well.  This induced charge also applies to neighboring pixels, which contributes to charge sharing.  The induced charge from trapped chunks is calculated from the initial and trapped positions using a weighting potential (Section~\ref{sec:ramo}).  The sum of the collected and induced charge is then converted into a ToT that is used by cluster and track reconstruction tools.
+   Ionisation energy is converted into electron-hole pairs ($\sim 3.6$ eV/pair) which experience random motion from diffusion.  Chunks of fundamental charge carriers drift toward the pixel electrodes (electrons) or backplane (holes) under the influence of the electric field, with a field- and temperature-dependent mobility.  The number of fundamental charges per chunk is tuned to save time and a correction is applied to account for an over-estimation of fluctuations.  In addition to drifting toward the electrodes under the influence of the electric field, there is a transverse component to the drift due to the 2 T magnetic field in the ATLAS inner detector.  A field- and temperature-dependent Lorentz angle is combined with the mobility to compute the time for a charge carrier to be collected (Section~\ref{sec:maps}~and~\ref{sec:mapsLorentz}).  This time is compared to a fluence-dependent trapping time (Section~\ref{sec:chargetrapping}), the characteristic time a charge carrier will travel for before it is trapped.  If the drift time is longer than the trapping time, the chunk is declared trapped.  The location of the chunk at the trapped position is calculated based on the starting position and trapping time (Section~\ref{sec:maps}).  Since moving charges induce a current in the collecting electrode, signal is induced on electrodes from trapped charges as well.  This induced charge also applies to neighboring pixels, which contributes to charge sharing.  The induced charge from trapped chunks is calculated from the initial and trapped positions using the weighting potential (Section~\ref{sec:ramo}).  The sum of the collected and induced charge is then converted into a ToT that is used by cluster and track reconstruction tools.
 
 
 
@@ -197,17 +200,16 @@ the electric field distribution in the bulk\footnote{There are also changes at t
 here is on the deformations on the electric field within the sensor.}. Since many variables used in signal 
 formation calculations depend on the electric field (drifting time, Lorentz angle deviation, etc.), including 
 radiation damage effects requires a careful parameterisation of the electric field in the pixels. 
-Investigation of the electric field profile in the bulk of irradiated silicon sensors have shown that for 
-certain materials, the electric field is no longer linear with the bulk depth after irradiation~\cite{bib:DP}.  
 
-Section~\ref{sec:ElectricField:SimulationDetails} introduces the default model used for subsequent studies, as well as provides references to alternative models in the literature.   The fluence-dependent depletion voltage calculation is presented in Section~\ref{sec:depletionvoltage} and the resulting field profiles are shown in Section~\ref{sec:Efieldprofile}.  Section~\ref{sec:Efieldmodelcomparisons} provides a brief comparison between the default model and alternative models.
+Section~\ref{sec:ElectricField:SimulationDetails} introduces the default model used for subsequent studies, as well as provides references to alternative models in the literature.  Annealing evaluation is 
+discussed in Section~\ref{sec:annealing}. The fluence-dependent depletion voltage calculation is presented in Section~\ref{sec:depletionvoltage} and the resulting field profiles are shown in Section~\ref{sec:Efieldprofile}.  Section~\ref{sec:Efieldmodelcomparisons} provides a brief comparison between the default model and alternative models.
 
 \subsubsection{Simulation Details}
 \label{sec:ElectricField:SimulationDetails}
 
 
 
-As already mentioned in Section~\ref{sec:RadDam}, investigation of the electric field profile in the bulk of irradiated silicon sensors have shown that the electric field is no longer linear with the bulk depth after irradiation. In these materials, the irradiation causes two junctions, one at the pixel side and one at the opposite side, as first explained by Eremin, Verbitskaya, and Li~(EVL)~\cite{bib:DP}. These two junctions give rise to an electric field with two maxima at the two edges of the sensor and a minima somewhere in the middle of the bulk.  Field profiles are discussed in more detail in Section~\ref{sec:Efieldprofile}
+As already mentioned in Section~\ref{sec:RadDam}, investigation of the electric field profile in the bulk of irradiated silicon sensors have shown that the electric field is no longer linear with the bulk depth after irradiation. In these materials, the irradiation causes two junctions, one at the pixel side and one at the opposite side, as first explained by Eremin, Verbitskaya, and Li~(EVL)~\cite{bib:DP}. These two junctions give rise to an electric field with two maxima at the two edges of the sensor and a minima somewhere in the middle of the bulk.  Electric field profiles are discussed in more detail in Section~\ref{sec:Efieldprofile}
 
 This important and striking feature of irradiated planar sensors is simulated using the \textit{Chiochia model}~\cite{CHIOCHIA2006}, already introduced in Section~\ref{sec:TCADRadDamModels}, implemented in the Silvaco TCAD package (see Chapter~\ref{chap:TCAD}).  The simulation is performed over volume that corresponds to a quarter of an ATLAS IBL pixel sensor cell, to take advantage of symmetry.  Figure~\ref{fig:planarsetup} highlights the geometry used in the simulation.   The electric field is computed at $T=-10^{\circ}$C using an effective doping concentration of $1.6\times 10^{12}/\text{cm}^3$ (corresponding to about 50 V depletion for unirradiated sensors) with a resolution of $1$ $\text{$\mu$m}^3$.  The Chiochia model is a double-trap model with one acceptor and one donor trap with activation energies set to $E_c-0.52$ eV and $E_v+0.48$ eV~\cite{bib:DP}, respectively.  Reference~\cite{CHIOCHIA2006} gives suggested values of the concentrations and capture cross-sections.  The capture cross section for the acceptor and donor levels for holes, $\sigma_h^A,\sigma_h^D$ are fixed at $1.65$ ($\times 10^{-15}$ cm$^2$) and the same quantities for electrons ($\sigma_e^{A},\sigma_e^D$) are fixed at $6.60\times 10^{-15}$ cm$^2$.  The acceptor and donor concentrations vary with fluence are interpolated from the values presented in~\cite{CHIOCHIA2006}.  In particular, the acceptor concentrations are set to $0.35, 0.68$, and $1.36\times 10^{15}/\text{cm$^3$}$ for $1, 2$, and $5\times 10^{14}$ $n_\text{eq}/\text{cm}^2$ and the corresponding donor concentrations for the same fluences are $0.5, 1.0$, and $3.39\times 10^{15}/\text{cm$^3$}$.
 
@@ -229,19 +231,20 @@ This important and striking feature of irradiated planar sensors is simulated us
 %\label{fig:3Dsetup}
 %\end{figure}
 
-While the Chiochia is used as default, there are additional radiation damage models (EVL~\cite{bib:DP}, Petasecca~\cite{1710302}, New Delhi~\cite{dalal2014simulation}, etc.), some of which are investigated in Section~\ref{sec:Efieldmodelcomparisons}.  The TCAD simulations for planar  are valid for silicon that has been instantaneously irradiated to a given fluence.   In reality, the irradiation and thermal history play an important role in the effective doping concentration, which influences the calculated electric field profile.  These effects are accounted for with a model of annealing, as described in the next Section.
+While the Chiochia model is used as default, there are additional radiation damage models (EVL~\cite{bib:DP}, Petasecca~\cite{1710302}, New Delhi~\cite{dalal2014simulation}, etc.), some of which are investigated in Section~\ref{sec:Efieldmodelcomparisons}.  The TCAD simulations for planar  are valid for silicon that has been instantaneously irradiated to a given fluence.   In reality, the irradiation and thermal history play an important role in the effective doping concentration, which influences the calculated electric field profile.  These effects are accounted for with a model of annealing, as described in the next Section.
 
 
 \subsubsection{Annealing}
 \label{sec:annealing}
 
- The irradiation and thermal history are accounted for in the prediction of the effective doping concentration with the Hamburg model (see~\cite{moll-thesis} and references therein).  In this model, the effective doping concentration has the following form:
+ The irradiation and thermal history are accounted for in the prediction of the effective doping concentration with the Hamburg model (see~\cite{moll-thesis} and references therein); changes 
+ to the effective doping concentration are of course impacting the electric field profiles too.
+  In this model, the effective doping concentration has the following form:
 
 \begin{align}
 \label{eq:hamburg0}
 N_\text{eff}(t)=(N_\text{eff}(0)-N_{D}^\text{removable}(0))+N_{D}^\text{removable}(t)-N_{A}^\text{stable}(t)-N_{A}^\text{beneficial}(t)-N_{A}^\text{reverse}(t),
 \end{align}
-
 where $N_D^\text{removable}(0)$ is the initial concentration of removable donors.  The fraction of removable donors at low doping concentrations like here is 100\% for charged particle irradiation, which dominates the inner pixel layers in the ATLAS detector.  The time-dependence of the terms on the right-hand side of Equation~\ref{eq:hamburg0} are described by the following differential equations:
 
 \begin{align}
@@ -262,7 +265,6 @@ where $N_D^\text{removable}(0)$ is the initial concentration of removable donors
 &N_{A}^\text{beneficial}(t)  &&=\frac{g_\text{A}\phi_\text{eq}}{k_\text{A}} \left( 1-e^{-k_\text{A}t} \right) + N_0 \cdot e^{-k_\text{A}t} \\ \label{eq:hamburg42}
 &N_{A}^\text{reverse}(t)  &&= \frac{g_\text{Y}\phi_\text{eq}}{k_\text{Y}} \left( k_\text{Y}t + e^{-k_\text{Y}t} -1  \right) + N_0^\text{nd} \left( 1-e^{-k_\text{Y}t} \right).
 \end{align}
-
 While the introduction rates $g_c,g_A$, and $g_Y$ have been measured elsewhere (e.g. \cite{Lindstrom:421210}), the reported values vary significantly amongst different materials and irradiation types and so are fit with \textit{depletion voltage data} from the ATLAS pixel detector described in the next section (Section~\ref{sec:depletionvoltage}).  Using the fitted introduction rates, the luminosity, and temperature profiles, the above model described in Equations~\ref{eq:hamburg12}-~\ref{eq:hamburg42} is used to predict the effective doping concentration as a function of time.  Figure~\ref{fig:electricfield:neff} shows the predicted effective doping concentration for the IBL. 
 
 \begin{figure}[!htpb]
@@ -280,16 +282,16 @@ The predictions from the Hamburg model are incorporated into the TCAD calculatio
 
 \subsubsection{Depletion Voltage}
 \label{sec:depletionvoltage}
+Here the fit to the depletion voltage of the ATLAS pixel modules is described; the goal is to extract the  introduction rates $g_c,g_A$, and $g_Y$  mentioned in the previous Section.
 
 The \textit{depletion region} is the volume over which the lifetime of generated carriers is long enough to be collected.  In order to maintain a high charge collection efficiency, it is critical that the depletion region extends to the whole sensor bulk.  The size of this region depends on the bias voltage and the doping concentration, which changes with fluence.   For unirradiated ATLAS planar sensors the depletion region grows from the backside up until type inversion, after which the region grows from the pixel implant.  For highly irradiated sensors, the notion of \textit{fully depleted} is not well-defined since there can be regions inside the sensor bulk that have very low field, even if the top and bottom of the (planar) sensor have a strong electric field.  This is described in more detail in Section~\ref{sec:Efieldprofile}.
 
- Despite the caveats about depletion at high fluence, at moderate fluences the notion of the depletion region is important for calibrating the Hamburg model that was introduced in Section~\ref{sec:annealing}.  The full depletion voltage in the Hamburg model is defined as the bias voltage fulfilling the following equation:
+ Despite the caveats about depletion at high fluence, at moderate fluences the notion of the depletion region is important for calibrating the Hamburg model that was introduced in Section~\ref{sec:annealing}.  The full depletion voltage $U_\text{full depl.}$ in the Hamburg model is defined as usual as:
 
 \begin{align}
 \label{eq:hamburg13}
 U_\text{full depl.} = |N_\text{eff}| \cdot \frac{qw^2}{2\epsilon\epsilon_0}
 \end{align}
-
 where $w$ is the sensor depth. Figure~\ref{fig:electricfield:depletionvoltage} shows the simulated depletion voltage as a function of time for the IBL
  (left) and b-layer (right). For calibration of the model, measurements with the ATLAS Pixel Detector were obtained by performing bias voltage scans of the mean ToT of hit-clusters on reconstructed particle trajectories. The depletion voltage is extracted by fitting two linear functions to the rising and the plateau region of the measured data. The intersection of the two lines is defined to be the depletion voltage (blue bars in Figure~\ref{fig:electricfield:depletionvoltage}). Another method which was also used to obtain the full depletion voltage is a scan of the cross-talk between adjacent pixels (green and red bars in Figure~\ref{fig:electricfield:depletionvoltage}, the different colors indicate different information sources). Since the pixels are isolated only after full depletion this is a powerful measurement tool. Unfortunately, this method is only applicable before space-charge sign inversion since otherwise the pixels are isolated already at low bias voltages much before full depletion.
 
@@ -343,11 +345,11 @@ $5\times 10^{14}$& (125) \\
 \label{eq:depletionvoltage}
 \end{table}
 
-In TCAD radiation damage models like~\cite{bib:DP,CHIOCHIA2006} annealing effects are not included. 
+In  radiation damage models like~\cite{bib:DP,CHIOCHIA2006} annealing effects are not included. 
 We have devised an effective modelling of annealing of annealing effects for TCAD radiation 
 damage models; it will be presented in Section~\ref{sec:TCADAnneal} 
 
-\subsubsection{Field Profiles}
+\subsubsection{Electric Field Profiles}
 \label{sec:Efieldprofile}
 
 For planar sensors, the field is largely independent of $x$ and $y$, perpendicular to the sensor depth. Figure~\ref{fig:electricfield:profilesRun23} shows the $z$-dependence of the electric field, averaged over $x$ and $y$, for an ATLAS planar sensor for various fluences and a fixed bias voltage of 80 V.  Before irradiation the field is approximately linear, reaching a maximum of about $2V/w\sim 8\times 10^{-4}$ MV/mm, where $V$ is the bias voltage and $w$ is the depletion depth.  After type inversion, the field maximum is on the opposite side of the sensor.  With increasing fluence, there is a minimum in the electric field in the center of the sensor.  For a fluence of $\Phi=5\times 10^{14}$ $n_\text{eq}/\text{cm}^2$ for 80 V (under-depleted - see Section~\ref{sec:depletionvoltage}), this minimum is broad and occupies nearly a third of the sensor.
@@ -361,8 +363,9 @@ For planar sensors, the field is largely independent of $x$ and $y$, perpendicul
 \label{fig:electricfield:profilesRun23}
 \end{figure}
 
+Similar predictions have been prepared for higher bias voltages and larger fluences.
 
-\subsubsection{Model Comparisons}
+\subsubsection{Model Comparisons and Systematic Uncertainties}
 \label{sec:Efieldmodelcomparisons}
 
 Detailed model comparisons are in preparation, but already the data presented in Section~\ref{sec:digivalidation} can be used to constrain various simulations as well as tune parameters and derive systematic uncertainties for predictions for higher luminosity data.  In addition to the Chiochia model for the planar sensors, the Petasecca model was also briefly investigated.  While the model itself is supported by beam test data~\cite{1710302}, it is found to disagree qualitatively on the fluence for type-inversion with the Chiochia model and does not display a two-peaked electric field profile after irradiation.  Therefore, this alternative model was not studied in further detail.
@@ -454,7 +457,7 @@ One way to emulate annealing effects from the Hamburg model in the TCAD simulati
 \label{eq:SpaceChargeTCADHamburg}
 \end{equation}
 
-Table~\ref{tab:NeffHamburg} collects predictions from the Hamburg model (see Section~\ref{sec:annealing}) for the effective concentration of donors and acceptors as well as their difference $N_\text{eff}$. 
+Table~\ref{tab:NeffHamburg} collects predictions from the Hamburg model (see Section~\ref{sec:annealing}) for the effective concentration of donors and acceptors as well as their difference $N_\text{eff}$ for two points in time. 
 
 \begin{table}[!htpb]
 \centering
@@ -468,12 +471,11 @@ Table~\ref{tab:NeffHamburg} collects predictions from the Hamburg model (see Sec
  8/9/2016 & 2$\times10^{14}$ & 2.72$\times10^{12}$ & 0.08$\times10^{12}$ & 2.8$\times10^{12}$\\
   \hline  
 \end{tabular}
-\caption{\label{tab:NeffHamburg}Predictions from the Hamburg model for the effective donor ($N_D$) and acceptor ($N_A$) concentrations as well as their difference ($N_\text{eff}$) for two point in time during Run 2.  Section~\ref{sec:annealing} for details.}
+\caption{\label{tab:NeffHamburg}Predictions from the Hamburg model for the effective donor ($N_D$) and acceptor ($N_A$) concentrations as well as their difference ($N_\text{eff}$) for two points in time during Run 2.  Section~\ref{sec:annealing} for details.}
 \end{table}
 
 Figure~\ref{fig:NeffTCADAnnealing} shows the charge density predicted by TCAD simulations in four 
-different scenarios with a bias voltage of 150~V and the two fluences reported in Table~\ref{tab:NeffHamburg}.  The \textit{Reference} scenario is the default setup described in Section~\ref{sec:ElectricField:SimulationDetails} with no modifications to emulate annealing.  Another extreme, labeled \textit{Annealed}, considers the acceptor and donor traps in the Hamburg model TCAD as in one-to-one correspondence.  Therefore, instead of matching the effective doping concentration as in Equation~\ref{eq:SpaceChargeTCADHamburg}, the acceptor and donor densities in TCAD are directly set to the values in Table~\ref{tab:NeffHamburg}.  Moreover, since shallow defects are not affected by deep traps in TCAD, the way to account for the fact that in Hamburg model the shallow donors are supposed to be completely annealed out is to reduce significantly the initial concentration of shallow donors. So, additionally, the doping level in the starting material is set to 8$\times$10$^{10}$~cm$^{-3}$;  as a reminder the initial donor concentration was of about 1.6$\times$10$^{12}$~cm$^{-3}$.   The Annealed scenario is qualitatively different than the un-annealed line and would predict an electric field that is linear (more below), which is in contrast to various measurements elsewhere~\cite{CHIOCHIA2006} and also shown later in this paper (Section~\ref{sec:CCE}).  Therefore, a compromise is made in which only the average effective doping concentration is matched between the models, following Equation~\ref{eq:SpaceChargeTCADHamburg}.  There is some freedom in how to do the matching because donors and acceptors can be independently varied.  For high fluences 
-($\gtrsim10^{13}$~n$_\text{eq}/\text{cm}^{2}$), deep and shallow donor states are more likely than acceptors to be completely removed~\cite{moll-thesis}.  Therefore, we vary only the acceptor concentrations when solving Equation~\ref{eq:SpaceChargeTCADHamburg}.   The values that match the Hamburg model are $+3\%$ for $\Phi=1\times10^{14}$ $n_\text{eq}/\text{cm}^2$ and $-1.6\%$ for $\Phi=2\times10^{14}$ $n_\text{eq}/\text{cm}^2$.  For reference, the space charge distributions for $+10\%$ and $-5\%$ for the two fluences are also shown, respectively.   The average charge density in the various scenarios is summarised in Tables~\ref{tab:TCADNeffHamburg1}~and~\ref{tab:TCADNeffHamburg2} for the two fluences shown in Figure~\ref{fig:NeffTCADAnnealing}.
+different scenarios with a bias voltage of 150~V and the two fluences reported in Table~\ref{tab:NeffHamburg}.  
 
 \begin{figure}[!htpb]
 \centering
@@ -483,6 +485,12 @@ different scenarios with a bias voltage of 150~V and the two fluences reported i
   fluences of (left)~$\Phi=1$~and~(right)~2$\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$. The bias voltage was set to $150$ V in all cases. Four scenarios were simulated; see text for more 
   details.}
 \end{figure}
+
+
+The \textit{Reference} scenario is the default setup described in Section~\ref{sec:ElectricField:SimulationDetails} with no modifications to emulate annealing.  Another extreme, labeled \textit{Annealed}, considers the acceptor and donor traps in the Hamburg model TCAD as in one-to-one correspondence.  Therefore, instead of matching the effective doping concentration as in Equation~\ref{eq:SpaceChargeTCADHamburg}, the acceptor and donor densities in TCAD are directly set to the values in Table~\ref{tab:NeffHamburg}.  Moreover, since shallow defects are not affected by deep traps in TCAD, the way to account for the fact that in Hamburg model the shallow donors are supposed to be completely annealed out is to reduce significantly the initial concentration of shallow donors. So, additionally, the doping level in the starting material is set to 8$\times$10$^{10}$~cm$^{-3}$;  as a reminder the initial donor concentration was of about 1.6$\times$10$^{12}$~cm$^{-3}$.   The Annealed scenario is qualitatively different than the un-annealed line and would predict an electric field that is linear (more below), which is in contrast to various measurements elsewhere~\cite{CHIOCHIA2006} and also shown later in this paper (Section~\ref{sec:CCE}).  Therefore, a compromise is made in which only the average effective doping concentration is matched between the models, following Equation~\ref{eq:SpaceChargeTCADHamburg}.  There is some freedom in how to do the matching because donors and acceptors can be independently varied.  For high fluences 
+($\gtrsim10^{13}$~n$_\text{eq}/\text{cm}^{2}$), deep and shallow donor states are more likely than acceptors to be completely removed~\cite{moll-thesis}.  Therefore, we vary only the acceptor concentrations when solving Equation~\ref{eq:SpaceChargeTCADHamburg}.   The values that match the Hamburg model are $+3\%$ for $\Phi=1\times10^{14}$ $n_\text{eq}/\text{cm}^2$ and $-1.6\%$ for $\Phi=2\times10^{14}$ $n_\text{eq}/\text{cm}^2$.  For reference, the space charge distributions for $+10\%$ and $-5\%$ for the two fluences are also shown, respectively.   The average charge density in the various scenarios is summarised in Tables~\ref{tab:TCADNeffHamburg1}~and~\ref{tab:TCADNeffHamburg2} for the two fluences shown in Figure~\ref{fig:NeffTCADAnnealing}.
+
+
 
 
 \begin{table}[htbp]
@@ -549,7 +557,7 @@ at fluence $\Phi=2\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$ the effect of annea
 predicted by Hamburg model can be emulated with the TCAD simulations.   These variations are currently within the model variations described in Section~\ref{sec:Efieldmodelcomparisons} that are used to set systematic uncertainties on the radiation damage model parameters.  Therefore, no additional corrections or uncertainties are applied to the simulation to account for annealing for the current radiation levels.
 
 
-\subsection{Time-to-electrode, Location-at-trap}
+\subsection{Time-to-Electrode, Location-at-Trap}
 \label{sec:maps}
 
 Numerically propagating charges through the silicon sensor can be computationally expensive, but fortunately can be computed once per geometry and set of conditions (temperature, bias, and fluence).   Electrons and holes drift with a velocity given by the mobility: $\mu_C$, where $C\in\{e,h\}$.  The mobility is parameterized as a function of electric field and temperature~\cite{JACOBONI197777}:
@@ -596,7 +604,7 @@ shown in Figure~\ref{fig:timetoelectrode} for planar  sensors.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.6\textwidth]{newtz_0fluence80V.pdf}
-\caption{The time for an electron or hole to drift all the way to the collecting electrode (electrons) or back plane (holes) in an ATLAS IBL planar sensor biased at 80 V as a function of the depth ($z$) using the averaged $E$ fields shown in Figure~\ref{fig:electricfield:profilesRun23}.  }
+\caption{The time for an electron or hole to drift all the way to the collecting electrode (electrons) or back plane (holes) in an ATLAS IBL planar sensor biased at 80 V as a function of the depth ($z$) using the averaged electric fields shown in Figure~\ref{fig:electricfield:profilesRun23}.  }
 \label{fig:timetoelectrode}
 \end{figure}
 
@@ -649,7 +657,7 @@ The drift along the $\phi$ direction (the azimuthal angle transverse to the beam
 \subsection{Trapping}
 \label{sec:chargetrapping}
 
-As a result of irradiation, defects form in the silicon and are sites for charge trapping.  In the simulation, charge chunks are declared trapped if the projected time to reach the electrode from Section~\ref{sec:maps} exceeds a random trapping time $t$ that is exponentially distributed with mean value $1/(\kappa\Theta)$, where $\Theta$ is the fluence.  The constant $\kappa$ (sometimes called $\beta$ in the literature) has been measured at the 2001 CERN  beam test and is approximately $\kappa=3\times 10^{-16}$ cm${}^2$/ns~\cite{trapping2}.  Charge trapping reduces the collected signal and thus degrades track reconstruction efficiency.
+As a result of irradiation, defects form in the silicon and are sites for charge trapping.  In the simulation, charge chunks are declared trapped if the projected time to reach the electrode from Section~\ref{sec:maps} exceeds a random trapping time $t$ that is exponentially distributed with mean value $1/(\kappa\Theta)$, where $\Theta$ is the fluence.  The constant $\kappa$ (sometimes called $\beta$ in the literature) has been measured in ATLAS pixel modules in  2001 during a CERN  beam test and is approximately $\kappa=3\times 10^{-16}$ cm${}^2$/ns~\cite{trapping2}.  Charge trapping reduces the collected signal and thus degrades track reconstruction efficiency.
 
 \subsection{Ramo Potential and the Induced Charge}
 \label{sec:ramo}
@@ -713,25 +721,16 @@ The implementation of the Ramo potential and charge trapping are illustrated in 
 \subsection{Data and Simulation}
 
 %https://twiki.cern.ch/twiki/bin/view/Atlas/PixelConditionsRUN2
-Given the models presented in the previous sections, it is critical to validate the physics as well as the implementation by comparing the simulations with data.  This Section present results for the  key observable for studying radiation damage: the charge collection efficiency\footnote{Results for the Lorentz angle are being prepared}.  The charge collection efficiency is measured as a function of time in Run 2 for the innermost pixel layer, which was installed during the shutdown between runs and thus was unirradiated at the start of Run 2.  The data were collected in the fall of 2015 and throughout 2016 with single muon triggers.  Charged particle tracks are reconstructed from hits in the Pixel detector, silicon strip detector, and transition radiation tracker.  Clusters on the innermost pixel layer associated to tracks are considered for further analysis.  The IBL is operated at 80 or 150 V at a temperature of 270 K in 2015 and 288 K in 2016.  The analog threshold is 2550 e with 4 bits of ToT for the digital charge readout.  The ToT is calibrated so that a ToT of 8 corresponds to 20 ke and a digital threshold of ToT $>1$ is applied.  The ADC is modeled in simulation using the same charge to ToT conversion.
+Given the models presented in the previous sections, it is critical to validate the physics as well as the implementation by comparing the simulations with data.  This Section present results for the  key observable for studying radiation damage: the charge collection efficiency\footnote{Results for the Lorentz angle are being prepared}.  The charge collection efficiency is measured as a function of time in Run 2 for the innermost pixel layer, which was installed during the shutdown between Run 1 and Run 2 and thus was unirradiated at the start of Run 2.  The data were collected in the fall of 2015 and throughout 2016 with single muon triggers.  Charged particle tracks are reconstructed from hits in the Pixel detector, silicon strip detector, and transition radiation tracker.  Clusters on the innermost pixel layer associated to tracks are considered for further analysis.  The IBL is operated at 80 or 150 V at a temperature of 270 K in 2015 and 288 K in 2016.  The analog threshold is 2550 e with 4 bits of ToT for the digital charge readout.  The ToT is calibrated so that a ToT of 8 corresponds to 20 ke and a digital threshold of ToT $>1$ is applied.  The ADC is modeled in simulation using the same charge to ToT conversion.
 
-Simulated datasets are based on Geant4~\cite{Agostinelli:2002hh} with digitization implemented in the full ATLAS simulation framework (ATHENA)~\cite{Aad:2010ah} or a standalone package called Allpix~\cite{benoit:20xx}.  The later is a lightweight wrapper of Geant4 that is optimized for testbeam analysis and is a powerful test-bench for digitizer development.
+Simulated datasets are based on Geant4~\cite{Agostinelli:2002hh} with digitization implemented in the full ATLAS simulation framework (ATHENA)~\cite{Aad:2010ah} or a standalone package called Allpix~\cite{benoit:20xx}.  The latter is a lightweight wrapper of Geant4 that is optimized for beam test
+ analysis and is a powerful test-bench for digitizer development.
 
-%user.stsuno.mc15 13TeV.361107.PowhegPythia8EvtGen AZNLOCTEQ6L1 Zmumu.2015.v01 EXT2 for the simplified?
 
 \subsection{Charge Collection Efficiency}
 \label{sec:CCE}
 
-The collected charge is represented by the mode of the charge distribution, which is approximately Landau~\cite{Landau:1944if}.  The charge collection efficiency is defined to be the collected charge at one fluence divided by the charge for unirradiated sensors in overdepletion.  Figure~\ref{fig:CCE:Run2} shows the measured and predicted charge collection efficiency as a function of integrated luminosity in Run 2~\cite{Rossini:2273193}. Data points are corrected in order to account for the drift in the ToT calibration~\cite{Miucci:2129027,Higashino:2252674}, as it can be seen in figure \ref{fig:ToTCalibrationDrift}, where the mean and RMS evolution of the ToT for all the IBL modules is shown, as measured in calibration scans. The tuning point was 10  for 16k electrons for 2015 and 8 for 2016. Radiation effects are assumed to cause the measured ToT to drift  with integrated luminosity, but short periods of annealing and regular re-tunings brought the mean ToT back to the tuning point. The drift is assumed linear between calibration and the correction is evaluated in the middle of the run considered. To this correction is assigned an error of 30 \% (which is then propagated to the charge collection efficiency value. MPV value of the fitted Landau distribution are then scaled up or down (accordingly to the direction of the drift). This effect depends run by run, but is in general below 5\% with a final error on the measure of $\sim 2/3 $ \%. The error on the predicted value of the charge collection efficiency is evaluated by taking the squared sum of the differences between the nominal value and the one obtained with the variation of the radiation damage parameters, as explained in detail in section \ref{sec:Efieldmodelcomparisons}. In addition is also considered a variation of the trapping probability constant of 10\% up and down. An error of 3\% is also assigned to the luminosity value of the data points (the horizontal error bars in figure \ref{fig:CCE:Run2}). Instead, for the Allpix simulation points, the integrated luminosity is converted to a fluence 
-%using the information presented in Figure~\ref{fig:fluenceoverview}, 
-and an error of 15\% is assigned to the conversion. As expected, the efficiency drops with fluence due to charge trapping.  
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=0.45\textwidth]{2015Calibration.pdf}
-\includegraphics[width=0.45\textwidth]{2016Calibration.pdf}
-\caption{The evolution of the mean and RMS of the measured Time-over-Threshold (ToT) over all pixels in the IBL detector as a function of the integrated luminosity and the corresponding total ionizing dose (TID) in 2015 (left) and 2016 (right), as measured in calibration scans. Each color/symbol series corresponds to a single tuning of the detector.(After~\cite{Miucci:2129027,Higashino:2252674})
-\label{fig:ToTCalibrationDrift}}
-\end{figure}
+The collected charge is represented by the mode of the charge distribution, which is approximately Landau~\cite{Landau:1944if}.  The charge collection efficiency is defined to be the collected charge at one fluence divided by the charge for unirradiated sensors in overdepletion.  Figure~\ref{fig:CCE:Run2} shows the measured and predicted charge collection efficiency as a function of integrated luminosity in Run 2~\cite{Rossini:2273193}. 
 
 
 \begin{figure}[htpb!]
@@ -741,7 +740,27 @@ and an error of 15\% is assigned to the conversion. As expected, the efficiency 
 \label{fig:CCE:Run2}
 \end{figure}
 
+
+
+Data points are corrected in order to account for the drift in the ToT calibration~\cite{Miucci:2129027,Higashino:2252674}, as it can be seen in figure \ref{fig:ToTCalibrationDrift}, where the mean and RMS evolution of the ToT for all the IBL modules is shown, as measured in calibration scans. The tuning point was 10  for 16k electrons for 2015 and 8 for 2016. 
+
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.45\textwidth]{2015Calibration.pdf}
+\includegraphics[width=0.45\textwidth]{2016Calibration.pdf}
+\caption{The evolution of the mean and RMS of the measured Time-over-Threshold (ToT) over all pixels in the IBL detector as a function of the integrated luminosity and the corresponding total ionizing dose (TID) in 2015 (left) and 2016 (right), as measured in calibration scans. Each color/symbol series corresponds to a single tuning of the detector.(After~\cite{Miucci:2129027,Higashino:2252674})
+\label{fig:ToTCalibrationDrift}}
+\end{figure}
+
+
+
+Radiation effects are assumed to cause the measured ToT to drift  with integrated luminosity, but short periods of annealing and regular re-tunings brought the mean ToT back to the tuning point. The drift is assumed linear between calibration and the correction is evaluated in the middle of the run considered. To this correction is assigned an error of 30 \% (which is then propagated to the charge collection efficiency value. MPV value of the fitted Landau distribution are then scaled up or down (accordingly to the direction of the drift). This effect depends run by run, but is in general below 5\% with a final error on the measure of $\sim 2/3 $ \%. The error on the predicted value of the charge collection efficiency is evaluated by taking the squared sum of the differences between the nominal value and the one obtained with the variation of the radiation damage parameters, as explained in detail in section \ref{sec:Efieldmodelcomparisons}. In addition is also considered a variation of the trapping probability constant of 10\% up and down. An error of 3\% is also assigned to the luminosity value of the data points (the horizontal error bars in figure \ref{fig:CCE:Run2}). Instead, for the Allpix simulation points, the integrated luminosity is converted to a fluence 
+%using the information presented in Figure~\ref{fig:fluenceoverview}, 
+and an error of 15\% is assigned to the conversion. 
+
+
 A breakdown of the impact of the systematics variations is reported in table \ref{tab:SystError}.
+
 
 
 \begin{table}[!htpb]
@@ -803,6 +822,10 @@ total error 					& 2.36		& 5.20 & 20.41 & 1.37 & 2.98  &16.47\\
 
 \end{table} 
 
+Figure~\ref{fig:CCE:Run2} shows that the level of agreement between data and simulations produced using 
+the new digitizer model is 
+satisfactory for what concerns the charge collection efficiency. As expected, the  charge collectionefficiency 
+drops with fluence due to charge trapping.  
 
 
 
@@ -811,7 +834,7 @@ total error 					& 2.36		& 5.20 & 20.41 & 1.37 & 2.98  &16.47\\
 
 
 
-This Chapter presents a digitization model for ATLAS planar  sensors that includes radiation damage effects.  In addition to describing the physics processes incorporated in the digitizer, the charge 
-collection efficiency is studied using Run 2 data; it shows excellent agreement between the simulation and the observations. The focus here was on Run 2 and 3 conditions, but the models can be used to make important design decisions for the upgraded ATLAS detector that must survive the harsh HL-LHC radiation environment.
+This Chapter presented a digitization model for ATLAS planar  sensors that includes radiation damage effects.  In addition to describing the physics processes incorporated in the digitizer, the charge 
+collection efficiency is studied using Run 2 data; it shows good agreement between the simulation and the observations. The focus here was on Run 2 and 3 conditions, but the models can be used to make important design decisions for the upgraded ATLAS detector that must survive the harsh HL-LHC radiation environment.
 
 
