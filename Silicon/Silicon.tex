@@ -562,7 +562,9 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
 
 
 % Requires the booktabs if the memoir class is not being used
-\begin{table}[htbp]
+\begin{table}[!htbp]
+   \caption{\label{tab:SiProp}Summary of silicon properties relevant for high energy physics applications~\cite{Lutz:411172}.}
+   \label{tab:SiProperties}
    \centering
    %\topcaption{Table captions are better up top} % requires the topcapt package
    \begin{tabular}{@{} lcr @{}} % Column formatting, @{} suppresses leading/trailing space
@@ -577,12 +579,10 @@ physics applications are summarised in Table~\ref{tab:SiProperties}.
       Mean ionisation energy $\epsilon$ & 3.6~eV & large signals\\
       Radiation length $X_0$      &  9.37~cm & thin detectors to minimize  \\
                                        &                 & multiple scattering \\
-      Electron mobility  $\mu_e$     & $\sim$1350 cm$^2$V/s  & fast charge collection \\
+      Electron mobility  $\mu_e$     & $\sim$1350~cm$^2$V/s  & fast charge collection \\
       Saturation velocity $v_{sat}$ & $\sim$10$^{7}$ cm/s & fast charge collection \\
       \bottomrule
    \end{tabular}
-   \caption{\label{tab:SiProp}Summary of silicon properties relevant for high energy physics applications~\cite{Lutz:411172}.}
-   \label{tab:SiProperties}
 \end{table}
 
 Other important characteristics that can explain the success of silicon are its large abundance, 

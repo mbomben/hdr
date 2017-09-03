@@ -68,15 +68,16 @@
 \begin{document}
 
 % Préambule
-	\pagenumbering{roman}
+	%\pagenumbering{roman}
+	\pagenumbering{gobble}
 	\pagedegarde
 
 	\cleardoublepage
 		% Table des matières
 			\setcounter{tocdepth}{1}	% Pas besoin de trop détailler le sommaire ici (chapitres/sections)
 			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
-\includefrom{.}{dedication}
-	\newpage
+%\includefrom{.}{dedication}
+%	\newpage
  \pagestyle{fancy}
 %\addcontentsline{toc}{chapter}{Acknowledgements}
 \includefrom{.}{Acknowledgements}
@@ -126,5 +127,7 @@
 %\addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{atlasnote}
 \bibliography{biblio}{}
-
+\clearpage
+\clearpage
+\afterpage{\blankpage}
 \end{document}

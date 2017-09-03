@@ -306,6 +306,8 @@ where $w$ is the sensor depth. Figure~\ref{fig:electricfield:depletionvoltage} s
 Due to the huge parameter space given by the introduction rates, the time necessary for the simulation, and a focus on physically rather than mathematically correct parameter combinations, the adjustment of the introduction rates was performed by hand. The derived introduction rates are summarized in Table~\ref{tab:depletionvoltage:introductionrates}.  The value of $g_\text{A}$ was chosen close to the literature values since the measurements were done at insensitive points in time with respect to beneficial annealing. The value of $g_\text{Y}$ was estimated from the reverse annealing during the long shutdown 1 (LS1) which was an extended period when the detector was maintained at room temperature. Since the IBL was installed after LS1 and has not undergone significant reverse annealing, the $g_\text{Y}$ value of the b-layer is used also for the IBL. % The simulated depletion voltage was extracted from Figure~\ref{fig:electricfield:depletionvoltage} at the benchmark fluences which were already crossed and are shown in Table~\ref{tab:depletionvoltage:deplvoltalahamburg}.}
 
 \begin{table}[!htpb]
+\caption{Introduction rates of the Hamburg model as obtained by fitting the simulated depletion voltage to the available measurements.}
+\label{tab:depletionvoltage:introductionrates}
 \centering
 \begin{tabular}{ccc}
   \hline
@@ -317,8 +319,6 @@ $g_\text{Y}$ & 6.0 & 6.0\\
 $g_\text{C}$ & 1.1 & 0.45\\
   \hline  
 \end{tabular}
-\caption{Introduction rates of the Hamburg model as obtained by fitting the simulated depletion voltage to the available measurements.}
-\label{tab:depletionvoltage:introductionrates}
 \end{table}
 
 
@@ -326,6 +326,8 @@ $g_\text{C}$ & 1.1 & 0.45\\
 Table~\ref{eq:depletionvoltage} lists the bias voltages that are used throughout the rest of the note unless otherwise specified.
 
 \begin{table}[!htpb]
+\caption{The calculated depletion voltages as a function of fluence for ATLAS planar  sensors.  For the planar sensors, the depletion voltage is computed using the Hamburg model after determining the introduction rates from Equation~\ref{eq:hamburg0} by fitting the data.  A fluence of $1\times 10^{14}$ ($2\times 10^{14}$) was reached around 09.07.2016 (08.09.2016).   Values in parentheses are directly from the TCAD simulation based on a CV analysis (prior to the $N_\text{eff}$ correction).}
+\label{eq:depletionvoltage}
 \centering
 \begin{tabular}{cc}
   \hline
@@ -341,8 +343,6 @@ $5\times 10^{14}$& (125) \\
 %$1\times 10^{16}$& -- & -260\\
   \hline  
 \end{tabular}
-\caption{The calculated depletion voltages as a function of fluence for ATLAS planar  sensors.  For the planar sensors, the depletion voltage is computed using the Hamburg model after determining the introduction rates from Equation~\ref{eq:hamburg0} by fitting the data.  A fluence of $1\times 10^{14}$ ($2\times 10^{14}$) was reached around 09.07.2016 (08.09.2016).   Values in parentheses are directly from the TCAD simulation based on a CV analysis (prior to the $N_\text{eff}$ correction).}
-\label{eq:depletionvoltage}
 \end{table}
 
 In  radiation damage models like~\cite{bib:DP,CHIOCHIA2006} annealing effects are not included. 
@@ -374,6 +374,8 @@ Next, Chiochia model parameters are varied.
 The summary of the parameters variations is presented in Table~\ref{tab:parVars}.
 
 \begin{table}[!htpb]
+\caption{Variations of Chiochia model~\cite{Chiochia:2004qh} parameters.}
+\label{tab:parVars}
 \centering
 \begin{tabular}{lcccc}
   \hline
@@ -384,8 +386,6 @@ The summary of the parameters variations is presented in Table~\ref{tab:parVars}
    donor & $\pm 10\%$ & $\sim\pm0.4\%$ & $\pm10\%$ & $\pm10\%$ \\
   \hline  
 \end{tabular}
-\caption{Variations of Chiochia model~\cite{Chiochia:2004qh} parameters.}
-\label{tab:parVars}
 \end{table}
 
 Figures~\ref{fig:acc_electricfieldvariations} and~\ref{fig:don_electricfieldvariations} show the electric field for variations in respectively the acceptor and donor trap parameters for a fluence of $10^{14}$ $n_\text{eq}/\text{cm}^2$ and a bias voltage of~80 V.  The normalization of all the curves is fixed by the bias voltage and therefore all the curves cross at a point. 
@@ -460,6 +460,7 @@ One way to emulate annealing effects from the Hamburg model in the TCAD simulati
 Table~\ref{tab:NeffHamburg} collects predictions from the Hamburg model (see Section~\ref{sec:annealing}) for the effective concentration of donors and acceptors as well as their difference $N_\text{eff}$ for two points in time. 
 
 \begin{table}[!htpb]
+\caption{\label{tab:NeffHamburg}Predictions from the Hamburg model for the effective donor ($N_D$) and acceptor ($N_A$) concentrations as well as their difference ($N_\text{eff}$) for two points in time during Run 2.  Section~\ref{sec:annealing} for details.}
 \centering
 \begin{tabular}{ccccc}
   \hline
@@ -471,7 +472,6 @@ Table~\ref{tab:NeffHamburg} collects predictions from the Hamburg model (see Sec
  8/9/2016 & 2$\times10^{14}$ & 2.72$\times10^{12}$ & 0.08$\times10^{12}$ & 2.8$\times10^{12}$\\
   \hline  
 \end{tabular}
-\caption{\label{tab:NeffHamburg}Predictions from the Hamburg model for the effective donor ($N_D$) and acceptor ($N_A$) concentrations as well as their difference ($N_\text{eff}$) for two points in time during Run 2.  Section~\ref{sec:annealing} for details.}
 \end{table}
 
 Figure~\ref{fig:NeffTCADAnnealing} shows the charge density predicted by TCAD simulations in four 
@@ -494,6 +494,9 @@ The \textit{Reference} scenario is the default setup described in Section~\ref{s
 
 
 \begin{table}[htbp]
+   \caption{\label{tab:TCADNeffHamburg1}Results for average and RMS of effective doping concentration over the sensor bulk from TCAD simulation for different scenarios. 
+Fluence $\Phi$ was 1$\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$; bias voltage $V_\text{bias}$ 
+was 150~V.  Refer to the text for more details.}
    \centering
    \begin{tabular}{ccc} 
       \hline
@@ -508,16 +511,16 @@ The \textit{Reference} scenario is the default setup described in Section~\ref{s
  $N_A$+3\% &  -1.7$\times10^{12}$ & 0.5$\times10^{12}$  \\
       \hline
          \end{tabular}
-   \caption{\label{tab:TCADNeffHamburg1}Results for average and RMS of effective doping concentration over the sensor bulk from TCAD simulation for different scenarios. 
-Fluence $\Phi$ was 1$\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$; bias voltage $V_\text{bias}$ 
-was 150~V.  Refer to the text for more details.}
 \end{table}
 
 
 
 
 % Requires the booktabs if the memoir class is not being used
-\begin{table}[htbp]
+\begin{table}[!htbp]
+   \caption{\label{tab:TCADNeffHamburg2}Results for average and RMS of effective doping concentration over the sensor bulk from TCAD simulation for different scenarios. 
+Fluence $\Phi$ was 2$\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$; bias voltage $V_\text{bias}$ 
+was 150~V.  Refer to the text for more details.}
    \centering
    %\topcaption{Table captions are better up top} % requires the topcapt package
    \begin{tabular}{ccc} % Column formatting, @{} suppresses leading/trailing space
@@ -533,9 +536,6 @@ was 150~V.  Refer to the text for more details.}
  $N_A$-1.6\% &  -2.7$\times10^{12}$ & 2.1$\times10^{12}$  \\
                    \bottomrule
    \end{tabular}
-   \caption{\label{tab:TCADNeffHamburg2}Results for average and RMS of effective doping concentration over the sensor bulk from TCAD simulation for different scenarios. 
-Fluence $\Phi$ was 2$\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$; bias voltage $V_\text{bias}$ 
-was 150~V.  Refer to the text for more details.}
 \end{table}
 
 The electric field profiles corresponding to the four scenarios shown in Figure~\ref{fig:NeffTCADAnnealing} are presented in Figure~\ref{fig:EFieldTCADAnnealing}.   For the Annealed scenario (shown only for reference), the profile is nearly linear while this is not the case for the other scenarios, especially at the higher fluence $\Phi=2\times10^{14}$~n$_\text{eq}/\text{cm}^{2}$.  
@@ -570,6 +570,8 @@ Numerically propagating charges through the silicon sensor can be computationall
 \noindent where the values for the saturation velocity $v_s$, critical $E$-field $E_\text{crit}$ and temperature exponent $\beta$ can be found in Table~\ref{eq:constants_rad}. 
 
 \begin{table}[!htpb]
+\caption{Physical constants describing the mobility of charge carriers in silicon.  The first three rows are reformatted from Ref.~\cite{JACOBONI197777} and the Hall scale factor is from Ref.~\cite{hall1}.}
+\label{eq:constants_rad}
 \centering
 \begin{tabular}{ccc}
   \hline
@@ -582,8 +584,6 @@ Numerically propagating charges through the silicon sensor can be computationall
   $r$ &$1.13+8\times 10^{-4}\times (T/\text{K}-273)$ & $0.72-5\times 10^{-4}\times (T/\text{K}-273)$\\
   \hline  
 \end{tabular}
-\caption{Physical constants describing the mobility of charge carriers in silicon.  The first three rows are reformatted from Ref.~\cite{JACOBONI197777} and the Hall scale factor is from Ref.~\cite{hall1}.}
-\label{eq:constants_rad}
 \end{table}
 
 
@@ -742,7 +742,7 @@ The collected charge is represented by the mode of the charge distribution, whic
 
 
 
-Data points are corrected in order to account for the drift in the ToT calibration~\cite{Miucci:2129027,Higashino:2252674}, as it can be seen in figure \ref{fig:ToTCalibrationDrift}, where the mean and RMS evolution of the ToT for all the IBL modules is shown, as measured in calibration scans. The tuning point was 10  for 16k electrons for 2015 and 8 for 2016. 
+Data points are corrected in order to account for the drift in the ToT calibration~\cite{Miucci:2129027,Higashino:2252674}, as it can be seen in Figure~\ref{fig:ToTCalibrationDrift}, where the mean and RMS evolution of the ToT for all the IBL modules is shown, as measured in calibration scans. The tuning point was 10  for 16k electrons for 2015 and 8 for 2016. 
 
 \begin{figure}[!htpb]
 \centering
@@ -754,16 +754,18 @@ Data points are corrected in order to account for the drift in the ToT calibrati
 
 
 
-Radiation effects are assumed to cause the measured ToT to drift  with integrated luminosity, but short periods of annealing and regular re-tunings brought the mean ToT back to the tuning point. The drift is assumed linear between calibration and the correction is evaluated in the middle of the run considered. To this correction is assigned an error of 30 \% (which is then propagated to the charge collection efficiency value. MPV value of the fitted Landau distribution are then scaled up or down (accordingly to the direction of the drift). This effect depends run by run, but is in general below 5\% with a final error on the measure of $\sim 2/3 $ \%. The error on the predicted value of the charge collection efficiency is evaluated by taking the squared sum of the differences between the nominal value and the one obtained with the variation of the radiation damage parameters, as explained in detail in section \ref{sec:Efieldmodelcomparisons}. In addition is also considered a variation of the trapping probability constant of 10\% up and down. An error of 3\% is also assigned to the luminosity value of the data points (the horizontal error bars in figure \ref{fig:CCE:Run2}). Instead, for the Allpix simulation points, the integrated luminosity is converted to a fluence 
+Radiation effects are assumed to cause the measured ToT to drift  with integrated luminosity, but short periods of annealing and regular re-tunings brought the mean ToT back to the tuning point. The drift is assumed linear between calibration and the correction is evaluated in the middle of the run considered. To this correction is assigned an error of 30 \% (which is then propagated to the charge collection efficiency value. MPV value of the fitted Landau distribution are then scaled up or down (accordingly to the direction of the drift). This effect depends run by run, but is in general below 5\% with a final error on the measure of $\sim 2/3 $ \%. The error on the predicted value of the charge collection efficiency is evaluated by taking the squared sum of the differences between the nominal value and the one obtained with the variation of the radiation damage parameters, as explained in detail in Section~\ref{sec:Efieldmodelcomparisons}. In addition is also considered a variation of the trapping probability constant of 10\% up and down. An error of 3\% is also assigned to the luminosity value of the data points (the horizontal error bars in Figure~\ref{fig:CCE:Run2}). Instead, for the Allpix simulation points, the integrated luminosity is converted to a fluence 
 %using the information presented in Figure~\ref{fig:fluenceoverview}, 
 and an error of 15\% is assigned to the conversion. 
 
 
-A breakdown of the impact of the systematics variations is reported in table \ref{tab:SystError}.
+A breakdown of the impact of the systematics variations is reported in Table \ref{tab:SystError}.
 
 
 
 \begin{table}[!htpb]
+   \caption{List of systematics considered in the errors in the simulation and their relative impact on the nominal value}
+   \label{tab:SystError}
 \begin{center}
 \setlength{\tabcolsep}{0.0pc}
 {\tiny
@@ -814,8 +816,6 @@ total error 					& 2.36		& 5.20 & 20.41 & 1.37 & 2.98  &16.47\\
 %1.0-3.0    &    1.73 $\pm$ 1.43 & 1.28 $\pm$ 1.22\\
 \noalign{\smallskip}\hline\noalign{\smallskip}
 \end{tabular*}
-   \caption{List of systematics considered in the errors in the simulation and their relative impact on the nominal value}
-   \label{tab:SystError}
 %%%%
 }
 \end{center}

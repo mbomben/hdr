@@ -52,7 +52,7 @@ $W',Z'$,
 extra dimensions and more~\cite{ATLASLoIPhaseII}.
 
 The high luminosity foreseen for the Phase-II implies a much harsher environment than in Run~2 
-for the ATLAS sub-detectors; indeed high luminosity means higher event rate, more pileup events 
+for the ATLAS sub-detectors; indeed high luminosity means higher event rate, more pile-up events 
 and higher radiation doses and fluences. 
 To cope with the severe data taking conditions expected at the HL-LHC it is planned to 
 upgrade the  ATLAS detector~\cite{ATLASLoIPhaseII,ATLASITkScopingDocument}. Upgrades include:
@@ -71,7 +71,7 @@ be discussed in the next Section.
 \label{sec:NewTracker}
 
 The new ATLAS  Inner Tracker will have to face unprecedented levels of radiation doses and fluences, 
-pileup events and events rate. Table~\ref{tab:ITkConditions} summarises some of the most important figures.
+pile-up events and events rate. Table~\ref{tab:ITkConditions} summarises some of the most important figures.
 
 \begin{table}[!htpb]
 \centering
@@ -82,7 +82,7 @@ Parameter & LHC & HL-LHC \\
 \hline
 \hline
 instantaneous luminosity $L$	 [cm$^{-2}$s$^{-1}$] & $1.0\times10^{34}$ &  $7.5\times10^{34}$ \\
-average number of pileup events $\mu$ & 25 & 200\\
+average number of pile-up events $\mu$ & 25 & 200\\
 track rate density for the innermost pixel layer $\mathcal{N}$ [MHz~cm$^{-2}$] & 0.25 & 2 \\ 
 fluence to the innermost pixel layer $\Phi$ [ 1 MeV $n_\text{eq}/\text{cm}^2$] & 5$\times10^{15}$ & 2$\times10^{16}$ \\
 total ionising dose to the innermost pixel layer TID [MRad] & 160  & 1700 \\
@@ -336,7 +336,7 @@ $\Phi$=2.0$\times10^{16}$~n$_{\rm eq}$/cm$^2$. Table~\ref{tab:n-in-n} summarizes
 the sensors were irradiated.
 
 \begin{table}[!htb]
-\caption{\label{tab:n-in-n}Summary of irradiated n-in-n samples in the testbeams. KIT stands for 25\,MeV energy proton irradiation; reactor neutrons for the TRIGA reactor~\cite{SNOJ2011136}.
+\caption{\label{tab:n-in-n}Summary of irradiated $n-on-n$ samples in the beam tests. KIT stands for 25\,MeV energy proton irradiation; reactor neutrons for the TRIGA reactor~\cite{SNOJ2011136}.
 }
 \begin{center}
 \begin{tabular}{l|c|c|l}
@@ -365,15 +365,16 @@ sensors. As an example, we measured a leakage current of 24~${\rm \mu A}$
 
 Hit efficiency was studied as a function of the bias voltage, for the
 module irradiated with $5\times 10^{15} n_{eq}/cm^{2}$.
-Results are in table~\ref{tab:n-eff}.
+Results are in Table~\ref{tab:n-eff}.
 
 \begin{table}[!htb]
 \caption{\label{tab:n-eff}Hit efficiency of an irradiated (fluence = $5\times 10^{15} n_{eq}/cm^{2}$)
 FEI3 $n-on-n$ 200~$\mu$m thick module at different bias voltages.}
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{ccc}
 \hline
 Bias voltage (V) & Hit efficiency (\%) \\
+\hline
 \hline
 350 & 93.2 \\
 \hline
@@ -395,7 +396,7 @@ Bias voltage (V) & Hit efficiency (\%) \\
 with fluence of $5\times 10^{15} n_{eq}/cm^{2}$; right: Hit efficiency map for the same assembly}
 \end{figure}
 
-In figure~\ref{fig:5e15}, on the left, a study of the collected charge vs bias voltage
+In Figure~\ref{fig:5e15}, on the left, a study of the collected charge vs bias voltage
  for a module irradiated with a fluence of $5\times 10^{15} n_{eq}/cm^{2}$ is shown\footnote{as
  a comparison data from strip detectors~\cite{Casse} are reported too.} (only data collected with the
  $^{90}$Sr  source are shown).  In the figure the expected threshold for the FE-I4
@@ -403,8 +404,8 @@ In figure~\ref{fig:5e15}, on the left, a study of the collected charge vs bias v
  promising for the  ATLAS IBL~\cite{IBLTDR}, and
   the outer pixel layers at HL-LHC.
 
-In figure~\ref{fig:5e15}, on the right, the hit-efficiency map for the module irradiated with a
-fluence of $5\times 10^{15} n_{eq}/cm^{2}$, as measured at the testbeam for particles
+In Figure~\ref{fig:5e15}, on the right, the hit-efficiency map for the module irradiated with a
+fluence of $5\times 10^{15} n_{eq}/cm^{2}$, as measured at the beam test for particles
 at normal incidence. The pixel module was biased at 1000 V and the hit-efficiency was 99.6\%.
 
 
@@ -538,15 +539,14 @@ that production, W80 and W30, along with their characteristics.
 \caption{\label{tab:W30W80Irr}Irradiation program for the two FE-I4 pixel modules $W80$ and $W30$.}
 \centering
 \begin{tabular}{cccc}
-\hline 
 \hline
 Module name & Beam spot size & Fluence $\phi$& Cumulative fluence at  peak $\Phi$\\ 
 (thickness [$\mu$m], \# of GRs) & (FWHM - [mm$^2$]) &  [10$^{15}$ n$_\text{eq}/\text{cm}^2$]  &  [10$^{15}$ n$_\text{eq}/\text{cm}^2$] \\
 \hline
+\hline 
 W80 (130, 2) & 20$\times$20 & 3 & same\\
 \hline
 W30 (100, 5) & 12$\times$12 & 4 & same\\
-\hline
 \hline
 W80 (130, 2) & 20$\times$20 & 7 & 10 \\
 \hline
@@ -719,7 +719,7 @@ both sides.
 Up to the trench definition, the process follows standard steps. Since the read-out electrodes are n-type, they will be shorted together by the electron
 inversion layer, induced by the positive fixed charge present in the oxide, unless a p-type implant, compensating such charge, surrounds the pixels.
 Both homogeneous (``p-spray'') and patterned (``p-stop'') implants have been used;
-the process splittings adopted in the fabrication batch only concern the presence and the doses of these implants,  as detailed in table~\ref{tab:isolation}.
+the process splittings adopted in the fabrication batch only concern the presence and the doses of these implants,  as detailed in Table~\ref{tab:isolation}.
 
 
 
@@ -1216,7 +1216,7 @@ interactions occurring at each crossing of the two beams every 25 ns, with maxim
 values extending up to 200 interaction events per crossing. This is only one example of the challenges the 
 experiments will have to face to operate at the HL-LHC.
  ATLAS  will undergo substantial upgrades to be able to cope with the increased luminosity of the HL-LHC 
-and with the harsher environment arising from the larger event pileup. Furthermore, some of the detector 
+and with the harsher environment arising from the larger event pile-up. Furthermore, some of the detector 
 components will near the end of their lifetime at the beginning of the next decade due to radiation damage, 
 and will need to be replaced. The higher luminosity  requires highly-granular, very radiation-hard silicon 
 tracking devices in the regions closer to the beam line.
