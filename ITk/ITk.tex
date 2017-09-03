@@ -78,11 +78,11 @@ pileup events and events rate. Table~\ref{tab:ITkConditions} summarises some of 
 \caption{\label{tab:ITkConditions}Environment conditions for the inner detector at the LHC and HL-LHC}
 \begin{tabular}{lcc}
 \hline
-\hline
 Parameter & LHC & HL-LHC \\
 \hline
+\hline
 instantaneous luminosity $L$	 [cm$^{-2}$s$^{-1}$] & $1.0\times10^{34}$ &  $7.5\times10^{34}$ \\
-number of pileup events $\mu$ & 25 & 200\\
+average number of pileup events $\mu$ & 25 & 200\\
 track rate density for the innermost pixel layer $\mathcal{N}$ [MHz~cm$^{-2}$] & 0.25 & 2 \\ 
 fluence to the innermost pixel layer $\Phi$ [ 1 MeV $n_\text{eq}/\text{cm}^2$] & 5$\times10^{15}$ & 2$\times10^{16}$ \\
 total ionising dose to the innermost pixel layer TID [MRad] & 160  & 1700 \\
@@ -141,7 +141,7 @@ The ITk will be an all silicon tracker; the main reason for abandoning the TRT i
 in its straw tubes, which is about 100\% at $L=5.0\times10^{34}$cm$^{-2}$s$^{-1}$. 
 The ITk will consist of an inner detector made of pixel modules and an outer one made of strips. 
 In the central region of the ITk Detector, sensors are arranged in cylinders around the beam axis, with (starting from inside) five pixel layers followed by two short-strip layers of paired stereo modules then two long-strip layers of paired stereo modules. The forward regions will be covered by six strip disks and a number of pixel rings leading to one or more hits depending on the ring layer and $\eta$ position. 
-The ITk layout is presented in Figure~\ref{fig:ITk_Layout}. The new tracker will cover a pseudorapidity range down to $|\eta|=4$. 
+The proposed ITk layout is presented in Figure~\ref{fig:ITk_Layout}. The new tracker will cover a pseudorapidity range down to $|\eta|=4$. 
 
 \begin{figure}[!htpb]
 \centering
@@ -169,7 +169,8 @@ and electrical services).
 \section{Pixels Detectors for ITK}
 \label{sec:ITkPixels}
 
-The innermost pixel barrel layer, Layer 0, of the ITk will be at about 40~mm; the Layer 1 at 85~mm. 
+The innermost pixel barrel layer, Layer 0, of the ITk will be at a radius of  40~mm from the interaction 
+point; the Layer 1 at 85~mm. 
 Layer 2, 3 and 4 will be placed respectively at 155, 213 and 271~mm from the beam axis. 
 The expected fluences for the ITk are reported in Figure~\ref{fig:ITk_Fluence}.
 
@@ -194,18 +195,18 @@ Small pixel cells imply also less leakage current fed into and small capacitance
 electronics, hence less noise. 
 
 
-The basic  unit of the ITk pixel detector is a module. The baseline module concept for the ITk pixel detector is the well proven hybrid pixel detector in which modules are composed of a sensor and the read-out chip (ROIC) bump bonded to each other on a pixel level. In addition other concepts are also investigated such as monolithic CMOS pixel detectors especially for the outer layers.
+The basic  unit of the ITk pixel detector is a module. The baseline module concept for the ITk pixel detector is the well proven hybrid pixel detector in which modules are composed of a sensor and the read-out chip (ROIC) bump bonded to each other on a pixel level. In addition other concepts are also investigated such as monolithic CMOS pixel detectors, especially for the outer layers.
 
 
 
 
 
-The choice of sensors depends mainly on the requirement that the detector has to withstand the integration of an expected dataset  of 3000\invfb.  This is particularly challenging for the innermost layer, which after the high-luminosity running is exposed, as it was said above, to an estimated fluence $\Phi$ of 1.5-2$\times10^{16}$~n$_{\rm eq}$/cm$^2$ for the innermost pixel layer. 
+The choice of sensors depends mainly on the requirement that the detector has to withstand the integration of an expected dataset  of 3000\invfb.  This is particularly challenging for the innermost layer, which after the high-luminosity running will have integrated, as it was said above,  an estimated fluence $\Phi$ of 1.5-2$\times10^{16}$~n$_{\rm eq}$/cm$^2$ for the innermost pixel layer. 
 
 There will be two main types of modules: dual-modules (two chips bump bonded to a sensor, around 
-4~$\times$~2~cm$^2$) for the the innermost layer to accommodate the limited space, quad- modules (four 
+4~$\times$~2~cm$^2$) for the the innermost layer to accommodate the limited space, quad-modules (four 
 chips bump bonded to a sensor, around 4 $\times$~4~cm$^2$ for the outer layers and in the rings. 
-The read-out chip is presently under development within the RD53 collaboration~\cite{RD53}, 
+The pixel read-out chip is presently under development within the RD53 collaboration~\cite{RD53}, 
 which will produce an RD53 prototype chip. Following this chip an ATLAS ITk pixel chip will be developed 
 using the basic blocks designed by RD53 while integrating additional functionality to meet ATLAS 
 specifications.
@@ -249,11 +250,11 @@ In this Paragraph only a short description of the planar sensors specification a
 for the ITk will be given as they will be discussed more in depth in the next two Sections. 
 A new generation of planar pixel sensors are under development for the ATLAS ITk pixel system. The main 
 differences with respect to the planar sensors implemented in the present detector are the different 
-electrode arrangement ($n-in-p$ versus the traditional $n-in-n$) and the reduced thickness in the range of 
+electrode arrangement ($n-on-p$ versus the traditional $n-on-n$) and the reduced thickness in the range of 
 100-150~$\mu$m with respect to the 200~$\mu$m for the sensors used in IBL and 250~$\mu$m 
 in the three outer ATLAS pixel layers. 
 
-The $n-in-p$ technology allows for cost reduction given the single side processing and the reduced 
+The $n-on-p$ technology allows for cost reduction given the single side processing and the reduced 
 complexity in handling and testing. The guard ring structure is implemented on the front side, leaving the 
 edges of the sensor at a potential close to the one of the backside. This arrangement potentially induces the 
 risk of electrical sparks between the sensor periphery and the chip. Isolation techniques, like the deposition 
@@ -266,7 +267,7 @@ of 10-20~$\mu$m thickness, use new approaches to cope with the rate and radiatio
 at the HL-LHC~\cite{PERIC2007876,1748-0221-11-02-C02045,HEMPEREK20158} 
 based on the following enabling technology features:
 HV add-ons that allow to use high depletion voltages; high resistivity wafers for large depletion depths; 
-radiation hard processed with multiple nested wells to allow CMOS electronics em-bedded with sufficient 
+radiation hard processed with multiple nested wells to allow CMOS electronics embedded with sufficient 
 shielding into the sensor substrate; and backside processing and
 thinning for material minimisation and backside voltage application.
 
@@ -279,11 +280,12 @@ embedded in multiple cells is shown in Figure~\ref{fig:DMAPS}.
    \caption{\label{fig:DMAPS}DMAPS schematic showing fully or partially depleted bulk, multiple nested wells for CMOS electronics and charge collection node. (After~\cite{ITkStripsTDR})}
    \end{figure}
 
-Since 2014 a demonstrator programme to prove DMAPS that are suited for high rate and high radiation 
+Since 2014 a demonstrator programme is carried on, to prove 
+DMAPS that are suited for high rate and high radiation 
 operation at LHC. For this a number of technologies have been explored and characterised 
 (AMS 350 nm and 180 nm, Global Foundry 130 nm, ESPROS 150 nm, LFoundry 130nm, TowerJazz 
 180nm, etc.); the designs have been characterised as stand-alone sensors as well as bonded to the FE-I4 
-pixel chip (as a ?hybrid?) either via bump bonds or via glue bonding (capacitively coupled pixel detector, 
+pixel chip (as a hybrid) either via bump bonds or via glue bonding (capacitively coupled pixel detector, 
 CCPD).
 
 The results within the demonstrator programme can be summarised as follows:
@@ -295,8 +297,8 @@ and with spatial resolutions similar to those as hybrid pixels
 collection width obtained after irradiation to a neutron fluence of 8.0$\times10^{15}$~n$_{\rm eq}$/cm$^2$ 
 determined using
 edge TCT measurements~\cite{1748-0221-12-02-P02021,5402213}.
-\item  Test beam measurements have shown high rate capability as detectors bonded to the FE-I4.
-\item Fully monolithic DMAPS pixel sensors have been designed incorporating read-out architectures suitable to cope with the expected rates at the HL-LHC (such as column- drain architectures and direct hit transfer architectures). Such designs have been sub- mitted for fabrication in 2016 and are currently being evaluated.
+\item  Beam test measurements have shown high rate capability as detectors bonded to the FE-I4 chip.
+\item Fully monolithic DMAPS pixel sensors have been designed incorporating read-out architectures suitable to cope with the expected rates at the HL-LHC (such as column- drain architectures and direct hit transfer architectures). Such designs have been submitted for fabrication in 2016 and are currently being evaluated.
 \end{itemize}
 
 \begin{figure}[!htbp]
@@ -320,16 +322,16 @@ The PPS R\&D project existed from 2009 to 2014 and investigated the radiation ha
 pixels sensors realised in planar technology. The main research directions were: optimisation 
 of the $n-$bulk material; exploration of $p-$bulk sensors; reduction of thickness; novel biasing 
 structures.  
-Reduction of the dead are at the detector periphery was investigated too, but this will be discussed in the 
+Reduction of the dead are at the detector periphery was investigated too, and it will be discussed in the 
 next Section. 
-These efforts were then continued within the ITk forming collaboration. 
+These efforts   continued then within the ITk pixel forming collaboration. 
 
 In what follows some results from the PPS activities.
 
-\subsection{Radiation hardness of $n-in-n$ FE-I3 samples.}
+\subsection{Radiation hardness of $n-on-n$ FE-I3 samples.}
 In~\cite{BOMBEN2012940,1748-0221-7-10-P10028} examples of the searches within the PPS group 
 are reported. Using pixel modules based on the ATLAS Pixel FE-I3 readout chip the charge collection 
-efficiency (CCE) of $n-in-n$ modules was tested up to fluences 
+efficiency (CCE) of $n-on-n$ modules was tested up to fluences 
 $\Phi$=2.0$\times10^{16}$~n$_{\rm eq}$/cm$^2$. Table~\ref{tab:n-in-n} summarizes the fluences to which 
 the sensors were irradiated.
 
@@ -367,7 +369,7 @@ Results are in table~\ref{tab:n-eff}.
 
 \begin{table}[!htb]
 \caption{\label{tab:n-eff}Hit efficiency of an irradiated (fluence = $5\times 10^{15} n_{eq}/cm^{2}$)
-FEI3 $n-in-n$ 200~$\mu$m thick module at different bias voltages.}
+FEI3 $n-on-n$ 200~$\mu$m thick module at different bias voltages.}
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
@@ -395,7 +397,7 @@ with fluence of $5\times 10^{15} n_{eq}/cm^{2}$; right: Hit efficiency map for t
 
 In figure~\ref{fig:5e15}, on the left, a study of the collected charge vs bias voltage
  for a module irradiated with a fluence of $5\times 10^{15} n_{eq}/cm^{2}$ is shown\footnote{as
- a comparison data from~\cite{Casse} are reported too.} (only data collected with the
+ a comparison data from strip detectors~\cite{Casse} are reported too.} (only data collected with the
  $^{90}$Sr  source are shown).  In the figure the expected threshold for the FE-I4
  chip is shows too. A signal of about 10 ke$^-$ is observed at 1000 V. This was very
  promising for the  ATLAS IBL~\cite{IBLTDR}, and
@@ -409,7 +411,7 @@ at normal incidence. The pixel module was biased at 1000 V and the hit-efficienc
 \paragraph{Charge Collection Efficiency}
 One of the main effects of irradiation is the increased trapping, which leads to a reduced signal amplitude. 
 As the trapping probability depends on the charge carrier velocity, the collected charge was measured as a 
-function of the bias voltage. Figure~\ref{fig:DO_all_Save} shows the results for all irradiated $n-in-n$ 
+function of the bias voltage. Figure~\ref{fig:DO_all_Save} shows the results for all irradiated $n-on-n$ 
 samples in the two beam test periods; see also Table~\ref{tab:n-in-n}. A systematic error on the collected 
 charge of 400\,e is assumed, due to the finite charge resolution of the ToT mechanism;  a 5\% systematic 
 uncertainty is also taken into account, due to non-uniformity in the injection capacitances.\\
@@ -421,7 +423,7 @@ sufficient to detect the hit with FE-I3.
  \begin{center}
   \includegraphics[width=0.65\textwidth]{DO_all_Save.pdf}
  \end{center}
- \caption{\label{fig:DO_all_Save}Collected charge as a function of bias voltage for $n-in-n$ samples irradiated to different fluences
+ \caption{\label{fig:DO_all_Save}Collected charge as a function of bias voltage for $n-on-n$ samples irradiated to different fluences
  (see details in the text).
  A threshold of 3200~e is indicated.}
 \end{figure}
@@ -506,7 +508,7 @@ The radiation hardness of $n-$bulk sensors was tested up to unprecedented fluenc
  Important charge losses were observed in proximity of the punch-through dot used for polarising 
  the sensor.
 
-\subsection{Thin $n-in-p$ FE-I4 samples.}
+\subsection{Thin $n-on-p$ FE-I4 samples.}
 \label{sec:PAE2pixels}
 
 While $n-$type bulk sensors require patterned guard rings on the back side of the sensor, for $p-$type material these can be moved to the pixelated side of the sensor (front side); then metallisation is the only process for the back side. This makes it a very cost-effective material for future pixel detectors. 
@@ -514,40 +516,24 @@ While $n-$type bulk sensors require patterned guard rings on the back side of th
 Thin $n-on-p$ planar pixel sensors have been realised at FBK\footnote{FBK-CMM (Trento, Italy): \url{http://cmm.fbk.eu/}} on high resistivity type 6" 
 wafers within 
 the  framework of the INFN Phase-2 program~\cite{DALLABETTA2016388}.
-Si-Si Direct Wafer Bonded (DWB) wafers were chosen to fabricate pixel detectors;  Si-Si DWB  are obtained bonding together two different wafers: a high-resistivity (HR) Float Zone sensor wafer and a low-resistivity (LR) Czochralski handle wafer. The FZ wafer is thinned to the desired thickness value, so as to obtain a wafer with a thin active layer plus a relatively thick mechanical support layer. P-type wafers of two different active depths (100 and 130~$\mum$) with 500~$\mum$  thick handle wafer were purchased. 
+Si-Si Direct Wafer Bonded (DWB) wafers were chosen to fabricate pixel detectors;  Si-Si DWB  are obtained bonding together two different wafers: a high-resistivity (HR) Float Zone sensor wafer and a low-resistivity (LR) Czochralski handle wafer. The FZ wafer is thinned to the desired thickness value, so as to obtain a wafer with a thin active layer plus a relatively thick mechanical support layer. P-type wafers of two different active depths (100 and 130~$\mum$) with 500~$\mum$  thick handle wafer were used. 
 In Figure~\ref{fig:wafer.png} a picture of one wafer from this production.
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.45\textwidth]{wafer.png}
+\includegraphics[width=0.35\textwidth]{wafer.png}
 \caption{\label{fig:wafer.png} Wafer from the $n-on-p$ planar technology production~\cite{DALLABETTA2016388}  whose layout was mainly based on ATLAS FEI4 and CMS PSI46 designs. The red rectangle 
 encircles one pixel sensors compatible with the FE-I4~\cite{FEI4} 
 readout chip.}
 \end{figure}
 
 \subsubsection{Beam test studies}
-Radiation hardness of that production was tested  using pixel sensors compatible with the FE-I4~\cite{FEI4} 
-readout chip. The sensors were indeed bump bonded to an FE-I4 chip at IZM, 
-Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and measured 
-on beam before and after irradiation. In Figure~\ref{fig:W80W30} some pictures of the pixel modules on 
-PCB are shown. 
-
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=0.35\textwidth]{scm.png}
-\includegraphics[width=0.35\textwidth]{w80_irrad1.png}
-\includegraphics[width=0.70\textwidth]{in_the_box.jpeg}
-\caption{\label{fig:W80W30}Thin $n-on-p$ planar pixel sensor modules. (top left) Module mounted 
-on a PCB card. (top right) Module inside the CERN PS irradiation area; (bottom) module inside 
-the DUT cooling box at the CERN H6 beamline; W80 is the second module from the left; outside 
-of the box the six planes of the ACONITE telescope~\cite{Jansen2016}.}
-\end{figure}
+Radiation hardness of that production was tested  using irradiated pixel sensors compatible with the FE-I4~\cite{FEI4} readout chip. Two sensors, {\it W80} and {\it W30}, were taken from two different sensor wafers, 
+with thickness of 130 (100)~$\mum$ for W80 (W30);
+and had different number of GRs,  2 and 5, respectively.  In both detector assemblies the 500~$\mum$  thick handle wafer was not thinned.
 
 Irradiations were carried at CERN PS using the 24~GeV/c proton beam. The irradiation was staged; 
 in Table~\ref{tab:W30W80Irr} the detail of the irradiation program for the two modules tested from 
-that production, $W80$ and $W30$. The two modules were taken from two different wafers, 
-and had different number of GRs,  2 and 5, respectively. The final sensor assembly 
-is 100~$\mum$; the 500~$\mum$  thick handle wafer was not thinned.
-
+that production, W80 and W30, along with their characteristics.  
 \begin{table}[!htpb]
 \caption{\label{tab:W30W80Irr}Irradiation program for the two FE-I4 pixel modules $W80$ and $W30$.}
 \centering
@@ -555,19 +541,34 @@ is 100~$\mum$; the 500~$\mum$  thick handle wafer was not thinned.
 \hline 
 \hline
 Module name & Beam spot size & Fluence $\phi$& Cumulative fluence at  peak $\Phi$\\ 
-(\# of GRs) & (FWHM - [mm$^2$]) &  [10$\times{15}$ n$_\text{eq}/\text{cm}^2$]  &  [10$\times{15}$ n$_\text{eq}/\text{cm}^2$] \\
+(thickness [$\mu$m], \# of GRs) & (FWHM - [mm$^2$]) &  [10$^{15}$ n$_\text{eq}/\text{cm}^2$]  &  [10$^{15}$ n$_\text{eq}/\text{cm}^2$] \\
 \hline
-W80 (2) & 20$\times$20 & 3 & same\\
+W80 (130, 2) & 20$\times$20 & 3 & same\\
 \hline
-W30 (5) & 12$\times$12 & 4 & same\\
+W30 (100, 5) & 12$\times$12 & 4 & same\\
 \hline
 \hline
-W80 (2) & 20$\times$20 & 7 & 10 \\
+W80 (130, 2) & 20$\times$20 & 7 & 10 \\
 \hline
-W30 (5) & 20$\times$20 & 7 & 11\\
+W30 (100, 5) & 20$\times$20 & 7 & 11\\
 \hline
 \end{tabular}
 \end{table}
+
+The sensors were indeed bump bonded to an FE-I4 chip at IZM, 
+Berlin\footnote{Fraunhofer-Institut f\"ur Zuverl\"assigkeit und Microintegration: \url{https://www.izm.fraunhofer.de/en.html}} and measured 
+on beam before and after irradiation. In Figure~\ref{fig:W80W30} some pictures of the pixel modules on 
+PCB are shown. 
+\begin{figure}[!htpb]
+\centering
+\includegraphics[width=0.36\textwidth]{scm.png}
+%\includegraphics[width=0.25\textwidth]{w80_irrad1.png}
+\includegraphics[width=0.63\textwidth]{in_the_box.jpeg}
+\caption{\label{fig:W80W30}Thin $n-on-p$ planar pixel sensor modules. (left) Module mounted 
+on a PCB card. (right) Module inside 
+the DUT cooling box at the CERN H6 beamline; W80 is the second module from the left; outside 
+of the box the six planes of the ACONITE telescope~\cite{Jansen2016}.}
+\end{figure}
 
 The modules were tested on beam after each irradiation step at CERN H6 beam line (120~GeV/c pions) and at DESY T21 beam line (4~GeV/c electrons).
  In both cases tracks were reconstructed thanks to  a EUDET-type beam telescope~\cite{Jansen2016}, 
@@ -575,43 +576,32 @@ The modules were tested on beam after each irradiation step at CERN H6 beam line
  The DUTs where mounted inside a box that shed them from light and kept them cold 
  ($\sim$-35$^{\circ}$C).
  
- In what follows some results are presented for hit and charge collection efficiency~\cite{TrentoWS2017,AudreyPSD11}.
+\noindent In what follows some results are presented for hit and charge collection efficiency~\cite{TrentoWS2017,AudreyPSD11}.
 
 
 \paragraph{Hit Efficiency}
 Hit efficiency were tested as a function of the bias voltage for both W80 and W30 after each irradiation 
-step. 
-The results are reported in Figure~\ref{fig:HitEffW80W30} after the first irradiation step
-(see Table~\ref{tab:W30W80Irr}).
+step. In Figure~\ref{fig:Hit_Eff_W80} the hit efficiency of W80 is reported after each irradiation step.
+
+
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=1.0\textwidth]{ZoomHitEffLowFl.pdf}
-\caption{\label{fig:HitEffW80W30}Hit efficiency as a function of the bias voltage for W80 and W30 modules 
-after the first irradiation step. The laboratory where the data were taken, the threshold and the tuning 
-are indicated (HDC is a register to correct time walk effects). The red dashed line indicate the 97\% 
-hit efficiency. (After~\cite{TrentoWS2017}.}
-\end{figure}
-
-The modules hit efficiency is above 97\% for bias voltages larger than 500~V. These results are good 
-but somewhat below the expectations as the detectors are only 100~$\mu$m thick and the fluences 
-not so elevated (3-4$\times{15}$ n$_\text{eq}/\text{cm}^2$). One possible explanation for this not 
-so large hit efficiency is the threshold: 1000-1100~e were probably too high for such detectors. 
-
-In Figure~\ref{fig:Hit_Eff_W80} the hit efficiency of W80 is reported after the second irradiation step; 
-the first step is added for comparison.
-
-\begin{figure}[!htpb]
-\centering
-\includegraphics[width=0.65\textwidth]{newHit_Eff_W80.pdf}
+\includegraphics[width=0.65\textwidth]{new2Hit_Eff_W80.pdf}
 \caption{\label{fig:Hit_Eff_W80}Hit efficiency as a function of the bias voltage for the W80 module after each irradiation step.The fluence, the threshold and the tuning 
 are indicated. The red dashed line indicate the 97\% 
 hit efficiency.}
 \end{figure}
 
-The W80 module is 97\% efficient at a bias voltage of 600 V for a threshold of 700~e (the signal amplitude 
+For the lower fluence the module hit efficiency is  97\% or more for bias voltages larger than 500~V.  This result is good 
+but somewhat below the expectations as the detector is  only 130~$\mu$m thick and the fluences 
+not so large (3$\times 10^{15}$ n$_\text{eq}/\text{cm}^2$). One possible explanation for this not 
+so large hit efficiency is the threshold: 1000~e was probably too high for such detector. 
+
+After a fluence of $\Phi=1\times 10^{16}$ n$_\text{eq}/\text{cm}^2$ the W80 module efficiency is close to 97\%  at a bias voltage of 600 V for a threshold of 700~e (the signal amplitude 
 for a MIP in an un-irradiated module of the same thickness is about 8000~e). This result is very 
 promising and it meets  the specifications for the Layer 1 of the ITk pixel detector.
+
 
 
 The hit efficiency within the pixel cell was investigated too. In Figure~\ref{fig:NPTW80InpixelEff.pdf} 
@@ -640,7 +630,7 @@ bias voltage respectively.
 step; the bias voltages were 100~V and 600~V, respectively.}
 \end{figure}
 
-The module was tuned always with a threshold of 1000~e and 6 ToT corresponded to 6000e. 
+Both before and after irradiation the module was tuned always with a threshold of 1000~e and 6 ToT corresponded to 6000e. 
 It can be seen that after the irradiation the most probable value (MPV) of the distribution is reduced 
 by about 33\%, going from 9 to 6.
 
@@ -666,7 +656,7 @@ The MPV of the cluster charge in ToT increases from $\sim$6 to $\sim$9 as the bi
  
 
 \paragraph{Comments}
-Thin planar detectors are envisaged for the ITk pixel detector. The results reported here for 100~$\mu$m 
+Thin planar detectors are envisaged for the ITk pixel detector. The results reported here for 130~$\mu$m 
 thick $n-on-p$ pixel modules are very promising since they exhibit an hit efficiency close to 
 97\% at a bias voltage of 600~V after a fluence of 1.0$\times{16}$ n$_\text{eq}/\text{cm}^2$; 
 the charge collected is half of the original one before irradiation.
@@ -754,14 +744,8 @@ Two patterned high dose implants, a  phosphorus implant forming the pixel and GR
  to the substrate (``bias tab''), are then performed.
 
 The etching of the trench is accomplished by a Deep Reactive Ion Etching (DRIE) machine, the same used for the fabrication of
-3D detectors~\cite{bib:3DFBK}.
-In the latter case, a 10~${\rm \mu}$m diameter and 200~${\rm \mu}$m deep hole has to be etched; the etching mask is made  by multiple stacks of dielectrics
- (oxide and nitride) plus a thick  photoresist.
-
-The trenches in an active edge sensor must be fully passing, {\it i.e.} their bottom  has to reach  the silicon oxide, which separates the active wafer from the 
+3D detectors~\cite{bib:3DFBK}. The trenches in an active edge sensor must be fully passing, {\it i.e.} their bottom  has to reach  the silicon oxide, which separates the active wafer from the 
 support wafer.
-In the etching of a trench, a problem arises from the fact that the photoresist tends to wear out and/or lift along the sides  of the trench, and then to be
-  a less effective mask. Thicker stacks of dielectrics are thus needed.
 
 After the trench is etched, its walls are boron-doped in a diffusion furnace.
 Thus, a continuous ohmic contact to the substrate  is created on the trench wall and to the backside.
@@ -825,7 +809,8 @@ bump-bonded to the FE-I4 readout chip.
 
 \subsubsection{The Wafer Layout}
 The production included nine FE-I4 compatible pixel sensors, differing in the pixel-to-trench distance (100, 200, 300, and 400~${\rm \mu}$m) and in the number of the guard rings (0, 1, 2, 3, 5, and 10)
-surrounding the pixel area (see Figure~\ref{fig:pixel}).
+surrounding the pixel area (see Figure~\ref{fig:pixel}). As a reminder the ATLAS pixels feature 
+100~$\mu$m pixel-to-edge distance; IBL ones 250~$\mu$m.
 
 The sensor with 3 GRs and a 200~$\mu$m pixel-to-trench distance featured two different GR designs, and
 each of them is repeated twice.
@@ -959,7 +944,7 @@ sensor edge can be seen for all the three samples.
 \includegraphics[width=0.30\textwidth]{fei4_100um_2GRs.jpeg}
 \caption{\label{fig:lpnhe5_4_7_pic}Microscope picture of corners of the  (left) LPNHE5, (middle) LPNHE4  and (right) LPNHE7 sensor. The black line at the top and on the right is the trench. The  shortest distance from the pixels to the trench is 100~$\mu m$ for all the three sensors. For LPNHE4 there is  one GR surrounding the pixel matrix; for LPNHE7 there are two GRs. The pictures show also a temporary metal strip~\cite{bib:metal} shorting the pixels: it was used at wafer level for checking the sensor current  but it was removed from the detectors tested in this work.}
 \end{figure}
-LPNHE5 has no GRs, LPNHE4 has one GR and LPNHE7 has two GRs. All sensors are 200~$\mu$m thick n-on-p and include a uniform p-spray implant on the pixels side to provide enough insulation among them. LPNHE4 and LPNHE5 sensors have, in addition, p-stops implants that surround the implants of pixels and GRs.
+LPNHE5 has no GRs, LPNHE4 has one GR and LPNHE7 has two GRs. All sensors are 200~$\mu$m thick $n-on-p$ and include a uniform p-spray implant on the pixels side to provide enough insulation among them. LPNHE4 and LPNHE5 sensors have, in addition, p-stops implants that surround the implants of pixels and GRs.
 The main  characteristics of the devices are summarized in Table~\ref{tab:device_charact}.
 
 \begin{table}[!htbp]
@@ -980,7 +965,7 @@ LPNHE7 & 2 & no\\
 
 
 The LPNHE4 module was used in an irradiation experiment before the beam tests. Laboratory measurements after irradiation showed that, due to the lack of  electrical insulation layer
-between the sensor and the FEI4-B readout chip (for a discussion of this issue see for example~\cite{rossi2006pixel}), it couldn't be biased up to full depletion. Hence there will not be
+between the sensor and the FEI4-B readout chip (for a discussion of this issue see for example~\cite{rossi2006pixel}), it couldn't be biased up to full depletion. Hence there are not be
 beam test results for irradiated detectors from this pixel sensors production but only laboratory 
 measurements with radioactive sources which will be presented at the end of the Section.
 
@@ -1146,12 +1131,12 @@ In order to further investigate the lateral depletion of the LPNHE7 sensor in th
 
 The edge efficiency is highest at 40~V, where the lateral depletion is such that the efficiency exceeds 50$\%$ up to a distance of 90~$\mu m$ from the pixel edge. At 20~V, the lateral depletion is clearly not completed as the 50$\%$ efficiency point is reached at 60 $\mu m$. The 30~V efficiency profile is quite close to the 40~V curve, although the high efficiency (>95\%) in the region between 50~$\mu m$ and 70~$\mu m$ is possible only at the 40~V. A few events yield non zero efficiency up to 20~$\mu m$ beyond the edge. This is consistent with the spatial resolution of the hits formed by one pixel cell.
 
-\subsubsection{Comments on the Irradiated Irradiated Pixel Module LPNHE4}
+\subsubsection{Comments on the Irradiated  Pixel Module LPNHE4}
 
 
 
 The LPNHE4 module was irradiated  at KIT\footnote{\url{http://www.etp.kit.edu/english/irradiation_center.php}}
- with 25~MeV protons at a fluence  $\Phi=1\times10^{15}$~$(1 {\rm MeV})\,n_{\rm eq}/{\rm cm}^{2}$. 
+ with 25~MeV protons at a fluence  $\Phi=1\times10^{15}$~$n_{\rm eq}/{\rm cm}^{2}$. 
 After irradiation the LPNHE4 detector was then tested at low temperature 
 to limit reverse annealing which could degrade its performance, but also 
 to avoid possible thermal runaways due to the expected high level of 
@@ -1172,7 +1157,7 @@ detector periphery. In Figure~\ref{fig:sparks} a sketch to illustrate the proble
 
 
 
-As already discussed in the introduction the doped trench is equipotential with the detector backside (at High Voltage, HV, as it can be seen in Figure~\ref{fig:sparks}). The trench is electrically connected with the front-side detector periphery through the bulk 
+As already discussed before in the Section the doped trench is equipotential with the detector backside (at High Voltage, HV, as it can be seen in Figure~\ref{fig:sparks}). The trench is electrically connected with the front-side detector periphery through the bulk 
 and the isolation implants (either p-spray or p-stop). The pixels are kept at ground via the connection to the readout chip. The readout chip area extends beyond the sensor pixel area, overlapping with the sensor front-side part that is at a voltage very close to HV. So there is an area 
 where a voltage difference of 100 V drops on less than 20~$\mu m$. For a more detailed discussion please refer to~\cite{rossi2006pixel}. In addition no electrical insulation layer was deposited on the sensor 
 surface, nor on the readout chip one.
@@ -1212,15 +1197,15 @@ New planar pixel productions exploiting the active edge technology are under dev
 \label{sec:itksummary}
 
 The High Luminosity LHC will allow to achieve instantaneous luminosities a factor of five larger than the 
-LHC nominal value, thereby enabling the experiments to enlarge their data sample by one order of 
+LHC nominal value, thereby enabling the experiments to increase their data sample by one order of 
 magnitude compared with the LHC baseline programme.
 
 With the integrated luminosity of 3000\invfb expected by the end of the HL-LHC phase, ATLAS and CMS 
 collaborations will be able to make Higgs couplings measurements at the \% level; 
 these and other measurements are crucial because deviations of the Higgs boson properties from the SM 
-expectations would indicate the existence of new physics. 
+expectations would indicate the existence of New Physics. 
 Furthermore, the HL-LHC will provide experimental access, for the first time, to Higgs boson couplings to particles of the second family through studies of the rare Higgs decays.
-Direct searches for new physics will continue at 
+Direct searches for New Physics will continue at 
 the HL-LHC with enhanced sensitivity. The discovery potential will increase  in terms of 
 masses of new particles compared with the baseline LHC programme, reaching several TeVs for singly-
 produced particles.
