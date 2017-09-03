@@ -14,7 +14,7 @@ for irradiated pads will be derived under some simplistic assumptions.
 \section{Introduction}
 In this part the assumptions made will be outlined after having reminded how signal is formed when 
 carrier moves towards the collecting electrodes.
-\subsection{Ramo theorem}
+\subsection{Ramo Theorem}
 \label{sec:CCEramo}
 We remind here that the instantaneous current $i(t)$ appearing on the electrodes of a silicon pad can be expressed 
 in terms of the charge of the carriers $q_{e,h}$, the drift velocity $\vec{v}_{e,h}$  and the 
@@ -27,7 +27,7 @@ The following formula holds separately for electrons and holes:
 i(t) = q\,\vec{v}\cdot\vec{E}_w
 \end{equation} 
 
-\subsection{Assumptions to simplify the calculation}
+\subsection{Assumptions to Simplify the Calculation}
 \label{sec:assumptions}
 A simple 1D diode will be considered; its bulk depth is equal to $w$. The direction of the carriers 
 drift will be identified with $z$; electrons will move toward the $z=0$ position, the holes toward $z=w$.
@@ -65,7 +65,7 @@ The passage of a MIP through the entire sensor thickness will be considered. The
 rate of charge created per unit length is $\mathcal{Q} (\sim \dfrac{80e}{\mu m})$. The total charge 
 released in the silicon bulk by the MIP is $Q_0=\mathcal{Q}\,w$
 
-\section{From instantaneous current to charge on electrodes}
+\section{From Instantaneous Current to Charge on Electrodes}
 \label{sec:charge}
 Under the assumptions made in Section~\ref{sec:assumptions} the instantaneous current $i(t)$ 
 from electrons and holes is simply equal to:
@@ -110,16 +110,16 @@ CCE=\dfrac{Q}{Q_0}=\Big[\dfrac{d_e+d_h}{w}\Big]-\Big(\dfrac{d_e}{w}\Big)^2\Big(1
 From Equation~\ref{eq:Qe} and~\ref{eq:Qh} it is also possible to get the contribution to $CCE$ 
 for electrons and holes separately. 
 
-\section{Predictions for interesting cases: unirradiated vs large fluences}
+\section{Predictions for Interesting Cases: Unirradiated vs Large Fluences}
 
-\subsubsection{Unirradiated sensor}
+\subsection{Unirradiated Sensor}
 
 In the case of unirradiated sensors the fluence $\phi$ is zero, so the trapping time $\tau$ and the 
 collecting distance $d$ are infinite. Working out the limits the $CCE$ is found to be:
 \begin{equation}
 \begin{split}
 \lim_{\phi \to 0}CCE & \sim \\ \lim_{d_e,d_h\to \infty}   \Big\{\Big[\dfrac{d_e+d_h}{w}\Big]&-\Big(\dfrac{d_e}{w}\Big)^2\Big(\dfrac{w}{d_e}-\dfrac{1}{2}\big(\dfrac{w}{d_e}\big)^2+\dfrac{1}{6}\big(\dfrac{w}{d_e}\big)^3\Big)-\Big(\dfrac{d_h}{w}\Big)^2\Big(\dfrac{w}{d_h}-\dfrac{1}{2}\big(\dfrac{w}{d_h}\big)^2+\dfrac{1}{6}\big(\dfrac{w}{d_h}\big)^3\Big)\Big\}=\\
-&\dfrac{1}{2}+\dfrac{1}{2}1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)=1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)
+&\dfrac{1}{2}+\dfrac{1}{2}-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)=1-\dfrac{w}{6}\Big(\dfrac{1}{d_e}+\dfrac{1}{d_h}\Big)
 \end{split}
 \label{eq:CCE_unirr}
 \end{equation}
@@ -129,11 +129,11 @@ It is interesting to notice that there's a contribution 1/2 from electrons and 1
 $CCE$. Neglecting holes in case of no  trapping for electrons the $CCE$  would be merely 1/2: 
 all the holes would be trapped and screen on average half of the total charge $Q_0$.
 
-\subsubsection{Large fluences}
+\subsection{Large Fluences}
 In the case of sensors irradiated to large fluences  the 
 collecting distance $d$ is negligible with respect to the sensor thickness $w$.
 
-Working out the limits the $CCE$ is found to be:
+\noindent Working out the limits the $CCE$ is found to be:
 \begin{equation}
 \begin{split}
 \lim_{\phi \to \infty}CCE & \sim \\ 
@@ -143,18 +143,25 @@ Working out the limits the $CCE$ is found to be:
 \label{eq:CCE_irr}
 \end{equation}
 
-To summarise: $CCE(\phi\to \infty)\sim\Big[\dfrac{d_e+d_h}{w}\Big]$; for zero 
+\noindent To summarise: $CCE(\phi\to \infty)\sim\Big[\dfrac{d_e+d_h}{w}\Big]$; for zero 
 collecting distances the $CCE$ is exactly zero. 
 The result  in Equation~\ref{eq:CCE_irr} means that in case of heavily irradiation the charge 
 can be effectively collected only within a distance from the electrode that is equal to the collection distance $d$; all the remaining $w-d$ have a negligible contribution. As for the unirradiated case, if holes are neglected the $CCE$ would be only about 1/2 of what it should be (in general
  the collection distances are different for electrons and holes).
 
-\section{Estimates for some scenarios}
+\section{Estimates for Some Scenarios}
 
 In Table~\ref{tab:cce_scenarios} some estimates for the CCE at certain fluences $\Phi$ for 
-certain diode thicknesses $w$ are reported.
+certain diode thicknesses $w$ are reported. For  the trapping constant  $\beta_{e,h}$
+a value of 5.6 (7.7)$\times 10^{-16}$~cm$^2$/ns was used~\cite{Trapping};  
+ for the thermal velocities $v_{th_{n,p}}$ a value of 1.06$\times 10^{7}$~cm/s was used for 
+ both electrons and holes.
+
+
 
 \begin{table}[!htbp]
+\caption{\label{tab:cce_scenarios}CCE estimates at fluences $\Phi$ for 
+certain diode thicknesses $w$.}
 \centering
 \begin{tabular}{ccc}
 \hline
@@ -185,8 +192,6 @@ $w$ [$\mu$m] & $\Phi$ [1$\times10^{15}$~n$_{\rm eq}$/cm$^2$] & CCE [\%] \\
 200 & 10 & 15 \\
 \hline
 \end{tabular}
-\caption{\label{tab:cce_scenarios}CCE estimates at fluences $\Phi$ for 
-certain diode thicknesses $w$.}
 \end{table}
 
 It can be seen that already for moderate fluences, 1-2$\times10^{14}$~n$_{\rm eq}$/cm$^2$, 
@@ -202,9 +207,9 @@ than the diode one $w$.
 \chapter{Trap occupation probability}
 \label{sec:trapoccprob}
 
-The purpose of this section is to motivate the variations in the electric field profiles in Sec.~\ref{sec:Efieldmodelcomparisons} with changes in the defining parameters of the two-trap radiation damage model presented in Sec.~\ref{sec:Efieldmodelcomparisons}.  Many of the concepts described here are discussed in more detail in Ref.~\cite{LUTZ1996}.
+The purpose of this section is to motivate the variations in the electric field profiles in Section~\ref{sec:Efieldmodelcomparisons} with changes in the defining parameters of the two-trap radiation damage model presented in the same Section.  Many of the concepts described here are discussed in more detail in~\cite{LUTZ1996}.
 
-Variations in the electric field profile are driven by modifications to the space charge distribution.   The contribution to the space charge density from radiation damage is due to charged traps.  The Chiochia model has two non-degenerate traps with two possible charge states, one of them neutral.  A trap is occupied if it can emit an electron; a donor-like trap is charged if it is not occupied and an acceptor-like trap is charged if it is occupied.  For one of the two traps $t$ in the Chiochia model, the occupation probability $P_t$ can be estimated from its energy level $E_t$ and its electron and hole capture cross sections $\sigma_{n,p}$. Once the trap occupation probability is known, its average charge state $Q_t$  can be calculated.  In particular, $Q_t = (1-P_t)$ for donors and $Q_t=-P_t$ for acceptors.
+Variations in the electric field profile are driven by modifications to the space charge distribution.   The contribution to the space charge density from radiation damage is due to charged traps.  The Chiochia model~\cite{CHIOCHIA2006} has two non-degenerate traps with two possible charge states, one of them neutral.  A trap is occupied if it can emit an electron; a donor-like trap is charged if it is not occupied and an acceptor-like trap is charged if it is occupied.  For one of the two traps $t$ in the Chiochia model, the occupation probability $P_t$ can be estimated from its energy level $E_t$ and its electron and hole capture cross sections $\sigma_{n,p}$. Once the trap occupation probability is known, its average charge state $Q_t$  can be calculated.  In particular, $Q_t = (1-P_t)$ for donors and $Q_t=-P_t$ for acceptors.
 
 %Only non-degenerate traps with 2 possible charge states, one of them neutral, are treated.  A trap is called ``donor'' if it can be either neutral or positively charged; on the contrary, a trap is called ``acceptor'' if it can be either neutral or negatively charged. In the following we will refer to a trap in the non neutral state as ``ionized''.
 
@@ -283,6 +288,9 @@ The space charge density (in units of elementary charge per volume) is then give
 
 
 \begin{table}[htbp]
+ \caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
+   trap energy values.}
+   \label{tab:trapEnergy}
    \centering
    \begin{tabular}{lccccc} 
       Parameter   & Increasing? Decreasing? & closer to?& $P_t$ & $Q_t$  \\
@@ -295,9 +303,7 @@ The space charge density (in units of elementary charge per volume) is then give
       $E_a$    & $\searrow$ &     $E_c$ & $1\to0$ & $-\to0$  \\
       \hline
    \end{tabular}
-   \caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
-   trap energy values.}
-   \label{tab:trapEnergy}
+  
 \end{table}
 
 %As already mentioned, all the changes mentioned above happen within few $kT$ around the intrinsic energy $E_i$.
@@ -307,6 +313,8 @@ The space charge density (in units of elementary charge per volume) is then give
 %Let's now focus on capture cross sections. The Table~\ref{tab:cross_sections} summarises the findings, based on Equations~\ref{eq:simplePt},~\ref{eq:simpleoneminusPt},~\ref{eq:Qdonors} and~\ref{eq:Qacceptors}.
 
 \begin{table}[!htbp]
+\caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
+   trap cross sections values.}
    \centering
    \begin{tabular}{lccccc} % Column formatting, @{} suppresses leading/trailing space
     Trap type&  Parameter   & Increasing? Decreasing? & $P_t$ & $Q_t$  \\
@@ -327,9 +335,7 @@ The space charge density (in units of elementary charge per volume) is then give
     Acceptor  & $\sigma_p$    & $\searrow$ &      $1\to0$ & $-\to0$  \\
       \hline
    \end{tabular}
-   \caption{Change in occupation probability $P_t$ and charge state $Q_t$ for changes of
-   trap cross sections values.}
-   \label{tab:cross_sections}
+      \label{tab:cross_sections}
 \end{table}
 
 
