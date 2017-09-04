@@ -1,8 +1,9 @@
 \chapter{Radiation Damage to the ATLAS Pixel Sensors}
 \label{chap:digi}
 
-This Chapter presents a model for radiation damage to silicon sensors~\cite{DigitizerPSD11} that is fast enough to be incorporated directly into the simulation of \textit{digitization}, {\it i.e.} the conversion from energy depositions from charged particles to digital signals sent from module front ends to the detector readout system.  This model is under development within the ATLAS Pixel 
-group.
+This Chapter presents a model for radiation damage to silicon sensors~\cite{Benoit:2255825,DigiIFAE} that is fast enough to be incorporated directly into the simulation of \textit{digitization}, {\it i.e.} the conversion from energy depositions from charged particles to digital signals sent from module front ends to the detector readout system.  This model is under development within the ATLAS Pixel 
+group\footnote{This work is a collaborative effort, which Benjamin Nachman and I coordinate;  the full list of involved researchers is the following: Mathieu Benoit, Julien Beyer, Marco Bomben, Rebecca Carney, Ian Dawson, Audrey Ducourthial, Gilberto Giugliarelli, Tommaso Lari, Anna Macchiolo, Lingxin Meng, Javier Llorente Merino, Paul Miyagawa, Benjamin Nachman, Lorenzo Rossini, Veronica Wallangen}, and a publication is in preparation~\cite{Benoit:2255825}. 
+This Chapter is built on that document.
 
 
 \noindent Figure~\ref{fig:atlassim} shows the flowchart of the ATLAS Monte Carlo simulation, from 
@@ -11,7 +12,7 @@ event generation to analysis; digitization step intervenes before reconstruction
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[height=0.45\textheight]{atlassim.pdf}
+\includegraphics[height=0.35\textheight]{newatlassim.pdf}
 \caption{\label{fig:atlassim}Flowchart of Monte Carlo simulation in ATLAS.}
 \end{figure}
 
@@ -121,8 +122,8 @@ The next Section describes the physics of the digitization model and the first c
 Figure~\ref{fig:app:raddamge1} presents a schematic overview of the physics models included in the digitization model.   
 \begin{figure}[htpb!]
 \centering
-\includegraphics[width=0.65\textwidth]{New2DigitizerSchematic.pdf}
-\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential. Pixel local coordinate system is indicated; it will be used through out the Chapter.}
+\includegraphics[width=0.65\textwidth]{New3DigitizerSchematic.pdf}
+\caption{A schematic diagram illustrating the components of the digitizer model described in this note.  The blue line represents a minimum ionizing particle traversing the pixel sensor.  Chunks of electrons and holes, each representing $\mathcal{O}(10)$ fundamental charges, are transported to the electrodes.  Holes drift toward the backplane under the influence of the electric field and also experience transverse motion due to the magnetic field (deflecting at the Lorentz angle).  Thermal diffusion also changes the position of the charges.  Before being collected, electrons or holes may be trapped by defects in the silicon.  Even though the charge chunk may be trapped, it still induces a charge on the primary and neighbor electrodes via the Ramo potential. Pixel local coordinate system is indicated; it will be used through out the Chapter. (After~\cite{Benoit:2255825})}
 \label{fig:app:raddamge1}
 \end{figure}
 
@@ -270,7 +271,7 @@ While the introduction rates $g_c,g_A$, and $g_Y$ have been measured elsewhere (
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.55\textwidth]{newneff_added.pdf}
-\caption{The predicted effective doping concentration as a function of time for the IBL using the Hamburg model described in Equations~\ref{eq:hamburg12}-~\ref{eq:hamburg42}. Donors lead to a negative effective doping concentration while acceptors contribute a positive concentration.  }
+\caption{The predicted effective doping concentration as a function of time for the IBL using the Hamburg model described in Equations~\ref{eq:hamburg12}-~\ref{eq:hamburg42}. Donors lead to a negative effective doping concentration while acceptors contribute a positive concentration.  (After~\cite{Benoit:2255825})}
 \label{fig:electricfield:neff}
 \end{figure}
 
@@ -290,7 +291,7 @@ The \textit{depletion region} is the volume over which the lifetime of generated
 
 \begin{align}
 \label{eq:hamburg13}
-U_\text{full depl.} = |N_\text{eff}| \cdot \frac{qw^2}{2\epsilon\epsilon_0}
+U_\text{full depl.} = |N_\text{eff}| \cdot \frac{qw^2}{2\epsilon\epsilon_0},
 \end{align}
 where $w$ is the sensor depth. Figure~\ref{fig:electricfield:depletionvoltage} shows the simulated depletion voltage as a function of time for the IBL
  (left) and b-layer (right). For calibration of the model, measurements with the ATLAS Pixel Detector were obtained by performing bias voltage scans of the mean ToT of hit-clusters on reconstructed particle trajectories. The depletion voltage is extracted by fitting two linear functions to the rising and the plateau region of the measured data. The intersection of the two lines is defined to be the depletion voltage (blue bars in Figure~\ref{fig:electricfield:depletionvoltage}). Another method which was also used to obtain the full depletion voltage is a scan of the cross-talk between adjacent pixels (green and red bars in Figure~\ref{fig:electricfield:depletionvoltage}, the different colors indicate different information sources). Since the pixels are isolated only after full depletion this is a powerful measurement tool. Unfortunately, this method is only applicable before space-charge sign inversion since otherwise the pixels are isolated already at low bias voltages much before full depletion.
@@ -299,7 +300,7 @@ where $w$ is the sensor depth. Figure~\ref{fig:electricfield:depletionvoltage} s
 \centering
 \includegraphics[width=0.45\textwidth]{IBL_2016_new.pdf}
 \includegraphics[width=0.45\textwidth]{BLayer_2016_new.pdf}
-\caption{Simulated depletion voltage of IBL (left) and b-layer (right) according to the Hamburg model as a function of time from the date of their installation until end of 2016. The shown simulation uses the adapted introduction rates. Blue bars indicate measurements of the depletion voltage using the bias voltage scan method while red and green bars display earlier measurements using cross-talk scans.}
+\caption{Simulated depletion voltage of IBL (left) and b-layer (right) according to the Hamburg model as a function of time from the date of their installation until end of 2016. The shown simulation uses the adapted introduction rates. Blue bars indicate measurements of the depletion voltage using the bias voltage scan method while red and green bars display earlier measurements using cross-talk scans. (After~\cite{Beyer:2252757})}
 \label{fig:electricfield:depletionvoltage}
 \end{figure}
 
@@ -359,7 +360,7 @@ For planar sensors, the field is largely independent of $x$ and $y$, perpendicul
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.6\textwidth]{newEz_0fluence80V.pdf}
-\caption{The electric field magnitude in the $z$ direction, averaged over $x$ and $y$ for a the ATLAS IBL sensor biased at 80 V and at various fluences.}
+\caption{The electric field magnitude in the $z$ direction, averaged over $x$ and $y$ for a the ATLAS IBL sensor biased at 80 V and at various fluences. (After~\cite{Benoit:2255825})}
 \label{fig:electricfield:profilesRun23}
 \end{figure}
 
@@ -604,7 +605,7 @@ shown in Figure~\ref{fig:timetoelectrode} for planar  sensors.
 \begin{figure}[!htpb]
 \centering
 \includegraphics[width=0.6\textwidth]{newtz_0fluence80V.pdf}
-\caption{The time for an electron or hole to drift all the way to the collecting electrode (electrons) or back plane (holes) in an ATLAS IBL planar sensor biased at 80 V as a function of the depth ($z$) using the averaged electric fields shown in Figure~\ref{fig:electricfield:profilesRun23}.  }
+\caption{The time for an electron or hole to drift all the way to the collecting electrode (electrons) or back plane (holes) in an ATLAS IBL planar sensor biased at 80 V as a function of the depth ($z$) using the averaged electric fields shown in Figure~\ref{fig:electricfield:profilesRun23}.  (After~\cite{Benoit:2255825})}
 \label{fig:timetoelectrode}
 \end{figure}
 
@@ -627,7 +628,7 @@ For charges that are trapped (see Section~\ref{sec:chargetrapping}), one must kn
 \centering
 \includegraphics[width=0.49\textwidth]{newdistance_maps_e1e14.pdf}
 \includegraphics[width=0.49\textwidth]{newdistance_maps_h1e14.pdf}
-\caption{The $z$ position of the trapped electrons (left) or holes (right) as a function of their starting position and the time traveled for $\Phi=10^{14}$ $n_\text{eq}/\text{cm}^2$.  The collecting electrode is at origin while the backplane is at $200$ $\mu$m.  }
+\caption{The $z$ position of the trapped electrons (left) or holes (right) as a function of their starting position and the time traveled for $\Phi=10^{14}$ $n_\text{eq}/\text{cm}^2$.  The collecting electrode is at origin while the backplane is at $200$ $\mu$m.  (After~\cite{Benoit:2255825})}
 \label{fig:posattrap}
 \end{figure}
 
@@ -649,7 +650,7 @@ The drift along the $\phi$ direction (the azimuthal angle transverse to the beam
 \centering
 \includegraphics[width=0.49\textwidth]{new2Angle_0fluence80V.pdf}
 \includegraphics[width=0.49\textwidth]{newRun2.pdf}
-\caption{Left: The depth dependence of the Lorentz angle for electrons and holes for four fluences in an ATLAS IBL planar sensor biased at 80 V.  Right: The integrated Lorentz angle for electrons (see Equation~\ref{eq:integratedlorentzangle}) as a function of the starting and ending position for a fluence of $\Phi=2\times10^{14}$ $n_\text{eq}/\text{cm}^2$.  The collecting electrode is at a $z$ position of $0$.}
+\caption{Left: The depth dependence of the Lorentz angle for electrons and holes for four fluences in an ATLAS IBL planar sensor biased at 80 V.  Right: The integrated Lorentz angle for electrons (see Equation~\ref{eq:integratedlorentzangle}) as a function of the starting and ending position for a fluence of $\Phi=2\times10^{14}$ $n_\text{eq}/\text{cm}^2$.  The collecting electrode is at a $z$ position of $0$. (After~\cite{Benoit:2255825})}
 \label{fig:lorentzangle:Run2}
 \end{figure}
 
@@ -687,7 +688,7 @@ The Ramo potential is calculated using TCAD to solve the Poisson's equation.  Fo
 \centering
 \includegraphics[width=0.49\textwidth]{newtest_ramoxz_10.pdf}
 \includegraphics[width=0.49\textwidth]{newtest_ramoz_10.pdf}
-\caption{Left: A two-dimensional slice of the full three-dimensional ATLAS planar sensor Ramo potential as computed with TCAD at $x=0$.  Dashed vertical lines indicate pixel boundaries.  Right: A one-dimensional slice of the Ramo potential at $x=y=0$.  Overlaid on top of the TCAD simulation are a series expansion solution of the Poisson's equation as well as double-exponential defined by Equation~\ref{eq:doublexp}.}
+\caption{Left: A two-dimensional slice of the full three-dimensional ATLAS planar sensor Ramo potential as computed with TCAD at $x=0$.  Dashed vertical lines indicate pixel boundaries.  Right: A one-dimensional slice of the Ramo potential at $x=y=0$.  Overlaid on top of the TCAD simulation are a series expansion solution of the Poisson's equation as well as double-exponential defined by Equation~\ref{eq:doublexp}. (After~\cite{Benoit:2255825})}
 \label{fig:ramo:planar}
 \end{figure}
 
@@ -708,7 +709,7 @@ The implementation of the Ramo potential and charge trapping are illustrated in 
 \includegraphics[width=0.32\textwidth]{newtestramo_corrected_other.pdf}
 \includegraphics[width=0.32\textwidth]{newtestramo_induced_0_1.pdf}
 \includegraphics[width=0.32\textwidth]{newtestramo_induced_1_0.pdf}
-\caption{The average charge collected as a function of the starting location and the time to be trapped for the same pixel as the electron-hole pair generation (left), the neighbor pixel in the short ($50$ $\mu $m) pitch direction (middle) and the pixel in the long pitch direction ($250$ $\mu m$) (right).  For simplicity, the electric field field is simulated without radiation damage and the vertical axis is a hypothetical trapping time.}
+\caption{The average charge collected as a function of the starting location and the time to be trapped for the same pixel as the electron-hole pair generation (left), the neighbor pixel in the short ($50$ $\mu $m) pitch direction (middle) and the pixel in the long pitch direction ($250$ $\mu m$) (right).  For simplicity, the electric field field is simulated without radiation damage and the vertical axis is a hypothetical trapping time. (After~\cite{Benoit:2255825})}
 \label{fig:ramo:check}
 \end{figure}
 
