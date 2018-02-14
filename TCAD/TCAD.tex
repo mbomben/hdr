@@ -66,7 +66,7 @@ some of the questions that TCAD simulations can address.
 In order for the answers to be really reliable it is important to have access to information 
 like the doping profiles of the various detector implants and dielectric thicknesses. 
 This is often not possible, since 
-the silicon foundries don't disclose these information. Some {\it a posteriori} analysis is possible, 
+the silicon foundries do not disclose these information. Some {\it a posteriori} analysis is possible, 
 like Secondary Ion Mass Spectroscopy, {\it SIMS}. SIMS is a vacuum based technique 
 which relies on the bombardment of a sample surface with a primary ion 
 beam  followed  by  mass  spectrometry  of  the 
@@ -96,7 +96,7 @@ Figure~\ref{fig:IV_BD}.
 \caption{\label{fig:IV_BD}IV curves for edgeless $n-on-p$ pixel test structures. (left) TCAD simulations 
 (right) Real data from~\cite{bib:nim2012}. Detectors with the same pixel-to-edge minimal distance 
 and different number of GRs are compared. In the right figure a photo of the tested detector is 
-shown in the inset.}
+shown in the inset. Vetical scales are different due to the simulated detector area which is smaller than the real one.}
 \end{figure}
 In the Figure the IV curves of edgeless $n-on-p$ pixel test structures are compared. The 
 parameter of interest here is the breakdown (BD) voltage, which in the presence of 
@@ -107,10 +107,11 @@ As it can be seen for what concerns the BD voltage the level of agreement betwee
 and TCAD simulations is at 20\% or better. This was an important achievement since 
 the designs of the real sensors was driven by the TCAD simulations studies; they allowed 
 to choose among different possible combinations of minimal pixel-to-edge distances and 
-number of GRs. 
+number of GRs. It has to be noticed that the vertical scales do not agree and this is expected since the area of the 
+simulated detector is a small fraction of the real one.
 
 A similar studied, reported in Figure~\ref{fig:width_GRs}, showed that keeping the number of GRs fixed and simply increasing the 
-minimal pixel-to-edge distance doesn't make the BD voltage larger.
+minimal pixel-to-edge distance does not make the BD voltage larger.
 
 \begin{figure}[!htbp]
 \centering
@@ -119,9 +120,9 @@ minimal pixel-to-edge distance doesn't make the BD voltage larger.
 and different number of GRs are compared.}
 \end{figure}
 
-This effect is due to the p-spray which is equipotential till it doesn't cross a $n^+$ implant, like a 
+This effect is due to the p-spray which is equipotential till it does not cross a $n^+$ implant, like a 
 GR or the pixels. Hence, increasing the distance between the detector edge and the pixels but 
-not adding more GRs doesn't allow a more smooth voltage drop, hence doesn't change the 
+not adding more GRs does not allow a more smooth voltage drop, hence does not change the 
 BD voltage. The fact the p-spray is equipotential was verified during the simulation studies, a test 
 otherwise difficult to accomplish.
 
@@ -324,7 +325,7 @@ were compared with the theoretical value evaluated using~\ref{eq:Ileak2}. Assumi
 for generation and recombination lifetimes and taking the intrinsic concentration value $n_i$ from 
 the simulation itself a current density of $J\sim1.6\times10^{-13}$~A/cm is expected, which 
 is in excellent agreement with the value observed in simulations when the default value of 
-$E^{Sil}_g(300)$ is chose ({\it i.e.} 1.08~eV); on the contrary, as it can be seen from Figure~\ref{fig:ILeak20C}, when $E^{Sil}_g(300)$ is set to 1.12~eV the simulation results don't match 
+$E^{Sil}_g(300)$ is chose ({\it i.e.} 1.08~eV); on the contrary, as it can be seen from Figure~\ref{fig:ILeak20C}, when $E^{Sil}_g(300)$ is set to 1.12~eV the simulation results do not match 
 the theoretical expected values.
 
 It has to be noted that  the simulated current is purely bulk generated; this is also clear from 
@@ -341,7 +342,7 @@ For all temperature $T$ times scenario $S$ combination the leakage current $I_{l
 at a 
 operational voltage 
 $V_{op}$ 
-was extracted. It was verified that the depletion voltage $V_{depl}$ didn't depend on scenarios nor temperatures.
+was extracted. It was verified that the depletion voltage $V_{depl}$ did not depend on scenarios nor temperatures.
 
  The leakage current was then studied as a function of the reciprocal of the 
 temperature and fitted with a function inspired by Equation~\ref{eq:IleakT}:

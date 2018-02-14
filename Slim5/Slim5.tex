@@ -73,9 +73,9 @@ at a radius of 1.5~cm.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.45\textwidth]{miniSVT.pdf}
+\includegraphics[width=0.45\textwidth]{SVT_details.png}
 \includegraphics[width=0.45\textwidth]{miniSuperBSVT.pdf}
-\caption{\label{fig:svt} (left)Schematic view of \babar\ SVT: tranverse section. (After~\cite{AUBERT20021}) The external radius is 144 mm. (right) Cross section of the SuperB SVT. (After~\cite{Baszczyk:2013xua}) }
+\caption{\label{fig:svt} (left)Schematic view of \babar\ SVT: tranverse section. (Adapted from~\cite{BaBarSVTreview}) The external radius is 144 mm. (right) Cross section of the SuperB SVT. (After~\cite{Baszczyk:2013xua}) }
 \end{figure}
 
 
@@ -134,7 +134,7 @@ measurements.  The expected level of precision for the majority of them will
 reach the percent level and will allow probing physics BSM~\cite{ILCVertexing2016}.
 
 To accomplish this ambitious physics program stringent requirements are imposed on tracking and 
-vertexing performances; these requirements didn't change much over a 
+vertexing performances; these requirements did not change much over a 
 decade~\cite{ILCVertexing2007,ILCVertexing2016}. 
 The  figure of merit of the future ILC vertex detector  is the impact parameter (ip) resolution which is 
 expected to be:
@@ -158,7 +158,7 @@ region.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{ILC_concepts.pdf}
+\includegraphics[width=0.95\textwidth]{ILC_concepts.pdf}
 \caption{\label{fig:ILC_concepts}ILD and SiD schemes of the vertex detector (After~\cite{ILCVertexing2016})}
 \end{figure}
 
@@ -413,25 +413,26 @@ of the energy loss
  spread $\sigma$ are of few $\mu$m for detector thicknesses of 100-200~$\mu$m when the  
   carriers velocities are saturated.
 Factors that influence the spatial resolution that are related to the  detector characteristics are the 
-analog or digital readout, the detector pitch and the signal-to-noise ratio.
+analog or binary readout, the detector pitch and the signal-to-noise ratio.
 
 Spatial resolution is usually estimated by taking the RMS of the residuals distribution. Residuals are 
 defined as the difference between the position of the DUT hit associated to a track and 
 the extrapolated position of the track itself on the DUT plane . 
-The width of the residuals distribution depends on many factors: the intrinsic resolution of the 
-DUT (about the detector pitch divided by $\sqrt{12}$ - the so-called {\it digital resolution}~\cite{TURCHETTA}), the pointing resolution of the tracking system 
-(about the intrinsic resolution of each telescope plane divided by the square root of the number of 
-telescope planes) and the RMS deviation due to MS,
+The width of the residuals distribution depends on two main factors: the intrinsic resolution of the 
+DUT $\sigma_{DUT}$ (about the detector pitch divided by $\sqrt{12}$ - the so-called {\it binary  resolution}~\cite{TURCHETTA}) and the pointing resolution of the tracking system $\sigma_{trk}$, which is the sum of the beam telescope resolution $\sigma_{tele}$~\footnote{about the intrinsic resolution of each telescope plane divided by the square root of the number of 
+telescope planes} and the RMS deviation due to MS $\sigma_{MS}$. Hence the width of the residuals distribution $\sigma_{res}$ is given by:
+
 
 \begin{equation}
-\sigma_{res}=\sigma_{DUT}\oplus\sigma_{trk}\oplus\sigma_{MS}
+\sigma_{res}=\sigma_{DUT}\oplus\sigma_{trk}
 \label{eq:res}
 \end{equation}
 
-If the contribution of tracking and MS to the residuals is negligible with respect to the DUT 
+If the contribution of tracking resolution to the residuals is negligible with respect to the DUT 
 one, then the DUT elementary cell, strip or pixel, can be resolved (examples can be found 
 in~\ref{sec:radhardpixels}); if not, then the residuals distribution 
-is usually well described by a Gaussian distribution. 
+is usually well described by a Gaussian distribution. In the latter case the DUT resolution $\sigma_{DUT}$  can be obtained by deconvolution 
+using Equation~\ref{eq:res}: $\sigma_{DUT}\sim\sigma_{res}\ominus\sigma_{trk}$
 
 Charge sharing between neighbouring strips (or pixels) allow the formation of clusters with 2 
 or more. Focusing on strips, when more than 1 strip fires it is important to assign to the 
@@ -488,7 +489,7 @@ module is presented. The width of the fitted Gaussian is about 16~$\mu$m.
 
 \begin{figure}[!htpb]
 \centering
-\includegraphics[width=0.5\textwidth]{res_pisde.pdf}
+\includegraphics[width=0.75\textwidth]{res_pisde.pdf}
 \caption{\label{fig:res_pside}Residuals distribution for hits registered on the $p-$side of a 
 striplets module. Points are data, the red line is the result of a Gaussian fit to the distribution.}
 \end{figure}
@@ -514,7 +515,7 @@ hit.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{annotated_res_pside_1stPHbin.pdf}
+\includegraphics[width=0.75\textwidth]{annotated_res_pside_1stPHbin.pdf}
 \caption{\label{fig:annotated_res_pside_1stPHbin}Residuals distribution for hits registered on the $p-$side of a 
 striplets module when only clusters with $\le$6600~e charge are considered. Data are represented as points with error bars. The fit function (blue solid line) is given in Equation~\ref{eq:res_pdf}; the red solid line 
 is the outlier Gaussian contribution.}
@@ -549,7 +550,7 @@ On the contrary, about 7\% of the data were described by the double Gaussian com
 
 The intrinsic resolution was obtained using Equation~\ref{eq:res}, where $\sigma_{res}$ is taken as 
 the width of the narrow core Gaussian of the fit function. We found an intrinsic resolution of 
-13.6~$\mu$m for the $p-$side and 14.1~$\mu$m or the $n-$side, slightly better than the digital 
+13.6~$\mu$m for the $p-$side and 14.1~$\mu$m or the $n-$side, slightly better than the binary  
 resolution for a 50~$\mu$m readout pitch and in agreement with the expected values for strip detectors with similar $S/N$.
 
 \subsubsection{Spatial Resolution as a Function of the Track Angle}
@@ -618,8 +619,7 @@ distribution.
  For what concerns 
  the space-point resolution, both detectors matched the expected performance for  50~$\mu$m pitch 
  detectors, 
- but they suffered for the low number of clusters with more than 1 cell and, more important, 
- from the high threshold. 
+ but they suffered for the low number of clusters with more than 1 cell due to the high threshold. 
   
   Faster readout was in need for both solutions, even if FSSR2 chip was operated at up to 
   70~MHz.

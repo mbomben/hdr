@@ -228,8 +228,17 @@ arm; the latter in particular enters quadratically in the formula.
 
 The charged particles ionise the medium through Coulomb interactions, which involve energy and 
 {\it momentum} exchanges, hence the particle being tracked is subject to many (small) deflections. 
-The collective name for all these deflections is {\it multiple scattering} (MS). MS deteriorates the 
-momentum resolution by ~\cite{Garcia-Sciveres:2017ymt}:
+The collective name for all these deflections is {\it multiple scattering} (MS).
+The extrapolation from the detecting layer closest to the interaction point to the primary vertex has a 
+slope that is smeared by $\theta_{MS}$ due to MS effects which is equal to~\cite{Olive:2016xmw}:
+
+\begin{equation}
+  \theta_{MS} \approx \dfrac{0.0136 {\rm GeV/c}}{\beta p}\sqrt{\dfrac{x}{X_0}}
+  \label{eq:thetaMS}
+\end{equation}
+ where $p$ is the particle momentum, $\beta$ its velocity in units of the speed of light, $x$ is the material thickness and $X_0$ its radiation length. 
+MS deteriorates the 
+momentum resolution by~\cite{Garcia-Sciveres:2017ymt}:
 
 \begin{equation}
 \Bigg(\dfrac{\sigma_{p_{T}}}{p_{T}}\Bigg)_{MS} = \dfrac{0.054}{\beta B L/\sin\theta}\sqrt{\dfrac{x/\sin\theta}{X_0}}
@@ -251,25 +260,25 @@ The error on secondary vertex reconstruction is linked to the precision on
 transverse impact parameter $d_0$~\cite{Garcia-Sciveres:2017ymt}:
 
 \begin{equation}
-\sigma_{d0}\approx\dfrac{\sigma_{point}}{\sqrt{N}}\sqrt{1+\dfrac{12(N-1)}{N+1}\Big(\dfrac{r}{L}\Big)^2}\oplus\theta_0 r_{pv}\sqrt{\dfrac{N(2N-1)}{6(N-1)^2}}
+\sigma_{d0}\approx\dfrac{\sigma_{point}}{\sqrt{N}}\sqrt{1+\dfrac{12(N-1)}{N+1}\Big(\dfrac{r}{L}\Big)^2}\oplus\theta_{MS} r_{pv}\sqrt{\dfrac{N(2N-1)}{6(N-1)^2}}
 \label{eq:d0res}
 \end{equation} 
 where the first term results from the extrapolation from the tracker to the primary vertex with $r/L$
 being the ratio of the extrapolation distance to the tracker length. It is clear it is better to have 
 the first layer as close as possible to the interaction point (small $r$), and then have 
-subsequent layers as far as possible (large $L$); increasing the number $N$ of measurements 
+the outermost layer as far as possible (large $L$); increasing the number $N$ of measurements 
 help as usual (central limit theorem); the resolution depends 
 linearly on the space-point resolution. The second term is due to multiple scattering, where 
-$\theta_0$ is the the multiple scattering angle~\cite{Olive:2016xmw}, and and $r_{pv}$ the distance 
+$\theta_{MS}$ is the the multiple scattering angle (presented in Equation~\ref{eq:thetaMS}), and and $r_{pv}$ the distance 
 of the first  layer to the primary interaction vertex. Minimising material and getting layer as 
-close as possible to the primary vertex helps; on the contrary, adding many layers here don't work 
+close as possible to the primary vertex helps; on the contrary, adding many layers here do not work 
 since each layer adds to the material budget, hence makes the MS effect more and more important.
 
 For a 4-layer geometry like in ATLAS (see Figure~\ref{fig:ATLASID}) and a material thickness of 
 typically around  3\% $X_0$ this yields~\cite{Garcia-Sciveres:2017ymt}:
 
 \begin{equation}
-\sigma_{d_{0}}=\dfrac{90\,\mu {\rm m\,GeV/c}}{p}
+  \sigma_{d_{0}}\approx\dfrac{90\,\mu {\rm m\,GeV/c}}{p}\oplus7\mu {\rm m}
 \end{equation}
 
 \section{Summary}
