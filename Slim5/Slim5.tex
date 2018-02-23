@@ -16,15 +16,15 @@ Wrap up of the SLIM5 project will be finally outlined in Section~\ref{sec:Slim5S
 The SLIM5 project~\cite{SLIM5:proj} aimed at advancing the state-of-the-art in the development of thin 
 tracking systems to be applied in High Energy Physics. The project was financed for three years
  (2006-2008) by INFN - National Scientific Committee 5~\cite{INFN_V} and involved several 
- italian research institutes. 
+ Italian research institutes. 
  
  The SLIM5 collaboration worked on developing tracking systems for experiments at 
  high luminosity flavour 
  factories, like the proposed SuperB~\cite{Baszczyk:2013xua}, and linear colliders. The goal was to deliver thin silicon tracking detectors with possibility 
  of self-triggering thanks to the combination of data-driven data acquisition and pattern matching 
- algorithm with very low latency. Double sides strip detectors (DSSDs) and monolithic active pixel sensors 
+ algorithm with very low latency. Double sides strip detectors (DSSDs) and monolithic active pixel sensor 
  (MAPS) prototypes were produced in the framework of the project.
-Before describing them we know illustrate the required performance for such detectors. 
+Before describing them we now illustrate the required performance for such detectors. 
 
 \section{Tracking and Vertexing Requirements for SuperB and ILC Experiments}
 \label{sec:HLExp}
@@ -134,8 +134,8 @@ measurements.  The expected level of precision for the majority of them will
 reach the percent level and will allow probing physics BSM~\cite{ILCVertexing2016}.
 
 To accomplish this ambitious physics program stringent requirements are imposed on tracking and 
-vertexing performances; these requirements did not change much over a 
-decade~\cite{ILCVertexing2007,ILCVertexing2016}. 
+vertexing performances (these requirements did not change much over a 
+decade~\cite{ILCVertexing2007,ILCVertexing2016}). 
 The  figure of merit of the future ILC vertex detector  is the impact parameter (ip) resolution which is 
 expected to be:
 
@@ -375,7 +375,7 @@ distribution of clusters are shown in Figure~\ref{fig:clu_ph_striplets}.
 
 The fitted MPV was found to be well compatible with the expected  value for a MIP in 200~$\mu$m 
 thick silicon detector. The region above 100 threshold DAC for the $n-$side was severely impacted 
-by the limited dynamical range of the ADC, as it can be seen in Figure~\ref{fig:clu_ph_striplets}.
+by the limited dynamic range of the ADC, as it can be seen in Figure~\ref{fig:clu_ph_striplets}.
 
 The hit-efficiency was of above 98\% for both the $p-$ and the $n-$side. A detailed analysis 
 of the hit-efficiency as a function of the position along the detector is shown in 
@@ -398,7 +398,10 @@ The spatial resolution performance of the striplets will be discussed in detail 
 \section{Discussion of the Striplets Spatial Resolution}
 \label{sec:striplets_res}
 
-In this Section the spatial resolution of the striplets will be discussed in detail. 
+In this Section the spatial resolution of the striplets will be discussed in detail. After a rather general introduction to the concepts of spatial resolution 
+and how it can be inferred from the residuals distribution, the spatial 
+resolution performance of the striplets will be presented. In particular 
+the impact of the threshold will be examined.
 
 \subsection{Residuals and Spatial Resolution}
 
@@ -524,7 +527,7 @@ is the outlier Gaussian contribution.}
 The residuals distribution was then fitted with a function containing three components: a core 
 Gaussian, to model correctly reconstructed clusters; a double guassian, with mean fixed at 
 $\pm 25\, \mu$m, to model the mis-reconstructed 2 strips clusters; and finally an outlier Gaussian, 
-with mean fixed at 0~$\mu$m, to take into account spurious hits. 
+with mean fixed at 0~$\mu$m, to take into account spurious hits~\cite{BOMBEN2010159}. 
 The probability density function (PDF) as a function of the residual value $x$ was:
 
 \begin{equation}
@@ -548,8 +551,8 @@ contribution, while the dashed line is all but the core Gaussian.}
 The fit results indicated that, once the dead strips are removed, the outlier component is negligible. 
 On the contrary, about 7\% of the data were described by the double Gaussian component.
 
-The intrinsic resolution was obtained using Equation~\ref{eq:res}, where $\sigma_{res}$ is taken as 
-the width of the narrow core Gaussian of the fit function. We found an intrinsic resolution of 
+The ultimate resolution was obtained using Equation~\ref{eq:res}, where $\sigma_{res}$ is taken as 
+the width of the core Gaussian of the fit function. We found a resolution of 
 13.6~$\mu$m for the $p-$side and 14.1~$\mu$m or the $n-$side, slightly better than the binary  
 resolution for a 50~$\mu$m readout pitch and in agreement with the expected values for strip detectors with similar $S/N$.
 

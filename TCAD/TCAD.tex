@@ -51,13 +51,13 @@ trackers will be given.
 \label{sec:sensordesign}
 
 The possibility to explore several designs for a silicon detector without having to realise them is 
-of course an asset since it allows to reduce the number of submissions, allowing to save time 
+ an asset since it allows to reduce the number of submissions, allowing to save time 
 and money. 
 One example of such studies is given by the optimisation of the detector edge design. 
 As already discussed in Section~\ref{sec:pads} it is important to control the voltage 
 drop from one side of the junction to the other one. This is particularly true for nowadays 
 silicon sensors where, to maximise the detector acceptance, the dead area at the 
-detector edge has to be kept at minimum (see also~\ref{sec:edgeless}). One way to achieve 
+detector edge has to be kept at a minimum (see also~\ref{sec:edgeless}). One way to achieve 
 small dead areas and and at the same time avoid large electric fields is to add several 
 guard rings (GRs) that surround the sensitive area of the sensor. How many GRs include in 
 the detector, how large their implants should be, which total area they should cover are 
@@ -82,7 +82,7 @@ on samples taken from an $n-on-p$ production.}
 
 P-spray is needed to counter the accumulation of electrons between $n^+$ implants in an 
 electron collecting detector, which otherwise would short the electrodes and degrade the 
-detector performance. The positive oxide charge is the responsible for the electron layer 
+detector performance. The positive oxide charge is responsible for the electron layer 
 at the Si-SiO$_2$ interface~\cite{Lutz:411172}. 
 
 Thanks to inputs like the ones from SIMS it is possible to make optimal choices for the detector 
@@ -110,7 +110,7 @@ to choose among different possible combinations of minimal pixel-to-edge distanc
 number of GRs. It has to be noticed that the vertical scales do not agree and this is expected since the area of the 
 simulated detector is a small fraction of the real one.
 
-A similar studied, reported in Figure~\ref{fig:width_GRs}, showed that keeping the number of GRs fixed and simply increasing the 
+A similar study, reported in Figure~\ref{fig:width_GRs}, showed that keeping the number of GRs fixed and simply increasing the 
 minimal pixel-to-edge distance does not make the BD voltage larger.
 
 \begin{figure}[!htbp]
@@ -120,7 +120,7 @@ minimal pixel-to-edge distance does not make the BD voltage larger.
 and different number of GRs are compared.}
 \end{figure}
 
-This effect is due to the p-spray which is equipotential till it does not cross a $n^+$ implant, like a 
+This effect is due to the p-spray which is equipotential with the backside implant till it does not cross a $n^+$ implant, like a 
 GR or the pixels. Hence, increasing the distance between the detector edge and the pixels but 
 not adding more GRs does not allow a more smooth voltage drop, hence does not change the 
 BD voltage. The fact the p-spray is equipotential was verified during the simulation studies, a test 
@@ -148,24 +148,32 @@ voltage and leakage current level.
 
 Such studies again allow to make detector choices that save money and time and give access to 
 quantities like carriers distribution otherwise impossible to measure. An example is given in 
-Figure~\ref{fig:carr_conc}, where the result of 2D simulations of an  $n-on-p$ detector 
+Figures~\ref{fig:early_carr_conc} and~\ref{fig:late_carr_conc}, where the result of 2D simulations of an  $n-on-n$ detector 
 are reported.
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.45\textwidth]{econ_early.png}
-\includegraphics[width=0.45\textwidth]{hcon_early.png}
-\includegraphics[width=0.45\textwidth]{econ_late.png}
-\includegraphics[width=0.45\textwidth]{hcon_late.png}
-\caption{\label{fig:carr_conc}2D simulations of an $n-on-p$ detector. Carriers concentration
-are reported when the detector is over depleted and a MIP stroke at $t=0$~s. 
-(Top) Carriers distribution during the MIP strike. (Bottom) After 1~ns. (Left) electron concentration. 
-(Right) Hole concentration. MIP was impinging at 20$^{\circ}$ with respect to the sensor surface.}
+\includegraphics[width=0.75\textwidth]{econ_early.png}
+\includegraphics[width=0.75\textwidth]{hcon_early.png}
+\caption{\label{fig:early_carr_conc}2D simulations of an irradiated $n-on-n$ detector. Carriers concentration
+are reported when the detector is over depleted and a MIP just stroke. 
+MIP was impinging at 20$^{\circ}$ with respect to the sensor surface. (Top) Electron concentration. 
+(Bottom) Hole concentration.}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{econ_late.png}
+\includegraphics[width=0.75\textwidth]{hcon_late.png}
+\caption{\label{fig:late_carr_conc}2D simulations of an irradiated $n-on-n$ detector. Carriers concentration
+are reported when the detector is over depleted and 1~ns after a MIP stroke. 
+MIP was impinging at 20$^{\circ}$ with respect to the sensor surface. (Top) Electron concentration. 
+(Bottom) Hole concentration.}
 \end{figure}
 Three collecting electrodes are simulated; the detector is 250~$\mu$m thick and the pitch 
-is 250~$\mu$m. The over-depleted detector is hit by a MIP; the MIP strikes at 
+is 250~$\mu$m. The over-depleted detector ($V_{bias} = 500$~V) is hit by a MIP; the MIP strikes at 
 an angle of 20$^{\circ}$ with respect to the sensor surface. The detector was simulated after 
-an irradiation fluence of $\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$
-It can be seen from the Figure that electrons drift faster than holes; a large fraction of holes 
+an irradiation fluence of $\Phi=1\times10^{15}$~n$_{\rm eq}$/cm$^2$, modeling the radiation damage using the Chiochia model~\cite{CHIOCHIA2006} (more details in Section~\ref{sec:TCADRadDamModels}).
+By comparing the Figures~\ref{fig:early_carr_conc} and~\ref{fig:late_carr_conc} 
+it can be seen that electrons drift faster than holes; a large fraction of holes 
 have moved little from the original position while electrons have gained much more distance 
 after 1~ns. 
 This kind of simulation are needed to interpret data from  beam tests when tracks are impinging 

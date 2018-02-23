@@ -212,7 +212,7 @@ readout electronics. Diffusion and Lorentz angle deviation
 can deteriorate the space-point measurement precision; more details in Chapters~\ref{chap:silicon}
  and~\ref{chap:SLIM5}.
 
-Assuming a space point-resolution of $\sigma_{point}$, the (transverse) momentum resolution is~\cite{GLUCKSTERN1963381,Olive:2016xmw,Garcia-Sciveres:2017ymt}:
+Assuming a space point-resolution of $\sigma_{point}$, the (transverse) momentum resolution is well described by~\cite{GLUCKSTERN1963381,Olive:2016xmw,Garcia-Sciveres:2017ymt}:
 
 \begin{equation}
 \dfrac{\sigma_{p_{T}}}{p_{T}} = \Bigg( \dfrac{p_T}{0.3|z|}\dfrac{\sigma_{point}}{L^2B}\sqrt{\dfrac{720}{N+4}}\Bigg) \oplus \Bigg(\dfrac{\sigma_{p_{T}}}{p_{T}}\Bigg)_{MS}
@@ -220,15 +220,15 @@ Assuming a space point-resolution of $\sigma_{point}$, the (transverse) momentum
 \end{equation} 
 
 where $p_T$ is the particle momentum (in GeV/c) transverse to the magnetic field $B$ (in Tesla); 
-$L$ is the the radial length, in meters (the space point-resolution of $\sigma_{point}$ is measured in 
-meters too). $N$ is the numbers of measuring layers in the tracker and for this formulation it is 
+$L$ is the radial length, in meters (the space point-resolution of $\sigma_{point}$ is measured in 
+meters too). $N$ is the number of equidistant measuring layers in the tracker and for this formulation it is 
 assumed to be large. As it can be seen from Equation~\ref{eq:ptres}, other than a good 
 space-point resolution, it is also important to have a large magnetic field and a long tracker lever 
 arm; the latter in particular enters quadratically in the formula. 
 
 The charged particles ionise the medium through Coulomb interactions, which involve energy and 
 {\it momentum} exchanges, hence the particle being tracked is subject to many (small) deflections. 
-The collective name for all these deflections is {\it multiple scattering} (MS).
+The collective term for all these deflections is {\it multiple scattering} (MS).
 The extrapolation from the detecting layer closest to the interaction point to the primary vertex has a 
 slope that is smeared by $\theta_{MS}$ due to MS effects which is equal to~\cite{Olive:2016xmw}:
 
@@ -245,19 +245,19 @@ momentum resolution by~\cite{Garcia-Sciveres:2017ymt}:
 \label{eq:MS}
 \end{equation} 
 with $L$ and $B$ as in Equation~\ref{eq:ptres}. Here $L/\sin\theta$ is the projected tracker length
- and $(x/\sin\theta)/X_0$ is the material thickness traversed by the particle, expressed in unit 
+ and $(x/\sin\theta)/X_0$ is the material thickness traversed by the particle, expressed in units 
  of radiation length $X_0$, when the particle crosses the detector at an angle $\theta$ with respect 
  to the detector surface.
  
- As an example, the resolution of a 1~GeV/c $p_T$ track in a $L=1$~m 
+ As an example, the resolution of a 1~GeV/c $p_T$ track in a $L=1$~m,  
  $N=10$ layers 
  tracker, immersed in a $B=$1~T solenoidal field, is about 1.0\% if the space-point resolution   
  $\sigma_{point}$ is about 10~$\mu$m for tacks at normal incidence; the result is dominated by 
- MS effect. For a 100~GeV/c $p_T$ the resolution is about 2.0\% and it is dominated by the 
+ MS effects. For a 100~GeV/c $p_T$ the resolution is about 2.0\% and it is dominated by the 
  error on the curvature measurement (first term of Equation~\ref{eq:ptres}).
 
-The error on secondary vertex reconstruction is linked to the precision on 
-transverse impact parameter $d_0$~\cite{Garcia-Sciveres:2017ymt}:
+The error on the secondary vertex reconstruction is linked to the precision on 
+the transverse impact parameter $d_0$~\cite{Garcia-Sciveres:2017ymt}:
 
 \begin{equation}
 \sigma_{d0}\approx\dfrac{\sigma_{point}}{\sqrt{N}}\sqrt{1+\dfrac{12(N-1)}{N+1}\Big(\dfrac{r}{L}\Big)^2}\oplus\theta_{MS} r_{pv}\sqrt{\dfrac{N(2N-1)}{6(N-1)^2}}
@@ -267,11 +267,11 @@ where the first term results from the extrapolation from the tracker to the prim
 being the ratio of the extrapolation distance to the tracker length. It is clear it is better to have 
 the first layer as close as possible to the interaction point (small $r$), and then have 
 the outermost layer as far as possible (large $L$); increasing the number $N$ of measurements 
-help as usual (central limit theorem); the resolution depends 
+help (central limit theorem); the resolution depends 
 linearly on the space-point resolution. The second term is due to multiple scattering, where 
-$\theta_{MS}$ is the the multiple scattering angle (presented in Equation~\ref{eq:thetaMS}), and and $r_{pv}$ the distance 
-of the first  layer to the primary interaction vertex. Minimising material and getting layer as 
-close as possible to the primary vertex helps; on the contrary, adding many layers here do not work 
+$\theta_{MS}$ is  the multiple scattering angle (presented in Equation~\ref{eq:thetaMS}), and and $r_{pv}$ the distance 
+of the first  layer to the primary interaction vertex. Minimising material and getting one layer as 
+close as possible to the primary vertex helps; on the contrary, adding many layers here doen not help 
 since each layer adds to the material budget, hence makes the MS effect more and more important.
 
 For a 4-layer geometry like in ATLAS (see Figure~\ref{fig:ATLASID}) and a material thickness of 
